@@ -4,9 +4,11 @@ Fixed Simple Pokemon Emerald server - headless FastAPI server
 """
 
 # Standard library imports
+import asyncio
 import base64
 import datetime
 import glob
+import http
 import io
 import json
 import logging
@@ -690,6 +692,11 @@ async def get_latest_frame():
     except Exception as e:
         logger.warning(f"Frame endpoint: Error encoding frame: {e}")
         return {"frame": ""}
+
+@app.post("/action/clear")
+async def clear_actions():
+    action_queue.clear()
+    return {"ok": True}
 
 @app.post("/action")
 async def take_action(request: ActionRequest):
@@ -1801,8 +1808,42 @@ async def mcp_navigate_to(request: dict):
         # Queue buttons via take_action to ensure metrics tracking
         if buttons:
             action_request = ActionRequest(buttons=buttons)
+            # add actions to action queue
             await take_action(action_request)
-
+        
+        t0 = time.time()
+        last_nonempty = len(action_queue)
+        async with http.AsyncClient(timeout=5) as cli:
+            while True:
+                # check if player is in battle
+                state = env.get_comprehensive_state()
+                if state.get("is_in_battle", True):
+                    logger.info("🛑 Navigation interrupted: Player entered battle")
+                    remaining = len(action_queue)
+                    # clear all subsequent buttons from action queue
+                    action_queue.clear()
+                    return {
+                        "success": False,
+                        "error": "Navigation interrupted: Player entered battle",
+                        "buttons_remaining": remaining
+                    }
+                # if reached target, return 
+                player_pos = state.get("player", {}).get("position", {})
+                if player_pos.get("x") == x and player_pos.get("y") == y:
+                    return {
+                    "success": True,
+                    "status": "arrived",
+                    "message": f"Arrived at ({x},{y}).",
+                    "steps_enqueued": len(buttons)
+                    }
+                # When action queue is empty, check if we have been empty for a while
+                if len(action_queue) == 0 and last_nonempty == 0:
+                    # extra quick check before deciding we’re done-but-not-arrived
+                    await asyncio.sleep(0.1)
+                    # re-check state on next iteration
+                else:
+                    last_nonempty = len(action_queue)
+                await asyncio.sleep(0.1)
         return {
             "success": True,
             "target": {"x": x, "y": y},

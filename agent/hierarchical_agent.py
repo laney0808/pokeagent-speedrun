@@ -823,17 +823,16 @@ OBJECTIVE: <your_objective_here>
                 "x": target_coords["x"],
                 "y": target_coords["y"],
                 "reason": f"Navigating to {destination}", 
-                "game_state": game_state
             })
             response.raise_for_status()
             result = response.json()
             if result.get("success"):
                 logger.info(f"Pathfinding successful")
-                if result.get("status") == "encountered":
-                    logger.info(f"Encountered a battle during navigation.")
-                    return ["WAIT"] #replace with appropriate battle handling later
                 return ["WAIT"]
             else:
+                if "battle" in result.get("error", ""):
+                    logger.info(f"Encountered a battle during navigation.")
+                    return ["WAIT"] #replace with appropriate battle handling later
                 logger.error(f"Pathfinding failed: {result.get('error')}")
                 return ["WAIT"]
         except requests.exceptions.RequestException as e:
