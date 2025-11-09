@@ -1811,7 +1811,6 @@ async def mcp_navigate_to(request: dict):
             # add actions to action queue
             await take_action(action_request)
         
-        t0 = time.time()
         last_nonempty = len(action_queue)
         async with http.AsyncClient(timeout=5) as cli:
             while True:
