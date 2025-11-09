@@ -944,11 +944,65 @@ ACTION: <your_action_here>
     def _format_title_prompt(self, game_state: Dict[str, Any]) -> str:
         """Formats the prompt for the title screen handler."""
         return """
-You are at the beginning of the game, on the title screen or in the introductory sequence (e.g., character selection, naming).
-Your goal is to start the game. Look at the screen and determine the single best button press to advance.
+🎬 TITLE SEQUENCE RULES:
+1. **SKIP QUICKLY**: The title sequence is just setup - complete it as fast as possible
+2. **PRESS A TO ADVANCE**: Most title screens advance with A button presses
+3. **MAKE QUICK CHOICES**: When prompted for gender, name, etc., choose quickly without overthinking
+4. **USE DEFAULTS WHEN POSSIBLE**: Short, simple choices speed up the process
+5. **DON'T READ EVERYTHING**: Skip intro text, company logos, and story setup
 
-AVAILABLE ACTIONS: A, B, UP, DOWN, LEFT, RIGHT, START, SELECT
-ACTION: <your_action_here>
+📋 TITLE SEQUENCE STAGES:
+- **Company Logos**: Game Freak, Nintendo logos (spam A to skip)
+- **Title Screen**: "POKEMON EMERALD" screen with legendary Pokémon (press START or A)
+- **Intro Cutscene**: Professor Birch introduction and Pokémon world explanation (spam A)
+- **Gender Selection**: Choose Boy or Girl (pick either one quickly with A)
+- **Name Entry**: Enter player name (use short name like "ASH", "RED", "A", or accept default)
+- **Rival Setup**: May/Brendan introduction (spam A)
+- **Moving Van Scene**: Intro cutscene showing arrival in Hoenn (spam A)
+- **Clock Setting**: Mom asks to set the clock (just press A, time doesn't matter much)
+
+💡 QUICK COMPLETION STRATEGY:
+- **Spam A Button**: Most title sequences just need repeated A presses to advance
+- **Gender Choice**: Either Boy or Girl is fine - just select one quickly
+- **Name Selection**: Use the shortest name possible or default (1-3 characters ideal)
+  - Quick names: "A", "B", "ASH", "RED", "MAY", "KAI"
+  - Or just accept whatever default name is highlighted
+- **Don't Customize**: Skip any customization options - just use defaults
+- **Clock Setting**: When asked to set time, just accept default or pick randomly (doesn't affect gameplay significantly)
+
+🎯 COMMON TITLE SEQUENCE ACTIONS:
+- **Logo Screens**: Press A repeatedly to skip through company logos
+- **Main Title**: Press START or A when you see "POKEMON EMERALD" title
+- **Birch Intro**: Press A through Professor Birch's welcome speech
+- **Gender Prompt**: "Are you a boy or a girl?" → Select with arrows, confirm with A
+- **Name Entry**: Type short name (A, B, LEFT, RIGHT to navigate, START to confirm) or press START immediately to use default
+- **Story Cutscenes**: Press A rapidly through all dialogue and cutscenes
+- **Clock Confirmation**: Press A to accept whatever time is shown
+
+⚠️ TITLE SEQUENCE CAUTIONS:
+- Don't get stuck on name entry - just use 1-2 characters or default
+- Don't try to read the story - you can't skip most of it anyway, just advance
+- Some cutscenes may have delays - be patient and keep pressing A
+- Don't worry about "perfect" choices - nothing in title sequence affects gameplay significantly
+
+💡 SPEED RUN APPROACH:
+- **Minimal Name**: Use single letter "A" or "B" for fastest name entry
+- **First Option**: Usually select the first available option (top choice)
+- **No Delays**: Keep pressing A even if text is still scrolling
+- **Accept Defaults**: Don't navigate through options - accept what's highlighted
+- **Skip All Text**: Don't try to read Professor Birch's explanations
+
+🎮 EFFICIENT TITLE HANDLING:
+- **Start Button**: On main title screen, press START to begin
+- **A Button Spam**: Once intro starts, just keep pressing A to advance through everything
+- **Quick Name**: When name screen appears, either:
+  - Press START immediately to accept default name
+  - Type one letter (A/B/C) then press START
+- **Quick Selections**: For any choices (gender, yes/no), pick the highlighted option with A
+- **Get to Gameplay**: Goal is to reach actual gameplay (your room in Littleroot Town) ASAP
+
+🏁 COMPLETION MARKER:
+You've finished the title sequence when you gain control of your character in your bedroom in Littleroot Town. At this point, the context will change from "title" to "overworld".
 """
 
     def _handle_menu(self, game_state: Dict[str, Any]) -> List[str]:
@@ -965,13 +1019,50 @@ ACTION: <your_action_here>
         return [action]
 
     def _format_menu_prompt(self, game_state: Dict[str, Any]) -> str:
-        """Formats the prompt for the menu handler."""
-        return """
-You are in a menu. Your goal is to navigate it correctly based on your current high-level objective.
-Look at the screen and determine the single best button press to advance.
+        return """🎮 MENU SELECTION RULES:
+1. **IDENTIFY MENU TYPE**: Look at the visual frame to determine which menu you're in (Main Menu, Bag, Pokémon, etc.)
+2. **READ OPTIONS CAREFULLY**: Examine all visible menu options before selecting
+3. **USE DIRECTIONAL KEYS**: Navigate menus with UP/DOWN (and sometimes LEFT/RIGHT for sub-menus or pages)
+4. **CONFIRM WITH A**: Press A to select/confirm the highlighted option
+5. **CANCEL WITH B**: Press B to go back to previous menu or close menu entirely
 
-AVAILABLE ACTIONS: A, B, UP, DOWN, LEFT, RIGHT, START, SELECT
-ACTION: <your_action_here>
+📋 MAIN MENU OPTIONS (some of them will only be available when you have completed certain parts of the game):
+- **Pokédex**: View Pokémon you've seen/caught with detailed info (Page, Area, Cry, Size)
+- **Pokémon**: View your party (up to 6 Pokémon) with HP, status, and manage team
+- **Bag**: Access your items in 5 pouches (Items, Poké Balls, TMs & HMs, Berries, Key Items)
+- **Pokénav**: View Hoenn Map, Pokémon conditions (contest stats), or trainers fought
+- **[Your Name]**: View trainer card with playtime, badges, Pokémon caught, money
+- **Save**: Save your game progress (only works outside battle)
+- **Options**: Change text speed, sound settings
+- **Exit**: Close the menu
+
+💡 MENU NAVIGATION STRATEGY:
+- **Know Your Goal**: What do you need from the menu? (heal Pokémon, use item, check map, save game, etc.)
+- **Navigate Efficiently**: Use UP/DOWN to move through options, count positions if needed
+- **Confirm Selections**: Always press A on the highlighted option you want
+- **Sub-menu Awareness**: Some options (Bag, Pokémon, Pokénav) open sub-menus with more choices
+- **Exit Properly**: Use B to back out or select "Exit" to close menu completely
+
+🎯 COMMON MENU TASKS:
+- **Using Items**: Main Menu → Bag → Select Pouch → Select Item → Use on Pokémon (if applicable)
+- **Checking Pokémon**: Main Menu → Pokémon → Select Pokémon to view stats/moves
+- **Viewing Map**: Main Menu → Pokénav → Hoenn Map
+- **Saving Game**: Main Menu → Save → Confirm (only works outside battle)
+- **Managing Items**: Main Menu → Bag → Navigate pouches (Items, Poké Balls, TMs & HMs, Berries, Key Items)
+
+⚠️ MENU CAUTIONS:
+- Don't spam A - you might select wrong options or use items accidentally
+- In Bag, make sure you're in the right pouch before selecting items
+- Some menu options may be locked/unavailable until you progress in the game
+- If you're in battle, the menu system is different (Fight, Bag, Pokémon, Run)
+- Save regularly, but remember you can only save outside of battle
+
+💡 VISUAL CUES:
+- Highlighted/selected option usually has a different color or cursor/arrow indicator
+- Grayed out options are unavailable/locked
+- Menu backgrounds and layouts help identify which menu you're in
+- Item counts and quantities are shown next to items in Bag
+- Pokémon HP bars show health status (green/yellow/red)
 """
 
     def _parse_action_from_response(self, response: str) -> str:
