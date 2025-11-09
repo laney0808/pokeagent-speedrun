@@ -793,7 +793,179 @@ EXAMPLE - DO THIS INSTEAD:
 - NPCs can trigger battles or dialogue, which may be useful for objectives
 """
 
-            # Create enhanced prompt with objectives, history context and chain of thought request
+            # Build menu selection rules section (only if in menu context)
+            menu_selection_rules = ""
+            if context == "menu":
+                menu_selection_rules = """
+🎮 MENU SELECTION RULES:
+1. **IDENTIFY MENU TYPE**: Look at the visual frame to determine which menu you're in (Main Menu, Bag, Pokémon, etc.)
+2. **READ OPTIONS CAREFULLY**: Examine all visible menu options before selecting
+3. **USE DIRECTIONAL KEYS**: Navigate menus with UP/DOWN (and sometimes LEFT/RIGHT for sub-menus or pages)
+4. **CONFIRM WITH A**: Press A to select/confirm the highlighted option
+5. **CANCEL WITH B**: Press B to go back to previous menu or close menu entirely
+
+📋 MAIN MENU OPTIONS (some of them will only be available when you have completed certain parts of the game):
+- **Pokédex**: View Pokémon you've seen/caught with detailed info (Page, Area, Cry, Size)
+- **Pokémon**: View your party (up to 6 Pokémon) with HP, status, and manage team
+- **Bag**: Access your items in 5 pouches (Items, Poké Balls, TMs & HMs, Berries, Key Items)
+- **Pokénav**: View Hoenn Map, Pokémon conditions (contest stats), or trainers fought
+- **[Your Name]**: View trainer card with playtime, badges, Pokémon caught, money
+- **Save**: Save your game progress (only works outside battle)
+- **Options**: Change text speed, sound settings
+- **Exit**: Close the menu
+
+💡 MENU NAVIGATION STRATEGY:
+- **Know Your Goal**: What do you need from the menu? (heal Pokémon, use item, check map, save game, etc.)
+- **Navigate Efficiently**: Use UP/DOWN to move through options, count positions if needed
+- **Confirm Selections**: Always press A on the highlighted option you want
+- **Sub-menu Awareness**: Some options (Bag, Pokémon, Pokénav) open sub-menus with more choices
+- **Exit Properly**: Use B to back out or select "Exit" to close menu completely
+
+🎯 COMMON MENU TASKS:
+- **Using Items**: Main Menu → Bag → Select Pouch → Select Item → Use on Pokémon (if applicable)
+- **Checking Pokémon**: Main Menu → Pokémon → Select Pokémon to view stats/moves
+- **Viewing Map**: Main Menu → Pokénav → Hoenn Map
+- **Saving Game**: Main Menu → Save → Confirm (only works outside battle)
+- **Managing Items**: Main Menu → Bag → Navigate pouches (Items, Poké Balls, TMs & HMs, Berries, Key Items)
+
+⚠️ MENU CAUTIONS:
+- Don't spam A - you might select wrong options or use items accidentally
+- In Bag, make sure you're in the right pouch before selecting items
+- Some menu options may be locked/unavailable until you progress in the game
+- If you're in battle, the menu system is different (Fight, Bag, Pokémon, Run)
+- Save regularly, but remember you can only save outside of battle
+
+💡 VISUAL CUES:
+- Highlighted/selected option usually has a different color or cursor/arrow indicator
+- Grayed out options are unavailable/locked
+- Menu backgrounds and layouts help identify which menu you're in
+- Item counts and quantities are shown next to items in Bag
+- Pokémon HP bars show health status (green/yellow/red)
+"""
+
+            # Build dialogue interaction rules section (only if in dialogue context)
+            dialogue_interaction_rules = ""
+            if context == "dialogue":
+                dialogue_interaction_rules = """
+💬 DIALOGUE INTERACTION RULES:
+1. **READ THE TEXT**: Always read the dialogue text to understand what's being said
+2. **ADVANCE WITH A**: Press A to advance through dialogue text and continue the conversation
+3. **SKIM FOR KEY INFO**: Quickly scan dialogue for important information (instructions, choices, story events)
+4. **IDENTIFY DIALOGUE TYPE**: Determine if this is just flavor text or requires decision/action
+
+📝 DIALOGUE CATEGORIES:
+- **Flavor Text**: General NPC chatter, town descriptions, random comments (can skip quickly with A)
+- **Story Dialogue**: Important plot points, character introductions, milestone events (read but still advance with A)
+- **Instructional Dialogue**: NPCs giving hints, directions, or explaining game mechanics (pay attention!)
+- **Choice Dialogue**: Requires you to select an option (YES/NO questions, choosing starter Pokémon, etc.)
+- **Pre-Battle Dialogue**: Trainer challenges before battles (advance with A to enter battle)
+- **Post-Event Dialogue**: Conversations after completing objectives or receiving items
+
+💡 DIALOGUE NAVIGATION STRATEGY:
+- **Quick Advancement**: Most dialogue just needs A to progress - don't overthink simple conversations
+- **Look for Questions**: If dialogue asks a question (YES/NO), you may need to make a choice
+- **Watch for Instructions**: NPCs may tell you where to go or what to do next - note this info
+- **Pre-Battle Cues**: Phrases like "I challenge you!" or "Let's battle!" indicate an upcoming fight
+- **Item Reception**: Dialogue about receiving items (Pokédex, Pokéballs, HMs, etc.) is important
+- **Story Milestones**: Professor Birch, Gym Leaders, Team Aqua/Magma dialogue often marks progress
+
+🎯 COMMON DIALOGUE SCENARIOS:
+- **NPC Greetings**: "Hello! Welcome to [Town]!" → Just press A to continue
+- **Directions/Hints**: "The Gym is north of here" → Note the info, press A to close
+- **YES/NO Questions**: "Would you like to [action]?" → Use UP/DOWN to select, A to confirm
+- **Trainer Battles**: "[Trainer] would like to battle!" → Press A to accept and enter battle
+- **Receiving Items**: "Here, take this [item]!" → Press A to receive and continue
+- **Story Events**: Professor/Important NPC dialogue → Read carefully, press A to progress
+
+⚠️ DIALOGUE CAUTIONS:
+- Don't spam A too fast - you might miss important information or choices
+- Some dialogue requires a YES/NO response - watch for arrow/cursor indicating a choice
+- Pre-battle dialogue automatically leads to battle when you press A to finish
+- Refusing some dialogues (saying NO) might block progress - usually say YES to story-related questions
+- Some NPCs repeat the same dialogue if you talk to them again
+
+💡 KEY DIALOGUE INDICATORS:
+- **Question marks (?)**: Usually indicates a question requiring YES/NO response
+- **Exclamation points (!)**: Often indicates important info or trainer battles
+- **"..." (ellipsis)**: Dialogue is still continuing, press A to see more
+- **Arrow (▼)**: More text to come, press A to continue
+- **Choice cursor (►)**: You can select between options (usually YES/NO)
+
+🎮 EFFICIENT DIALOGUE HANDLING:
+- **Skim First**: Quickly read the first few words to categorize the dialogue type
+- **Advance Quickly**: For non-essential dialogue, press A to move forward
+- **Pause for Choices**: If you see YES/NO or multiple options, think before selecting
+- **Note Instructions**: If NPC mentions a location or objective, remember it for your plan
+- **Accept Battles**: When trainers challenge you, pressing A will start the battle
+"""
+
+            # Build title sequence rules section (only if in title context)
+            title_sequence_rules = ""
+            if context == "title":
+                title_sequence_rules = """
+🎬 TITLE SEQUENCE RULES:
+1. **SKIP QUICKLY**: The title sequence is just setup - complete it as fast as possible
+2. **PRESS A TO ADVANCE**: Most title screens advance with A button presses
+3. **MAKE QUICK CHOICES**: When prompted for gender, name, etc., choose quickly without overthinking
+4. **USE DEFAULTS WHEN POSSIBLE**: Short, simple choices speed up the process
+5. **DON'T READ EVERYTHING**: Skip intro text, company logos, and story setup
+
+📋 TITLE SEQUENCE STAGES:
+- **Company Logos**: Game Freak, Nintendo logos (spam A to skip)
+- **Title Screen**: "POKEMON EMERALD" screen with legendary Pokémon (press START or A)
+- **Intro Cutscene**: Professor Birch introduction and Pokémon world explanation (spam A)
+- **Gender Selection**: Choose Boy or Girl (pick either one quickly with A)
+- **Name Entry**: Enter player name (use short name like "ASH", "RED", "A", or accept default)
+- **Rival Setup**: May/Brendan introduction (spam A)
+- **Moving Van Scene**: Intro cutscene showing arrival in Hoenn (spam A)
+- **Clock Setting**: Mom asks to set the clock (just press A, time doesn't matter much)
+
+💡 QUICK COMPLETION STRATEGY:
+- **Spam A Button**: Most title sequences just need repeated A presses to advance
+- **Gender Choice**: Either Boy or Girl is fine - just select one quickly
+- **Name Selection**: Use the shortest name possible or default (1-3 characters ideal)
+  - Quick names: "A", "B", "ASH", "RED", "MAY", "KAI"
+  - Or just accept whatever default name is highlighted
+- **Don't Customize**: Skip any customization options - just use defaults
+- **Clock Setting**: When asked to set time, just accept default or pick randomly (doesn't affect gameplay significantly)
+
+🎯 COMMON TITLE SEQUENCE ACTIONS:
+- **Logo Screens**: Press A repeatedly to skip through company logos
+- **Main Title**: Press START or A when you see "POKEMON EMERALD" title
+- **Birch Intro**: Press A through Professor Birch's welcome speech
+- **Gender Prompt**: "Are you a boy or a girl?" → Select with arrows, confirm with A
+- **Name Entry**: Type short name (A, B, LEFT, RIGHT to navigate, START to confirm) or press START immediately to use default
+- **Story Cutscenes**: Press A rapidly through all dialogue and cutscenes
+- **Clock Confirmation**: Press A to accept whatever time is shown
+
+⚠️ TITLE SEQUENCE CAUTIONS:
+- Don't get stuck on name entry - just use 1-2 characters or default
+- Don't try to read the story - you can't skip most of it anyway, just advance
+- Some cutscenes may have delays - be patient and keep pressing A
+- Don't worry about "perfect" choices - nothing in title sequence affects gameplay significantly
+
+💡 SPEED RUN APPROACH:
+- **Minimal Name**: Use single letter "A" or "B" for fastest name entry
+- **First Option**: Usually select the first available option (top choice)
+- **No Delays**: Keep pressing A even if text is still scrolling
+- **Accept Defaults**: Don't navigate through options - accept what's highlighted
+- **Skip All Text**: Don't try to read Professor Birch's explanations
+
+🎮 EFFICIENT TITLE HANDLING:
+- **Start Button**: On main title screen, press START to begin
+- **A Button Spam**: Once intro starts, just keep pressing A to advance through everything
+- **Quick Name**: When name screen appears, either:
+  - Press START immediately to accept default name
+  - Type one letter (A/B/C) then press START
+- **Quick Selections**: For any choices (gender, yes/no), pick the highlighted option with A
+- **Get to Gameplay**: Goal is to reach actual gameplay (your room in Littleroot Town) ASAP
+
+🏁 COMPLETION MARKER:
+You've finished the title sequence when you gain control of your character in your bedroom in Littleroot Town. At this point, the context will change from "title" to "overworld".
+"""
+
+
+# Create enhanced prompt with objectives, history context and chain of thought request
             prompt = f"""You are playing as the Protagonist in Pokemon Emerald. Progress quickly to the milestones by balancing exploration and exploitation of things you know, but have fun for the Twitch stream while you do it. 
             Based on the current game frame and state information, think through your next move and choose the best button action. 
             If you notice that you are repeating the same action sequences over and over again, you definitely need to try something different since what you are doing is wrong! Try exploring different new areas or interacting with different NPCs if you are stuck.
@@ -840,6 +1012,12 @@ ACTION:
 [Your final action choice - PREFER SINGLE ACTIONS like 'RIGHT' or 'A'. Only use multiple actions like 'UP, UP, RIGHT' if you've verified each step is WALKABLE in the movement preview and map.]
 
 {pathfinding_rules}
+
+{menu_selection_rules}
+
+{dialogue_interaction_rules}
+
+{title_sequence_rules}
 
 Context: {context} | Coords: {coords} """
             
