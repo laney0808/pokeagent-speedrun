@@ -942,8 +942,33 @@ ACTION: <your_action_here>
         return [action]
 
     def _format_title_prompt(self, game_state: Dict[str, Any]) -> str:
-        """Formats the prompt for the title screen handler."""
-        return """
+        """Formats the prompt for the title screen handler with game state context."""
+        # Extract relevant game state information
+        player_info = game_state.get("player", {})
+        player_name = player_info.get("name", "????????")
+        player_location = player_info.get("location", "TITLE_SEQUENCE")
+        game_info = game_state.get("game", {})
+        game_state_value = game_info.get("game_state", "Unknown")
+        
+        # Get recent actions for context
+        recent_actions_str = ', '.join(list(self.state.recent_actions)[-10:]) if self.state.recent_actions else "None"
+        
+        # Check milestones to understand progress
+        milestones = game_state.get("milestones", {})
+        game_running = milestones.get("GAME_RUNNING", {}).get("completed", False)
+        player_name_set = milestones.get("PLAYER_NAME_SET", {}).get("completed", False)
+        intro_complete = milestones.get("INTRO_CUTSCENE_COMPLETE", {}).get("completed", False)
+        
+        # Determine current stage
+        current_stage = "Starting title sequence"
+        if intro_complete:
+            current_stage = "Intro complete - should be in gameplay soon"
+        elif player_name_set:
+            current_stage = "Name set - in intro cutscene"
+        elif game_running:
+            current_stage = "Game started - setting up player"
+        
+        return f"""
 🎬 TITLE SEQUENCE RULES:
 1. **SKIP QUICKLY**: The title sequence is just setup - complete it as fast as possible
 2. **PRESS A TO ADVANCE**: Most title screens advance with A button presses
@@ -951,7 +976,19 @@ ACTION: <your_action_here>
 4. **USE DEFAULTS WHEN POSSIBLE**: Short, simple choices speed up the process
 5. **DON'T READ EVERYTHING**: Skip intro text, company logos, and story setup
 
-📋 TITLE SEQUENCE STAGES:
+� CURRENT STATE:
+- **Player Name**: {player_name}
+- **Location**: {player_location}
+- **Game State**: {game_state_value}
+- **Progress Stage**: {current_stage}
+- **Game Running**: {"Yes" if game_running else "No"}
+- **Name Set**: {"Yes" if player_name_set else "No"}
+- **Intro Complete**: {"Yes" if intro_complete else "No"}
+
+📜 RECENT ACTIONS (last 10):
+{recent_actions_str}
+
+�📋 TITLE SEQUENCE STAGES:
 - **Company Logos**: Game Freak, Nintendo logos (spam A to skip)
 - **Title Screen**: "POKEMON EMERALD" screen with legendary Pokémon (press START or A)
 - **Intro Cutscene**: Professor Birch introduction and Pokémon world explanation (spam A)
@@ -1001,8 +1038,17 @@ ACTION: <your_action_here>
 - **Quick Selections**: For any choices (gender, yes/no), pick the highlighted option with A
 - **Get to Gameplay**: Goal is to reach actual gameplay (your room in Littleroot Town) ASAP
 
+🎯 CONTEXT-AWARE GUIDANCE:
+- Current stage is: {current_stage}
+- Player name is currently: {player_name}
+- If name is "????????", you need to set it (use START for default or type 1-2 letters)
+- If intro is complete, you should be close to actual gameplay
+- Recent actions: {recent_actions_str}
+
 🏁 COMPLETION MARKER:
 You've finished the title sequence when you gain control of your character in your bedroom in Littleroot Town. At this point, the context will change from "title" to "overworld".
+
+ACTION: <your_action_here>
 """
 
     def _handle_menu(self, game_state: Dict[str, Any]) -> List[str]:
@@ -1019,14 +1065,61 @@ You've finished the title sequence when you gain control of your character in yo
         return [action]
 
     def _format_menu_prompt(self, game_state: Dict[str, Any]) -> str:
-        return """🎮 MENU SELECTION RULES:
+        """Formats the prompt for the menu layer with game state context."""
+        # Extract relevant game state information
+        player_info = game_state.get("player", {})
+        player_name = player_info.get("name", "Unknown")
+        player_location = player_info.get("location", "Unknown")
+        coords = self.get_player_coords(game_state)
+        
+        # Get party information
+        party = player_info.get("party", [])
+        party_info = []
+        for i, pokemon in enumerate(party[:6], 1):
+            species = pokemon.get("species_name", "Unknown")
+            level = pokemon.get("level", "?")
+            current_hp = pokemon.get("current_hp", 0)
+            max_hp = pokemon.get("max_hp", 1)
+            status = pokemon.get("status", "OK")
+            party_info.append(f"  {i}. {species} Lv.{level} - HP: {current_hp}/{max_hp} - Status: {status}")
+        
+        party_str = "\n".join(party_info) if party_info else "  No Pokémon in party"
+        
+        # Get bag/items information (if available)
+        bag_info = game_state.get("bag", {})
+        item_count = sum(len(items) for items in bag_info.values()) if bag_info else 0
+        
+        # Get badges
+        badges = game_state.get("game", {}).get("badges", [])
+        badge_count = len(badges)
+        
+        # Get money
+        money = player_info.get("money", 0)
+        
+        # Get recent actions for context
+        recent_actions_str = ', '.join(list(self.state.recent_actions)[-10:]) if self.state.recent_actions else "None"
+        
+        return f"""🎮 MENU SELECTION RULES:
 1. **IDENTIFY MENU TYPE**: Look at the visual frame to determine which menu you're in (Main Menu, Bag, Pokémon, etc.)
 2. **READ OPTIONS CAREFULLY**: Examine all visible menu options before selecting
 3. **USE DIRECTIONAL KEYS**: Navigate menus with UP/DOWN (and sometimes LEFT/RIGHT for sub-menus or pages)
 4. **CONFIRM WITH A**: Press A to select/confirm the highlighted option
 5. **CANCEL WITH B**: Press B to go back to previous menu or close menu entirely
 
-📋 MAIN MENU OPTIONS (some of them will only be available when you have completed certain parts of the game):
+📊 CURRENT GAME STATE:
+- **Player**: {player_name}
+- **Location**: {player_location} at {coords if coords else "Unknown"}
+- **Money**: ${money}
+- **Badges**: {badge_count}
+- **Items in Bag**: {item_count}
+
+🎯 YOUR POKÉMON PARTY:
+{party_str}
+
+� RECENT ACTIONS (last 10):
+{recent_actions_str}
+
+�📋 MAIN MENU OPTIONS (some of them will only be available when you have completed certain parts of the game):
 - **Pokédex**: View Pokémon you've seen/caught with detailed info (Page, Area, Cry, Size)
 - **Pokémon**: View your party (up to 6 Pokémon) with HP, status, and manage team
 - **Bag**: Access your items in 5 pouches (Items, Poké Balls, TMs & HMs, Berries, Key Items)
@@ -1063,6 +1156,14 @@ You've finished the title sequence when you gain control of your character in yo
 - Menu backgrounds and layouts help identify which menu you're in
 - Item counts and quantities are shown next to items in Bag
 - Pokémon HP bars show health status (green/yellow/red)
+
+🎯 CONTEXT-AWARE SUGGESTIONS:
+- If any Pokémon have low HP (red), consider using healing items from the Bag
+- If you have {badge_count} badge(s), you're progressing through the game
+- Recent actions suggest menu context - make decisions accordingly
+- Always consider closing the menu (B or Exit) if you've accomplished your goal
+
+ACTION: <your_action_here>
 """
 
     def _parse_action_from_response(self, response: str) -> str:
