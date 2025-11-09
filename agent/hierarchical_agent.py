@@ -822,7 +822,8 @@ OBJECTIVE: <your_objective_here>
             response = requests.post(f"{self.mcp_server_url}/mcp/navigate_to", json={
                 "x": target_coords["x"],
                 "y": target_coords["y"],
-                "reason": f"Navigating to {destination}"
+                "reason": f"Navigating to {destination}", 
+                "game_state": game_state
             })
             response.raise_for_status()
             result = response.json()
