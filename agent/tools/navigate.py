@@ -11,6 +11,6 @@ class NavigateToInput(BaseModel):
 
 class NavigateToOutput(BaseModel):
     success: bool
-    status: Literal["ok","failed"]
+    status: Literal["ok","encountered", "failed"]
     message: Optional[str] = None
     steps: Optional[int] = None

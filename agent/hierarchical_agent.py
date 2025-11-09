@@ -829,6 +829,9 @@ OBJECTIVE: <your_objective_here>
             result = response.json()
             if result.get("success"):
                 logger.info(f"Pathfinding successful")
+                if result.get("status") == "encountered":
+                    logger.info(f"Encountered a battle during navigation.")
+                    return ["WAIT"] #replace with appropriate battle handling later
                 return ["WAIT"]
             else:
                 logger.error(f"Pathfinding failed: {result.get('error')}")

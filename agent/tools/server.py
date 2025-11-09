@@ -21,11 +21,6 @@ def list_tools():
         "output_schema": NavigateToOutput.model_json_schema(),
     }]
 
-async def _post_callback(url: str, body: dict):
-    headers = {}
-    async with httpx.AsyncClient(timeout=5) as cli:
-        await cli.post(url, json=body, headers=headers)
-
 @app.post("/mcp/navigate_to")
 async def navigate_to(body: dict):
     try:
@@ -46,20 +41,13 @@ async def navigate_to(body: dict):
         return NavigateToOutput(success=False, status="failed", message="No path found").model_dump()
 
     # Execute the path. After each press:
-    # - optionally update current position (if you can infer)
-    # - check for battle or NPC
     for idx, btn in enumerate(buttons, 1):
         await _press_button(btn)
         # Encounter checks
         if _battle_active():
-            if params.callback_url:
-                await _post_callback(params.callback_url, {
-                    "position": current_location,
-                    "encounter_type": "battle"
-                }, params.callback_auth)
             return NavigateToOutput(
-                success=True, status="ok",
-                message=f"Encountered Pokémon after {idx} steps; notified agent.",
+                success=True, status="encountered",
+                message=f"Encountered Pokémon after {idx} steps",
                 steps=idx
             ).model_dump()
 
