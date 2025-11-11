@@ -47,8 +47,7 @@ class Agent:
         self.scaffold = scaffold
         if scaffold == "simple":
             # Use global SimpleAgent instance to enable checkpoint persistence
-            rom_path = getattr(args, "rom", None) if args else None
-            self.agent_impl = get_simple_agent(self.vlm, rom_path=rom_path)
+            self.agent_impl = get_simple_agent(self.vlm)
             print(f"   Scaffold: Simple (direct frame->action)")
 
         elif scaffold == "react":
@@ -151,11 +150,6 @@ class Agent:
                 print(f"❌ Agent error: {e}")
                 return None
 
-    def set_battle_directive(self, directive: str) -> None:
-        """Forward battle directives to the simple agent scaffold."""
-        if self.scaffold == "simple" and hasattr(self.agent_impl, "set_battle_directive"):
-            self.agent_impl.set_battle_directive(directive)
-
 
 __all__ = [
     'Agent',
@@ -168,11 +162,7 @@ __all__ = [
     'simple_mode_processing_multiprocess',
     'configure_simple_agent_defaults',
     'ReActAgent',
-<<<<<<< Updated upstream
     'create_react_agent',
     'HierarchicalAgent',
     'PlanningAgent'
-=======
-    'create_react_agent'
->>>>>>> Stashed changes
 ]

@@ -5,7 +5,6 @@ import base64
 import random
 import time
 import logging
-import json
 from abc import ABC, abstractmethod
 from typing import Union, List, Dict, Any, Optional
 import numpy as np
@@ -280,26 +279,13 @@ class OpenRouterBackend(VLMBackend):
             base_url="https://openrouter.ai/api/v1",
             api_key=self.api_key,
         )
-
-        self.extra_body = None
-        extra_body_env = os.getenv("OPENROUTER_EXTRA_BODY")
-        if extra_body_env:
-            try:
-                self.extra_body = json.loads(extra_body_env)
-            except json.JSONDecodeError:
-                logger.warning("OPENROUTER_EXTRA_BODY is not valid JSON. Ignoring extra body payload.")
-                self.extra_body = None
     
     @retry_with_exponential_backoff
     def _call_completion(self, messages):
         """Calls the completions.create method with exponential backoff."""
-        kwargs = {}
-        if self.extra_body:
-            kwargs["extra_body"] = self.extra_body
         return self.client.chat.completions.create(
             model=self.model_name,
-            messages=messages,
-            **kwargs,
+            messages=messages
         )
     
     def get_query(self, img: Union[Image.Image, np.ndarray], text: str, module_name: str = "Unknown") -> str:
@@ -1067,7 +1053,6 @@ class VLM:
                 metadata={"model": self.model_name, "backend": self.backend.__class__.__name__, "duration": duration, "has_image": False}
             )
             raise
-<<<<<<< Updated upstream
 
     def get_structured_query(self, img: Union[Image.Image, np.ndarray, List[Union[Image.Image, np.ndarray]]], text: str,
                             response_schema: Any, module_name: str = "Unknown") -> Any:
@@ -1095,5 +1080,3 @@ class VLM:
                 metadata={"model": self.model_name, "backend": self.backend.__class__.__name__, "duration": duration, "has_image": True, "structured": True}
             )
             raise
-=======
->>>>>>> Stashed changes
