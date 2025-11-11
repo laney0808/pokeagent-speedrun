@@ -642,6 +642,7 @@ AVAILABLE ACTIONS (if dialogue or interactive menu is present):
 
 AVAILABLE COMMANDS (if no dialogue):
 - navigate_to:<X,Y>
+- navigate_to_and_interact_with:<X,Y>
 - get_world_map
 - get_navigation_hints:<target_area_name>
 - add_objective:<type>:<description>:<target>
@@ -768,6 +769,9 @@ OBJECTIVE: <your_objective_here>
         if objective.startswith("navigate_to:"):
             destination = objective.split(":", 1)[1]
             return self._execute_navigation(destination, game_state)
+        if objective.startswith("navigate_to_and_interact_with:"):
+            target = objective.split(":", 1)[1]
+            return self._execute_interaction(target, game_state)
         elif objective == "get_world_map":
             return self._get_world_map()
         elif objective.startswith("get_navigation_hints:"):
@@ -810,6 +814,52 @@ OBJECTIVE: <your_objective_here>
                 obj.completed_at = datetime.now()
                 logger.info(f"Completed objective: {obj.description}")
                 return
+    
+    def _execute_interaction(self, target: str, game_state: Dict[str, Any]) -> List[str]:
+        """Executes an interaction task using the pathfinder."""
+        try:
+            self.self._execute_navigation(target, game_state)
+            # wait for arrival
+            response = requests.post(f"{self.mcp_server_url}/get_comprehensive_state", json={})
+            response.raise_for_status()
+            result = response.json()
+            player_pos = result.get("player", {}).get("position")
+            if player_pos:
+                player_coords = (player_pos.get("x", 0), player_pos.get("y", 0))
+            # check if in interaction range
+            # For simplicity, assume interaction range is 1 tile away
+            target_coords = self._get_coords_for_location(target)
+            key = ""
+            if target_coords and player_coords:
+                # switch for 4 cases: target is on the left, right, above, below, and default (not within range)
+                if (abs(player_coords[0] - target_coords["x"]) == 1 and player_coords[1] == target_coords["y"]):
+                    key = "LEFT"
+                elif (abs(player_coords[0] - target_coords["x"]) == -1 and player_coords[1] == target_coords["y"]):
+                    key = "RIGHT"
+                elif (player_coords[0] == target_coords["x"] and abs(player_coords[1] - target_coords["y"]) == 1):
+                    key = "ABOVE"
+                elif (player_coords[0] == target_coords["x"] and abs(player_coords[1] - target_coords["y"]) == -1):
+                    key = "BELOW"
+                else:
+                    logger.error(f"Not in interaction range for target: {target}")
+                    return ["WAIT"]
+                
+            action_response = requests.post(f"{self.mcp_server_url}/mcp/press_buttons", json={
+                "buttons": [key]
+            })
+            action_response.raise_for_status()
+            result = action_response.json()
+            if result.get("success"):
+                logger.info(f"Successfully executed interaction with {target}.")
+                return ["WAIT"]
+            else:
+                logger.error(f"Failed to execute interaction: {result.get('error')}")
+                return ["WAIT"]
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Failed to call get_game_state after navigation: {e}")
+            return ["WAIT"]
+                
+
 
     def _execute_navigation(self, destination: str, game_state: Dict[str, Any]) -> List[str]:
         """Executes a navigation task using the pathfinder."""
@@ -823,7 +873,6 @@ OBJECTIVE: <your_objective_here>
                 "x": target_coords["x"],
                 "y": target_coords["y"],
                 "reason": f"Navigating to {destination}", 
-                "game_state": game_state
             })
             response.raise_for_status()
             result = response.json()
@@ -835,6 +884,49 @@ OBJECTIVE: <your_objective_here>
                 return ["WAIT"]
         except requests.exceptions.RequestException as e:
             logger.error(f"Failed to call navigate_to: {e}")
+            return ["WAIT"]
+    
+    def _execute_interaction(self, target: str, game_state: Dict[str, Any]) -> List[str]:
+        """Executes an interaction task using the pathfinder."""
+        try:
+            self.self._execute_navigation(target, game_state)
+            # wait for arrival
+            response = requests.post(f"{self.mcp_server_url}/get_comprehensive_state", json={})
+            response.raise_for_status()
+            result = response.json()
+            player_pos = result.get("player", {}).get("position")
+            if player_pos:
+                player_coords = (player_pos.get("x", 0), player_pos.get("y", 0))
+            # check if in interaction range
+            # For simplicity, assume interaction range is 1 tile away
+            target_coords = self._get_coords_for_location(target)
+            key = ""
+            if target_coords and player_coords:
+                # switch for 4 cases: target is on the left, right, above, below, and default (not within range)
+                if (abs(player_coords[0] - target_coords["x"]) == 1 and player_coords[1] == target_coords["y"]):
+                    key = "LEFT"
+                elif (abs(player_coords[0] - target_coords["x"]) == -1 and player_coords[1] == target_coords["y"]):
+                    key = "RIGHT"
+                elif (player_coords[0] == target_coords["x"] and abs(player_coords[1] - target_coords["y"]) == 1):
+                    key = "ABOVE"
+                elif (player_coords[0] == target_coords["x"] and abs(player_coords[1] - target_coords["y"]) == -1):
+                    key = "BELOW"
+                else:
+                    logger.error(f"Not in interaction range for target: {target}")
+                    return ["WAIT"]
+            action_response = requests.post(f"{self.mcp_server_url}/mcp/press_buttons", json={
+                "buttons": [key]
+            })
+            action_response.raise_for_status()
+            result = action_response.json()
+            if result.get("success"):
+                logger.info(f"Successfully executed interaction with {target}.")
+                return ["WAIT"]
+            else:
+                logger.error(f"Failed to execute interaction: {result.get('error')}")
+                return ["WAIT"]
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Failed to call get_game_state after navigation: {e}")
             return ["WAIT"]
 
     def _get_world_map(self) -> List[str]:
