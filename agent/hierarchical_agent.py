@@ -845,7 +845,7 @@ OBJECTIVE: <your_objective_here>
                     return ["WAIT"]
                 
             action_response = requests.post(f"{self.mcp_server_url}/mcp/press_buttons", json={
-                "buttons": [key]
+                "buttons": [key, "A"]
             })
             action_response.raise_for_status()
             result = action_response.json()
