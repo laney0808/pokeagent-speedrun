@@ -36,11 +36,19 @@ import sys
 from collections import deque
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Any, Optional, Tuple, Union
 import numpy as np
 from PIL import Image
 
 from utils.state_formatter import format_state_for_llm
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+from utils.agent_helpers import update_server_metrics
+from .battle_agent import BattleAgent, BattleDecision, BattleDirective
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 logger = logging.getLogger(__name__)
 
@@ -111,6 +119,7 @@ class SimpleAgentState:
     failed_movements: Dict[str, List[str]] = field(default_factory=dict)  # coord_key -> [failed_directions]
     npc_interactions: Dict[str, str] = field(default_factory=dict)  # coord_key -> interaction_notes
     movement_memory_action_counter: int = 0  # Counter for tracking actions since last memory clear
+    battle_directive: BattleDirective = BattleDirective.FIGHT
     
     def __post_init__(self):
         """Initialize deques with current default values"""
@@ -126,8 +135,9 @@ class SimpleAgent:
     
     def __init__(self, vlm, max_history_entries: int = None, max_recent_actions: int = None, 
                  history_display_count: int = None, actions_display_count: int = None,
-                 movement_memory_clear_interval: int = None):
+                 movement_memory_clear_interval: int = None, rom_path: Optional[str] = None):
         self.vlm = vlm
+        self.rom_path = rom_path or "Emerald-GBAdvance/rom.gba"
         
         # Use current global defaults if not specified
         max_history_entries = max_history_entries or DEFAULT_MAX_HISTORY_ENTRIES
@@ -139,6 +149,7 @@ class SimpleAgent:
         self.state = SimpleAgentState()
         self.state.history = deque(maxlen=max_history_entries)
         self.state.recent_actions = deque(maxlen=max_recent_actions)
+        self.state.battle_directive = BattleDirective.FIGHT
         
         # Display parameters for LLM prompts
         self.history_display_count = history_display_count
@@ -146,6 +157,12 @@ class SimpleAgent:
         
         # Movement memory clearing interval
         self.movement_memory_clear_interval = movement_memory_clear_interval
+
+        # Dedicated battle subagent
+        self.battle_agent = BattleAgent(rom_path=self.rom_path)
+        env_directive = os.environ.get("BATTLE_DIRECTIVE")
+        if env_directive:
+            self.set_battle_directive(env_directive)
         
         # Initialize storyline objectives for Emerald progression
         self._initialize_storyline_objectives()
@@ -686,7 +703,33 @@ class SimpleAgent:
         
         action = self.process_step(frame, game_state)
         return {"action": action, "reasoning": "Simple agent decision"}
-    
+
+    def _handle_battle_context(
+        self,
+        game_state: Dict[str, Any],
+        coords: Optional[Tuple[int, int]],
+        map_id: Optional[int],
+    ):
+        """Delegate battle decisions to the specialized BattleAgent."""
+        decision = self.battle_agent.decide(game_state, directive=self.state.battle_directive)
+        if decision is None:
+            logger.debug("BattleAgent could not produce a decision; falling back to VLM prompt.")
+            return None
+
+        reasoning = decision.notes or decision.directive.value.title()
+        if decision.selected_move:
+            reasoning = f"{decision.selected_move}: {reasoning}"
+
+        normalized = self._finalize_actions(
+            actions=decision.button_sequence,
+            reasoning=reasoning,
+            coords=coords,
+            map_id=map_id,
+            context="battle",
+            game_state=game_state,
+        )
+        return normalized
+
     def process_step(self, frame, game_state: Dict[str, Any]) -> str:
         """
         Main processing step for simple mode with history tracking
@@ -728,6 +771,11 @@ class SimpleAgent:
             coords = self.get_player_coords(game_state)
             context = self.get_game_context(game_state)
             map_id = self.get_map_id(game_state)
+
+            if context == "battle":
+                battle_result = self._handle_battle_context(game_state, coords, map_id)
+                if battle_result is not None:
+                    return battle_result
             
             # Format the current state for LLM (includes movement preview)
             formatted_state = format_state_for_llm(game_state)
@@ -888,6 +936,7 @@ Context: {context} | Coords: {coords} """
                           actions in ['UP', 'DOWN', 'LEFT', 'RIGHT']):
                         self.record_failed_movement(coords, actions, "movement_blocked")
 
+<<<<<<< Updated upstream
             # Record this step in history with reasoning
             game_state_summary = self.create_game_state_summary(game_state)
             action_with_reasoning = f"{actions} | Reasoning: {reasoning}" if reasoning else str(actions)
@@ -927,10 +976,70 @@ Context: {context} | Coords: {coords} """
                         self.state.stuck_detection[key] = max(0, self.state.stuck_detection[key] - 1)
 
             return actions
+=======
+            return self._finalize_actions(actions, reasoning, coords, map_id, context, game_state)
+>>>>>>> Stashed changes
             
         except Exception as e:
             logger.error(f"Error in simple agent processing: {e}")
             return ["A"]  # Default safe action as list
+
+    def _finalize_actions(
+        self,
+        actions: Union[str, List[str]],
+        reasoning: Optional[str],
+        coords: Optional[Tuple[int, int]],
+        map_id: Optional[int],
+        context: str,
+        game_state: Dict[str, Any],
+    ):
+        """Shared bookkeeping after we choose an action sequence."""
+        return_as_list = isinstance(actions, list)
+        if return_as_list:
+            action_list = list(actions)
+        else:
+            action_list = [actions]
+
+        reasoning_text = reasoning or ""
+        action_display = ", ".join(action_list)
+        action_with_reasoning = f"{action_display} | Reasoning: {reasoning_text}" if reasoning_text else action_display
+
+        history_entry = HistoryEntry(
+            timestamp=datetime.now(),
+            player_coords=coords,
+            map_id=map_id,
+            context=context,
+            action_taken=action_with_reasoning,
+            game_state_summary=self.create_game_state_summary(game_state),
+        )
+        self.state.history.append(history_entry)
+
+        # Update recent action tracking
+        self.state.recent_actions.extend(action_list)
+        self.state.movement_memory_action_counter += len(action_list)
+
+        # Maybe clear movement memory
+        if (
+            self.movement_memory_clear_interval > 0
+            and self.state.movement_memory_action_counter >= self.movement_memory_clear_interval
+        ):
+            logger.info(
+                f"🧹 Movement memory clear triggered after {self.state.movement_memory_action_counter} actions"
+            )
+            self.clear_movement_memory(partial=True)
+
+        # Reset stuck detection counters when we move to a new location
+        if coords:
+            current_prefix = f"{coords[0]}_{coords[1]}"
+            for key in list(self.state.stuck_detection.keys()):
+                if not key.startswith(current_prefix) and self.state.stuck_detection[key] > 0:
+                    self.state.stuck_detection[key] = max(0, self.state.stuck_detection[key] - 1)
+
+        update_server_metrics()
+
+        if return_as_list:
+            return action_list
+        return action_list[0] if len(action_list) == 1 else action_list
     
     def _parse_actions(self, response: str, game_state: Dict[str, Any] = None) -> List[str]:
         """Parse action response from LLM into list of valid actions"""
@@ -1221,6 +1330,28 @@ Context: {context} | Coords: {coords} """
                    f"{len(self.state.recent_actions)}/{self.state.recent_actions.maxlen} actions, "
                    f"display {self.history_display_count}/{self.actions_display_count}, "
                    f"movement memory clear interval: {self.movement_memory_clear_interval}")
+
+    def set_battle_directive(self, directive: Union[str, BattleDirective]) -> None:
+        """Update the current battle directive (fight / catch / flee)."""
+        if isinstance(directive, BattleDirective):
+            battle_dir = directive
+        else:
+            try:
+                battle_dir = BattleDirective(directive.strip().lower())
+            except Exception:
+                logger.warning(f"Unsupported battle directive: {directive}")
+                return
+
+        if self.state.battle_directive == battle_dir:
+            return
+
+        logger.info(f"🔁 Battle directive updated: {self.state.battle_directive.value} -> {battle_dir.value}")
+        self.state.battle_directive = battle_dir
+        self.battle_agent.set_directive(battle_dir)
+
+    def get_battle_directive(self) -> BattleDirective:
+        """Return the currently active battle directive."""
+        return self.state.battle_directive
     
     def load_history_from_llm_checkpoint(self, checkpoint_file: str):
         """Load SimpleAgent history from LLM checkpoint file"""
@@ -1569,16 +1700,27 @@ Context: {context} | Coords: {coords} """
 # Global simple agent instance for backward compatibility with existing multiprocess code
 _global_simple_agent = None
 
-def get_simple_agent(vlm) -> SimpleAgent:
+def get_simple_agent(vlm, **kwargs) -> SimpleAgent:
     """Get or create the global simple agent instance"""
     global _global_simple_agent
+
+    requested_rom = kwargs.get("rom_path")
+    needs_new_agent = False
+
     if _global_simple_agent is None:
-        _global_simple_agent = SimpleAgent(vlm)
-        
-        # Check if we should load from checkpoint
-        import os
+        needs_new_agent = True
+    else:
+        if _global_simple_agent.vlm != vlm:
+            needs_new_agent = True
+        elif requested_rom and getattr(_global_simple_agent, "rom_path", None) != requested_rom:
+            needs_new_agent = True
+
+    if needs_new_agent:
+        if not requested_rom and _global_simple_agent is not None:
+            kwargs["rom_path"] = getattr(_global_simple_agent, "rom_path", None)
+        _global_simple_agent = SimpleAgent(vlm, **kwargs)
+
         if os.environ.get("LOAD_CHECKPOINT_MODE") == "true":
-            # Check cache folder first, then fall back to old location
             cache_dir = ".pokeagent_cache"
             checkpoint_file = os.path.join(cache_dir, "checkpoint_llm.txt") if os.path.exists(cache_dir) else "checkpoint_llm.txt"
             if not os.path.exists(checkpoint_file) and os.path.exists("checkpoint_llm.txt"):
@@ -1588,30 +1730,14 @@ def get_simple_agent(vlm) -> SimpleAgent:
                 _global_simple_agent.load_history_from_llm_checkpoint(checkpoint_file)
             else:
                 logger.info(f"⚠️ No checkpoint file found: {checkpoint_file}")
-                
-    elif _global_simple_agent.vlm != vlm:
-        # VLM changed, create new instance
-        _global_simple_agent = SimpleAgent(vlm)
-        
-        # Load checkpoint for new instance too if mode is set
-        import os
-        if os.environ.get("LOAD_CHECKPOINT_MODE") == "true":
-            # Check cache folder first, then fall back to old location
-            cache_dir = ".pokeagent_cache"
-            checkpoint_file = os.path.join(cache_dir, "checkpoint_llm.txt") if os.path.exists(cache_dir) else "checkpoint_llm.txt"
-            if not os.path.exists(checkpoint_file) and os.path.exists("checkpoint_llm.txt"):
-                checkpoint_file = "checkpoint_llm.txt"
-            if os.path.exists(checkpoint_file):
-                logger.info(f"🔄 Loading SimpleAgent history from {checkpoint_file}")
-                _global_simple_agent.load_history_from_llm_checkpoint(checkpoint_file)
-                
+
     return _global_simple_agent
 
 def simple_mode_processing_multiprocess(vlm, game_state, args=None):
     """Simple mode processing function for multiprocess mode (backward compatibility)"""
     # args parameter kept for backward compatibility but not used
-    _ = args  # Acknowledge unused parameter
-    agent = get_simple_agent(vlm)
+    rom_path = getattr(args, "rom", None) if args else None
+    agent = get_simple_agent(vlm, rom_path=rom_path)
     frame = game_state["visual"]["screenshot"]
     
     # CRITICAL: Validate frame before processing
