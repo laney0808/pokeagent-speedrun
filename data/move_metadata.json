@@ -1,0 +1,8435 @@
+{
+  "10-000-000-VOLT-THUNDERBOLT": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 719,
+    "power": 195,
+    "pp": 1,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ABSORB": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 71,
+    "power": 20,
+    "pp": 25,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "ACCELEROCK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 709,
+    "power": 40,
+    "pp": 20,
+    "priority": 1,
+    "type": "ROCK"
+  },
+  "ACID": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 51,
+    "power": 40,
+    "pp": 30,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "ACID-ARMOR": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 151,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "ACID-DOWNPOUR--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 628,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "ACID-DOWNPOUR--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 629,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "ACID-SPRAY": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 491,
+    "power": 40,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "ACROBATICS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 512,
+    "power": 55,
+    "pp": 15,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "ACUPRESSURE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 367,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "AERIAL-ACE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 332,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "AEROBLAST": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 177,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "AFTER-YOU": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 495,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "AGILITY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 97,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "AIR-CUTTER": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 314,
+    "power": 60,
+    "pp": 25,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "AIR-SLASH": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 403,
+    "power": 75,
+    "pp": 15,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "ALL-OUT-PUMMELING--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 624,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "ALL-OUT-PUMMELING--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 625,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "ALLURING-VOICE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 914,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "ALLY-SWITCH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 502,
+    "power": null,
+    "pp": 15,
+    "priority": 2,
+    "type": "PSYCHIC"
+  },
+  "AMNESIA": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 133,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "ANCHOR-SHOT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 677,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "ANCIENT-POWER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 246,
+    "power": 60,
+    "pp": 5,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "APPLE-ACID": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 787,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "AQUA-CUTTER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 895,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "AQUA-JET": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 453,
+    "power": 40,
+    "pp": 20,
+    "priority": 1,
+    "type": "WATER"
+  },
+  "AQUA-RING": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 392,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "AQUA-STEP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 872,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "AQUA-TAIL": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 401,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "ARM-THRUST": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 292,
+    "power": 15,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "ARMOR-CANNON": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 890,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "AROMATHERAPY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 312,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "AROMATIC-MIST": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 597,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "ASSIST": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 274,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "ASSURANCE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 372,
+    "power": 60,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "ASTONISH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 310,
+    "power": 30,
+    "pp": 15,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "ASTRAL-BARRAGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 825,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "ATTACK-ORDER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 454,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "ATTRACT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 213,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "AURA-SPHERE": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 396,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "AURA-WHEEL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 783,
+    "power": 110,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "AURORA-BEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 62,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "AURORA-VEIL": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 694,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "AUTOTOMIZE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 475,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "AVALANCHE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 419,
+    "power": 60,
+    "pp": 10,
+    "priority": -4,
+    "type": "ICE"
+  },
+  "AXE-KICK": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 853,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "BABY-DOLL-EYES": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 608,
+    "power": null,
+    "pp": 30,
+    "priority": 1,
+    "type": "FAIRY"
+  },
+  "BADDY-BAD": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 737,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "BANEFUL-BUNKER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 661,
+    "power": null,
+    "pp": 10,
+    "priority": 4,
+    "type": "POISON"
+  },
+  "BARB-BARRAGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 839,
+    "power": 60,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "BARRAGE": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 140,
+    "power": 15,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BARRIER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 112,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "BATON-PASS": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 226,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BEAK-BLAST": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 690,
+    "power": 100,
+    "pp": 15,
+    "priority": -3,
+    "type": "FLYING"
+  },
+  "BEAT-UP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 251,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "BEHEMOTH-BASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 782,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "BEHEMOTH-BLADE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 781,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "BELCH": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 562,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "BELLY-DRUM": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 187,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BESTOW": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 516,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BIDE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 117,
+    "power": null,
+    "pp": 10,
+    "priority": 1,
+    "type": "NORMAL"
+  },
+  "BIND": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 20,
+    "power": 15,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BITE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 44,
+    "power": 60,
+    "pp": 25,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "BITTER-BLADE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 891,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "BITTER-MALICE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 841,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "BLACK-HOLE-ECLIPSE--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 654,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "BLACK-HOLE-ECLIPSE--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 655,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "BLAST-BURN": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 307,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "BLAZE-KICK": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 299,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "BLAZING-TORQUE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 896,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "BLEAKWIND-STORM": {
+    "accuracy": 80,
+    "damage_class": "SPECIAL",
+    "id": 846,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "BLIZZARD": {
+    "accuracy": 70,
+    "damage_class": "SPECIAL",
+    "id": 59,
+    "power": 110,
+    "pp": 5,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "BLOCK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 335,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BLOOD-MOON": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 901,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BLOOM-DOOM--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 644,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "BLOOM-DOOM--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 645,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "BLUE-FLARE": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 551,
+    "power": 130,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "BODY-PRESS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 776,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "BODY-SLAM": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 34,
+    "power": 85,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BOLT-BEAK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 754,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "BOLT-STRIKE": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 550,
+    "power": 130,
+    "pp": 5,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "BONE-CLUB": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 125,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "BONE-RUSH": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 198,
+    "power": 25,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "BONEMERANG": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 155,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "BOOMBURST": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 586,
+    "power": 140,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BOUNCE": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 340,
+    "power": 85,
+    "pp": 5,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "BOUNCY-BUBBLE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 733,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "BRANCH-POKE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 785,
+    "power": 40,
+    "pp": 40,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "BRAVE-BIRD": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 413,
+    "power": 120,
+    "pp": 15,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "BREAKING-SWIPE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 784,
+    "power": 60,
+    "pp": 15,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "BREAKNECK-BLITZ--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 622,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BREAKNECK-BLITZ--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 623,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "BRICK-BREAK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 280,
+    "power": 75,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "BRINE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 362,
+    "power": 65,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "BRUTAL-SWING": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 693,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "BUBBLE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 145,
+    "power": 40,
+    "pp": 30,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "BUBBLE-BEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 61,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "BUG-BITE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 450,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "BUG-BUZZ": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 405,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "BULK-UP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 339,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "BULLDOZE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 523,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "BULLET-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 418,
+    "power": 40,
+    "pp": 30,
+    "priority": 1,
+    "type": "STEEL"
+  },
+  "BULLET-SEED": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 331,
+    "power": 25,
+    "pp": 30,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "BURN-UP": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 682,
+    "power": 130,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "BURNING-BULWARK": {
+    "accuracy": 0,
+    "damage_class": "STATUS",
+    "id": 908,
+    "power": 0,
+    "pp": 10,
+    "priority": 4,
+    "type": "FIRE"
+  },
+  "BURNING-JEALOUSY": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 807,
+    "power": 70,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "BUZZY-BUZZ": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 734,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "CALM-MIND": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 347,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "CAMOUFLAGE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 293,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CAPTIVATE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 445,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CATASTROPIKA": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 658,
+    "power": 210,
+    "pp": 1,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "CEASELESS-EDGE": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 845,
+    "power": 65,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "CELEBRATE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 606,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CHARGE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 268,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "CHARGE-BEAM": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 451,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "CHARM": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 204,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "CHATTER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 448,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "CHILLING-WATER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 886,
+    "power": 50,
+    "pp": 20,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "CHILLY-RECEPTION": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 881,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "CHIP-AWAY": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 498,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CHLOROBLAST": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 835,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "CIRCLE-THROW": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 509,
+    "power": 60,
+    "pp": 10,
+    "priority": -6,
+    "type": "FIGHTING"
+  },
+  "CLAMP": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 128,
+    "power": 35,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "CLANGING-SCALES": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 691,
+    "power": 110,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "CLANGOROUS-SOUL": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 775,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "CLANGOROUS-SOULBLAZE": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 728,
+    "power": 185,
+    "pp": 1,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "CLEAR-SMOG": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 499,
+    "power": 50,
+    "pp": 15,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "CLOSE-COMBAT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 370,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "COACHING": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 811,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "COIL": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 489,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "COLLISION-COURSE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 878,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "COMBAT-TORQUE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 899,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "COMET-PUNCH": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 4,
+    "power": 18,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "COMEUPPANCE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 894,
+    "power": 1,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "CONFIDE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 590,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CONFUSE-RAY": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 109,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "CONFUSION": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 93,
+    "power": 50,
+    "pp": 25,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "CONSTRICT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 132,
+    "power": 10,
+    "pp": 35,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CONTINENTAL-CRUSH--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 632,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "CONTINENTAL-CRUSH--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 633,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "CONVERSION": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 160,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CONVERSION-2": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 176,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "COPYCAT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 383,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CORE-ENFORCER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 687,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "CORKSCREW-CRASH--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 638,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "CORKSCREW-CRASH--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 639,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "CORROSIVE-GAS": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 810,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "COSMIC-POWER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 322,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "COTTON-GUARD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 538,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "COTTON-SPORE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 178,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "COUNTER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 68,
+    "power": null,
+    "pp": 20,
+    "priority": -5,
+    "type": "FIGHTING"
+  },
+  "COURT-CHANGE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 756,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "COVET": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 343,
+    "power": 60,
+    "pp": 25,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CRABHAMMER": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 152,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "CRAFTY-SHIELD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 578,
+    "power": null,
+    "pp": 10,
+    "priority": 3,
+    "type": "FAIRY"
+  },
+  "CROSS-CHOP": {
+    "accuracy": 80,
+    "damage_class": "PHYSICAL",
+    "id": 238,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "CROSS-POISON": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 440,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "CRUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 242,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "CRUSH-CLAW": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 306,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CRUSH-GRIP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 462,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "CURSE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 174,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "CUT": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 15,
+    "power": 50,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DARK-PULSE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 399,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "DARK-VOID": {
+    "accuracy": 50,
+    "damage_class": "STATUS",
+    "id": 464,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "DARKEST-LARIAT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 663,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "DAZZLING-GLEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 605,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "DECORATE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 777,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "DEFEND-ORDER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 455,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "DEFENSE-CURL": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 111,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DEFOG": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 432,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "DESTINY-BOND": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 194,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "DETECT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 197,
+    "power": null,
+    "pp": 5,
+    "priority": 4,
+    "type": "FIGHTING"
+  },
+  "DEVASTATING-DRAKE--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 652,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DEVASTATING-DRAKE--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 653,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DIAMOND-STORM": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 591,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "DIG": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 91,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "DIRE-CLAW": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 827,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "DISABLE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 50,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DISARMING-VOICE": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 574,
+    "power": 40,
+    "pp": 15,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "DISCHARGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 435,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "DIVE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 291,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "DIZZY-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 146,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DOODLE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 867,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DOOM-DESIRE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 353,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "DOUBLE-EDGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 38,
+    "power": 120,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DOUBLE-HIT": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 458,
+    "power": 35,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DOUBLE-IRON-BASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 742,
+    "power": 60,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "DOUBLE-KICK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 24,
+    "power": 30,
+    "pp": 30,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "DOUBLE-SHOCK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 892,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "DOUBLE-SLAP": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 3,
+    "power": 15,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DOUBLE-TEAM": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 104,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "DRACO-METEOR": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 434,
+    "power": 130,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-ASCENT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 620,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "DRAGON-BREATH": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 225,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-CHEER": {
+    "accuracy": 0,
+    "damage_class": "STATUS",
+    "id": 913,
+    "power": 0,
+    "pp": 15,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-CLAW": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 337,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-DANCE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 349,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-DARTS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 751,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-ENERGY": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 820,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-HAMMER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 692,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-PULSE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 406,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-RAGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 82,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-RUSH": {
+    "accuracy": 75,
+    "damage_class": "PHYSICAL",
+    "id": 407,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DRAGON-TAIL": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 525,
+    "power": 60,
+    "pp": 10,
+    "priority": -6,
+    "type": "DRAGON"
+  },
+  "DRAIN-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 409,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "DRAINING-KISS": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 577,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "DREAM-EATER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 138,
+    "power": 100,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "DRILL-PECK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 65,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "DRILL-RUN": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 529,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "DRUM-BEATING": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 778,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "DUAL-CHOP": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 530,
+    "power": 40,
+    "pp": 15,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DUAL-WINGBEAT": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 814,
+    "power": 40,
+    "pp": 10,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "DYNAMAX-CANNON": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 744,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "DYNAMIC-PUNCH": {
+    "accuracy": 50,
+    "damage_class": "PHYSICAL",
+    "id": 223,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "EARTH-POWER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 414,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "EARTHQUAKE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 89,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "ECHOED-VOICE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 497,
+    "power": 40,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "EERIE-IMPULSE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 598,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "EERIE-SPELL": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 826,
+    "power": 80,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "EGG-BOMB": {
+    "accuracy": 75,
+    "damage_class": "PHYSICAL",
+    "id": 121,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "ELECTRIC-TERRAIN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 604,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ELECTRIFY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 582,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ELECTRO-BALL": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 486,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ELECTRO-DRIFT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 879,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ELECTRO-SHOT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 905,
+    "power": 130,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ELECTROWEB": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 527,
+    "power": 55,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "EMBARGO": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 373,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "EMBER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 52,
+    "power": 40,
+    "pp": 25,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "ENCORE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 227,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "ENDEAVOR": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 283,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "ENDURE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 203,
+    "power": null,
+    "pp": 10,
+    "priority": 4,
+    "type": "NORMAL"
+  },
+  "ENERGY-BALL": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 412,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "ENTRAINMENT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 494,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "ERUPTION": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 284,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "ESPER-WING": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 840,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "ETERNABEAM": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 795,
+    "power": 160,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "EXPANDING-FORCE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 797,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "EXPLOSION": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 153,
+    "power": 250,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "EXTRASENSORY": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 326,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "EXTREME-EVOBOOST": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 702,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "EXTREME-SPEED": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 245,
+    "power": 80,
+    "pp": 5,
+    "priority": 2,
+    "type": "NORMAL"
+  },
+  "FACADE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 263,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FAIRY-LOCK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 587,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "FAIRY-WIND": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 584,
+    "power": 40,
+    "pp": 30,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "FAKE-OUT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 252,
+    "power": 40,
+    "pp": 10,
+    "priority": 3,
+    "type": "NORMAL"
+  },
+  "FAKE-TEARS": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 313,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "FALSE-SURRENDER": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 793,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "FALSE-SWIPE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 206,
+    "power": 40,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FEATHER-DANCE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 297,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "FEINT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 364,
+    "power": 30,
+    "pp": 10,
+    "priority": 2,
+    "type": "NORMAL"
+  },
+  "FEINT-ATTACK": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 185,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "FELL-STINGER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 565,
+    "power": 50,
+    "pp": 25,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "FICKLE-BEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 907,
+    "power": 80,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "FIERY-DANCE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 552,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FIERY-WRATH": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 822,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "FILLET-AWAY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 868,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FINAL-GAMBIT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 515,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "FIRE-BLAST": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 126,
+    "power": 110,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FIRE-FANG": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 424,
+    "power": 65,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FIRE-LASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 680,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FIRE-PLEDGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 519,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FIRE-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 7,
+    "power": 75,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FIRE-SPIN": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 83,
+    "power": 35,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FIRST-IMPRESSION": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 660,
+    "power": 90,
+    "pp": 10,
+    "priority": 2,
+    "type": "BUG"
+  },
+  "FISHIOUS-REND": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 755,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "FISSURE": {
+    "accuracy": 30,
+    "damage_class": "PHYSICAL",
+    "id": 90,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "FLAIL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 175,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FLAME-BURST": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 481,
+    "power": 70,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FLAME-CHARGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 488,
+    "power": 50,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FLAME-WHEEL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 172,
+    "power": 60,
+    "pp": 25,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FLAMETHROWER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 53,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FLARE-BLITZ": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 394,
+    "power": 120,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FLASH": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 148,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FLASH-CANNON": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 430,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "FLATTER": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 260,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "FLEUR-CANNON": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 705,
+    "power": 130,
+    "pp": 5,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "FLING": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 374,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "FLIP-TURN": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 812,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "FLOATY-FALL": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 731,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "FLORAL-HEALING": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 666,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "FLOWER-SHIELD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 579,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "FLOWER-TRICK": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 870,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "FLY": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 19,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "FLYING-PRESS": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 560,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "FOCUS-BLAST": {
+    "accuracy": 70,
+    "damage_class": "SPECIAL",
+    "id": 411,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "FOCUS-ENERGY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 116,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FOCUS-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 264,
+    "power": 150,
+    "pp": 20,
+    "priority": -3,
+    "type": "FIGHTING"
+  },
+  "FOLLOW-ME": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 266,
+    "power": null,
+    "pp": 20,
+    "priority": 2,
+    "type": "NORMAL"
+  },
+  "FORCE-PALM": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 395,
+    "power": 60,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "FORESIGHT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 193,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FORESTS-CURSE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 571,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "FOUL-PLAY": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 492,
+    "power": 95,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "FREEZE-DRY": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 573,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "FREEZE-SHOCK": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 553,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "FREEZING-GLARE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 821,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "FREEZY-FROST": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 739,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "FRENZY-PLANT": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 338,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "FROST-BREATH": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 524,
+    "power": 60,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "FRUSTRATION": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 218,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FURY-ATTACK": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 31,
+    "power": 15,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FURY-CUTTER": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 210,
+    "power": 40,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "FURY-SWIPES": {
+    "accuracy": 80,
+    "damage_class": "PHYSICAL",
+    "id": 154,
+    "power": 18,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "FUSION-BOLT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 559,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "FUSION-FLARE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 558,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "FUTURE-SIGHT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 248,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "GASTRO-ACID": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 380,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "GEAR-GRIND": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 544,
+    "power": 50,
+    "pp": 15,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "GEAR-UP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 674,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "GENESIS-SUPERNOVA": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 703,
+    "power": 185,
+    "pp": 1,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "GEOMANCY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 601,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "GIGA-DRAIN": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 202,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "GIGA-IMPACT": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 416,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "GIGATON-HAMMER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 893,
+    "power": 160,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "GIGAVOLT-HAVOC--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 646,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "GIGAVOLT-HAVOC--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 647,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "GLACIAL-LANCE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 824,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "GLACIATE": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 549,
+    "power": 65,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "GLAIVE-RUSH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 862,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "GLARE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 137,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "GLITZY-GLOW": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 736,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "GRASS-KNOT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 447,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "GRASS-PLEDGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 520,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "GRASS-WHISTLE": {
+    "accuracy": 55,
+    "damage_class": "STATUS",
+    "id": 320,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "GRASSY-GLIDE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 803,
+    "power": 55,
+    "pp": 20,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "GRASSY-TERRAIN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 580,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "GRAV-APPLE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 788,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "GRAVITY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 356,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "GROWL": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 45,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "GROWTH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 74,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "GRUDGE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 288,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "GUARD-SPLIT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 470,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "GUARD-SWAP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 385,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "GUARDIAN-OF-ALOLA": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 698,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "GUILLOTINE": {
+    "accuracy": 30,
+    "damage_class": "PHYSICAL",
+    "id": 12,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "GUNK-SHOT": {
+    "accuracy": 80,
+    "damage_class": "PHYSICAL",
+    "id": 441,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "GUST": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 16,
+    "power": 40,
+    "pp": 35,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "GYRO-BALL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 360,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "HAIL": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 258,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "HAMMER-ARM": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 359,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "HAPPY-HOUR": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 603,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HARD-PRESS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 912,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "HARDEN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 106,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HAZE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 114,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "HEAD-CHARGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 543,
+    "power": 120,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HEAD-SMASH": {
+    "accuracy": 80,
+    "damage_class": "PHYSICAL",
+    "id": 457,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "HEADBUTT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 29,
+    "power": 70,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HEADLONG-RUSH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 838,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "HEAL-BELL": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 215,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HEAL-BLOCK": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 377,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "HEAL-ORDER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 456,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "HEAL-PULSE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 505,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "HEALING-WISH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 361,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "HEART-STAMP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 531,
+    "power": 60,
+    "pp": 25,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "HEART-SWAP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 391,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "HEAT-CRASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 535,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "HEAT-WAVE": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 257,
+    "power": 95,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "HEAVY-SLAM": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 484,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "HELPING-HAND": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 270,
+    "power": null,
+    "pp": 20,
+    "priority": 5,
+    "type": "NORMAL"
+  },
+  "HEX": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 506,
+    "power": 65,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "HIDDEN-POWER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 237,
+    "power": 60,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HIGH-HORSEPOWER": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 667,
+    "power": 95,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "HIGH-JUMP-KICK": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 136,
+    "power": 130,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "HOLD-BACK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 610,
+    "power": 40,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HOLD-HANDS": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 607,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HONE-CLAWS": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 468,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "HORN-ATTACK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 30,
+    "power": 65,
+    "pp": 25,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HORN-DRILL": {
+    "accuracy": 30,
+    "damage_class": "PHYSICAL",
+    "id": 32,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HORN-LEECH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 532,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "HOWL": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 336,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HURRICANE": {
+    "accuracy": 70,
+    "damage_class": "SPECIAL",
+    "id": 542,
+    "power": 110,
+    "pp": 10,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "HYDRO-CANNON": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 308,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "HYDRO-PUMP": {
+    "accuracy": 80,
+    "damage_class": "SPECIAL",
+    "id": 56,
+    "power": 110,
+    "pp": 5,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "HYDRO-STEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 876,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "HYDRO-VORTEX--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 642,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "HYDRO-VORTEX--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 643,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "HYPER-BEAM": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 63,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HYPER-DRILL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 887,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HYPER-FANG": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 158,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HYPER-VOICE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 304,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "HYPERSPACE-FURY": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 621,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "HYPERSPACE-HOLE": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 593,
+    "power": 80,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "HYPNOSIS": {
+    "accuracy": 60,
+    "damage_class": "STATUS",
+    "id": 95,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "ICE-BALL": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 301,
+    "power": 30,
+    "pp": 20,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICE-BEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 58,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICE-BURN": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 554,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICE-FANG": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 423,
+    "power": 65,
+    "pp": 15,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICE-HAMMER": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 665,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICE-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 8,
+    "power": 75,
+    "pp": 15,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICE-SHARD": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 420,
+    "power": 40,
+    "pp": 30,
+    "priority": 1,
+    "type": "ICE"
+  },
+  "ICE-SPINNER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 861,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICICLE-CRASH": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 556,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICICLE-SPEAR": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 333,
+    "power": 25,
+    "pp": 30,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "ICY-WIND": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 196,
+    "power": 55,
+    "pp": 15,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "IMPRISON": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 286,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "INCINERATE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 510,
+    "power": 60,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "INFERNAL-PARADE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 844,
+    "power": 60,
+    "pp": 15,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "INFERNO": {
+    "accuracy": 50,
+    "damage_class": "SPECIAL",
+    "id": 517,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "INFERNO-OVERDRIVE--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 640,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "INFERNO-OVERDRIVE--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 641,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "INFESTATION": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 611,
+    "power": 20,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "INGRAIN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 275,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "INSTRUCT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 689,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "ION-DELUGE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 569,
+    "power": null,
+    "pp": 25,
+    "priority": 1,
+    "type": "ELECTRIC"
+  },
+  "IRON-DEFENSE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 334,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "IRON-HEAD": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 442,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "IRON-TAIL": {
+    "accuracy": 75,
+    "damage_class": "PHYSICAL",
+    "id": 231,
+    "power": 100,
+    "pp": 15,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "IVY-CUDGEL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 904,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "JAW-LOCK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 746,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "JET-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 857,
+    "power": 60,
+    "pp": 15,
+    "priority": 1,
+    "type": "WATER"
+  },
+  "JUDGMENT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 449,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "JUMP-KICK": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 26,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "JUNGLE-HEALING": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 816,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "KARATE-CHOP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 2,
+    "power": 50,
+    "pp": 25,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "KINESIS": {
+    "accuracy": 80,
+    "damage_class": "STATUS",
+    "id": 134,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "KINGS-SHIELD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 588,
+    "power": null,
+    "pp": 10,
+    "priority": 4,
+    "type": "STEEL"
+  },
+  "KNOCK-OFF": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 282,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "KOWTOW-CLEAVE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 869,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "LANDS-WRATH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 616,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "LASER-FOCUS": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 673,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "LASH-OUT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 808,
+    "power": 75,
+    "pp": 5,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "LAST-RESORT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 387,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "LAST-RESPECTS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 854,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "LAVA-PLUME": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 436,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "LEAF-BLADE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 348,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "LEAF-STORM": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 437,
+    "power": 130,
+    "pp": 5,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "LEAF-TORNADO": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 536,
+    "power": 65,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "LEAFAGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 670,
+    "power": 40,
+    "pp": 40,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "LEECH-LIFE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 141,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "LEECH-SEED": {
+    "accuracy": 90,
+    "damage_class": "STATUS",
+    "id": 73,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "LEER": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 43,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "LETS-SNUGGLE-FOREVER": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 726,
+    "power": 190,
+    "pp": 1,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "LICK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 122,
+    "power": 30,
+    "pp": 30,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "LIFE-DEW": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 791,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "LIGHT-OF-RUIN": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 617,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "LIGHT-SCREEN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 113,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "LIGHT-THAT-BURNS-THE-SKY": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 723,
+    "power": 200,
+    "pp": 1,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "LIQUIDATION": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 710,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "LOCK-ON": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 199,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "LOVELY-KISS": {
+    "accuracy": 75,
+    "damage_class": "STATUS",
+    "id": 142,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "LOW-KICK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 67,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "LOW-SWEEP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 490,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "LUCKY-CHANT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 381,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "LUMINA-CRASH": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 855,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "LUNAR-BLESSING": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 849,
+    "power": 0,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "LUNAR-DANCE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 461,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "LUNGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 679,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "LUSTER-PURGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 295,
+    "power": 95,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "MACH-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 183,
+    "power": 40,
+    "pp": 30,
+    "priority": 1,
+    "type": "FIGHTING"
+  },
+  "MAGIC-COAT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 277,
+    "power": null,
+    "pp": 15,
+    "priority": 4,
+    "type": "PSYCHIC"
+  },
+  "MAGIC-POWDER": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 750,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "MAGIC-ROOM": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 478,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "MAGICAL-LEAF": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 345,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "MAGICAL-TORQUE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 900,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "MAGMA-STORM": {
+    "accuracy": 75,
+    "damage_class": "SPECIAL",
+    "id": 463,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "MAGNET-BOMB": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 443,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "MAGNET-RISE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 393,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "MAGNETIC-FLUX": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 602,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "MAGNITUDE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 222,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "MAKE-IT-RAIN": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 874,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "MALICIOUS-MOONSAULT": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 696,
+    "power": 180,
+    "pp": 1,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "MALIGNANT-CHAIN": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 919,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "MAT-BLOCK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 561,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "MATCHA-GOTCHA": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 902,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "MAX-AIRSTREAM": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 766,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "MAX-DARKNESS": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 772,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "MAX-FLARE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 757,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "MAX-FLUTTERBY": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 758,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "MAX-GEYSER": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 765,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "MAX-GUARD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 743,
+    "power": null,
+    "pp": 10,
+    "priority": 4,
+    "type": "NORMAL"
+  },
+  "MAX-HAILSTORM": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 763,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "MAX-KNUCKLE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 761,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "MAX-LIGHTNING": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 759,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "MAX-MINDSTORM": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 769,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "MAX-OOZE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 764,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "MAX-OVERGROWTH": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 773,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "MAX-PHANTASM": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 762,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "MAX-QUAKE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 771,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "MAX-ROCKFALL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 770,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "MAX-STARFALL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 767,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "MAX-STEELSPIKE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 774,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "MAX-STRIKE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 760,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MAX-WYRMWIND": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 768,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "ME-FIRST": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 382,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MEAN-LOOK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 212,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MEDITATE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 96,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "MEGA-DRAIN": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 72,
+    "power": 40,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "MEGA-KICK": {
+    "accuracy": 75,
+    "damage_class": "PHYSICAL",
+    "id": 25,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MEGA-PUNCH": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 5,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MEGAHORN": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 224,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "MEMENTO": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 262,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "MENACING-MOONRAZE-MAELSTROM": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 725,
+    "power": 200,
+    "pp": 1,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "METAL-BURST": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 368,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "METAL-CLAW": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 232,
+    "power": 50,
+    "pp": 35,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "METAL-SOUND": {
+    "accuracy": 85,
+    "damage_class": "STATUS",
+    "id": 319,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "METEOR-ASSAULT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 794,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "METEOR-BEAM": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 800,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "METEOR-MASH": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 309,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "METRONOME": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 118,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MIGHTY-CLEAVE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 910,
+    "power": 95,
+    "pp": 5,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "MILK-DRINK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 208,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MIMIC": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 102,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MIND-BLOWN": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 720,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "MIND-READER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 170,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MINIMIZE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 107,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MIRACLE-EYE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 357,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "MIRROR-COAT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 243,
+    "power": null,
+    "pp": 20,
+    "priority": -5,
+    "type": "PSYCHIC"
+  },
+  "MIRROR-MOVE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 119,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "MIRROR-SHOT": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 429,
+    "power": 65,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "MIST": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 54,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "MIST-BALL": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 296,
+    "power": 95,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "MISTY-EXPLOSION": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 802,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "MISTY-TERRAIN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 581,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "MOONBLAST": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 585,
+    "power": 95,
+    "pp": 15,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "MOONGEIST-BEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 714,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "MOONLIGHT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 236,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "MORNING-SUN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 234,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MORTAL-SPIN": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 866,
+    "power": 30,
+    "pp": 15,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "MOUNTAIN-GALE": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 836,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "MUD-BOMB": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 426,
+    "power": 65,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "MUD-SHOT": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 341,
+    "power": 55,
+    "pp": 15,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "MUD-SLAP": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 189,
+    "power": 20,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "MUD-SPORT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 300,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "MUDDY-WATER": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 330,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "MULTI-ATTACK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 718,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "MYSTICAL-FIRE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 595,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "MYSTICAL-POWER": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 832,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "NASTY-PLOT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 417,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "NATURAL-GIFT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 363,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "NATURE-POWER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 267,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "NATURES-MADNESS": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 717,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "NEEDLE-ARM": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 302,
+    "power": 60,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "NEVER-ENDING-NIGHTMARE--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 636,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "NEVER-ENDING-NIGHTMARE--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 637,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "NIGHT-DAZE": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 539,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "NIGHT-SHADE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 101,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "NIGHT-SLASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 400,
+    "power": 70,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "NIGHTMARE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 171,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "NO-RETREAT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 748,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "NOBLE-ROAR": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 568,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "NOXIOUS-TORQUE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 898,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "NUZZLE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 609,
+    "power": 20,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "OBLIVION-WING": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 613,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "OBSTRUCT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 792,
+    "power": null,
+    "pp": 10,
+    "priority": 4,
+    "type": "DARK"
+  },
+  "OCEANIC-OPERETTA": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 697,
+    "power": 195,
+    "pp": 1,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "OCTAZOOKA": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 190,
+    "power": 65,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "OCTOLOCK": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 753,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "ODOR-SLEUTH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 316,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "OMINOUS-WIND": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 466,
+    "power": 60,
+    "pp": 5,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "ORDER-UP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 856,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "ORIGIN-PULSE": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 618,
+    "power": 110,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "OUTRAGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 200,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "OVERDRIVE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 786,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "OVERHEAT": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 315,
+    "power": 130,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "PAIN-SPLIT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 220,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "PARABOLIC-CHARGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 570,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "PARTING-SHOT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 575,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "PAY-DAY": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 6,
+    "power": 40,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "PAYBACK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 371,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "PECK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 64,
+    "power": 35,
+    "pp": 35,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "PERISH-SONG": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 195,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "PETAL-BLIZZARD": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 572,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "PETAL-DANCE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 80,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "PHANTOM-FORCE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 566,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "PHOTON-GEYSER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 722,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PIKA-PAPOW": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 732,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "PIN-MISSILE": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 42,
+    "power": 25,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "PLASMA-FISTS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 721,
+    "power": 100,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "PLAY-NICE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 589,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "PLAY-ROUGH": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 583,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "PLUCK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 365,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "POISON-FANG": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 305,
+    "power": 50,
+    "pp": 15,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "POISON-GAS": {
+    "accuracy": 90,
+    "damage_class": "STATUS",
+    "id": 139,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "POISON-JAB": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 398,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "POISON-POWDER": {
+    "accuracy": 75,
+    "damage_class": "STATUS",
+    "id": 77,
+    "power": null,
+    "pp": 35,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "POISON-STING": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 40,
+    "power": 15,
+    "pp": 35,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "POISON-TAIL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 342,
+    "power": 50,
+    "pp": 25,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "POLLEN-PUFF": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 676,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "POLTERGEIST": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 809,
+    "power": 110,
+    "pp": 5,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "POPULATION-BOMB": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 860,
+    "power": 20,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "POUNCE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 884,
+    "power": 50,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "POUND": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 1,
+    "power": 40,
+    "pp": 35,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "POWDER": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 600,
+    "power": null,
+    "pp": 20,
+    "priority": 1,
+    "type": "BUG"
+  },
+  "POWDER-SNOW": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 181,
+    "power": 40,
+    "pp": 25,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "POWER-GEM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 408,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "POWER-SHIFT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 829,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "POWER-SPLIT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 471,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "POWER-SWAP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 384,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "POWER-TRICK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 379,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "POWER-TRIP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 681,
+    "power": 20,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "POWER-UP-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 612,
+    "power": 40,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "POWER-WHIP": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 438,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "PRECIPICE-BLADES": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 619,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "PRESENT": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 217,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "PRISMATIC-LASER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 711,
+    "power": 160,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PROTECT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 182,
+    "power": null,
+    "pp": 10,
+    "priority": 4,
+    "type": "NORMAL"
+  },
+  "PSYBEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 60,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYBLADE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 875,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYCH-UP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 244,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "PSYCHIC": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 94,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYCHIC-FANGS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 706,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYCHIC-NOISE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 917,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYCHIC-TERRAIN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 678,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYCHO-BOOST": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 354,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYCHO-CUT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 427,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYCHO-SHIFT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 375,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYSHIELD-BASH": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 828,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYSHOCK": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 473,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYSTRIKE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 540,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PSYWAVE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 149,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "PULVERIZING-PANCAKE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 701,
+    "power": 210,
+    "pp": 1,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "PUNISHMENT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 386,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "PURIFY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 685,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "PURSUIT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 228,
+    "power": 40,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "PYRO-BALL": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 780,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "QUASH": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 511,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "QUICK-ATTACK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 98,
+    "power": 40,
+    "pp": 30,
+    "priority": 1,
+    "type": "NORMAL"
+  },
+  "QUICK-GUARD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 501,
+    "power": null,
+    "pp": 15,
+    "priority": 3,
+    "type": "FIGHTING"
+  },
+  "QUIVER-DANCE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 483,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "RAGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 99,
+    "power": 20,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RAGE-FIST": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 889,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "RAGE-POWDER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 476,
+    "power": null,
+    "pp": 20,
+    "priority": 2,
+    "type": "BUG"
+  },
+  "RAGING-BULL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 873,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RAGING-FURY": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 833,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "RAIN-DANCE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 240,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "RAPID-SPIN": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 229,
+    "power": 50,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RAZOR-LEAF": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 75,
+    "power": 55,
+    "pp": 25,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "RAZOR-SHELL": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 534,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "RAZOR-WIND": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 13,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RECOVER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 105,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RECYCLE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 278,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "REFLECT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 115,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "REFLECT-TYPE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 513,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "REFRESH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 287,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RELIC-SONG": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 547,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "REST": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 156,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "RETALIATE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 514,
+    "power": 70,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RETURN": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 216,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "REVELATION-DANCE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 686,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "REVENGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 279,
+    "power": 60,
+    "pp": 10,
+    "priority": -4,
+    "type": "FIGHTING"
+  },
+  "REVERSAL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 179,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "REVIVAL-BLESSING": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 863,
+    "power": 0,
+    "pp": 1,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RISING-VOLTAGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 804,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ROAR": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 46,
+    "power": null,
+    "pp": 20,
+    "priority": -6,
+    "type": "NORMAL"
+  },
+  "ROAR-OF-TIME": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 459,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "ROCK-BLAST": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 350,
+    "power": 25,
+    "pp": 10,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "ROCK-CLIMB": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 431,
+    "power": 90,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "ROCK-POLISH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 397,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "ROCK-SLIDE": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 157,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "ROCK-SMASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 249,
+    "power": 40,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "ROCK-THROW": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 88,
+    "power": 50,
+    "pp": 15,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "ROCK-TOMB": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 317,
+    "power": 60,
+    "pp": 15,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "ROCK-WRECKER": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 439,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "ROLE-PLAY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 272,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "ROLLING-KICK": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 27,
+    "power": 60,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "ROLLOUT": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 205,
+    "power": 30,
+    "pp": 20,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "ROOST": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 355,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "ROTOTILLER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 563,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "ROUND": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 496,
+    "power": 60,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "RUINATION": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 877,
+    "power": 1,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "SACRED-FIRE": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 221,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "SACRED-SWORD": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 533,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "SAFEGUARD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 219,
+    "power": null,
+    "pp": 25,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SALT-CURE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 864,
+    "power": 40,
+    "pp": 15,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "SAND-ATTACK": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 28,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "SAND-TOMB": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 328,
+    "power": 35,
+    "pp": 15,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "SANDSEAR-STORM": {
+    "accuracy": 80,
+    "damage_class": "SPECIAL",
+    "id": 848,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "SANDSTORM": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 201,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "SAPPY-SEED": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 738,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SAVAGE-SPIN-OUT--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 634,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "SAVAGE-SPIN-OUT--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 635,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "SCALD": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 503,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "SCALE-SHOT": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 799,
+    "power": 25,
+    "pp": 20,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "SCARY-FACE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 184,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SCORCHING-SANDS": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 815,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "SCRATCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 10,
+    "power": 40,
+    "pp": 35,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SCREECH": {
+    "accuracy": 85,
+    "damage_class": "STATUS",
+    "id": 103,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SEARING-SHOT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 545,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "SEARING-SUNRAZE-SMASH": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 724,
+    "power": 200,
+    "pp": 1,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "SECRET-POWER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 290,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SECRET-SWORD": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 548,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "SEED-BOMB": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 402,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SEED-FLARE": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 465,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SEISMIC-TOSS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 69,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "SELF-DESTRUCT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 120,
+    "power": 200,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SHADOW-BALL": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 247,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SHADOW-BLAST": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 10002,
+    "power": 80,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-BLITZ": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 10003,
+    "power": 40,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-BOLT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 10004,
+    "power": 75,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-BONE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 708,
+    "power": 85,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SHADOW-BREAK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 10005,
+    "power": 75,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-CHILL": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 10006,
+    "power": 75,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-CLAW": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 421,
+    "power": 70,
+    "pp": 15,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SHADOW-DOWN": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 10012,
+    "power": null,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-END": {
+    "accuracy": 60,
+    "damage_class": "PHYSICAL",
+    "id": 10007,
+    "power": 120,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-FIRE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 10008,
+    "power": 75,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-FORCE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 467,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SHADOW-HALF": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 10013,
+    "power": null,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-HOLD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 10014,
+    "power": null,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-MIST": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 10015,
+    "power": null,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-PANIC": {
+    "accuracy": 90,
+    "damage_class": "STATUS",
+    "id": 10016,
+    "power": null,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-PUNCH": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 325,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SHADOW-RAVE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 10009,
+    "power": 70,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-RUSH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 10001,
+    "power": 55,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-SHED": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 10017,
+    "power": null,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-SKY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 10018,
+    "power": null,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-SNEAK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 425,
+    "power": 40,
+    "pp": 30,
+    "priority": 1,
+    "type": "GHOST"
+  },
+  "SHADOW-STORM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 10010,
+    "power": 95,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHADOW-WAVE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 10011,
+    "power": 50,
+    "pp": null,
+    "priority": 0,
+    "type": "SHADOW"
+  },
+  "SHARPEN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 159,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SHATTERED-PSYCHE--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 648,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "SHATTERED-PSYCHE--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 649,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "SHED-TAIL": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 880,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SHEER-COLD": {
+    "accuracy": 30,
+    "damage_class": "SPECIAL",
+    "id": 329,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "SHELL-SIDE-ARM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 801,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "SHELL-SMASH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 504,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SHELL-TRAP": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 704,
+    "power": 150,
+    "pp": 5,
+    "priority": -3,
+    "type": "FIRE"
+  },
+  "SHELTER": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 842,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "SHIFT-GEAR": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 508,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "SHOCK-WAVE": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 351,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "SHORE-UP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 659,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "SIGNAL-BEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 324,
+    "power": 75,
+    "pp": 15,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "SILK-TRAP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 852,
+    "power": 0,
+    "pp": 10,
+    "priority": 4,
+    "type": "BUG"
+  },
+  "SILVER-WIND": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 318,
+    "power": 60,
+    "pp": 5,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "SIMPLE-BEAM": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 493,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SING": {
+    "accuracy": 55,
+    "damage_class": "STATUS",
+    "id": 47,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SINISTER-ARROW-RAID": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 695,
+    "power": 180,
+    "pp": 1,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SIZZLY-SLIDE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 735,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "SKETCH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 166,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SKILL-SWAP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 285,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "SKITTER-SMACK": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 806,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "SKULL-BASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 130,
+    "power": 130,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SKY-ATTACK": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 143,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "SKY-DROP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 507,
+    "power": 60,
+    "pp": 10,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "SKY-UPPERCUT": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 327,
+    "power": 85,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "SLACK-OFF": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 303,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SLAM": {
+    "accuracy": 75,
+    "damage_class": "PHYSICAL",
+    "id": 21,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SLASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 163,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SLEEP-POWDER": {
+    "accuracy": 75,
+    "damage_class": "STATUS",
+    "id": 79,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SLEEP-TALK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 214,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SLUDGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 124,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "SLUDGE-BOMB": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 188,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "SLUDGE-WAVE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 482,
+    "power": 95,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "SMACK-DOWN": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 479,
+    "power": 50,
+    "pp": 15,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "SMART-STRIKE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 684,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "SMELLING-SALTS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 265,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SMOG": {
+    "accuracy": 70,
+    "damage_class": "SPECIAL",
+    "id": 123,
+    "power": 30,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "SMOKESCREEN": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 108,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SNAP-TRAP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 779,
+    "power": 35,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SNARL": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 555,
+    "power": 55,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "SNATCH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 289,
+    "power": null,
+    "pp": 10,
+    "priority": 4,
+    "type": "DARK"
+  },
+  "SNIPE-SHOT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 745,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "SNORE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 173,
+    "power": 50,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SNOWSCAPE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 883,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "SOAK": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 487,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "SOFT-BOILED": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 135,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SOLAR-BEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 76,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SOLAR-BLADE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 669,
+    "power": 125,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SONIC-BOOM": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 49,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SOUL-STEALING-7-STAR-STRIKE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 699,
+    "power": 195,
+    "pp": 1,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SPACIAL-REND": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 460,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "SPARK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 209,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "SPARKLING-ARIA": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 664,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "SPARKLY-SWIRL": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 740,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "SPECTRAL-THIEF": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 712,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SPEED-SWAP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 683,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "SPICY-EXTRACT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 858,
+    "power": 0,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SPIDER-WEB": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 169,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "SPIKE-CANNON": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 131,
+    "power": 20,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SPIKES": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 191,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "SPIKY-SHIELD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 596,
+    "power": null,
+    "pp": 10,
+    "priority": 4,
+    "type": "GRASS"
+  },
+  "SPIN-OUT": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 859,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "SPIRIT-BREAK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 789,
+    "power": 75,
+    "pp": 15,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "SPIRIT-SHACKLE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 662,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SPIT-UP": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 255,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SPITE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 180,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "SPLASH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 150,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SPLINTERED-STORMSHARDS": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 727,
+    "power": 190,
+    "pp": 1,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "SPLISHY-SPLASH": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 730,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "SPORE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 147,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SPOTLIGHT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 671,
+    "power": null,
+    "pp": 15,
+    "priority": 3,
+    "type": "NORMAL"
+  },
+  "SPRINGTIDE-STORM": {
+    "accuracy": 80,
+    "damage_class": "SPECIAL",
+    "id": 831,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "STEALTH-ROCK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 446,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "STEAM-ERUPTION": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 592,
+    "power": 110,
+    "pp": 5,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "STEAMROLLER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 537,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "STEEL-BEAM": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 796,
+    "power": 140,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "STEEL-ROLLER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 798,
+    "power": 130,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "STEEL-WING": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 211,
+    "power": 70,
+    "pp": 25,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "STICKY-WEB": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 564,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "STOCKPILE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 254,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "STOKED-SPARKSURFER": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 700,
+    "power": 175,
+    "pp": 1,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "STOMP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 23,
+    "power": 65,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "STOMPING-TANTRUM": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 707,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "STONE-AXE": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 830,
+    "power": 65,
+    "pp": 15,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "STONE-EDGE": {
+    "accuracy": 80,
+    "damage_class": "PHYSICAL",
+    "id": 444,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "STORED-POWER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 500,
+    "power": 20,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "STORM-THROW": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 480,
+    "power": 60,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "STRANGE-STEAM": {
+    "accuracy": 95,
+    "damage_class": "SPECIAL",
+    "id": 790,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "STRENGTH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 70,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "STRENGTH-SAP": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 668,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "STRING-SHOT": {
+    "accuracy": 95,
+    "damage_class": "STATUS",
+    "id": 81,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "STRUGGLE": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 165,
+    "power": 50,
+    "pp": 1,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "STRUGGLE-BUG": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 522,
+    "power": 50,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "STUFF-CHEEKS": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 747,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "STUN-SPORE": {
+    "accuracy": 75,
+    "damage_class": "STATUS",
+    "id": 78,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SUBMISSION": {
+    "accuracy": 80,
+    "damage_class": "PHYSICAL",
+    "id": 66,
+    "power": 80,
+    "pp": 20,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "SUBSTITUTE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 164,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SUBZERO-SLAMMER--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 650,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "SUBZERO-SLAMMER--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 651,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "SUCKER-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 389,
+    "power": 70,
+    "pp": 5,
+    "priority": 1,
+    "type": "DARK"
+  },
+  "SUNNY-DAY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 241,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "SUNSTEEL-STRIKE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 713,
+    "power": 100,
+    "pp": 5,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "SUPER-FANG": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 162,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SUPERCELL-SLAM": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 916,
+    "power": 100,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "SUPERPOWER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 276,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "SUPERSONIC": {
+    "accuracy": 55,
+    "damage_class": "STATUS",
+    "id": 48,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SUPERSONIC-SKYSTRIKE--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 626,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "SUPERSONIC-SKYSTRIKE--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 627,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "SURF": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 57,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "SURGING-STRIKES": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 818,
+    "power": 25,
+    "pp": 5,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "SWAGGER": {
+    "accuracy": 85,
+    "damage_class": "STATUS",
+    "id": 207,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SWALLOW": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 256,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SWEET-KISS": {
+    "accuracy": 75,
+    "damage_class": "STATUS",
+    "id": 186,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "SWEET-SCENT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 230,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SWIFT": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 129,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SWITCHEROO": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 415,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "SWORDS-DANCE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 14,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "SYNCHRONOISE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 485,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "SYNTHESIS": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 235,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "SYRUP-BOMB": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 903,
+    "power": 60,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "TACHYON-CUTTER": {
+    "accuracy": 0,
+    "damage_class": "SPECIAL",
+    "id": 911,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "STEEL"
+  },
+  "TACKLE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 33,
+    "power": 40,
+    "pp": 35,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TAIL-GLOW": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 294,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "TAIL-SLAP": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 541,
+    "power": 25,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TAIL-WHIP": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 39,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TAILWIND": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 366,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "TAKE-DOWN": {
+    "accuracy": 85,
+    "damage_class": "PHYSICAL",
+    "id": 36,
+    "power": 90,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TAKE-HEART": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 850,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "TAR-SHOT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 749,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "ROCK"
+  },
+  "TAUNT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 269,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "TEARFUL-LOOK": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 715,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TEATIME": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 752,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TECHNO-BLAST": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 546,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TECTONIC-RAGE--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 630,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "TECTONIC-RAGE--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 631,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "TEETER-DANCE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 298,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TELEKINESIS": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 477,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "TELEPORT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 100,
+    "power": null,
+    "pp": 20,
+    "priority": -6,
+    "type": "PSYCHIC"
+  },
+  "TEMPER-FLARE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 915,
+    "power": 75,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "TERA-BLAST": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 851,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TERA-STARSTORM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 906,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TERRAIN-PULSE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 805,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "THIEF": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 168,
+    "power": 60,
+    "pp": 25,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "THOUSAND-ARROWS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 614,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "THOUSAND-WAVES": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 615,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "GROUND"
+  },
+  "THRASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 37,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "THROAT-CHOP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 675,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "THUNDER": {
+    "accuracy": 70,
+    "damage_class": "SPECIAL",
+    "id": 87,
+    "power": 110,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "THUNDER-CAGE": {
+    "accuracy": 90,
+    "damage_class": "SPECIAL",
+    "id": 819,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "THUNDER-FANG": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 422,
+    "power": 65,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "THUNDER-PUNCH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 9,
+    "power": 75,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "THUNDER-SHOCK": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 84,
+    "power": 40,
+    "pp": 30,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "THUNDER-WAVE": {
+    "accuracy": 90,
+    "damage_class": "STATUS",
+    "id": 86,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "THUNDERBOLT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 85,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "THUNDERCLAP": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 909,
+    "power": 70,
+    "pp": 5,
+    "priority": 1,
+    "type": "ELECTRIC"
+  },
+  "THUNDEROUS-KICK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 823,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "TICKLE": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 321,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TIDY-UP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 882,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TOPSY-TURVY": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 576,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "TORCH-SONG": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 871,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "TORMENT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 259,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "TOXIC": {
+    "accuracy": 90,
+    "damage_class": "STATUS",
+    "id": 92,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "TOXIC-SPIKES": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 390,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "TOXIC-THREAD": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 672,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "TRAILBLAZE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 885,
+    "power": 50,
+    "pp": 20,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "TRANSFORM": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 144,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TRI-ATTACK": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 161,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TRICK": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 271,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "TRICK-OR-TREAT": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 567,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "GHOST"
+  },
+  "TRICK-ROOM": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 433,
+    "power": null,
+    "pp": 5,
+    "priority": -7,
+    "type": "PSYCHIC"
+  },
+  "TRIPLE-ARROWS": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 843,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "TRIPLE-AXEL": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 813,
+    "power": 20,
+    "pp": 10,
+    "priority": 0,
+    "type": "ICE"
+  },
+  "TRIPLE-DIVE": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 865,
+    "power": 30,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "TRIPLE-KICK": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 167,
+    "power": 10,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "TROP-KICK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 688,
+    "power": 70,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "TRUMP-CARD": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 376,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "TWIN-BEAM": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 888,
+    "power": 40,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "TWINEEDLE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 41,
+    "power": 25,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "TWINKLE-TACKLE--PHYSICAL": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 656,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "TWINKLE-TACKLE--SPECIAL": {
+    "accuracy": null,
+    "damage_class": "SPECIAL",
+    "id": 657,
+    "power": null,
+    "pp": 1,
+    "priority": 0,
+    "type": "FAIRY"
+  },
+  "TWISTER": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 239,
+    "power": 40,
+    "pp": 20,
+    "priority": 0,
+    "type": "DRAGON"
+  },
+  "U-TURN": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 369,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "UPPER-HAND": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 918,
+    "power": 65,
+    "pp": 15,
+    "priority": 3,
+    "type": "FIGHTING"
+  },
+  "UPROAR": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 253,
+    "power": 90,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "V-CREATE": {
+    "accuracy": 95,
+    "damage_class": "PHYSICAL",
+    "id": 557,
+    "power": 180,
+    "pp": 5,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "VACUUM-WAVE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 410,
+    "power": 40,
+    "pp": 30,
+    "priority": 1,
+    "type": "FIGHTING"
+  },
+  "VEEVEE-VOLLEY": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 741,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "VENOM-DRENCH": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 599,
+    "power": null,
+    "pp": 20,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "VENOSHOCK": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 474,
+    "power": 65,
+    "pp": 10,
+    "priority": 0,
+    "type": "POISON"
+  },
+  "VICE-GRIP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 11,
+    "power": 55,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "VICTORY-DANCE": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 837,
+    "power": 0,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "VINE-WHIP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 22,
+    "power": 45,
+    "pp": 25,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "VITAL-THROW": {
+    "accuracy": null,
+    "damage_class": "PHYSICAL",
+    "id": 233,
+    "power": 70,
+    "pp": 10,
+    "priority": -1,
+    "type": "FIGHTING"
+  },
+  "VOLT-SWITCH": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 521,
+    "power": 70,
+    "pp": 20,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "VOLT-TACKLE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 344,
+    "power": 120,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "WAKE-UP-SLAP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 358,
+    "power": 70,
+    "pp": 10,
+    "priority": 0,
+    "type": "FIGHTING"
+  },
+  "WATER-GUN": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 55,
+    "power": 40,
+    "pp": 25,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WATER-PLEDGE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 518,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WATER-PULSE": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 352,
+    "power": 60,
+    "pp": 20,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WATER-SHURIKEN": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 594,
+    "power": 15,
+    "pp": 20,
+    "priority": 1,
+    "type": "WATER"
+  },
+  "WATER-SPORT": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 346,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WATER-SPOUT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 323,
+    "power": 150,
+    "pp": 5,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WATERFALL": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 127,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WAVE-CRASH": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 834,
+    "power": 120,
+    "pp": 10,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WEATHER-BALL": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 311,
+    "power": 50,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "WHIRLPOOL": {
+    "accuracy": 85,
+    "damage_class": "SPECIAL",
+    "id": 250,
+    "power": 35,
+    "pp": 15,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WHIRLWIND": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 18,
+    "power": null,
+    "pp": 20,
+    "priority": -6,
+    "type": "NORMAL"
+  },
+  "WICKED-BLOW": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 817,
+    "power": 75,
+    "pp": 5,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "WICKED-TORQUE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 897,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "DARK"
+  },
+  "WIDE-GUARD": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 469,
+    "power": null,
+    "pp": 10,
+    "priority": 3,
+    "type": "ROCK"
+  },
+  "WILD-CHARGE": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 528,
+    "power": 90,
+    "pp": 15,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "WILDBOLT-STORM": {
+    "accuracy": 80,
+    "damage_class": "SPECIAL",
+    "id": 847,
+    "power": 100,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "WILL-O-WISP": {
+    "accuracy": 85,
+    "damage_class": "STATUS",
+    "id": 261,
+    "power": null,
+    "pp": 15,
+    "priority": 0,
+    "type": "FIRE"
+  },
+  "WING-ATTACK": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 17,
+    "power": 60,
+    "pp": 35,
+    "priority": 0,
+    "type": "FLYING"
+  },
+  "WISH": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 273,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "WITHDRAW": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 110,
+    "power": null,
+    "pp": 40,
+    "priority": 0,
+    "type": "WATER"
+  },
+  "WONDER-ROOM": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 472,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "WOOD-HAMMER": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 452,
+    "power": 120,
+    "pp": 15,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "WORK-UP": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 526,
+    "power": null,
+    "pp": 30,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "WORRY-SEED": {
+    "accuracy": 100,
+    "damage_class": "STATUS",
+    "id": 388,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "GRASS"
+  },
+  "WRAP": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 35,
+    "power": 15,
+    "pp": 20,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "WRING-OUT": {
+    "accuracy": 100,
+    "damage_class": "SPECIAL",
+    "id": 378,
+    "power": null,
+    "pp": 5,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "X-SCISSOR": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 404,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "BUG"
+  },
+  "YAWN": {
+    "accuracy": null,
+    "damage_class": "STATUS",
+    "id": 281,
+    "power": null,
+    "pp": 10,
+    "priority": 0,
+    "type": "NORMAL"
+  },
+  "ZAP-CANNON": {
+    "accuracy": 50,
+    "damage_class": "SPECIAL",
+    "id": 192,
+    "power": 120,
+    "pp": 5,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ZEN-HEADBUTT": {
+    "accuracy": 90,
+    "damage_class": "PHYSICAL",
+    "id": 428,
+    "power": 80,
+    "pp": 15,
+    "priority": 0,
+    "type": "PSYCHIC"
+  },
+  "ZING-ZAP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 716,
+    "power": 80,
+    "pp": 10,
+    "priority": 0,
+    "type": "ELECTRIC"
+  },
+  "ZIPPY-ZAP": {
+    "accuracy": 100,
+    "damage_class": "PHYSICAL",
+    "id": 729,
+    "power": 80,
+    "pp": 10,
+    "priority": 2,
+    "type": "ELECTRIC"
+  }
+}

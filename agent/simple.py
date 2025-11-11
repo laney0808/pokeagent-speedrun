@@ -36,11 +36,13 @@ import sys
 from collections import deque
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import List, Dict, Any, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
+
 import numpy as np
 from PIL import Image
 
 from utils.state_formatter import format_state_for_llm
+from .battle import BattleAgent, BattleDirective, extract_battle_directive
 
 logger = logging.getLogger(__name__)
 
@@ -111,6 +113,8 @@ class SimpleAgentState:
     failed_movements: Dict[str, List[str]] = field(default_factory=dict)  # coord_key -> [failed_directions]
     npc_interactions: Dict[str, str] = field(default_factory=dict)  # coord_key -> interaction_notes
     movement_memory_action_counter: int = 0  # Counter for tracking actions since last memory clear
+    battle_directive: BattleDirective = field(default_factory=BattleDirective)
+    last_context: str = "overworld"
     
     def __post_init__(self):
         """Initialize deques with current default values"""
@@ -128,6 +132,7 @@ class SimpleAgent:
                  history_display_count: int = None, actions_display_count: int = None,
                  movement_memory_clear_interval: int = None):
         self.vlm = vlm
+        self.battle_agent = BattleAgent(vlm)
         
         # Use current global defaults if not specified
         max_history_entries = max_history_entries or DEFAULT_MAX_HISTORY_ENTRIES
@@ -726,7 +731,9 @@ class SimpleAgent:
             
             # Get current state info
             coords = self.get_player_coords(game_state)
+            previous_context = self.state.last_context
             context = self.get_game_context(game_state)
+            self.state.last_context = context
             map_id = self.get_map_id(game_state)
             
             # Format the current state for LLM (includes movement preview)
@@ -837,7 +844,10 @@ REASONING:
 [Explain why you're choosing this specific action. Reference the MOVEMENT PREVIEW and MOVEMENT MEMORY sections. Check the visual frame for NPCs before moving. If you see NPCs in the image, avoid walking into them. Consider any failed movements or known obstacles from your memory.]
 
 ACTION:
-[Your final action choice - PREFER SINGLE ACTIONS like 'RIGHT' or 'A'. Only use multiple actions like 'UP, UP, RIGHT' if you've verified each step is WALKABLE in the movement preview and map.]
+[Your final action choice - PREFER SINGLE ACTIONS like 'RIGHT' or 'A'. Only use multiple actions like 'UP, UP, RIGHT' if you've verified each step is WALKABLE in the movement preview and map. If the GAME STATE is battle, you may output 'WAIT' here and let the dedicated battle agent execute the directive you provided.]
+
+BATTLE DIRECTIVE (optional):
+[When you expect to enter or are already in a battle, provide high-level guidance for the dedicated battle agent in the format `BATTLE_DIRECTIVE: MODE details`. Supported modes: ATTACK, CATCH, HEAL, FLEE, STATUS, STALL. Example: `BATTLE_DIRECTIVE: CATCH rare Ralts - weaken first then throw best ball`. The directive persists until you update it.]
 
 {pathfinding_rules}
 
@@ -870,9 +880,18 @@ Context: {context} | Coords: {coords} """
             else:
                 logger.error("🚫 CRITICAL: About to call VLM but frame validation failed - this should never happen!")
                 return "WAIT"
+
+            directive_from_prompt = extract_battle_directive(response, source="llm")
+            if directive_from_prompt:
+                self._set_battle_directive(directive_from_prompt)
             
             # Extract action(s) from structured response
             actions, reasoning = self._parse_structured_response(response, game_state)
+
+            if context == "battle":
+                actions, reasoning = self._run_battle_agent(frame, game_state, reasoning)
+            elif previous_context == "battle":
+                self._handle_battle_exit(game_state)
             
             # Check for failed movement by comparing previous coordinates
             if len(self.state.history) > 0:
@@ -890,7 +909,13 @@ Context: {context} | Coords: {coords} """
 
             # Record this step in history with reasoning
             game_state_summary = self.create_game_state_summary(game_state)
-            action_with_reasoning = f"{actions} | Reasoning: {reasoning}" if reasoning else str(actions)
+            if reasoning:
+                action_with_reasoning = f"{actions} | Reasoning: {reasoning}"
+            else:
+                action_with_reasoning = str(actions)
+            if context == "battle":
+                directive_summary = self._get_active_battle_directive().summary()
+                action_with_reasoning = f"{action_with_reasoning} | Directive: {directive_summary}"
             history_entry = HistoryEntry(
                 timestamp=datetime.now(),
                 player_coords=coords,
@@ -1565,6 +1590,45 @@ Context: {context} | Coords: {coords} """
             "movement_memory_action_counter": self.state.movement_memory_action_counter,
             "movement_memory_clear_interval": self.movement_memory_clear_interval
         }
+
+    # ------------------------------------------------------------------
+    # Battle directive helpers
+
+    def _set_battle_directive(self, directive: BattleDirective):
+        if not directive:
+            return
+        normalized = directive.normalized_mode()
+        current = self.state.battle_directive
+        if not current or current.normalized_mode() != normalized or current.details != directive.details:
+            logger.info("Updated battle directive -> %s", directive.summary())
+        self.state.battle_directive = directive
+
+    def _get_active_battle_directive(self) -> BattleDirective:
+        if not self.state.battle_directive:
+            self.state.battle_directive = BattleDirective()
+        return self.state.battle_directive
+
+    def _reset_battle_directive(self, reason: str):
+        logger.info("Resetting battle directive (%s)", reason)
+        self.state.battle_directive = BattleDirective(source=reason)
+
+    def _handle_battle_exit(self, game_state: Dict[str, Any]):
+        """Clean up battle-specific context once the battle ends."""
+        final_status = game_state.get("status", {}).get("message")
+        if final_status:
+            logger.info("Battle finished: %s", final_status)
+        self._reset_battle_directive("battle_complete")
+
+    def _run_battle_agent(self, frame, game_state: Dict[str, Any], overworld_reasoning: str) -> Tuple[List[str], str]:
+        directive = self._get_active_battle_directive()
+        actions, battle_reasoning = self.battle_agent.decide_actions(
+            frame=frame,
+            game_state=game_state,
+            directive=directive,
+            llm_reasoning=overworld_reasoning,
+        )
+        reasoning = f"[BattleAgent:{directive.normalized_mode()}] {battle_reasoning}"
+        return actions, reasoning
 
 # Global simple agent instance for backward compatibility with existing multiprocess code
 _global_simple_agent = None

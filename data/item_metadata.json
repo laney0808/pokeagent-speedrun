@@ -1,0 +1,8722 @@
+{
+  "1": {
+    "category": "standard-balls",
+    "name": "MASTER-BALL"
+  },
+  "2": {
+    "category": "standard-balls",
+    "name": "ULTRA-BALL"
+  },
+  "3": {
+    "category": "standard-balls",
+    "name": "GREAT-BALL"
+  },
+  "4": {
+    "category": "standard-balls",
+    "name": "POKE-BALL"
+  },
+  "5": {
+    "category": "standard-balls",
+    "name": "SAFARI-BALL"
+  },
+  "6": {
+    "category": "special-balls",
+    "name": "NET-BALL"
+  },
+  "7": {
+    "category": "special-balls",
+    "name": "DIVE-BALL"
+  },
+  "8": {
+    "category": "special-balls",
+    "name": "NEST-BALL"
+  },
+  "9": {
+    "category": "special-balls",
+    "name": "REPEAT-BALL"
+  },
+  "10": {
+    "category": "special-balls",
+    "name": "TIMER-BALL"
+  },
+  "11": {
+    "category": "special-balls",
+    "name": "LUXURY-BALL"
+  },
+  "12": {
+    "category": "special-balls",
+    "name": "PREMIER-BALL"
+  },
+  "13": {
+    "category": "special-balls",
+    "name": "DUSK-BALL"
+  },
+  "14": {
+    "category": "special-balls",
+    "name": "HEAL-BALL"
+  },
+  "15": {
+    "category": "special-balls",
+    "name": "QUICK-BALL"
+  },
+  "16": {
+    "category": "special-balls",
+    "name": "CHERISH-BALL"
+  },
+  "17": {
+    "category": "healing",
+    "name": "POTION"
+  },
+  "18": {
+    "category": "status-cures",
+    "name": "ANTIDOTE"
+  },
+  "19": {
+    "category": "status-cures",
+    "name": "BURN-HEAL"
+  },
+  "20": {
+    "category": "status-cures",
+    "name": "ICE-HEAL"
+  },
+  "21": {
+    "category": "status-cures",
+    "name": "AWAKENING"
+  },
+  "22": {
+    "category": "status-cures",
+    "name": "PARALYZE-HEAL"
+  },
+  "23": {
+    "category": "healing",
+    "name": "FULL-RESTORE"
+  },
+  "24": {
+    "category": "healing",
+    "name": "MAX-POTION"
+  },
+  "25": {
+    "category": "healing",
+    "name": "HYPER-POTION"
+  },
+  "26": {
+    "category": "healing",
+    "name": "SUPER-POTION"
+  },
+  "27": {
+    "category": "status-cures",
+    "name": "FULL-HEAL"
+  },
+  "28": {
+    "category": "revival",
+    "name": "REVIVE"
+  },
+  "29": {
+    "category": "revival",
+    "name": "MAX-REVIVE"
+  },
+  "30": {
+    "category": "healing",
+    "name": "FRESH-WATER"
+  },
+  "31": {
+    "category": "healing",
+    "name": "SODA-POP"
+  },
+  "32": {
+    "category": "healing",
+    "name": "LEMONADE"
+  },
+  "33": {
+    "category": "healing",
+    "name": "MOOMOO-MILK"
+  },
+  "34": {
+    "category": "healing",
+    "name": "ENERGY-POWDER"
+  },
+  "35": {
+    "category": "healing",
+    "name": "ENERGY-ROOT"
+  },
+  "36": {
+    "category": "status-cures",
+    "name": "HEAL-POWDER"
+  },
+  "37": {
+    "category": "revival",
+    "name": "REVIVAL-HERB"
+  },
+  "38": {
+    "category": "pp-recovery",
+    "name": "ETHER"
+  },
+  "39": {
+    "category": "pp-recovery",
+    "name": "MAX-ETHER"
+  },
+  "40": {
+    "category": "pp-recovery",
+    "name": "ELIXIR"
+  },
+  "41": {
+    "category": "pp-recovery",
+    "name": "MAX-ELIXIR"
+  },
+  "42": {
+    "category": "status-cures",
+    "name": "LAVA-COOKIE"
+  },
+  "43": {
+    "category": "healing",
+    "name": "BERRY-JUICE"
+  },
+  "44": {
+    "category": "revival",
+    "name": "SACRED-ASH"
+  },
+  "45": {
+    "category": "vitamins",
+    "name": "HP-UP"
+  },
+  "46": {
+    "category": "vitamins",
+    "name": "PROTEIN"
+  },
+  "47": {
+    "category": "vitamins",
+    "name": "IRON"
+  },
+  "48": {
+    "category": "vitamins",
+    "name": "CARBOS"
+  },
+  "49": {
+    "category": "vitamins",
+    "name": "CALCIUM"
+  },
+  "50": {
+    "category": "vitamins",
+    "name": "RARE-CANDY"
+  },
+  "51": {
+    "category": "vitamins",
+    "name": "PP-UP"
+  },
+  "52": {
+    "category": "vitamins",
+    "name": "ZINC"
+  },
+  "53": {
+    "category": "vitamins",
+    "name": "PP-MAX"
+  },
+  "54": {
+    "category": "status-cures",
+    "name": "OLD-GATEAU"
+  },
+  "55": {
+    "category": "stat-boosts",
+    "name": "GUARD-SPEC"
+  },
+  "56": {
+    "category": "stat-boosts",
+    "name": "DIRE-HIT"
+  },
+  "57": {
+    "category": "stat-boosts",
+    "name": "X-ATTACK"
+  },
+  "58": {
+    "category": "stat-boosts",
+    "name": "X-DEFENSE"
+  },
+  "59": {
+    "category": "stat-boosts",
+    "name": "X-SPEED"
+  },
+  "60": {
+    "category": "stat-boosts",
+    "name": "X-ACCURACY"
+  },
+  "61": {
+    "category": "stat-boosts",
+    "name": "X-SP-ATK"
+  },
+  "62": {
+    "category": "stat-boosts",
+    "name": "X-SP-DEF"
+  },
+  "63": {
+    "category": "spelunking",
+    "name": "POKE-DOLL"
+  },
+  "64": {
+    "category": "spelunking",
+    "name": "FLUFFY-TAIL"
+  },
+  "65": {
+    "category": "flutes",
+    "name": "BLUE-FLUTE"
+  },
+  "66": {
+    "category": "flutes",
+    "name": "YELLOW-FLUTE"
+  },
+  "67": {
+    "category": "flutes",
+    "name": "RED-FLUTE"
+  },
+  "68": {
+    "category": "spelunking",
+    "name": "BLACK-FLUTE"
+  },
+  "69": {
+    "category": "spelunking",
+    "name": "WHITE-FLUTE"
+  },
+  "70": {
+    "category": "collectibles",
+    "name": "SHOAL-SALT"
+  },
+  "71": {
+    "category": "collectibles",
+    "name": "SHOAL-SHELL"
+  },
+  "72": {
+    "category": "collectibles",
+    "name": "RED-SHARD"
+  },
+  "73": {
+    "category": "collectibles",
+    "name": "BLUE-SHARD"
+  },
+  "74": {
+    "category": "collectibles",
+    "name": "YELLOW-SHARD"
+  },
+  "75": {
+    "category": "collectibles",
+    "name": "GREEN-SHARD"
+  },
+  "76": {
+    "category": "spelunking",
+    "name": "SUPER-REPEL"
+  },
+  "77": {
+    "category": "spelunking",
+    "name": "MAX-REPEL"
+  },
+  "78": {
+    "category": "spelunking",
+    "name": "ESCAPE-ROPE"
+  },
+  "79": {
+    "category": "spelunking",
+    "name": "REPEL"
+  },
+  "80": {
+    "category": "evolution",
+    "name": "SUN-STONE"
+  },
+  "81": {
+    "category": "evolution",
+    "name": "MOON-STONE"
+  },
+  "82": {
+    "category": "evolution",
+    "name": "FIRE-STONE"
+  },
+  "83": {
+    "category": "evolution",
+    "name": "THUNDER-STONE"
+  },
+  "84": {
+    "category": "evolution",
+    "name": "WATER-STONE"
+  },
+  "85": {
+    "category": "evolution",
+    "name": "LEAF-STONE"
+  },
+  "86": {
+    "category": "loot",
+    "name": "TINY-MUSHROOM"
+  },
+  "87": {
+    "category": "loot",
+    "name": "BIG-MUSHROOM"
+  },
+  "88": {
+    "category": "loot",
+    "name": "PEARL"
+  },
+  "89": {
+    "category": "loot",
+    "name": "BIG-PEARL"
+  },
+  "90": {
+    "category": "loot",
+    "name": "STARDUST"
+  },
+  "91": {
+    "category": "loot",
+    "name": "STAR-PIECE"
+  },
+  "92": {
+    "category": "loot",
+    "name": "NUGGET"
+  },
+  "93": {
+    "category": "collectibles",
+    "name": "HEART-SCALE"
+  },
+  "94": {
+    "category": "dex-completion",
+    "name": "HONEY"
+  },
+  "95": {
+    "category": "mulch",
+    "name": "GROWTH-MULCH"
+  },
+  "96": {
+    "category": "mulch",
+    "name": "DAMP-MULCH"
+  },
+  "97": {
+    "category": "mulch",
+    "name": "STABLE-MULCH"
+  },
+  "98": {
+    "category": "mulch",
+    "name": "GOOEY-MULCH"
+  },
+  "99": {
+    "category": "dex-completion",
+    "name": "ROOT-FOSSIL"
+  },
+  "100": {
+    "category": "dex-completion",
+    "name": "CLAW-FOSSIL"
+  },
+  "101": {
+    "category": "dex-completion",
+    "name": "HELIX-FOSSIL"
+  },
+  "102": {
+    "category": "dex-completion",
+    "name": "DOME-FOSSIL"
+  },
+  "103": {
+    "category": "dex-completion",
+    "name": "OLD-AMBER"
+  },
+  "104": {
+    "category": "dex-completion",
+    "name": "ARMOR-FOSSIL"
+  },
+  "105": {
+    "category": "dex-completion",
+    "name": "SKULL-FOSSIL"
+  },
+  "106": {
+    "category": "loot",
+    "name": "RARE-BONE"
+  },
+  "107": {
+    "category": "evolution",
+    "name": "SHINY-STONE"
+  },
+  "108": {
+    "category": "evolution",
+    "name": "DUSK-STONE"
+  },
+  "109": {
+    "category": "evolution",
+    "name": "DAWN-STONE"
+  },
+  "110": {
+    "category": "evolution",
+    "name": "OVAL-STONE"
+  },
+  "111": {
+    "category": "dex-completion",
+    "name": "ODD-KEYSTONE"
+  },
+  "112": {
+    "category": "species-specific",
+    "name": "ADAMANT-ORB"
+  },
+  "113": {
+    "category": "species-specific",
+    "name": "LUSTROUS-ORB"
+  },
+  "114": {
+    "category": "all-mail",
+    "name": "GRASS-MAIL"
+  },
+  "115": {
+    "category": "all-mail",
+    "name": "FLAME-MAIL"
+  },
+  "116": {
+    "category": "all-mail",
+    "name": "BUBBLE-MAIL"
+  },
+  "117": {
+    "category": "all-mail",
+    "name": "BLOOM-MAIL"
+  },
+  "118": {
+    "category": "all-mail",
+    "name": "TUNNEL-MAIL"
+  },
+  "119": {
+    "category": "all-mail",
+    "name": "STEEL-MAIL"
+  },
+  "120": {
+    "category": "all-mail",
+    "name": "HEART-MAIL"
+  },
+  "121": {
+    "category": "all-mail",
+    "name": "SNOW-MAIL"
+  },
+  "122": {
+    "category": "all-mail",
+    "name": "SPACE-MAIL"
+  },
+  "123": {
+    "category": "all-mail",
+    "name": "AIR-MAIL"
+  },
+  "124": {
+    "category": "all-mail",
+    "name": "MOSAIC-MAIL"
+  },
+  "125": {
+    "category": "all-mail",
+    "name": "BRICK-MAIL"
+  },
+  "126": {
+    "category": "medicine",
+    "name": "CHERI-BERRY"
+  },
+  "127": {
+    "category": "medicine",
+    "name": "CHESTO-BERRY"
+  },
+  "128": {
+    "category": "medicine",
+    "name": "PECHA-BERRY"
+  },
+  "129": {
+    "category": "medicine",
+    "name": "RAWST-BERRY"
+  },
+  "130": {
+    "category": "medicine",
+    "name": "ASPEAR-BERRY"
+  },
+  "131": {
+    "category": "medicine",
+    "name": "LEPPA-BERRY"
+  },
+  "132": {
+    "category": "medicine",
+    "name": "ORAN-BERRY"
+  },
+  "133": {
+    "category": "medicine",
+    "name": "PERSIM-BERRY"
+  },
+  "134": {
+    "category": "medicine",
+    "name": "LUM-BERRY"
+  },
+  "135": {
+    "category": "medicine",
+    "name": "SITRUS-BERRY"
+  },
+  "136": {
+    "category": "picky-healing",
+    "name": "FIGY-BERRY"
+  },
+  "137": {
+    "category": "picky-healing",
+    "name": "WIKI-BERRY"
+  },
+  "138": {
+    "category": "picky-healing",
+    "name": "MAGO-BERRY"
+  },
+  "139": {
+    "category": "picky-healing",
+    "name": "AGUAV-BERRY"
+  },
+  "140": {
+    "category": "picky-healing",
+    "name": "IAPAPA-BERRY"
+  },
+  "141": {
+    "category": "baking-only",
+    "name": "RAZZ-BERRY"
+  },
+  "142": {
+    "category": "baking-only",
+    "name": "BLUK-BERRY"
+  },
+  "143": {
+    "category": "baking-only",
+    "name": "NANAB-BERRY"
+  },
+  "144": {
+    "category": "baking-only",
+    "name": "WEPEAR-BERRY"
+  },
+  "145": {
+    "category": "baking-only",
+    "name": "PINAP-BERRY"
+  },
+  "146": {
+    "category": "effort-drop",
+    "name": "POMEG-BERRY"
+  },
+  "147": {
+    "category": "effort-drop",
+    "name": "KELPSY-BERRY"
+  },
+  "148": {
+    "category": "effort-drop",
+    "name": "QUALOT-BERRY"
+  },
+  "149": {
+    "category": "effort-drop",
+    "name": "HONDEW-BERRY"
+  },
+  "150": {
+    "category": "effort-drop",
+    "name": "GREPA-BERRY"
+  },
+  "151": {
+    "category": "effort-drop",
+    "name": "TAMATO-BERRY"
+  },
+  "152": {
+    "category": "baking-only",
+    "name": "CORNN-BERRY"
+  },
+  "153": {
+    "category": "baking-only",
+    "name": "MAGOST-BERRY"
+  },
+  "154": {
+    "category": "baking-only",
+    "name": "RABUTA-BERRY"
+  },
+  "155": {
+    "category": "baking-only",
+    "name": "NOMEL-BERRY"
+  },
+  "156": {
+    "category": "baking-only",
+    "name": "SPELON-BERRY"
+  },
+  "157": {
+    "category": "baking-only",
+    "name": "PAMTRE-BERRY"
+  },
+  "158": {
+    "category": "baking-only",
+    "name": "WATMEL-BERRY"
+  },
+  "159": {
+    "category": "baking-only",
+    "name": "DURIN-BERRY"
+  },
+  "160": {
+    "category": "baking-only",
+    "name": "BELUE-BERRY"
+  },
+  "161": {
+    "category": "type-protection",
+    "name": "OCCA-BERRY"
+  },
+  "162": {
+    "category": "type-protection",
+    "name": "PASSHO-BERRY"
+  },
+  "163": {
+    "category": "type-protection",
+    "name": "WACAN-BERRY"
+  },
+  "164": {
+    "category": "type-protection",
+    "name": "RINDO-BERRY"
+  },
+  "165": {
+    "category": "type-protection",
+    "name": "YACHE-BERRY"
+  },
+  "166": {
+    "category": "type-protection",
+    "name": "CHOPLE-BERRY"
+  },
+  "167": {
+    "category": "type-protection",
+    "name": "KEBIA-BERRY"
+  },
+  "168": {
+    "category": "type-protection",
+    "name": "SHUCA-BERRY"
+  },
+  "169": {
+    "category": "type-protection",
+    "name": "COBA-BERRY"
+  },
+  "170": {
+    "category": "type-protection",
+    "name": "PAYAPA-BERRY"
+  },
+  "171": {
+    "category": "type-protection",
+    "name": "TANGA-BERRY"
+  },
+  "172": {
+    "category": "type-protection",
+    "name": "CHARTI-BERRY"
+  },
+  "173": {
+    "category": "type-protection",
+    "name": "KASIB-BERRY"
+  },
+  "174": {
+    "category": "type-protection",
+    "name": "HABAN-BERRY"
+  },
+  "175": {
+    "category": "type-protection",
+    "name": "COLBUR-BERRY"
+  },
+  "176": {
+    "category": "type-protection",
+    "name": "BABIRI-BERRY"
+  },
+  "177": {
+    "category": "type-protection",
+    "name": "CHILAN-BERRY"
+  },
+  "178": {
+    "category": "in-a-pinch",
+    "name": "LIECHI-BERRY"
+  },
+  "179": {
+    "category": "in-a-pinch",
+    "name": "GANLON-BERRY"
+  },
+  "180": {
+    "category": "in-a-pinch",
+    "name": "SALAC-BERRY"
+  },
+  "181": {
+    "category": "in-a-pinch",
+    "name": "PETAYA-BERRY"
+  },
+  "182": {
+    "category": "in-a-pinch",
+    "name": "APICOT-BERRY"
+  },
+  "183": {
+    "category": "in-a-pinch",
+    "name": "LANSAT-BERRY"
+  },
+  "184": {
+    "category": "in-a-pinch",
+    "name": "STARF-BERRY"
+  },
+  "185": {
+    "category": "other",
+    "name": "ENIGMA-BERRY"
+  },
+  "186": {
+    "category": "in-a-pinch",
+    "name": "MICLE-BERRY"
+  },
+  "187": {
+    "category": "in-a-pinch",
+    "name": "CUSTAP-BERRY"
+  },
+  "188": {
+    "category": "other",
+    "name": "JABOCA-BERRY"
+  },
+  "189": {
+    "category": "other",
+    "name": "ROWAP-BERRY"
+  },
+  "190": {
+    "category": "held-items",
+    "name": "BRIGHT-POWDER"
+  },
+  "191": {
+    "category": "held-items",
+    "name": "WHITE-HERB"
+  },
+  "192": {
+    "category": "effort-training",
+    "name": "MACHO-BRACE"
+  },
+  "193": {
+    "category": "training",
+    "name": "EXP-SHARE"
+  },
+  "194": {
+    "category": "held-items",
+    "name": "QUICK-CLAW"
+  },
+  "195": {
+    "category": "training",
+    "name": "SOOTHE-BELL"
+  },
+  "196": {
+    "category": "held-items",
+    "name": "MENTAL-HERB"
+  },
+  "197": {
+    "category": "choice",
+    "name": "CHOICE-BAND"
+  },
+  "198": {
+    "category": "held-items",
+    "name": "KINGS-ROCK"
+  },
+  "199": {
+    "category": "type-enhancement",
+    "name": "SILVER-POWDER"
+  },
+  "200": {
+    "category": "training",
+    "name": "AMULET-COIN"
+  },
+  "201": {
+    "category": "training",
+    "name": "CLEANSE-TAG"
+  },
+  "202": {
+    "category": "species-specific",
+    "name": "SOUL-DEW"
+  },
+  "203": {
+    "category": "species-specific",
+    "name": "DEEP-SEA-TOOTH"
+  },
+  "204": {
+    "category": "species-specific",
+    "name": "DEEP-SEA-SCALE"
+  },
+  "205": {
+    "category": "held-items",
+    "name": "SMOKE-BALL"
+  },
+  "206": {
+    "category": "training",
+    "name": "EVERSTONE"
+  },
+  "207": {
+    "category": "held-items",
+    "name": "FOCUS-BAND"
+  },
+  "208": {
+    "category": "training",
+    "name": "LUCKY-EGG"
+  },
+  "209": {
+    "category": "held-items",
+    "name": "SCOPE-LENS"
+  },
+  "210": {
+    "category": "type-enhancement",
+    "name": "METAL-COAT"
+  },
+  "211": {
+    "category": "held-items",
+    "name": "LEFTOVERS"
+  },
+  "212": {
+    "category": "evolution",
+    "name": "DRAGON-SCALE"
+  },
+  "213": {
+    "category": "species-specific",
+    "name": "LIGHT-BALL"
+  },
+  "214": {
+    "category": "type-enhancement",
+    "name": "SOFT-SAND"
+  },
+  "215": {
+    "category": "type-enhancement",
+    "name": "HARD-STONE"
+  },
+  "216": {
+    "category": "type-enhancement",
+    "name": "MIRACLE-SEED"
+  },
+  "217": {
+    "category": "type-enhancement",
+    "name": "BLACK-GLASSES"
+  },
+  "218": {
+    "category": "type-enhancement",
+    "name": "BLACK-BELT"
+  },
+  "219": {
+    "category": "type-enhancement",
+    "name": "MAGNET"
+  },
+  "220": {
+    "category": "type-enhancement",
+    "name": "MYSTIC-WATER"
+  },
+  "221": {
+    "category": "type-enhancement",
+    "name": "SHARP-BEAK"
+  },
+  "222": {
+    "category": "type-enhancement",
+    "name": "POISON-BARB"
+  },
+  "223": {
+    "category": "type-enhancement",
+    "name": "NEVER-MELT-ICE"
+  },
+  "224": {
+    "category": "type-enhancement",
+    "name": "SPELL-TAG"
+  },
+  "225": {
+    "category": "type-enhancement",
+    "name": "TWISTED-SPOON"
+  },
+  "226": {
+    "category": "type-enhancement",
+    "name": "CHARCOAL"
+  },
+  "227": {
+    "category": "type-enhancement",
+    "name": "DRAGON-FANG"
+  },
+  "228": {
+    "category": "type-enhancement",
+    "name": "SILK-SCARF"
+  },
+  "229": {
+    "category": "evolution",
+    "name": "UP-GRADE"
+  },
+  "230": {
+    "category": "held-items",
+    "name": "SHELL-BELL"
+  },
+  "231": {
+    "category": "type-enhancement",
+    "name": "SEA-INCENSE"
+  },
+  "232": {
+    "category": "held-items",
+    "name": "LAX-INCENSE"
+  },
+  "233": {
+    "category": "species-specific",
+    "name": "LUCKY-PUNCH"
+  },
+  "234": {
+    "category": "species-specific",
+    "name": "METAL-POWDER"
+  },
+  "235": {
+    "category": "species-specific",
+    "name": "THICK-CLUB"
+  },
+  "236": {
+    "category": "species-specific",
+    "name": "STICK"
+  },
+  "237": {
+    "category": "scarves",
+    "name": "RED-SCARF"
+  },
+  "238": {
+    "category": "scarves",
+    "name": "BLUE-SCARF"
+  },
+  "239": {
+    "category": "scarves",
+    "name": "PINK-SCARF"
+  },
+  "240": {
+    "category": "scarves",
+    "name": "GREEN-SCARF"
+  },
+  "241": {
+    "category": "scarves",
+    "name": "YELLOW-SCARF"
+  },
+  "242": {
+    "category": "held-items",
+    "name": "WIDE-LENS"
+  },
+  "243": {
+    "category": "held-items",
+    "name": "MUSCLE-BAND"
+  },
+  "244": {
+    "category": "held-items",
+    "name": "WISE-GLASSES"
+  },
+  "245": {
+    "category": "held-items",
+    "name": "EXPERT-BELT"
+  },
+  "246": {
+    "category": "held-items",
+    "name": "LIGHT-CLAY"
+  },
+  "247": {
+    "category": "held-items",
+    "name": "LIFE-ORB"
+  },
+  "248": {
+    "category": "held-items",
+    "name": "POWER-HERB"
+  },
+  "249": {
+    "category": "bad-held-items",
+    "name": "TOXIC-ORB"
+  },
+  "250": {
+    "category": "bad-held-items",
+    "name": "FLAME-ORB"
+  },
+  "251": {
+    "category": "species-specific",
+    "name": "QUICK-POWDER"
+  },
+  "252": {
+    "category": "held-items",
+    "name": "FOCUS-SASH"
+  },
+  "253": {
+    "category": "held-items",
+    "name": "ZOOM-LENS"
+  },
+  "254": {
+    "category": "held-items",
+    "name": "METRONOME"
+  },
+  "255": {
+    "category": "bad-held-items",
+    "name": "IRON-BALL"
+  },
+  "256": {
+    "category": "bad-held-items",
+    "name": "LAGGING-TAIL"
+  },
+  "257": {
+    "category": "held-items",
+    "name": "DESTINY-KNOT"
+  },
+  "258": {
+    "category": "held-items",
+    "name": "BLACK-SLUDGE"
+  },
+  "259": {
+    "category": "held-items",
+    "name": "ICY-ROCK"
+  },
+  "260": {
+    "category": "held-items",
+    "name": "SMOOTH-ROCK"
+  },
+  "261": {
+    "category": "held-items",
+    "name": "HEAT-ROCK"
+  },
+  "262": {
+    "category": "held-items",
+    "name": "DAMP-ROCK"
+  },
+  "263": {
+    "category": "held-items",
+    "name": "GRIP-CLAW"
+  },
+  "264": {
+    "category": "choice",
+    "name": "CHOICE-SCARF"
+  },
+  "265": {
+    "category": "bad-held-items",
+    "name": "STICKY-BARB"
+  },
+  "266": {
+    "category": "effort-training",
+    "name": "POWER-BRACER"
+  },
+  "267": {
+    "category": "effort-training",
+    "name": "POWER-BELT"
+  },
+  "268": {
+    "category": "effort-training",
+    "name": "POWER-LENS"
+  },
+  "269": {
+    "category": "effort-training",
+    "name": "POWER-BAND"
+  },
+  "270": {
+    "category": "effort-training",
+    "name": "POWER-ANKLET"
+  },
+  "271": {
+    "category": "effort-training",
+    "name": "POWER-WEIGHT"
+  },
+  "272": {
+    "category": "held-items",
+    "name": "SHED-SHELL"
+  },
+  "273": {
+    "category": "held-items",
+    "name": "BIG-ROOT"
+  },
+  "274": {
+    "category": "choice",
+    "name": "CHOICE-SPECS"
+  },
+  "275": {
+    "category": "plates",
+    "name": "FLAME-PLATE"
+  },
+  "276": {
+    "category": "plates",
+    "name": "SPLASH-PLATE"
+  },
+  "277": {
+    "category": "plates",
+    "name": "ZAP-PLATE"
+  },
+  "278": {
+    "category": "plates",
+    "name": "MEADOW-PLATE"
+  },
+  "279": {
+    "category": "plates",
+    "name": "ICICLE-PLATE"
+  },
+  "280": {
+    "category": "plates",
+    "name": "FIST-PLATE"
+  },
+  "281": {
+    "category": "plates",
+    "name": "TOXIC-PLATE"
+  },
+  "282": {
+    "category": "plates",
+    "name": "EARTH-PLATE"
+  },
+  "283": {
+    "category": "plates",
+    "name": "SKY-PLATE"
+  },
+  "284": {
+    "category": "plates",
+    "name": "MIND-PLATE"
+  },
+  "285": {
+    "category": "plates",
+    "name": "INSECT-PLATE"
+  },
+  "286": {
+    "category": "plates",
+    "name": "STONE-PLATE"
+  },
+  "287": {
+    "category": "plates",
+    "name": "SPOOKY-PLATE"
+  },
+  "288": {
+    "category": "plates",
+    "name": "DRACO-PLATE"
+  },
+  "289": {
+    "category": "plates",
+    "name": "DREAD-PLATE"
+  },
+  "290": {
+    "category": "plates",
+    "name": "IRON-PLATE"
+  },
+  "291": {
+    "category": "type-enhancement",
+    "name": "ODD-INCENSE"
+  },
+  "292": {
+    "category": "type-enhancement",
+    "name": "ROCK-INCENSE"
+  },
+  "293": {
+    "category": "bad-held-items",
+    "name": "FULL-INCENSE"
+  },
+  "294": {
+    "category": "type-enhancement",
+    "name": "WAVE-INCENSE"
+  },
+  "295": {
+    "category": "type-enhancement",
+    "name": "ROSE-INCENSE"
+  },
+  "296": {
+    "category": "training",
+    "name": "LUCK-INCENSE"
+  },
+  "297": {
+    "category": "training",
+    "name": "PURE-INCENSE"
+  },
+  "298": {
+    "category": "evolution",
+    "name": "PROTECTOR"
+  },
+  "299": {
+    "category": "evolution",
+    "name": "ELECTIRIZER"
+  },
+  "300": {
+    "category": "evolution",
+    "name": "MAGMARIZER"
+  },
+  "301": {
+    "category": "evolution",
+    "name": "DUBIOUS-DISC"
+  },
+  "302": {
+    "category": "evolution",
+    "name": "REAPER-CLOTH"
+  },
+  "303": {
+    "category": "held-items",
+    "name": "RAZOR-CLAW"
+  },
+  "304": {
+    "category": "held-items",
+    "name": "RAZOR-FANG"
+  },
+  "305": {
+    "category": "all-machines",
+    "name": "TM01"
+  },
+  "306": {
+    "category": "all-machines",
+    "name": "TM02"
+  },
+  "307": {
+    "category": "all-machines",
+    "name": "TM03"
+  },
+  "308": {
+    "category": "all-machines",
+    "name": "TM04"
+  },
+  "309": {
+    "category": "all-machines",
+    "name": "TM05"
+  },
+  "310": {
+    "category": "all-machines",
+    "name": "TM06"
+  },
+  "311": {
+    "category": "all-machines",
+    "name": "TM07"
+  },
+  "312": {
+    "category": "all-machines",
+    "name": "TM08"
+  },
+  "313": {
+    "category": "all-machines",
+    "name": "TM09"
+  },
+  "314": {
+    "category": "all-machines",
+    "name": "TM10"
+  },
+  "315": {
+    "category": "all-machines",
+    "name": "TM11"
+  },
+  "316": {
+    "category": "all-machines",
+    "name": "TM12"
+  },
+  "317": {
+    "category": "all-machines",
+    "name": "TM13"
+  },
+  "318": {
+    "category": "all-machines",
+    "name": "TM14"
+  },
+  "319": {
+    "category": "all-machines",
+    "name": "TM15"
+  },
+  "320": {
+    "category": "all-machines",
+    "name": "TM16"
+  },
+  "321": {
+    "category": "all-machines",
+    "name": "TM17"
+  },
+  "322": {
+    "category": "all-machines",
+    "name": "TM18"
+  },
+  "323": {
+    "category": "all-machines",
+    "name": "TM19"
+  },
+  "324": {
+    "category": "all-machines",
+    "name": "TM20"
+  },
+  "325": {
+    "category": "all-machines",
+    "name": "TM21"
+  },
+  "326": {
+    "category": "all-machines",
+    "name": "TM22"
+  },
+  "327": {
+    "category": "all-machines",
+    "name": "TM23"
+  },
+  "328": {
+    "category": "all-machines",
+    "name": "TM24"
+  },
+  "329": {
+    "category": "all-machines",
+    "name": "TM25"
+  },
+  "330": {
+    "category": "all-machines",
+    "name": "TM26"
+  },
+  "331": {
+    "category": "all-machines",
+    "name": "TM27"
+  },
+  "332": {
+    "category": "all-machines",
+    "name": "TM28"
+  },
+  "333": {
+    "category": "all-machines",
+    "name": "TM29"
+  },
+  "334": {
+    "category": "all-machines",
+    "name": "TM30"
+  },
+  "335": {
+    "category": "all-machines",
+    "name": "TM31"
+  },
+  "336": {
+    "category": "all-machines",
+    "name": "TM32"
+  },
+  "337": {
+    "category": "all-machines",
+    "name": "TM33"
+  },
+  "338": {
+    "category": "all-machines",
+    "name": "TM34"
+  },
+  "339": {
+    "category": "all-machines",
+    "name": "TM35"
+  },
+  "340": {
+    "category": "all-machines",
+    "name": "TM36"
+  },
+  "341": {
+    "category": "all-machines",
+    "name": "TM37"
+  },
+  "342": {
+    "category": "all-machines",
+    "name": "TM38"
+  },
+  "343": {
+    "category": "all-machines",
+    "name": "TM39"
+  },
+  "344": {
+    "category": "all-machines",
+    "name": "TM40"
+  },
+  "345": {
+    "category": "all-machines",
+    "name": "TM41"
+  },
+  "346": {
+    "category": "all-machines",
+    "name": "TM42"
+  },
+  "347": {
+    "category": "all-machines",
+    "name": "TM43"
+  },
+  "348": {
+    "category": "all-machines",
+    "name": "TM44"
+  },
+  "349": {
+    "category": "all-machines",
+    "name": "TM45"
+  },
+  "350": {
+    "category": "all-machines",
+    "name": "TM46"
+  },
+  "351": {
+    "category": "all-machines",
+    "name": "TM47"
+  },
+  "352": {
+    "category": "all-machines",
+    "name": "TM48"
+  },
+  "353": {
+    "category": "all-machines",
+    "name": "TM49"
+  },
+  "354": {
+    "category": "all-machines",
+    "name": "TM50"
+  },
+  "355": {
+    "category": "all-machines",
+    "name": "TM51"
+  },
+  "356": {
+    "category": "all-machines",
+    "name": "TM52"
+  },
+  "357": {
+    "category": "all-machines",
+    "name": "TM53"
+  },
+  "358": {
+    "category": "all-machines",
+    "name": "TM54"
+  },
+  "359": {
+    "category": "all-machines",
+    "name": "TM55"
+  },
+  "360": {
+    "category": "all-machines",
+    "name": "TM56"
+  },
+  "361": {
+    "category": "all-machines",
+    "name": "TM57"
+  },
+  "362": {
+    "category": "all-machines",
+    "name": "TM58"
+  },
+  "363": {
+    "category": "all-machines",
+    "name": "TM59"
+  },
+  "364": {
+    "category": "all-machines",
+    "name": "TM60"
+  },
+  "365": {
+    "category": "all-machines",
+    "name": "TM61"
+  },
+  "366": {
+    "category": "all-machines",
+    "name": "TM62"
+  },
+  "367": {
+    "category": "all-machines",
+    "name": "TM63"
+  },
+  "368": {
+    "category": "all-machines",
+    "name": "TM64"
+  },
+  "369": {
+    "category": "all-machines",
+    "name": "TM65"
+  },
+  "370": {
+    "category": "all-machines",
+    "name": "TM66"
+  },
+  "371": {
+    "category": "all-machines",
+    "name": "TM67"
+  },
+  "372": {
+    "category": "all-machines",
+    "name": "TM68"
+  },
+  "373": {
+    "category": "all-machines",
+    "name": "TM69"
+  },
+  "374": {
+    "category": "all-machines",
+    "name": "TM70"
+  },
+  "375": {
+    "category": "all-machines",
+    "name": "TM71"
+  },
+  "376": {
+    "category": "all-machines",
+    "name": "TM72"
+  },
+  "377": {
+    "category": "all-machines",
+    "name": "TM73"
+  },
+  "378": {
+    "category": "all-machines",
+    "name": "TM74"
+  },
+  "379": {
+    "category": "all-machines",
+    "name": "TM75"
+  },
+  "380": {
+    "category": "all-machines",
+    "name": "TM76"
+  },
+  "381": {
+    "category": "all-machines",
+    "name": "TM77"
+  },
+  "382": {
+    "category": "all-machines",
+    "name": "TM78"
+  },
+  "383": {
+    "category": "all-machines",
+    "name": "TM79"
+  },
+  "384": {
+    "category": "all-machines",
+    "name": "TM80"
+  },
+  "385": {
+    "category": "all-machines",
+    "name": "TM81"
+  },
+  "386": {
+    "category": "all-machines",
+    "name": "TM82"
+  },
+  "387": {
+    "category": "all-machines",
+    "name": "TM83"
+  },
+  "388": {
+    "category": "all-machines",
+    "name": "TM84"
+  },
+  "389": {
+    "category": "all-machines",
+    "name": "TM85"
+  },
+  "390": {
+    "category": "all-machines",
+    "name": "TM86"
+  },
+  "391": {
+    "category": "all-machines",
+    "name": "TM87"
+  },
+  "392": {
+    "category": "all-machines",
+    "name": "TM88"
+  },
+  "393": {
+    "category": "all-machines",
+    "name": "TM89"
+  },
+  "394": {
+    "category": "all-machines",
+    "name": "TM90"
+  },
+  "395": {
+    "category": "all-machines",
+    "name": "TM91"
+  },
+  "396": {
+    "category": "all-machines",
+    "name": "TM92"
+  },
+  "397": {
+    "category": "all-machines",
+    "name": "HM01"
+  },
+  "398": {
+    "category": "all-machines",
+    "name": "HM02"
+  },
+  "399": {
+    "category": "all-machines",
+    "name": "HM03"
+  },
+  "400": {
+    "category": "all-machines",
+    "name": "HM04"
+  },
+  "401": {
+    "category": "all-machines",
+    "name": "HM05"
+  },
+  "402": {
+    "category": "all-machines",
+    "name": "HM06"
+  },
+  "403": {
+    "category": "all-machines",
+    "name": "HM07"
+  },
+  "404": {
+    "category": "all-machines",
+    "name": "HM08"
+  },
+  "405": {
+    "category": "gameplay",
+    "name": "EXPLORER-KIT"
+  },
+  "406": {
+    "category": "unused",
+    "name": "LOOT-SACK"
+  },
+  "407": {
+    "category": "unused",
+    "name": "RULE-BOOK"
+  },
+  "408": {
+    "category": "gameplay",
+    "name": "POKE-RADAR"
+  },
+  "409": {
+    "category": "gameplay",
+    "name": "POINT-CARD"
+  },
+  "410": {
+    "category": "gameplay",
+    "name": "JOURNAL"
+  },
+  "411": {
+    "category": "gameplay",
+    "name": "SEAL-CASE"
+  },
+  "412": {
+    "category": "gameplay",
+    "name": "FASHION-CASE"
+  },
+  "413": {
+    "category": "unused",
+    "name": "SEAL-BAG"
+  },
+  "414": {
+    "category": "gameplay",
+    "name": "PAL-PAD"
+  },
+  "415": {
+    "category": "plot-advancement",
+    "name": "WORKS-KEY"
+  },
+  "416": {
+    "category": "plot-advancement",
+    "name": "OLD-CHARM"
+  },
+  "417": {
+    "category": "plot-advancement",
+    "name": "GALACTIC-KEY"
+  },
+  "418": {
+    "category": "unused",
+    "name": "RED-CHAIN"
+  },
+  "419": {
+    "category": "gameplay",
+    "name": "TOWN-MAP"
+  },
+  "420": {
+    "category": "gameplay",
+    "name": "VS-SEEKER"
+  },
+  "421": {
+    "category": "gameplay",
+    "name": "COIN-CASE"
+  },
+  "422": {
+    "category": "gameplay",
+    "name": "OLD-ROD"
+  },
+  "423": {
+    "category": "gameplay",
+    "name": "GOOD-ROD"
+  },
+  "424": {
+    "category": "gameplay",
+    "name": "SUPER-ROD"
+  },
+  "425": {
+    "category": "gameplay",
+    "name": "SPRAYDUCK"
+  },
+  "426": {
+    "category": "gameplay",
+    "name": "POFFIN-CASE"
+  },
+  "427": {
+    "category": "gameplay",
+    "name": "BICYCLE"
+  },
+  "428": {
+    "category": "event-items",
+    "name": "SUITE-KEY"
+  },
+  "429": {
+    "category": "event-items",
+    "name": "OAKS-LETTER"
+  },
+  "430": {
+    "category": "event-items",
+    "name": "LUNAR-WING"
+  },
+  "431": {
+    "category": "event-items",
+    "name": "MEMBER-CARD"
+  },
+  "432": {
+    "category": "event-items",
+    "name": "AZURE-FLUTE"
+  },
+  "433": {
+    "category": "plot-advancement",
+    "name": "SS-TICKET"
+  },
+  "434": {
+    "category": "gameplay",
+    "name": "CONTEST-PASS"
+  },
+  "435": {
+    "category": "plot-advancement",
+    "name": "MAGMA-STONE"
+  },
+  "436": {
+    "category": "plot-advancement",
+    "name": "PARCEL"
+  },
+  "437": {
+    "category": "plot-advancement",
+    "name": "COUPON-1"
+  },
+  "438": {
+    "category": "plot-advancement",
+    "name": "COUPON-2"
+  },
+  "439": {
+    "category": "plot-advancement",
+    "name": "COUPON-3"
+  },
+  "440": {
+    "category": "plot-advancement",
+    "name": "STORAGE-KEY"
+  },
+  "441": {
+    "category": "plot-advancement",
+    "name": "SECRET-POTION"
+  },
+  "442": {
+    "category": "species-specific",
+    "name": "GRISEOUS-ORB"
+  },
+  "443": {
+    "category": "gameplay",
+    "name": "VS-RECORDER"
+  },
+  "444": {
+    "category": "event-items",
+    "name": "GRACIDEA"
+  },
+  "445": {
+    "category": "event-items",
+    "name": "SECRET-KEY"
+  },
+  "446": {
+    "category": "gameplay",
+    "name": "APRICORN-BOX"
+  },
+  "447": {
+    "category": "gameplay",
+    "name": "BERRY-POTS"
+  },
+  "448": {
+    "category": "plot-advancement",
+    "name": "SQUIRT-BOTTLE"
+  },
+  "449": {
+    "category": "apricorn-balls",
+    "name": "LURE-BALL"
+  },
+  "450": {
+    "category": "apricorn-balls",
+    "name": "LEVEL-BALL"
+  },
+  "451": {
+    "category": "apricorn-balls",
+    "name": "MOON-BALL"
+  },
+  "452": {
+    "category": "apricorn-balls",
+    "name": "HEAVY-BALL"
+  },
+  "453": {
+    "category": "apricorn-balls",
+    "name": "FAST-BALL"
+  },
+  "454": {
+    "category": "apricorn-balls",
+    "name": "FRIEND-BALL"
+  },
+  "455": {
+    "category": "apricorn-balls",
+    "name": "LOVE-BALL"
+  },
+  "456": {
+    "category": "standard-balls",
+    "name": "PARK-BALL"
+  },
+  "457": {
+    "category": "standard-balls",
+    "name": "SPORT-BALL"
+  },
+  "458": {
+    "category": "apricorn-box",
+    "name": "RED-APRICORN"
+  },
+  "459": {
+    "category": "apricorn-box",
+    "name": "BLUE-APRICORN"
+  },
+  "460": {
+    "category": "apricorn-box",
+    "name": "YELLOW-APRICORN"
+  },
+  "461": {
+    "category": "apricorn-box",
+    "name": "GREEN-APRICORN"
+  },
+  "462": {
+    "category": "apricorn-box",
+    "name": "PINK-APRICORN"
+  },
+  "463": {
+    "category": "apricorn-box",
+    "name": "WHITE-APRICORN"
+  },
+  "464": {
+    "category": "apricorn-box",
+    "name": "BLACK-APRICORN"
+  },
+  "465": {
+    "category": "gameplay",
+    "name": "DOWSING-MACHINE"
+  },
+  "466": {
+    "category": "gameplay",
+    "name": "RAGE-CANDY-BAR"
+  },
+  "467": {
+    "category": "plot-advancement",
+    "name": "RED-ORB"
+  },
+  "468": {
+    "category": "plot-advancement",
+    "name": "BLUE-ORB"
+  },
+  "469": {
+    "category": "plot-advancement",
+    "name": "JADE-ORB"
+  },
+  "470": {
+    "category": "event-items",
+    "name": "ENIGMA-STONE"
+  },
+  "471": {
+    "category": "gameplay",
+    "name": "UNOWN-REPORT"
+  },
+  "472": {
+    "category": "gameplay",
+    "name": "BLUE-CARD"
+  },
+  "473": {
+    "category": "unused",
+    "name": "SLOWPOKE-TAIL"
+  },
+  "474": {
+    "category": "plot-advancement",
+    "name": "CLEAR-BELL"
+  },
+  "475": {
+    "category": "plot-advancement",
+    "name": "CARD-KEY"
+  },
+  "476": {
+    "category": "plot-advancement",
+    "name": "BASEMENT-KEY"
+  },
+  "477": {
+    "category": "plot-advancement",
+    "name": "RED-SCALE"
+  },
+  "478": {
+    "category": "plot-advancement",
+    "name": "LOST-ITEM"
+  },
+  "479": {
+    "category": "plot-advancement",
+    "name": "PASS"
+  },
+  "480": {
+    "category": "plot-advancement",
+    "name": "MACHINE-PART"
+  },
+  "481": {
+    "category": "plot-advancement",
+    "name": "SILVER-WING"
+  },
+  "482": {
+    "category": "plot-advancement",
+    "name": "RAINBOW-WING"
+  },
+  "483": {
+    "category": "plot-advancement",
+    "name": "MYSTERY-EGG"
+  },
+  "484": {
+    "category": "gameplay",
+    "name": "GB-SOUNDS"
+  },
+  "485": {
+    "category": "plot-advancement",
+    "name": "TIDAL-BELL"
+  },
+  "486": {
+    "category": "data-cards",
+    "name": "DATA-CARD-01"
+  },
+  "487": {
+    "category": "data-cards",
+    "name": "DATA-CARD-02"
+  },
+  "488": {
+    "category": "data-cards",
+    "name": "DATA-CARD-03"
+  },
+  "489": {
+    "category": "data-cards",
+    "name": "DATA-CARD-04"
+  },
+  "490": {
+    "category": "data-cards",
+    "name": "DATA-CARD-05"
+  },
+  "491": {
+    "category": "data-cards",
+    "name": "DATA-CARD-06"
+  },
+  "492": {
+    "category": "data-cards",
+    "name": "DATA-CARD-07"
+  },
+  "493": {
+    "category": "data-cards",
+    "name": "DATA-CARD-08"
+  },
+  "494": {
+    "category": "data-cards",
+    "name": "DATA-CARD-09"
+  },
+  "495": {
+    "category": "data-cards",
+    "name": "DATA-CARD-10"
+  },
+  "496": {
+    "category": "data-cards",
+    "name": "DATA-CARD-11"
+  },
+  "497": {
+    "category": "data-cards",
+    "name": "DATA-CARD-12"
+  },
+  "498": {
+    "category": "data-cards",
+    "name": "DATA-CARD-13"
+  },
+  "499": {
+    "category": "data-cards",
+    "name": "DATA-CARD-14"
+  },
+  "500": {
+    "category": "data-cards",
+    "name": "DATA-CARD-15"
+  },
+  "501": {
+    "category": "data-cards",
+    "name": "DATA-CARD-16"
+  },
+  "502": {
+    "category": "data-cards",
+    "name": "DATA-CARD-17"
+  },
+  "503": {
+    "category": "data-cards",
+    "name": "DATA-CARD-18"
+  },
+  "504": {
+    "category": "data-cards",
+    "name": "DATA-CARD-19"
+  },
+  "505": {
+    "category": "data-cards",
+    "name": "DATA-CARD-20"
+  },
+  "506": {
+    "category": "data-cards",
+    "name": "DATA-CARD-21"
+  },
+  "507": {
+    "category": "data-cards",
+    "name": "DATA-CARD-22"
+  },
+  "508": {
+    "category": "data-cards",
+    "name": "DATA-CARD-23"
+  },
+  "509": {
+    "category": "data-cards",
+    "name": "DATA-CARD-24"
+  },
+  "510": {
+    "category": "data-cards",
+    "name": "DATA-CARD-25"
+  },
+  "511": {
+    "category": "data-cards",
+    "name": "DATA-CARD-26"
+  },
+  "512": {
+    "category": "data-cards",
+    "name": "DATA-CARD-27"
+  },
+  "513": {
+    "category": "unused",
+    "name": "LOCK-CAPSULE"
+  },
+  "514": {
+    "category": "unused",
+    "name": "PHOTO-ALBUM"
+  },
+  "515": {
+    "category": "all-mail",
+    "name": "ORANGE-MAIL"
+  },
+  "516": {
+    "category": "all-mail",
+    "name": "HARBOR-MAIL"
+  },
+  "517": {
+    "category": "all-mail",
+    "name": "GLITTER-MAIL"
+  },
+  "518": {
+    "category": "all-mail",
+    "name": "MECH-MAIL"
+  },
+  "519": {
+    "category": "all-mail",
+    "name": "WOOD-MAIL"
+  },
+  "520": {
+    "category": "all-mail",
+    "name": "WAVE-MAIL"
+  },
+  "521": {
+    "category": "all-mail",
+    "name": "BEAD-MAIL"
+  },
+  "522": {
+    "category": "all-mail",
+    "name": "SHADOW-MAIL"
+  },
+  "523": {
+    "category": "all-mail",
+    "name": "TROPIC-MAIL"
+  },
+  "524": {
+    "category": "all-mail",
+    "name": "DREAM-MAIL"
+  },
+  "525": {
+    "category": "all-mail",
+    "name": "FAB-MAIL"
+  },
+  "526": {
+    "category": "all-mail",
+    "name": "RETRO-MAIL"
+  },
+  "527": {
+    "category": "gameplay",
+    "name": "MACH-BIKE"
+  },
+  "528": {
+    "category": "gameplay",
+    "name": "ACRO-BIKE"
+  },
+  "529": {
+    "category": "gameplay",
+    "name": "WAILMER-PAIL"
+  },
+  "530": {
+    "category": "plot-advancement",
+    "name": "DEVON-GOODS"
+  },
+  "531": {
+    "category": "gameplay",
+    "name": "SOOT-SACK"
+  },
+  "532": {
+    "category": "gameplay",
+    "name": "POKEBLOCK-CASE"
+  },
+  "533": {
+    "category": "plot-advancement",
+    "name": "LETTER"
+  },
+  "534": {
+    "category": "event-items",
+    "name": "EON-TICKET"
+  },
+  "535": {
+    "category": "plot-advancement",
+    "name": "SCANNER"
+  },
+  "536": {
+    "category": "gameplay",
+    "name": "GO-GOGGLES"
+  },
+  "537": {
+    "category": "plot-advancement",
+    "name": "METEORITE"
+  },
+  "538": {
+    "category": "plot-advancement",
+    "name": "RM-1-KEY"
+  },
+  "539": {
+    "category": "plot-advancement",
+    "name": "RM-2-KEY"
+  },
+  "540": {
+    "category": "plot-advancement",
+    "name": "RM-4-KEY"
+  },
+  "541": {
+    "category": "plot-advancement",
+    "name": "RM-6-KEY"
+  },
+  "542": {
+    "category": "gameplay",
+    "name": "DEVON-SCOPE"
+  },
+  "543": {
+    "category": "plot-advancement",
+    "name": "OAKS-PARCEL"
+  },
+  "544": {
+    "category": "plot-advancement",
+    "name": "POKE-FLUTE"
+  },
+  "545": {
+    "category": "plot-advancement",
+    "name": "BIKE-VOUCHER"
+  },
+  "546": {
+    "category": "plot-advancement",
+    "name": "GOLD-TEETH"
+  },
+  "547": {
+    "category": "plot-advancement",
+    "name": "LIFT-KEY"
+  },
+  "548": {
+    "category": "plot-advancement",
+    "name": "SILPH-SCOPE"
+  },
+  "549": {
+    "category": "gameplay",
+    "name": "FAME-CHECKER"
+  },
+  "550": {
+    "category": "gameplay",
+    "name": "TM-CASE"
+  },
+  "551": {
+    "category": "gameplay",
+    "name": "BERRY-POUCH"
+  },
+  "552": {
+    "category": "gameplay",
+    "name": "TEACHY-TV"
+  },
+  "553": {
+    "category": "plot-advancement",
+    "name": "TRI-PASS"
+  },
+  "554": {
+    "category": "plot-advancement",
+    "name": "RAINBOW-PASS"
+  },
+  "555": {
+    "category": "plot-advancement",
+    "name": "TEA"
+  },
+  "556": {
+    "category": "event-items",
+    "name": "MYSTICTICKET"
+  },
+  "557": {
+    "category": "event-items",
+    "name": "AURORATICKET"
+  },
+  "558": {
+    "category": "gameplay",
+    "name": "POWDER-JAR"
+  },
+  "559": {
+    "category": "plot-advancement",
+    "name": "RUBY"
+  },
+  "560": {
+    "category": "plot-advancement",
+    "name": "SAPPHIRE"
+  },
+  "561": {
+    "category": "plot-advancement",
+    "name": "MAGMA-EMBLEM"
+  },
+  "562": {
+    "category": "event-items",
+    "name": "OLD-SEA-MAP"
+  },
+  "563": {
+    "category": "species-specific",
+    "name": "DOUSE-DRIVE"
+  },
+  "564": {
+    "category": "species-specific",
+    "name": "SHOCK-DRIVE"
+  },
+  "565": {
+    "category": "species-specific",
+    "name": "BURN-DRIVE"
+  },
+  "566": {
+    "category": "species-specific",
+    "name": "CHILL-DRIVE"
+  },
+  "567": {
+    "category": "healing",
+    "name": "SWEET-HEART"
+  },
+  "568": {
+    "category": "all-mail",
+    "name": "GREET-MAIL"
+  },
+  "569": {
+    "category": "all-mail",
+    "name": "FAVORED-MAIL"
+  },
+  "570": {
+    "category": "all-mail",
+    "name": "RSVP-MAIL"
+  },
+  "571": {
+    "category": "all-mail",
+    "name": "THANKS-MAIL"
+  },
+  "572": {
+    "category": "all-mail",
+    "name": "INQUIRY-MAIL"
+  },
+  "573": {
+    "category": "all-mail",
+    "name": "LIKE-MAIL"
+  },
+  "574": {
+    "category": "all-mail",
+    "name": "REPLY-MAIL"
+  },
+  "575": {
+    "category": "all-mail",
+    "name": "BRIDGE-MAIL-S"
+  },
+  "576": {
+    "category": "all-mail",
+    "name": "BRIDGE-MAIL-D"
+  },
+  "577": {
+    "category": "all-mail",
+    "name": "BRIDGE-MAIL-T"
+  },
+  "578": {
+    "category": "all-mail",
+    "name": "BRIDGE-MAIL-V"
+  },
+  "579": {
+    "category": "all-mail",
+    "name": "BRIDGE-MAIL-M"
+  },
+  "580": {
+    "category": "evolution",
+    "name": "PRISM-SCALE"
+  },
+  "581": {
+    "category": "held-items",
+    "name": "EVIOLITE"
+  },
+  "582": {
+    "category": "held-items",
+    "name": "FLOAT-STONE"
+  },
+  "583": {
+    "category": "held-items",
+    "name": "ROCKY-HELMET"
+  },
+  "584": {
+    "category": "held-items",
+    "name": "AIR-BALLOON"
+  },
+  "585": {
+    "category": "held-items",
+    "name": "RED-CARD"
+  },
+  "586": {
+    "category": "held-items",
+    "name": "RING-TARGET"
+  },
+  "587": {
+    "category": "held-items",
+    "name": "BINDING-BAND"
+  },
+  "588": {
+    "category": "held-items",
+    "name": "ABSORB-BULB"
+  },
+  "589": {
+    "category": "held-items",
+    "name": "CELL-BATTERY"
+  },
+  "590": {
+    "category": "held-items",
+    "name": "EJECT-BUTTON"
+  },
+  "591": {
+    "category": "jewels",
+    "name": "FIRE-GEM"
+  },
+  "592": {
+    "category": "jewels",
+    "name": "WATER-GEM"
+  },
+  "593": {
+    "category": "jewels",
+    "name": "ELECTRIC-GEM"
+  },
+  "594": {
+    "category": "jewels",
+    "name": "GRASS-GEM"
+  },
+  "595": {
+    "category": "jewels",
+    "name": "ICE-GEM"
+  },
+  "596": {
+    "category": "jewels",
+    "name": "FIGHTING-GEM"
+  },
+  "597": {
+    "category": "jewels",
+    "name": "POISON-GEM"
+  },
+  "598": {
+    "category": "jewels",
+    "name": "GROUND-GEM"
+  },
+  "599": {
+    "category": "jewels",
+    "name": "FLYING-GEM"
+  },
+  "600": {
+    "category": "jewels",
+    "name": "PSYCHIC-GEM"
+  },
+  "601": {
+    "category": "jewels",
+    "name": "BUG-GEM"
+  },
+  "602": {
+    "category": "jewels",
+    "name": "ROCK-GEM"
+  },
+  "603": {
+    "category": "jewels",
+    "name": "GHOST-GEM"
+  },
+  "604": {
+    "category": "jewels",
+    "name": "DARK-GEM"
+  },
+  "605": {
+    "category": "jewels",
+    "name": "STEEL-GEM"
+  },
+  "606": {
+    "category": "vitamins",
+    "name": "HEALTH-WING"
+  },
+  "607": {
+    "category": "vitamins",
+    "name": "MUSCLE-WING"
+  },
+  "608": {
+    "category": "vitamins",
+    "name": "RESIST-WING"
+  },
+  "609": {
+    "category": "vitamins",
+    "name": "GENIUS-WING"
+  },
+  "610": {
+    "category": "vitamins",
+    "name": "CLEVER-WING"
+  },
+  "611": {
+    "category": "vitamins",
+    "name": "SWIFT-WING"
+  },
+  "612": {
+    "category": "loot",
+    "name": "PRETTY-WING"
+  },
+  "613": {
+    "category": "dex-completion",
+    "name": "COVER-FOSSIL"
+  },
+  "614": {
+    "category": "dex-completion",
+    "name": "PLUME-FOSSIL"
+  },
+  "615": {
+    "category": "event-items",
+    "name": "LIBERTY-PASS"
+  },
+  "616": {
+    "category": "held-items",
+    "name": "PASS-ORB"
+  },
+  "617": {
+    "category": "special-balls",
+    "name": "DREAM-BALL"
+  },
+  "618": {
+    "category": "spelunking",
+    "name": "POKE-TOY"
+  },
+  "619": {
+    "category": "gameplay",
+    "name": "PROP-CASE"
+  },
+  "620": {
+    "category": "plot-advancement",
+    "name": "DRAGON-SKULL"
+  },
+  "621": {
+    "category": "loot",
+    "name": "BALM-MUSHROOM"
+  },
+  "622": {
+    "category": "loot",
+    "name": "BIG-NUGGET"
+  },
+  "623": {
+    "category": "loot",
+    "name": "PEARL-STRING"
+  },
+  "624": {
+    "category": "loot",
+    "name": "COMET-SHARD"
+  },
+  "625": {
+    "category": "loot",
+    "name": "RELIC-COPPER"
+  },
+  "626": {
+    "category": "loot",
+    "name": "RELIC-SILVER"
+  },
+  "627": {
+    "category": "loot",
+    "name": "RELIC-GOLD"
+  },
+  "628": {
+    "category": "loot",
+    "name": "RELIC-VASE"
+  },
+  "629": {
+    "category": "loot",
+    "name": "RELIC-BAND"
+  },
+  "630": {
+    "category": "loot",
+    "name": "RELIC-STATUE"
+  },
+  "631": {
+    "category": "loot",
+    "name": "RELIC-CROWN"
+  },
+  "632": {
+    "category": "status-cures",
+    "name": "CASTELIACONE"
+  },
+  "633": {
+    "category": "miracle-shooter",
+    "name": "DIRE-HIT-2"
+  },
+  "634": {
+    "category": "miracle-shooter",
+    "name": "X-SPEED-2"
+  },
+  "635": {
+    "category": "miracle-shooter",
+    "name": "X-SP-ATK-2"
+  },
+  "636": {
+    "category": "miracle-shooter",
+    "name": "X-SP-DEF-2"
+  },
+  "637": {
+    "category": "miracle-shooter",
+    "name": "X-DEFENSE-2"
+  },
+  "638": {
+    "category": "miracle-shooter",
+    "name": "X-ATTACK-2"
+  },
+  "639": {
+    "category": "miracle-shooter",
+    "name": "X-ACCURACY-2"
+  },
+  "640": {
+    "category": "miracle-shooter",
+    "name": "X-SPEED-3"
+  },
+  "641": {
+    "category": "miracle-shooter",
+    "name": "X-SP-ATK-3"
+  },
+  "642": {
+    "category": "miracle-shooter",
+    "name": "X-SP-DEF-3"
+  },
+  "643": {
+    "category": "miracle-shooter",
+    "name": "X-DEFENSE-3"
+  },
+  "644": {
+    "category": "miracle-shooter",
+    "name": "X-ATTACK-3"
+  },
+  "645": {
+    "category": "miracle-shooter",
+    "name": "X-ACCURACY-3"
+  },
+  "646": {
+    "category": "miracle-shooter",
+    "name": "X-SPEED-6"
+  },
+  "647": {
+    "category": "miracle-shooter",
+    "name": "X-SP-ATK-6"
+  },
+  "648": {
+    "category": "miracle-shooter",
+    "name": "X-SP-DEF-6"
+  },
+  "649": {
+    "category": "miracle-shooter",
+    "name": "X-DEFENSE-6"
+  },
+  "650": {
+    "category": "miracle-shooter",
+    "name": "X-ATTACK-6"
+  },
+  "651": {
+    "category": "miracle-shooter",
+    "name": "X-ACCURACY-6"
+  },
+  "652": {
+    "category": "miracle-shooter",
+    "name": "ABILITY-URGE"
+  },
+  "653": {
+    "category": "miracle-shooter",
+    "name": "ITEM-DROP"
+  },
+  "654": {
+    "category": "miracle-shooter",
+    "name": "ITEM-URGE"
+  },
+  "655": {
+    "category": "miracle-shooter",
+    "name": "RESET-URGE"
+  },
+  "656": {
+    "category": "miracle-shooter",
+    "name": "DIRE-HIT-3"
+  },
+  "657": {
+    "category": "plot-advancement",
+    "name": "LIGHT-STONE"
+  },
+  "658": {
+    "category": "plot-advancement",
+    "name": "DARK-STONE"
+  },
+  "659": {
+    "category": "all-machines",
+    "name": "TM93"
+  },
+  "660": {
+    "category": "all-machines",
+    "name": "TM94"
+  },
+  "661": {
+    "category": "all-machines",
+    "name": "TM95"
+  },
+  "662": {
+    "category": "gameplay",
+    "name": "XTRANSCEIVER"
+  },
+  "663": {
+    "category": "unused",
+    "name": "GOD-STONE"
+  },
+  "664": {
+    "category": "plot-advancement",
+    "name": "GRAM-1"
+  },
+  "665": {
+    "category": "plot-advancement",
+    "name": "GRAM-2"
+  },
+  "666": {
+    "category": "plot-advancement",
+    "name": "GRAM-3"
+  },
+  "668": {
+    "category": "jewels",
+    "name": "DRAGON-GEM"
+  },
+  "669": {
+    "category": "jewels",
+    "name": "NORMAL-GEM"
+  },
+  "670": {
+    "category": "gameplay",
+    "name": "MEDAL-BOX"
+  },
+  "671": {
+    "category": "gameplay",
+    "name": "DNA-SPLICERS"
+  },
+  "673": {
+    "category": "gameplay",
+    "name": "PERMIT"
+  },
+  "674": {
+    "category": "gameplay",
+    "name": "OVAL-CHARM"
+  },
+  "675": {
+    "category": "gameplay",
+    "name": "SHINY-CHARM"
+  },
+  "676": {
+    "category": "plot-advancement",
+    "name": "PLASMA-CARD"
+  },
+  "677": {
+    "category": "plot-advancement",
+    "name": "GRUBBY-HANKY"
+  },
+  "678": {
+    "category": "plot-advancement",
+    "name": "COLRESS-MACHINE"
+  },
+  "679": {
+    "category": "plot-advancement",
+    "name": "DROPPED-ITEM"
+  },
+  "681": {
+    "category": "gameplay",
+    "name": "REVEAL-GLASS"
+  },
+  "682": {
+    "category": "held-items",
+    "name": "WEAKNESS-POLICY"
+  },
+  "683": {
+    "category": "held-items",
+    "name": "ASSAULT-VEST"
+  },
+  "684": {
+    "category": "plates",
+    "name": "PIXIE-PLATE"
+  },
+  "685": {
+    "category": "vitamins",
+    "name": "ABILITY-CAPSULE"
+  },
+  "686": {
+    "category": "evolution",
+    "name": "WHIPPED-DREAM"
+  },
+  "687": {
+    "category": "evolution",
+    "name": "SACHET"
+  },
+  "688": {
+    "category": "held-items",
+    "name": "LUMINOUS-MOSS"
+  },
+  "689": {
+    "category": "held-items",
+    "name": "SNOWBALL"
+  },
+  "690": {
+    "category": "held-items",
+    "name": "SAFETY-GOGGLES"
+  },
+  "691": {
+    "category": "mulch",
+    "name": "RICH-MULCH"
+  },
+  "692": {
+    "category": "mulch",
+    "name": "SURPRISE-MULCH"
+  },
+  "693": {
+    "category": "mulch",
+    "name": "BOOST-MULCH"
+  },
+  "694": {
+    "category": "mulch",
+    "name": "AMAZE-MULCH"
+  },
+  "695": {
+    "category": "mega-stones",
+    "name": "GENGARITE"
+  },
+  "696": {
+    "category": "mega-stones",
+    "name": "GARDEVOIRITE"
+  },
+  "697": {
+    "category": "mega-stones",
+    "name": "AMPHAROSITE"
+  },
+  "698": {
+    "category": "mega-stones",
+    "name": "VENUSAURITE"
+  },
+  "699": {
+    "category": "mega-stones",
+    "name": "CHARIZARDITE-X"
+  },
+  "700": {
+    "category": "mega-stones",
+    "name": "BLASTOISINITE"
+  },
+  "701": {
+    "category": "mega-stones",
+    "name": "MEWTWONITE-X"
+  },
+  "702": {
+    "category": "mega-stones",
+    "name": "MEWTWONITE-Y"
+  },
+  "703": {
+    "category": "mega-stones",
+    "name": "BLAZIKENITE"
+  },
+  "704": {
+    "category": "mega-stones",
+    "name": "MEDICHAMITE"
+  },
+  "705": {
+    "category": "mega-stones",
+    "name": "HOUNDOOMINITE"
+  },
+  "706": {
+    "category": "mega-stones",
+    "name": "AGGRONITE"
+  },
+  "707": {
+    "category": "mega-stones",
+    "name": "BANETTITE"
+  },
+  "708": {
+    "category": "mega-stones",
+    "name": "TYRANITARITE"
+  },
+  "709": {
+    "category": "mega-stones",
+    "name": "SCIZORITE"
+  },
+  "710": {
+    "category": "mega-stones",
+    "name": "PINSIRITE"
+  },
+  "711": {
+    "category": "mega-stones",
+    "name": "AERODACTYLITE"
+  },
+  "712": {
+    "category": "mega-stones",
+    "name": "LUCARIONITE"
+  },
+  "713": {
+    "category": "mega-stones",
+    "name": "ABOMASITE"
+  },
+  "714": {
+    "category": "mega-stones",
+    "name": "KANGASKHANITE"
+  },
+  "715": {
+    "category": "mega-stones",
+    "name": "GYARADOSITE"
+  },
+  "716": {
+    "category": "mega-stones",
+    "name": "ABSOLITE"
+  },
+  "717": {
+    "category": "mega-stones",
+    "name": "CHARIZARDITE-Y"
+  },
+  "718": {
+    "category": "mega-stones",
+    "name": "ALAKAZITE"
+  },
+  "719": {
+    "category": "mega-stones",
+    "name": "HERACRONITE"
+  },
+  "720": {
+    "category": "mega-stones",
+    "name": "MAWILITE"
+  },
+  "721": {
+    "category": "mega-stones",
+    "name": "MANECTITE"
+  },
+  "722": {
+    "category": "mega-stones",
+    "name": "GARCHOMPITE"
+  },
+  "723": {
+    "category": "type-protection",
+    "name": "ROSELI-BERRY"
+  },
+  "724": {
+    "category": "other",
+    "name": "KEE-BERRY"
+  },
+  "725": {
+    "category": "other",
+    "name": "MARANGA-BERRY"
+  },
+  "726": {
+    "category": "loot",
+    "name": "DISCOUNT-COUPON"
+  },
+  "727": {
+    "category": "loot",
+    "name": "STRANGE-SOUVENIR"
+  },
+  "728": {
+    "category": "status-cures",
+    "name": "LUMIOSE-GALETTE"
+  },
+  "729": {
+    "category": "dex-completion",
+    "name": "JAW-FOSSIL"
+  },
+  "730": {
+    "category": "dex-completion",
+    "name": "SAIL-FOSSIL"
+  },
+  "731": {
+    "category": "jewels",
+    "name": "FAIRY-GEM"
+  },
+  "732": {
+    "category": "gameplay",
+    "name": "ADVENTURE-RULES"
+  },
+  "733": {
+    "category": "plot-advancement",
+    "name": "ELEVATOR-KEY"
+  },
+  "734": {
+    "category": "gameplay",
+    "name": "HOLO-CASTER"
+  },
+  "735": {
+    "category": "plot-advancement",
+    "name": "HONOR-OF-KALOS"
+  },
+  "736": {
+    "category": "plot-advancement",
+    "name": "INTRIGUING-STONE"
+  },
+  "737": {
+    "category": "gameplay",
+    "name": "LENS-CASE"
+  },
+  "738": {
+    "category": "plot-advancement",
+    "name": "LOOKER-TICKET"
+  },
+  "739": {
+    "category": "gameplay",
+    "name": "MEGA-RING"
+  },
+  "740": {
+    "category": "plot-advancement",
+    "name": "POWER-PLANT-PASS"
+  },
+  "741": {
+    "category": "plot-advancement",
+    "name": "PROFS-LETTER"
+  },
+  "742": {
+    "category": "gameplay",
+    "name": "ROLLER-SKATES"
+  },
+  "743": {
+    "category": "gameplay",
+    "name": "SPRINKLOTAD"
+  },
+  "744": {
+    "category": "gameplay",
+    "name": "TMV-PASS"
+  },
+  "745": {
+    "category": "all-machines",
+    "name": "TM96"
+  },
+  "746": {
+    "category": "all-machines",
+    "name": "TM97"
+  },
+  "747": {
+    "category": "all-machines",
+    "name": "TM98"
+  },
+  "748": {
+    "category": "all-machines",
+    "name": "TM99"
+  },
+  "749": {
+    "category": "all-machines",
+    "name": "TM100"
+  },
+  "760": {
+    "category": "mega-stones",
+    "name": "LATIASITE"
+  },
+  "761": {
+    "category": "mega-stones",
+    "name": "LATIOSITE"
+  },
+  "762": {
+    "category": "unused",
+    "name": "COMMON-STONE"
+  },
+  "763": {
+    "category": "gameplay",
+    "name": "MAKEUP-BAG"
+  },
+  "764": {
+    "category": "unused",
+    "name": "TRAVEL-TRUNK"
+  },
+  "765": {
+    "category": "status-cures",
+    "name": "SHALOUR-SABLE"
+  },
+  "768": {
+    "category": "unused",
+    "name": "MEGA-CHARM"
+  },
+  "769": {
+    "category": "unused",
+    "name": "MEGA-GLOVE"
+  },
+  "770": {
+    "category": "plot-advancement",
+    "name": "DEVON-PARTS"
+  },
+  "772": {
+    "category": "gameplay",
+    "name": "POKEBLOCK-KIT"
+  },
+  "773": {
+    "category": "plot-advancement",
+    "name": "KEY-TO-ROOM-1"
+  },
+  "774": {
+    "category": "plot-advancement",
+    "name": "KEY-TO-ROOM-2"
+  },
+  "775": {
+    "category": "plot-advancement",
+    "name": "KEY-TO-ROOM-4"
+  },
+  "776": {
+    "category": "plot-advancement",
+    "name": "KEY-TO-ROOM-6"
+  },
+  "779": {
+    "category": "plot-advancement",
+    "name": "DEVON-SCUBA-GEAR"
+  },
+  "780": {
+    "category": "gameplay",
+    "name": "CONTEST-COSTUME--JACKET"
+  },
+  "782": {
+    "category": "plot-advancement",
+    "name": "MAGMA-SUIT"
+  },
+  "783": {
+    "category": "plot-advancement",
+    "name": "AQUA-SUIT"
+  },
+  "784": {
+    "category": "plot-advancement",
+    "name": "PAIR-OF-TICKETS"
+  },
+  "785": {
+    "category": "gameplay",
+    "name": "MEGA-BRACELET"
+  },
+  "786": {
+    "category": "unused",
+    "name": "MEGA-PENDANT"
+  },
+  "787": {
+    "category": "unused",
+    "name": "MEGA-GLASSES"
+  },
+  "788": {
+    "category": "unused",
+    "name": "MEGA-ANCHOR"
+  },
+  "789": {
+    "category": "unused",
+    "name": "MEGA-STICKPIN"
+  },
+  "790": {
+    "category": "unused",
+    "name": "MEGA-TIARA"
+  },
+  "791": {
+    "category": "unused",
+    "name": "MEGA-ANKLET"
+  },
+  "793": {
+    "category": "mega-stones",
+    "name": "SWAMPERTITE"
+  },
+  "794": {
+    "category": "mega-stones",
+    "name": "SCEPTILITE"
+  },
+  "795": {
+    "category": "mega-stones",
+    "name": "SABLENITE"
+  },
+  "796": {
+    "category": "mega-stones",
+    "name": "ALTARIANITE"
+  },
+  "797": {
+    "category": "mega-stones",
+    "name": "GALLADITE"
+  },
+  "798": {
+    "category": "mega-stones",
+    "name": "AUDINITE"
+  },
+  "799": {
+    "category": "mega-stones",
+    "name": "METAGROSSITE"
+  },
+  "800": {
+    "category": "mega-stones",
+    "name": "SHARPEDONITE"
+  },
+  "801": {
+    "category": "mega-stones",
+    "name": "SLOWBRONITE"
+  },
+  "802": {
+    "category": "mega-stones",
+    "name": "STEELIXITE"
+  },
+  "803": {
+    "category": "mega-stones",
+    "name": "PIDGEOTITE"
+  },
+  "804": {
+    "category": "mega-stones",
+    "name": "GLALITITE"
+  },
+  "805": {
+    "category": "mega-stones",
+    "name": "DIANCITE"
+  },
+  "806": {
+    "category": "gameplay",
+    "name": "PRISON-BOTTLE"
+  },
+  "807": {
+    "category": "unused",
+    "name": "MEGA-CUFF"
+  },
+  "808": {
+    "category": "mega-stones",
+    "name": "CAMERUPTITE"
+  },
+  "809": {
+    "category": "mega-stones",
+    "name": "LOPUNNITE"
+  },
+  "810": {
+    "category": "mega-stones",
+    "name": "SALAMENCITE"
+  },
+  "811": {
+    "category": "mega-stones",
+    "name": "BEEDRILLITE"
+  },
+  "814": {
+    "category": "gameplay",
+    "name": "KEY-STONE"
+  },
+  "815": {
+    "category": "plot-advancement",
+    "name": "METEORITE-SHARD"
+  },
+  "816": {
+    "category": "gameplay",
+    "name": "EON-FLUTE"
+  },
+  "817": {
+    "category": "z-crystals",
+    "name": "NORMALIUM-Z--HELD"
+  },
+  "818": {
+    "category": "z-crystals",
+    "name": "FIRIUM-Z--HELD"
+  },
+  "819": {
+    "category": "z-crystals",
+    "name": "WATERIUM-Z--HELD"
+  },
+  "820": {
+    "category": "z-crystals",
+    "name": "ELECTRIUM-Z--HELD"
+  },
+  "821": {
+    "category": "z-crystals",
+    "name": "GRASSIUM-Z--HELD"
+  },
+  "822": {
+    "category": "z-crystals",
+    "name": "ICIUM-Z--HELD"
+  },
+  "823": {
+    "category": "z-crystals",
+    "name": "FIGHTINIUM-Z--HELD"
+  },
+  "824": {
+    "category": "z-crystals",
+    "name": "POISONIUM-Z--HELD"
+  },
+  "825": {
+    "category": "z-crystals",
+    "name": "GROUNDIUM-Z--HELD"
+  },
+  "826": {
+    "category": "z-crystals",
+    "name": "FLYINIUM-Z--HELD"
+  },
+  "827": {
+    "category": "z-crystals",
+    "name": "PSYCHIUM-Z--HELD"
+  },
+  "828": {
+    "category": "z-crystals",
+    "name": "BUGINIUM-Z--HELD"
+  },
+  "829": {
+    "category": "z-crystals",
+    "name": "ROCKIUM-Z--HELD"
+  },
+  "830": {
+    "category": "z-crystals",
+    "name": "GHOSTIUM-Z--HELD"
+  },
+  "831": {
+    "category": "z-crystals",
+    "name": "DRAGONIUM-Z--HELD"
+  },
+  "832": {
+    "category": "z-crystals",
+    "name": "DARKINIUM-Z--HELD"
+  },
+  "833": {
+    "category": "z-crystals",
+    "name": "STEELIUM-Z--HELD"
+  },
+  "834": {
+    "category": "z-crystals",
+    "name": "FAIRIUM-Z--HELD"
+  },
+  "835": {
+    "category": "z-crystals",
+    "name": "PIKANIUM-Z--HELD"
+  },
+  "836": {
+    "category": "loot",
+    "name": "BOTTLE-CAP"
+  },
+  "837": {
+    "category": "loot",
+    "name": "GOLD-BOTTLE-CAP"
+  },
+  "838": {
+    "category": "gameplay",
+    "name": "Z-RING"
+  },
+  "839": {
+    "category": "z-crystals",
+    "name": "DECIDIUM-Z--HELD"
+  },
+  "840": {
+    "category": "z-crystals",
+    "name": "INCINIUM-Z--HELD"
+  },
+  "841": {
+    "category": "z-crystals",
+    "name": "PRIMARIUM-Z--HELD"
+  },
+  "842": {
+    "category": "z-crystals",
+    "name": "TAPUNIUM-Z--HELD"
+  },
+  "843": {
+    "category": "z-crystals",
+    "name": "MARSHADIUM-Z--HELD"
+  },
+  "844": {
+    "category": "z-crystals",
+    "name": "ALORAICHIUM-Z--HELD"
+  },
+  "845": {
+    "category": "z-crystals",
+    "name": "SNORLIUM-Z--HELD"
+  },
+  "846": {
+    "category": "z-crystals",
+    "name": "EEVIUM-Z--HELD"
+  },
+  "847": {
+    "category": "z-crystals",
+    "name": "MEWNIUM-Z--HELD"
+  },
+  "877": {
+    "category": "z-crystals",
+    "name": "PIKASHUNIUM-Z--HELD"
+  },
+  "878": {
+    "category": "gameplay",
+    "name": "FORAGE-BAG"
+  },
+  "879": {
+    "category": "gameplay",
+    "name": "FISHING-ROD"
+  },
+  "880": {
+    "category": "plot-advancement",
+    "name": "PROFESSORS-MASK"
+  },
+  "881": {
+    "category": "gameplay",
+    "name": "FESTIVAL-TICKET"
+  },
+  "882": {
+    "category": "plot-advancement",
+    "name": "SPARKLING-STONE"
+  },
+  "883": {
+    "category": "held-items",
+    "name": "ADRENALINE-ORB"
+  },
+  "884": {
+    "category": "gameplay",
+    "name": "ZYGARDE-CUBE"
+  },
+  "885": {
+    "category": "evolution",
+    "name": "ICE-STONE"
+  },
+  "886": {
+    "category": "unused",
+    "name": "RIDE-PAGER"
+  },
+  "887": {
+    "category": "special-balls",
+    "name": "BEAST-BALL"
+  },
+  "888": {
+    "category": "status-cures",
+    "name": "BIG-MALASADA"
+  },
+  "889": {
+    "category": "species-specific",
+    "name": "RED-NECTAR"
+  },
+  "890": {
+    "category": "species-specific",
+    "name": "YELLOW-NECTAR"
+  },
+  "891": {
+    "category": "species-specific",
+    "name": "PINK-NECTAR"
+  },
+  "892": {
+    "category": "species-specific",
+    "name": "PURPLE-NECTAR"
+  },
+  "893": {
+    "category": "plot-advancement",
+    "name": "SUN-FLUTE"
+  },
+  "894": {
+    "category": "plot-advancement",
+    "name": "MOON-FLUTE"
+  },
+  "895": {
+    "category": "plot-advancement",
+    "name": "ENIGMATIC-CARD"
+  },
+  "896": {
+    "category": "held-items",
+    "name": "TERRAIN-EXTENDER"
+  },
+  "897": {
+    "category": "held-items",
+    "name": "PROTECTIVE-PADS"
+  },
+  "898": {
+    "category": "held-items",
+    "name": "ELECTRIC-SEED"
+  },
+  "899": {
+    "category": "held-items",
+    "name": "PSYCHIC-SEED"
+  },
+  "900": {
+    "category": "held-items",
+    "name": "MISTY-SEED"
+  },
+  "901": {
+    "category": "held-items",
+    "name": "GRASSY-SEED"
+  },
+  "902": {
+    "category": "memories",
+    "name": "FIGHTING-MEMORY"
+  },
+  "903": {
+    "category": "memories",
+    "name": "FLYING-MEMORY"
+  },
+  "904": {
+    "category": "memories",
+    "name": "POISON-MEMORY"
+  },
+  "905": {
+    "category": "memories",
+    "name": "GROUND-MEMORY"
+  },
+  "906": {
+    "category": "memories",
+    "name": "ROCK-MEMORY"
+  },
+  "907": {
+    "category": "memories",
+    "name": "BUG-MEMORY"
+  },
+  "908": {
+    "category": "memories",
+    "name": "GHOST-MEMORY"
+  },
+  "909": {
+    "category": "memories",
+    "name": "STEEL-MEMORY"
+  },
+  "910": {
+    "category": "memories",
+    "name": "FIRE-MEMORY"
+  },
+  "911": {
+    "category": "memories",
+    "name": "WATER-MEMORY"
+  },
+  "912": {
+    "category": "memories",
+    "name": "GRASS-MEMORY"
+  },
+  "913": {
+    "category": "memories",
+    "name": "ELECTRIC-MEMORY"
+  },
+  "914": {
+    "category": "memories",
+    "name": "PSYCHIC-MEMORY"
+  },
+  "915": {
+    "category": "memories",
+    "name": "ICE-MEMORY"
+  },
+  "916": {
+    "category": "memories",
+    "name": "DRAGON-MEMORY"
+  },
+  "917": {
+    "category": "memories",
+    "name": "DARK-MEMORY"
+  },
+  "918": {
+    "category": "memories",
+    "name": "FAIRY-MEMORY"
+  },
+  "919": {
+    "category": "unused",
+    "name": "BIKE--GREEN"
+  },
+  "920": {
+    "category": "unused",
+    "name": "STORAGE-KEY--GALACTIC-WAREHOUSE"
+  },
+  "921": {
+    "category": "unused",
+    "name": "BASEMENT-KEY--GOLDENROD"
+  },
+  "922": {
+    "category": "unused",
+    "name": "XTRANSCEIVER--RED"
+  },
+  "923": {
+    "category": "unused",
+    "name": "XTRANSCEIVER--YELLOW"
+  },
+  "924": {
+    "category": "unused",
+    "name": "DNA-SPLICERS--MERGE"
+  },
+  "925": {
+    "category": "unused",
+    "name": "DNA-SPLICERS--SPLIT"
+  },
+  "926": {
+    "category": "unused",
+    "name": "DROPPED-ITEM--RED"
+  },
+  "927": {
+    "category": "unused",
+    "name": "DROPPED-ITEM--YELLOW"
+  },
+  "928": {
+    "category": "unused",
+    "name": "HOLO-CASTER--GREEN"
+  },
+  "929": {
+    "category": "unused",
+    "name": "BIKE--YELLOW"
+  },
+  "930": {
+    "category": "unused",
+    "name": "HOLO-CASTER--RED"
+  },
+  "931": {
+    "category": "unused",
+    "name": "BASEMENT-KEY--NEW-MAUVILLE"
+  },
+  "932": {
+    "category": "unused",
+    "name": "STORAGE-KEY--SEA-MAUVILLE"
+  },
+  "933": {
+    "category": "unused",
+    "name": "SS-TICKET--HOENN"
+  },
+  "934": {
+    "category": "unused",
+    "name": "CONTEST-COSTUME--DRESS"
+  },
+  "935": {
+    "category": "unused",
+    "name": "METEORITE--2"
+  },
+  "936": {
+    "category": "unused",
+    "name": "METEORITE--3"
+  },
+  "937": {
+    "category": "unused",
+    "name": "METEORITE--4"
+  },
+  "938": {
+    "category": "unused",
+    "name": "NORMALIUM-Z--BAG"
+  },
+  "939": {
+    "category": "unused",
+    "name": "FIRIUM-Z--BAG"
+  },
+  "940": {
+    "category": "unused",
+    "name": "WATERIUM-Z--BAG"
+  },
+  "941": {
+    "category": "unused",
+    "name": "ELECTRIUM-Z--BAG"
+  },
+  "942": {
+    "category": "unused",
+    "name": "GRASSIUM-Z--BAG"
+  },
+  "943": {
+    "category": "unused",
+    "name": "ICIUM-Z--BAG"
+  },
+  "944": {
+    "category": "unused",
+    "name": "FIGHTINIUM-Z--BAG"
+  },
+  "945": {
+    "category": "unused",
+    "name": "POISONIUM-Z--BAG"
+  },
+  "946": {
+    "category": "unused",
+    "name": "GROUNDIUM-Z--BAG"
+  },
+  "947": {
+    "category": "unused",
+    "name": "FLYINIUM-Z--BAG"
+  },
+  "948": {
+    "category": "unused",
+    "name": "PSYCHIUM-Z--BAG"
+  },
+  "949": {
+    "category": "unused",
+    "name": "BUGINIUM-Z--BAG"
+  },
+  "950": {
+    "category": "unused",
+    "name": "ROCKIUM-Z--BAG"
+  },
+  "951": {
+    "category": "unused",
+    "name": "GHOSTIUM-Z--BAG"
+  },
+  "952": {
+    "category": "unused",
+    "name": "DRAGONIUM-Z--BAG"
+  },
+  "953": {
+    "category": "unused",
+    "name": "DARKINIUM-Z--BAG"
+  },
+  "954": {
+    "category": "unused",
+    "name": "STEELIUM-Z--BAG"
+  },
+  "955": {
+    "category": "unused",
+    "name": "FAIRIUM-Z--BAG"
+  },
+  "956": {
+    "category": "unused",
+    "name": "PIKANIUM-Z--BAG"
+  },
+  "957": {
+    "category": "unused",
+    "name": "DECIDIUM-Z--BAG"
+  },
+  "958": {
+    "category": "unused",
+    "name": "INCINIUM-Z--BAG"
+  },
+  "959": {
+    "category": "unused",
+    "name": "PRIMARIUM-Z--BAG"
+  },
+  "960": {
+    "category": "unused",
+    "name": "TAPUNIUM-Z--BAG"
+  },
+  "961": {
+    "category": "unused",
+    "name": "MARSHADIUM-Z--BAG"
+  },
+  "962": {
+    "category": "unused",
+    "name": "ALORAICHIUM-Z--BAG"
+  },
+  "963": {
+    "category": "unused",
+    "name": "SNORLIUM-Z--BAG"
+  },
+  "964": {
+    "category": "unused",
+    "name": "EEVIUM-Z--BAG"
+  },
+  "965": {
+    "category": "unused",
+    "name": "MEWNIUM-Z--BAG"
+  },
+  "966": {
+    "category": "unused",
+    "name": "PIKASHUNIUM-Z--BAG"
+  },
+  "967": {
+    "category": "unused",
+    "name": "SOLGANIUM-Z--HELD"
+  },
+  "968": {
+    "category": "unused",
+    "name": "LUNALIUM-Z--HELD"
+  },
+  "969": {
+    "category": "unused",
+    "name": "ULTRANECROZIUM-Z--HELD"
+  },
+  "970": {
+    "category": "unused",
+    "name": "MIMIKIUM-Z--HELD"
+  },
+  "971": {
+    "category": "unused",
+    "name": "LYCANIUM-Z--HELD"
+  },
+  "972": {
+    "category": "unused",
+    "name": "KOMMONIUM-Z--HELD"
+  },
+  "973": {
+    "category": "unused",
+    "name": "SOLGANIUM-Z--BAG"
+  },
+  "974": {
+    "category": "unused",
+    "name": "LUNALIUM-Z--BAG"
+  },
+  "975": {
+    "category": "unused",
+    "name": "ULTRANECROZIUM-Z--BAG"
+  },
+  "976": {
+    "category": "unused",
+    "name": "MIMIKIUM-Z--BAG"
+  },
+  "977": {
+    "category": "unused",
+    "name": "LYCANIUM-Z--BAG"
+  },
+  "978": {
+    "category": "unused",
+    "name": "KOMMONIUM-Z--BAG"
+  },
+  "979": {
+    "category": "unused",
+    "name": "Z-POWER-RING"
+  },
+  "980": {
+    "category": "unused",
+    "name": "PINK-PETAL"
+  },
+  "981": {
+    "category": "unused",
+    "name": "ORANGE-PETAL"
+  },
+  "982": {
+    "category": "unused",
+    "name": "BLUE-PETAL"
+  },
+  "983": {
+    "category": "unused",
+    "name": "RED-PETAL"
+  },
+  "984": {
+    "category": "unused",
+    "name": "GREEN-PETAL"
+  },
+  "985": {
+    "category": "unused",
+    "name": "YELLOW-PETAL"
+  },
+  "986": {
+    "category": "unused",
+    "name": "PURPLE-PETAL"
+  },
+  "987": {
+    "category": "unused",
+    "name": "RAINBOW-FLOWER"
+  },
+  "988": {
+    "category": "unused",
+    "name": "SURGE-BADGE"
+  },
+  "989": {
+    "category": "unused",
+    "name": "N-SOLARIZER--MERGE"
+  },
+  "990": {
+    "category": "unused",
+    "name": "N-LUNARIZER--MERGE"
+  },
+  "991": {
+    "category": "unused",
+    "name": "N-SOLARIZER--SPLIT"
+  },
+  "992": {
+    "category": "unused",
+    "name": "N-LUNARIZER--SPLIT"
+  },
+  "993": {
+    "category": "unused",
+    "name": "ILIMAS-NORMALIUM-Z"
+  },
+  "994": {
+    "category": "unused",
+    "name": "LEFT-POKE-BALL"
+  },
+  "995": {
+    "category": "unused",
+    "name": "ROTO-HATCH"
+  },
+  "996": {
+    "category": "unused",
+    "name": "ROTO-BARGAIN"
+  },
+  "997": {
+    "category": "unused",
+    "name": "ROTO-PRIZE-MONEY"
+  },
+  "998": {
+    "category": "unused",
+    "name": "ROTO-EXP-POINTS"
+  },
+  "999": {
+    "category": "unused",
+    "name": "ROTO-FRIENDSHIP"
+  },
+  "1000": {
+    "category": "unused",
+    "name": "ROTO-ENCOUNTER"
+  },
+  "1001": {
+    "category": "unused",
+    "name": "ROTO-STEALTH"
+  },
+  "1002": {
+    "category": "unused",
+    "name": "ROTO-HP-RESTORE"
+  },
+  "1003": {
+    "category": "unused",
+    "name": "ROTO-PP-RESTORE"
+  },
+  "1004": {
+    "category": "unused",
+    "name": "ROTO-BOOST"
+  },
+  "1005": {
+    "category": "unused",
+    "name": "ROTO-CATCH"
+  },
+  "1006": {
+    "category": "unused",
+    "name": "AUTOGRAPH"
+  },
+  "1007": {
+    "category": "unused",
+    "name": "POKEMON-BOX"
+  },
+  "1008": {
+    "category": "unused",
+    "name": "MEDICINE-POCKET"
+  },
+  "1009": {
+    "category": "unused",
+    "name": "CANDY-JAR"
+  },
+  "1010": {
+    "category": "unused",
+    "name": "POWER-UP-POCKET"
+  },
+  "1011": {
+    "category": "unused",
+    "name": "CLOTHING-TRUNK"
+  },
+  "1012": {
+    "category": "unused",
+    "name": "CATCHING-POCKET"
+  },
+  "1013": {
+    "category": "unused",
+    "name": "BATTLE-POCKET"
+  },
+  "1014": {
+    "category": "catching-bonus",
+    "name": "SILVER-RAZZ-BERRY"
+  },
+  "1015": {
+    "category": "catching-bonus",
+    "name": "GOLDEN-RAZZ-BERRY"
+  },
+  "1016": {
+    "category": "catching-bonus",
+    "name": "SILVER-NANAB-BERRY"
+  },
+  "1017": {
+    "category": "catching-bonus",
+    "name": "GOLDEN-NANAB-BERRY"
+  },
+  "1018": {
+    "category": "catching-bonus",
+    "name": "SILVER-PINAP-BERRY"
+  },
+  "1019": {
+    "category": "catching-bonus",
+    "name": "GOLDEN-PINAP-BERRY"
+  },
+  "1020": {
+    "category": "plot-advancement",
+    "name": "SECRET-KEY--LETSGO"
+  },
+  "1021": {
+    "category": "plot-advancement",
+    "name": "SS-TICKET--LETSGO"
+  },
+  "1022": {
+    "category": "plot-advancement",
+    "name": "PARCEL--LETSGO"
+  },
+  "1023": {
+    "category": "plot-advancement",
+    "name": "CARD-KEY--LETSGO"
+  },
+  "1024": {
+    "category": "loot",
+    "name": "STRETCHY-SPRING"
+  },
+  "1025": {
+    "category": "loot",
+    "name": "CHALKY-STONE"
+  },
+  "1026": {
+    "category": "loot",
+    "name": "MARBLE"
+  },
+  "1027": {
+    "category": "loot",
+    "name": "LONE-EARRING"
+  },
+  "1028": {
+    "category": "loot",
+    "name": "BEACH-GLASS"
+  },
+  "1029": {
+    "category": "loot",
+    "name": "GOLD-LEAF"
+  },
+  "1030": {
+    "category": "loot",
+    "name": "SILVER-LEAF"
+  },
+  "1031": {
+    "category": "loot",
+    "name": "POLISHED-MUD-BALL"
+  },
+  "1032": {
+    "category": "loot",
+    "name": "TROPICAL-SHELL"
+  },
+  "1033": {
+    "category": "loot",
+    "name": "LEAF-LETTER--PIKACHU"
+  },
+  "1034": {
+    "category": "loot",
+    "name": "LEAF-LETTER--EEVEE"
+  },
+  "1035": {
+    "category": "loot",
+    "name": "SMALL-BOUQUET"
+  },
+  "1036": {
+    "category": "spelunking",
+    "name": "LURE"
+  },
+  "1037": {
+    "category": "spelunking",
+    "name": "SUPER-LURE"
+  },
+  "1038": {
+    "category": "spelunking",
+    "name": "MAX-LURE"
+  },
+  "1039": {
+    "category": "status-cures",
+    "name": "PEWTER-CRUNCHIES"
+  },
+  "1040": {
+    "category": "vitamins",
+    "name": "HEALTH-CANDY"
+  },
+  "1041": {
+    "category": "vitamins",
+    "name": "MIGHTY-CANDY"
+  },
+  "1042": {
+    "category": "vitamins",
+    "name": "TOUGH-CANDY"
+  },
+  "1043": {
+    "category": "vitamins",
+    "name": "SMART-CANDY"
+  },
+  "1044": {
+    "category": "vitamins",
+    "name": "COURAGE-CANDY"
+  },
+  "1045": {
+    "category": "vitamins",
+    "name": "QUICK-CANDY"
+  },
+  "1046": {
+    "category": "vitamins",
+    "name": "HEALTH-CANDY-L"
+  },
+  "1047": {
+    "category": "vitamins",
+    "name": "MIGHTY-CANDY-L"
+  },
+  "1048": {
+    "category": "vitamins",
+    "name": "TOUGH-CANDY-L"
+  },
+  "1049": {
+    "category": "vitamins",
+    "name": "SMART-CANDY-L"
+  },
+  "1050": {
+    "category": "vitamins",
+    "name": "COURAGE-CANDY-L"
+  },
+  "1051": {
+    "category": "vitamins",
+    "name": "QUICK-CANDY-L"
+  },
+  "1052": {
+    "category": "vitamins",
+    "name": "HEALTH-CANDY-XL"
+  },
+  "1053": {
+    "category": "vitamins",
+    "name": "MIGHTY-CANDY-XL"
+  },
+  "1054": {
+    "category": "vitamins",
+    "name": "TOUGH-CANDY-XL"
+  },
+  "1055": {
+    "category": "vitamins",
+    "name": "SMART-CANDY-XL"
+  },
+  "1056": {
+    "category": "vitamins",
+    "name": "COURAGE-CANDY-XL"
+  },
+  "1057": {
+    "category": "vitamins",
+    "name": "QUICK-CANDY-XL"
+  },
+  "1058": {
+    "category": "species-candies",
+    "name": "BULBASAUR-CANDY"
+  },
+  "1059": {
+    "category": "species-candies",
+    "name": "CHARMANDER-CANDY"
+  },
+  "1060": {
+    "category": "species-candies",
+    "name": "SQUIRTLE-CANDY"
+  },
+  "1061": {
+    "category": "species-candies",
+    "name": "CATERPIE-CANDY"
+  },
+  "1062": {
+    "category": "species-candies",
+    "name": "WEEDLE-CANDY"
+  },
+  "1063": {
+    "category": "species-candies",
+    "name": "PIDGEY-CANDY"
+  },
+  "1064": {
+    "category": "species-candies",
+    "name": "RATTATA-CANDY"
+  },
+  "1065": {
+    "category": "species-candies",
+    "name": "SPEAROW-CANDY"
+  },
+  "1066": {
+    "category": "species-candies",
+    "name": "EKANS-CANDY"
+  },
+  "1067": {
+    "category": "species-candies",
+    "name": "PIKACHU-CANDY"
+  },
+  "1068": {
+    "category": "species-candies",
+    "name": "SANDSHREW-CANDY"
+  },
+  "1069": {
+    "category": "species-candies",
+    "name": "NIDORAN-F-CANDY"
+  },
+  "1070": {
+    "category": "species-candies",
+    "name": "NIDORAN-M-CANDY"
+  },
+  "1071": {
+    "category": "species-candies",
+    "name": "CLEFAIRY-CANDY"
+  },
+  "1072": {
+    "category": "species-candies",
+    "name": "VULPIX-CANDY"
+  },
+  "1073": {
+    "category": "species-candies",
+    "name": "JIGGLYPUFF-CANDY"
+  },
+  "1074": {
+    "category": "species-candies",
+    "name": "ZUBAT-CANDY"
+  },
+  "1075": {
+    "category": "species-candies",
+    "name": "ODDISH-CANDY"
+  },
+  "1076": {
+    "category": "species-candies",
+    "name": "PARAS-CANDY"
+  },
+  "1077": {
+    "category": "species-candies",
+    "name": "VENONAT-CANDY"
+  },
+  "1078": {
+    "category": "species-candies",
+    "name": "DIGLETT-CANDY"
+  },
+  "1079": {
+    "category": "species-candies",
+    "name": "MEOWTH-CANDY"
+  },
+  "1080": {
+    "category": "species-candies",
+    "name": "PSYDUCK-CANDY"
+  },
+  "1081": {
+    "category": "species-candies",
+    "name": "MANKEY-CANDY"
+  },
+  "1082": {
+    "category": "species-candies",
+    "name": "GROWLITHE-CANDY"
+  },
+  "1083": {
+    "category": "species-candies",
+    "name": "POLIWAG-CANDY"
+  },
+  "1084": {
+    "category": "species-candies",
+    "name": "ABRA-CANDY"
+  },
+  "1085": {
+    "category": "species-candies",
+    "name": "MACHOP-CANDY"
+  },
+  "1086": {
+    "category": "species-candies",
+    "name": "BELLSPROUT-CANDY"
+  },
+  "1087": {
+    "category": "species-candies",
+    "name": "TENTACOOL-CANDY"
+  },
+  "1088": {
+    "category": "species-candies",
+    "name": "GEODUDE-CANDY"
+  },
+  "1089": {
+    "category": "species-candies",
+    "name": "PONYTA-CANDY"
+  },
+  "1090": {
+    "category": "species-candies",
+    "name": "SLOWPOKE-CANDY"
+  },
+  "1091": {
+    "category": "species-candies",
+    "name": "MAGNEMITE-CANDY"
+  },
+  "1092": {
+    "category": "species-candies",
+    "name": "FARFETCHD-CANDY"
+  },
+  "1093": {
+    "category": "species-candies",
+    "name": "DODUO-CANDY"
+  },
+  "1094": {
+    "category": "species-candies",
+    "name": "SEEL-CANDY"
+  },
+  "1095": {
+    "category": "species-candies",
+    "name": "GRIMER-CANDY"
+  },
+  "1096": {
+    "category": "species-candies",
+    "name": "SHELLDER-CANDY"
+  },
+  "1097": {
+    "category": "species-candies",
+    "name": "GASTLY-CANDY"
+  },
+  "1098": {
+    "category": "species-candies",
+    "name": "ONIX-CANDY"
+  },
+  "1099": {
+    "category": "species-candies",
+    "name": "DROWZEE-CANDY"
+  },
+  "1100": {
+    "category": "species-candies",
+    "name": "KRABBY-CANDY"
+  },
+  "1101": {
+    "category": "species-candies",
+    "name": "VOLTORB-CANDY"
+  },
+  "1102": {
+    "category": "species-candies",
+    "name": "EXEGGCUTE-CANDY"
+  },
+  "1103": {
+    "category": "species-candies",
+    "name": "CUBONE-CANDY"
+  },
+  "1104": {
+    "category": "species-candies",
+    "name": "HITMONLEE-CANDY"
+  },
+  "1105": {
+    "category": "species-candies",
+    "name": "HITMONCHAN-CANDY"
+  },
+  "1106": {
+    "category": "species-candies",
+    "name": "LICKITUNG-CANDY"
+  },
+  "1107": {
+    "category": "species-candies",
+    "name": "KOFFING-CANDY"
+  },
+  "1108": {
+    "category": "species-candies",
+    "name": "RHYHORN-CANDY"
+  },
+  "1109": {
+    "category": "species-candies",
+    "name": "CHANSEY-CANDY"
+  },
+  "1110": {
+    "category": "species-candies",
+    "name": "TANGELA-CANDY"
+  },
+  "1111": {
+    "category": "species-candies",
+    "name": "KANGASKHAN-CANDY"
+  },
+  "1112": {
+    "category": "species-candies",
+    "name": "HORSEA-CANDY"
+  },
+  "1113": {
+    "category": "species-candies",
+    "name": "GOLDEEN-CANDY"
+  },
+  "1114": {
+    "category": "species-candies",
+    "name": "STARYU-CANDY"
+  },
+  "1115": {
+    "category": "species-candies",
+    "name": "MR-MIME-CANDY"
+  },
+  "1116": {
+    "category": "species-candies",
+    "name": "SCYTHER-CANDY"
+  },
+  "1117": {
+    "category": "species-candies",
+    "name": "JYNX-CANDY"
+  },
+  "1118": {
+    "category": "species-candies",
+    "name": "ELECTABUZZ-CANDY"
+  },
+  "1119": {
+    "category": "species-candies",
+    "name": "PINSIR-CANDY"
+  },
+  "1120": {
+    "category": "species-candies",
+    "name": "TAUROS-CANDY"
+  },
+  "1121": {
+    "category": "species-candies",
+    "name": "MAGIKARP-CANDY"
+  },
+  "1122": {
+    "category": "species-candies",
+    "name": "LAPRAS-CANDY"
+  },
+  "1123": {
+    "category": "species-candies",
+    "name": "DITTO-CANDY"
+  },
+  "1124": {
+    "category": "species-candies",
+    "name": "EEVEE-CANDY"
+  },
+  "1125": {
+    "category": "species-candies",
+    "name": "PORYGON-CANDY"
+  },
+  "1126": {
+    "category": "species-candies",
+    "name": "OMANYTE-CANDY"
+  },
+  "1127": {
+    "category": "species-candies",
+    "name": "KABUTO-CANDY"
+  },
+  "1128": {
+    "category": "species-candies",
+    "name": "AERODACTYL-CANDY"
+  },
+  "1129": {
+    "category": "species-candies",
+    "name": "SNORLAX-CANDY"
+  },
+  "1130": {
+    "category": "species-candies",
+    "name": "ARTICUNO-CANDY"
+  },
+  "1131": {
+    "category": "species-candies",
+    "name": "ZAPDOS-CANDY"
+  },
+  "1132": {
+    "category": "species-candies",
+    "name": "MOLTRES-CANDY"
+  },
+  "1133": {
+    "category": "species-candies",
+    "name": "DRATINI-CANDY"
+  },
+  "1134": {
+    "category": "species-candies",
+    "name": "MEWTWO-CANDY"
+  },
+  "1135": {
+    "category": "species-candies",
+    "name": "MEW-CANDY"
+  },
+  "1136": {
+    "category": "species-candies",
+    "name": "MELTAN-CANDY"
+  },
+  "1137": {
+    "category": "species-candies",
+    "name": "MAGMAR-CANDY"
+  },
+  "1138": {
+    "category": "plot-advancement",
+    "name": "ENDORSEMENT"
+  },
+  "1139": {
+    "category": "gameplay",
+    "name": "POKEMON-BOX-LINK"
+  },
+  "1140": {
+    "category": "plot-advancement",
+    "name": "WISHING-STAR"
+  },
+  "1141": {
+    "category": "plot-advancement",
+    "name": "DYNAMAX-BAND"
+  },
+  "1142": {
+    "category": "gameplay",
+    "name": "FISHING-ROD--GALAR"
+  },
+  "1143": {
+    "category": "gameplay",
+    "name": "ROTOM-BIKE"
+  },
+  "1144": {
+    "category": "curry-ingredients",
+    "name": "SAUSAGES"
+  },
+  "1145": {
+    "category": "curry-ingredients",
+    "name": "BOBS-FOOD-TIN"
+  },
+  "1146": {
+    "category": "curry-ingredients",
+    "name": "BACHS-FOOD-TIN"
+  },
+  "1147": {
+    "category": "curry-ingredients",
+    "name": "TIN-OF-BEANS"
+  },
+  "1148": {
+    "category": "curry-ingredients",
+    "name": "BREAD"
+  },
+  "1149": {
+    "category": "curry-ingredients",
+    "name": "PASTA"
+  },
+  "1150": {
+    "category": "curry-ingredients",
+    "name": "MIXED-MUSHROOMS"
+  },
+  "1151": {
+    "category": "curry-ingredients",
+    "name": "SMOKE-POKE-TAIL"
+  },
+  "1152": {
+    "category": "curry-ingredients",
+    "name": "LARGE-LEEK"
+  },
+  "1153": {
+    "category": "curry-ingredients",
+    "name": "FANCY-APPLE"
+  },
+  "1154": {
+    "category": "curry-ingredients",
+    "name": "BRITTLE-BONES"
+  },
+  "1155": {
+    "category": "curry-ingredients",
+    "name": "PACK-OF-POTATOES"
+  },
+  "1156": {
+    "category": "curry-ingredients",
+    "name": "PUNGENT-ROOT"
+  },
+  "1157": {
+    "category": "curry-ingredients",
+    "name": "SALAD-MIX"
+  },
+  "1158": {
+    "category": "curry-ingredients",
+    "name": "FRIED-FOOD"
+  },
+  "1159": {
+    "category": "curry-ingredients",
+    "name": "BOILED-EGG"
+  },
+  "1160": {
+    "category": "gameplay",
+    "name": "CAMPING-GEAR"
+  },
+  "1161": {
+    "category": "species-specific",
+    "name": "RUSTED-SWORD"
+  },
+  "1162": {
+    "category": "species-specific",
+    "name": "RUSTED-SHIELD"
+  },
+  "1163": {
+    "category": "dex-completion",
+    "name": "FOSSILIZED-BIRD"
+  },
+  "1164": {
+    "category": "dex-completion",
+    "name": "FOSSILIZED-FISH"
+  },
+  "1165": {
+    "category": "dex-completion",
+    "name": "FOSSILIZED-DRAKE"
+  },
+  "1166": {
+    "category": "dex-completion",
+    "name": "FOSSILIZED-DINO"
+  },
+  "1167": {
+    "category": "evolution",
+    "name": "STRAWBERRY-SWEET"
+  },
+  "1168": {
+    "category": "evolution",
+    "name": "LOVE-SWEET"
+  },
+  "1169": {
+    "category": "evolution",
+    "name": "BERRY-SWEET"
+  },
+  "1170": {
+    "category": "evolution",
+    "name": "CLOVER-SWEET"
+  },
+  "1171": {
+    "category": "evolution",
+    "name": "FLOWER-SWEET"
+  },
+  "1172": {
+    "category": "evolution",
+    "name": "STAR-SWEET"
+  },
+  "1173": {
+    "category": "evolution",
+    "name": "RIBBON-SWEET"
+  },
+  "1174": {
+    "category": "evolution",
+    "name": "SWEET-APPLE"
+  },
+  "1175": {
+    "category": "evolution",
+    "name": "TART-APPLE"
+  },
+  "1176": {
+    "category": "held-items",
+    "name": "THROAT-SPRAY"
+  },
+  "1177": {
+    "category": "held-items",
+    "name": "EJECT-PACK"
+  },
+  "1178": {
+    "category": "held-items",
+    "name": "HEAVY-DUTY-BOOTS"
+  },
+  "1179": {
+    "category": "held-items",
+    "name": "BLUNDER-POLICY"
+  },
+  "1180": {
+    "category": "held-items",
+    "name": "ROOM-SERVICE"
+  },
+  "1181": {
+    "category": "held-items",
+    "name": "UTILITY-UMBRELLA"
+  },
+  "1182": {
+    "category": "vitamins",
+    "name": "EXP-CANDY-XS"
+  },
+  "1183": {
+    "category": "vitamins",
+    "name": "EXP-CANDY-S"
+  },
+  "1184": {
+    "category": "vitamins",
+    "name": "EXP-CANDY-M"
+  },
+  "1185": {
+    "category": "vitamins",
+    "name": "EXP-CANDY-L"
+  },
+  "1186": {
+    "category": "vitamins",
+    "name": "EXP-CANDY-XL"
+  },
+  "1187": {
+    "category": "vitamins",
+    "name": "DYNAMAX-CANDY"
+  },
+  "1188": {
+    "category": "all-machines",
+    "name": "TR00"
+  },
+  "1189": {
+    "category": "all-machines",
+    "name": "TR01"
+  },
+  "1190": {
+    "category": "all-machines",
+    "name": "TR02"
+  },
+  "1191": {
+    "category": "all-machines",
+    "name": "TR03"
+  },
+  "1192": {
+    "category": "all-machines",
+    "name": "TR04"
+  },
+  "1193": {
+    "category": "all-machines",
+    "name": "TR05"
+  },
+  "1194": {
+    "category": "all-machines",
+    "name": "TR06"
+  },
+  "1195": {
+    "category": "all-machines",
+    "name": "TR07"
+  },
+  "1196": {
+    "category": "all-machines",
+    "name": "TR08"
+  },
+  "1197": {
+    "category": "all-machines",
+    "name": "TR09"
+  },
+  "1198": {
+    "category": "all-machines",
+    "name": "TR10"
+  },
+  "1199": {
+    "category": "all-machines",
+    "name": "TR11"
+  },
+  "1200": {
+    "category": "all-machines",
+    "name": "TR12"
+  },
+  "1201": {
+    "category": "all-machines",
+    "name": "TR13"
+  },
+  "1202": {
+    "category": "all-machines",
+    "name": "TR14"
+  },
+  "1203": {
+    "category": "all-machines",
+    "name": "TR15"
+  },
+  "1204": {
+    "category": "all-machines",
+    "name": "TR16"
+  },
+  "1205": {
+    "category": "all-machines",
+    "name": "TR17"
+  },
+  "1206": {
+    "category": "all-machines",
+    "name": "TR18"
+  },
+  "1207": {
+    "category": "all-machines",
+    "name": "TR19"
+  },
+  "1208": {
+    "category": "all-machines",
+    "name": "TR20"
+  },
+  "1209": {
+    "category": "all-machines",
+    "name": "TR21"
+  },
+  "1210": {
+    "category": "all-machines",
+    "name": "TR22"
+  },
+  "1211": {
+    "category": "all-machines",
+    "name": "TR23"
+  },
+  "1212": {
+    "category": "all-machines",
+    "name": "TR24"
+  },
+  "1213": {
+    "category": "all-machines",
+    "name": "TR25"
+  },
+  "1214": {
+    "category": "all-machines",
+    "name": "TR26"
+  },
+  "1215": {
+    "category": "all-machines",
+    "name": "TR27"
+  },
+  "1216": {
+    "category": "all-machines",
+    "name": "TR28"
+  },
+  "1217": {
+    "category": "all-machines",
+    "name": "TR29"
+  },
+  "1218": {
+    "category": "all-machines",
+    "name": "TR30"
+  },
+  "1219": {
+    "category": "all-machines",
+    "name": "TR31"
+  },
+  "1220": {
+    "category": "all-machines",
+    "name": "TR32"
+  },
+  "1221": {
+    "category": "all-machines",
+    "name": "TR33"
+  },
+  "1222": {
+    "category": "all-machines",
+    "name": "TR34"
+  },
+  "1223": {
+    "category": "all-machines",
+    "name": "TR35"
+  },
+  "1224": {
+    "category": "all-machines",
+    "name": "TR36"
+  },
+  "1225": {
+    "category": "all-machines",
+    "name": "TR37"
+  },
+  "1226": {
+    "category": "all-machines",
+    "name": "TR38"
+  },
+  "1227": {
+    "category": "all-machines",
+    "name": "TR39"
+  },
+  "1228": {
+    "category": "all-machines",
+    "name": "TR40"
+  },
+  "1229": {
+    "category": "all-machines",
+    "name": "TR41"
+  },
+  "1230": {
+    "category": "all-machines",
+    "name": "TR42"
+  },
+  "1231": {
+    "category": "all-machines",
+    "name": "TR43"
+  },
+  "1232": {
+    "category": "all-machines",
+    "name": "TR44"
+  },
+  "1233": {
+    "category": "all-machines",
+    "name": "TR45"
+  },
+  "1234": {
+    "category": "all-machines",
+    "name": "TR46"
+  },
+  "1235": {
+    "category": "all-machines",
+    "name": "TR47"
+  },
+  "1236": {
+    "category": "all-machines",
+    "name": "TR48"
+  },
+  "1237": {
+    "category": "all-machines",
+    "name": "TR49"
+  },
+  "1238": {
+    "category": "all-machines",
+    "name": "TR50"
+  },
+  "1239": {
+    "category": "all-machines",
+    "name": "TR51"
+  },
+  "1240": {
+    "category": "all-machines",
+    "name": "TR52"
+  },
+  "1241": {
+    "category": "all-machines",
+    "name": "TR53"
+  },
+  "1242": {
+    "category": "all-machines",
+    "name": "TR54"
+  },
+  "1243": {
+    "category": "all-machines",
+    "name": "TR55"
+  },
+  "1244": {
+    "category": "all-machines",
+    "name": "TR56"
+  },
+  "1245": {
+    "category": "all-machines",
+    "name": "TR57"
+  },
+  "1246": {
+    "category": "all-machines",
+    "name": "TR58"
+  },
+  "1247": {
+    "category": "all-machines",
+    "name": "TR59"
+  },
+  "1248": {
+    "category": "all-machines",
+    "name": "TR60"
+  },
+  "1249": {
+    "category": "all-machines",
+    "name": "TR61"
+  },
+  "1250": {
+    "category": "all-machines",
+    "name": "TR62"
+  },
+  "1251": {
+    "category": "all-machines",
+    "name": "TR63"
+  },
+  "1252": {
+    "category": "all-machines",
+    "name": "TR64"
+  },
+  "1253": {
+    "category": "all-machines",
+    "name": "TR65"
+  },
+  "1254": {
+    "category": "all-machines",
+    "name": "TR66"
+  },
+  "1255": {
+    "category": "all-machines",
+    "name": "TR67"
+  },
+  "1256": {
+    "category": "all-machines",
+    "name": "TR68"
+  },
+  "1257": {
+    "category": "all-machines",
+    "name": "TR69"
+  },
+  "1258": {
+    "category": "all-machines",
+    "name": "TR70"
+  },
+  "1259": {
+    "category": "all-machines",
+    "name": "TR71"
+  },
+  "1260": {
+    "category": "all-machines",
+    "name": "TR72"
+  },
+  "1261": {
+    "category": "all-machines",
+    "name": "TR73"
+  },
+  "1262": {
+    "category": "all-machines",
+    "name": "TR74"
+  },
+  "1263": {
+    "category": "all-machines",
+    "name": "TR75"
+  },
+  "1264": {
+    "category": "all-machines",
+    "name": "TR76"
+  },
+  "1265": {
+    "category": "all-machines",
+    "name": "TR77"
+  },
+  "1266": {
+    "category": "all-machines",
+    "name": "TR78"
+  },
+  "1267": {
+    "category": "all-machines",
+    "name": "TR79"
+  },
+  "1268": {
+    "category": "all-machines",
+    "name": "TR80"
+  },
+  "1269": {
+    "category": "all-machines",
+    "name": "TR81"
+  },
+  "1270": {
+    "category": "all-machines",
+    "name": "TR82"
+  },
+  "1271": {
+    "category": "all-machines",
+    "name": "TR83"
+  },
+  "1272": {
+    "category": "all-machines",
+    "name": "TR84"
+  },
+  "1273": {
+    "category": "all-machines",
+    "name": "TR85"
+  },
+  "1274": {
+    "category": "all-machines",
+    "name": "TR86"
+  },
+  "1275": {
+    "category": "all-machines",
+    "name": "TR87"
+  },
+  "1276": {
+    "category": "all-machines",
+    "name": "TR88"
+  },
+  "1277": {
+    "category": "all-machines",
+    "name": "TR89"
+  },
+  "1278": {
+    "category": "all-machines",
+    "name": "TR90"
+  },
+  "1279": {
+    "category": "all-machines",
+    "name": "TR91"
+  },
+  "1280": {
+    "category": "all-machines",
+    "name": "TR92"
+  },
+  "1281": {
+    "category": "all-machines",
+    "name": "TR93"
+  },
+  "1282": {
+    "category": "all-machines",
+    "name": "TR94"
+  },
+  "1283": {
+    "category": "all-machines",
+    "name": "TR95"
+  },
+  "1284": {
+    "category": "all-machines",
+    "name": "TR96"
+  },
+  "1285": {
+    "category": "all-machines",
+    "name": "TR97"
+  },
+  "1286": {
+    "category": "all-machines",
+    "name": "TR98"
+  },
+  "1287": {
+    "category": "all-machines",
+    "name": "TR99"
+  },
+  "1288": {
+    "category": "all-machines",
+    "name": "TM00"
+  },
+  "1289": {
+    "category": "nature-mints",
+    "name": "LONELY-MINT"
+  },
+  "1290": {
+    "category": "nature-mints",
+    "name": "ADAMANT-MINT"
+  },
+  "1291": {
+    "category": "nature-mints",
+    "name": "NAUGHTY-MINT"
+  },
+  "1292": {
+    "category": "nature-mints",
+    "name": "BRAVE-MINT"
+  },
+  "1293": {
+    "category": "nature-mints",
+    "name": "BOLD-MINT"
+  },
+  "1294": {
+    "category": "nature-mints",
+    "name": "IMPISH-MINT"
+  },
+  "1295": {
+    "category": "nature-mints",
+    "name": "LAX-MINT"
+  },
+  "1296": {
+    "category": "nature-mints",
+    "name": "RELAXED-MINT"
+  },
+  "1297": {
+    "category": "nature-mints",
+    "name": "MODEST-MINT"
+  },
+  "1298": {
+    "category": "nature-mints",
+    "name": "MILD-MINT"
+  },
+  "1299": {
+    "category": "nature-mints",
+    "name": "RASH-MINT"
+  },
+  "1300": {
+    "category": "nature-mints",
+    "name": "QUIET-MINT"
+  },
+  "1301": {
+    "category": "nature-mints",
+    "name": "CALM-MINT"
+  },
+  "1302": {
+    "category": "nature-mints",
+    "name": "GENTLE-MINT"
+  },
+  "1303": {
+    "category": "nature-mints",
+    "name": "CAREFUL-MINT"
+  },
+  "1304": {
+    "category": "nature-mints",
+    "name": "SASSY-MINT"
+  },
+  "1305": {
+    "category": "nature-mints",
+    "name": "TIMID-MINT"
+  },
+  "1306": {
+    "category": "nature-mints",
+    "name": "HASTY-MINT"
+  },
+  "1307": {
+    "category": "nature-mints",
+    "name": "JOLLY-MINT"
+  },
+  "1308": {
+    "category": "nature-mints",
+    "name": "NAIVE-MINT"
+  },
+  "1309": {
+    "category": "nature-mints",
+    "name": "SERIOUS-MINT"
+  },
+  "1310": {
+    "category": "collectibles",
+    "name": "WISHING-PIECE"
+  },
+  "1311": {
+    "category": "evolution",
+    "name": "CRACKED-POT"
+  },
+  "1312": {
+    "category": "evolution",
+    "name": "CHIPPED-POT"
+  },
+  "1313": {
+    "category": "gameplay",
+    "name": "HI-TECH-EARBUDS"
+  },
+  "1314": {
+    "category": "curry-ingredients",
+    "name": "FRUIT-BUNCH"
+  },
+  "1315": {
+    "category": "curry-ingredients",
+    "name": "MOOMOO-CHEESE"
+  },
+  "1316": {
+    "category": "curry-ingredients",
+    "name": "SPICE-MIX"
+  },
+  "1317": {
+    "category": "curry-ingredients",
+    "name": "FRESH-CREAM"
+  },
+  "1318": {
+    "category": "curry-ingredients",
+    "name": "PACKAGED-CURRY"
+  },
+  "1319": {
+    "category": "curry-ingredients",
+    "name": "COCONUT-MILK"
+  },
+  "1320": {
+    "category": "curry-ingredients",
+    "name": "INSTANT-NOODLES"
+  },
+  "1321": {
+    "category": "curry-ingredients",
+    "name": "PRECOOKED-BURGER"
+  },
+  "1322": {
+    "category": "curry-ingredients",
+    "name": "GIGANTAMIX"
+  },
+  "1323": {
+    "category": "unused",
+    "name": "WISHING-CHIP"
+  },
+  "1324": {
+    "category": "unused",
+    "name": "ROTOM-BIKE--WATER-MODE"
+  },
+  "1325": {
+    "category": "gameplay",
+    "name": "CATCHING-CHARM"
+  },
+  "1326": {
+    "category": "plot-advancement",
+    "name": "OLD-LETTER"
+  },
+  "1327": {
+    "category": "unused",
+    "name": "BAND-AUTOGRAPH"
+  },
+  "1328": {
+    "category": "plot-advancement",
+    "name": "SONIAS-BOOK"
+  },
+  "1329": {
+    "category": "gameplay",
+    "name": "ROTOM-CATALOG"
+  },
+  "1330": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AND458"
+  },
+  "1331": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AND15"
+  },
+  "1332": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AND337"
+  },
+  "1333": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AND603"
+  },
+  "1334": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AND390"
+  },
+  "1335": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR6879"
+  },
+  "1336": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR6859"
+  },
+  "1337": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR6913"
+  },
+  "1338": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR7348"
+  },
+  "1339": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR7121"
+  },
+  "1340": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR6746"
+  },
+  "1341": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR7194"
+  },
+  "1342": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR7337"
+  },
+  "1343": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR7343"
+  },
+  "1344": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR6812"
+  },
+  "1345": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR7116"
+  },
+  "1346": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR7264"
+  },
+  "1347": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGR7597"
+  },
+  "1348": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DEL7882"
+  },
+  "1349": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DEL7906"
+  },
+  "1350": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DEL7852"
+  },
+  "1351": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PSC596"
+  },
+  "1352": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PSC361"
+  },
+  "1353": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PSC510"
+  },
+  "1354": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PSC437"
+  },
+  "1355": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PSC8773"
+  },
+  "1356": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEP1865"
+  },
+  "1357": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEP1829"
+  },
+  "1358": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-BOO5340"
+  },
+  "1359": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-BOO5506"
+  },
+  "1360": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-BOO5435"
+  },
+  "1361": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-BOO5602"
+  },
+  "1362": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-BOO5733"
+  },
+  "1363": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-BOO5235"
+  },
+  "1364": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-BOO5351"
+  },
+  "1365": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HYA3748"
+  },
+  "1366": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HYA3903"
+  },
+  "1367": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HYA3418"
+  },
+  "1368": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HYA3482"
+  },
+  "1369": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HYA3845"
+  },
+  "1370": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI1084"
+  },
+  "1371": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI472"
+  },
+  "1372": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI1666"
+  },
+  "1373": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI897"
+  },
+  "1374": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI1231"
+  },
+  "1375": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI874"
+  },
+  "1376": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI1298"
+  },
+  "1377": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI1325"
+  },
+  "1378": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI984"
+  },
+  "1379": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI1464"
+  },
+  "1380": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI1393"
+  },
+  "1381": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ERI850"
+  },
+  "1382": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TAU1409"
+  },
+  "1383": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TAU1457"
+  },
+  "1384": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TAU1165"
+  },
+  "1385": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TAU1791"
+  },
+  "1386": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TAU1910"
+  },
+  "1387": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TAU1346"
+  },
+  "1388": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TAU1373"
+  },
+  "1389": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TAU1412"
+  },
+  "1390": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMA2491"
+  },
+  "1391": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMA2693"
+  },
+  "1392": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMA2294"
+  },
+  "1393": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMA2827"
+  },
+  "1394": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMA2282"
+  },
+  "1395": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMA2618"
+  },
+  "1396": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMA2657"
+  },
+  "1397": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMA2646"
+  },
+  "1398": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4905"
+  },
+  "1399": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4301"
+  },
+  "1400": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA5191"
+  },
+  "1401": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA5054"
+  },
+  "1402": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4295"
+  },
+  "1403": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4660"
+  },
+  "1404": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4554"
+  },
+  "1405": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4069"
+  },
+  "1406": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA3569"
+  },
+  "1407": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA3323"
+  },
+  "1408": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4033"
+  },
+  "1409": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4377"
+  },
+  "1410": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4375"
+  },
+  "1411": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA4518"
+  },
+  "1412": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMA3594"
+  },
+  "1413": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR5056"
+  },
+  "1414": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR4825"
+  },
+  "1415": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR4932"
+  },
+  "1416": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR4540"
+  },
+  "1417": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR4689"
+  },
+  "1418": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR5338"
+  },
+  "1419": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR4910"
+  },
+  "1420": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR5315"
+  },
+  "1421": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR5359"
+  },
+  "1422": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR5409"
+  },
+  "1423": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VIR5107"
+  },
+  "1424": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ARI617"
+  },
+  "1425": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ARI553"
+  },
+  "1426": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ARI546"
+  },
+  "1427": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ARI951"
+  },
+  "1428": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI1713"
+  },
+  "1429": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI2061"
+  },
+  "1430": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI1790"
+  },
+  "1431": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI1903"
+  },
+  "1432": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI1948"
+  },
+  "1433": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI2004"
+  },
+  "1434": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI1852"
+  },
+  "1435": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI1879"
+  },
+  "1436": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI1899"
+  },
+  "1437": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ORI1543"
+  },
+  "1438": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAS21"
+  },
+  "1439": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAS168"
+  },
+  "1440": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAS403"
+  },
+  "1441": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAS153"
+  },
+  "1442": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAS542"
+  },
+  "1443": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAS219"
+  },
+  "1444": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAS265"
+  },
+  "1445": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CNC3572"
+  },
+  "1446": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CNC3208"
+  },
+  "1447": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CNC3461"
+  },
+  "1448": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CNC3449"
+  },
+  "1449": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CNC3429"
+  },
+  "1450": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CNC3627"
+  },
+  "1451": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CNC3268"
+  },
+  "1452": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CNC3249"
+  },
+  "1453": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-COM4968"
+  },
+  "1454": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRV4757"
+  },
+  "1455": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRV4623"
+  },
+  "1456": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRV4662"
+  },
+  "1457": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRV4786"
+  },
+  "1458": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AUR1708"
+  },
+  "1459": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AUR2088"
+  },
+  "1460": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AUR1605"
+  },
+  "1461": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AUR2095"
+  },
+  "1462": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AUR1577"
+  },
+  "1463": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AUR1641"
+  },
+  "1464": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AUR1612"
+  },
+  "1465": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PAV7790"
+  },
+  "1466": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CET911"
+  },
+  "1467": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CET681"
+  },
+  "1468": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CET188"
+  },
+  "1469": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CET539"
+  },
+  "1470": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CET804"
+  },
+  "1471": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEP8974"
+  },
+  "1472": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEP8162"
+  },
+  "1473": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEP8238"
+  },
+  "1474": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEP8417"
+  },
+  "1475": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEN5267"
+  },
+  "1476": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEN5288"
+  },
+  "1477": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEN551"
+  },
+  "1478": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEN5459"
+  },
+  "1479": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CEN5460"
+  },
+  "1480": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMI2943"
+  },
+  "1481": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CMI2845"
+  },
+  "1482": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-EQU8131"
+  },
+  "1483": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VUL7405"
+  },
+  "1484": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMI424"
+  },
+  "1485": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMI5563"
+  },
+  "1486": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMI5735"
+  },
+  "1487": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-UMI6789"
+  },
+  "1488": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRT4287"
+  },
+  "1489": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LYR7001"
+  },
+  "1490": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LYR7178"
+  },
+  "1491": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LYR7106"
+  },
+  "1492": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LYR7298"
+  },
+  "1493": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-ARA6585"
+  },
+  "1494": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6134"
+  },
+  "1495": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6527"
+  },
+  "1496": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6553"
+  },
+  "1497": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO5953"
+  },
+  "1498": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO5984"
+  },
+  "1499": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6508"
+  },
+  "1500": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6084"
+  },
+  "1501": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO5944"
+  },
+  "1502": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6630"
+  },
+  "1503": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6027"
+  },
+  "1504": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6247"
+  },
+  "1505": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6252"
+  },
+  "1506": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO5928"
+  },
+  "1507": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6241"
+  },
+  "1508": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SCO6165"
+  },
+  "1509": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TRI544"
+  },
+  "1510": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO3982"
+  },
+  "1511": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO4534"
+  },
+  "1512": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO4357"
+  },
+  "1513": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO4057"
+  },
+  "1514": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO4359"
+  },
+  "1515": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO4031"
+  },
+  "1516": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO3852"
+  },
+  "1517": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO3905"
+  },
+  "1518": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LEO3773"
+  },
+  "1519": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GRU8425"
+  },
+  "1520": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GRU8636"
+  },
+  "1521": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GRU8353"
+  },
+  "1522": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LIB5685"
+  },
+  "1523": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LIB5531"
+  },
+  "1524": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LIB5787"
+  },
+  "1525": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-LIB5603"
+  },
+  "1526": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PUP3165"
+  },
+  "1527": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PUP3185"
+  },
+  "1528": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PUP3045"
+  },
+  "1529": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CYG7924"
+  },
+  "1530": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CYG7417"
+  },
+  "1531": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CYG7796"
+  },
+  "1532": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CYG8301"
+  },
+  "1533": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CYG7949"
+  },
+  "1534": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CYG7528"
+  },
+  "1535": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-OCT7228"
+  },
+  "1536": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-COL1956"
+  },
+  "1537": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-COL2040"
+  },
+  "1538": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-COL2177"
+  },
+  "1539": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2990"
+  },
+  "1540": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2891"
+  },
+  "1541": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2421"
+  },
+  "1542": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2473"
+  },
+  "1543": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2216"
+  },
+  "1544": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2777"
+  },
+  "1545": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2650"
+  },
+  "1546": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2286"
+  },
+  "1547": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2484"
+  },
+  "1548": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-GEM2930"
+  },
+  "1549": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8775"
+  },
+  "1550": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8781"
+  },
+  "1551": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG39"
+  },
+  "1552": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8308"
+  },
+  "1553": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8650"
+  },
+  "1554": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8634"
+  },
+  "1555": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8684"
+  },
+  "1556": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8450"
+  },
+  "1557": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8880"
+  },
+  "1558": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PEG8905"
+  },
+  "1559": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-OPH6556"
+  },
+  "1560": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-OPH6378"
+  },
+  "1561": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-OPH6603"
+  },
+  "1562": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-OPH6149"
+  },
+  "1563": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-OPH6056"
+  },
+  "1564": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-OPH6075"
+  },
+  "1565": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SER5854"
+  },
+  "1566": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SER7141"
+  },
+  "1567": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SER5879"
+  },
+  "1568": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HER6406"
+  },
+  "1569": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HER6148"
+  },
+  "1570": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HER6410"
+  },
+  "1571": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HER6526"
+  },
+  "1572": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HER6117"
+  },
+  "1573": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-HER6008"
+  },
+  "1574": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PER936"
+  },
+  "1575": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PER1017"
+  },
+  "1576": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PER1131"
+  },
+  "1577": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PER1228"
+  },
+  "1578": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PER834"
+  },
+  "1579": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PER941"
+  },
+  "1580": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PHE99"
+  },
+  "1581": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PHE338"
+  },
+  "1582": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VEL3634"
+  },
+  "1583": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VEL3485"
+  },
+  "1584": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-VEL3734"
+  },
+  "1585": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQR8232"
+  },
+  "1586": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQR8414"
+  },
+  "1587": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQR8709"
+  },
+  "1588": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQR8518"
+  },
+  "1589": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQR7950"
+  },
+  "1590": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQR8499"
+  },
+  "1591": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQR8610"
+  },
+  "1592": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQR8264"
+  },
+  "1593": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRU4853"
+  },
+  "1594": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRU4730"
+  },
+  "1595": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRU4763"
+  },
+  "1596": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRU4700"
+  },
+  "1597": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CRU4656"
+  },
+  "1598": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-PSA8728"
+  },
+  "1599": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-TRA6217"
+  },
+  "1600": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAP7776"
+  },
+  "1601": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAP7754"
+  },
+  "1602": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAP8278"
+  },
+  "1603": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAP8322"
+  },
+  "1604": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAP7773"
+  },
+  "1605": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-SGE7479"
+  },
+  "1606": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAR2326"
+  },
+  "1607": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAR3685"
+  },
+  "1608": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAR3307"
+  },
+  "1609": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CAR3699"
+  },
+  "1610": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA5744"
+  },
+  "1611": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA5291"
+  },
+  "1612": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA6705"
+  },
+  "1613": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA6536"
+  },
+  "1614": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA7310"
+  },
+  "1615": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA6688"
+  },
+  "1616": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA4434"
+  },
+  "1617": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA6370"
+  },
+  "1618": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA7462"
+  },
+  "1619": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA6396"
+  },
+  "1620": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA6132"
+  },
+  "1621": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-DRA6636"
+  },
+  "1622": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CVN4915"
+  },
+  "1623": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CVN4785"
+  },
+  "1624": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-CVN4846"
+  },
+  "1625": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQL7595"
+  },
+  "1626": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQL7557"
+  },
+  "1627": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQL7525"
+  },
+  "1628": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQL7602"
+  },
+  "1629": {
+    "category": "dynamax-crystals",
+    "name": "DYNAMAX-CRYSTAL-AQL7235"
+  },
+  "1630": {
+    "category": "revival",
+    "name": "MAX-HONEY"
+  },
+  "1631": {
+    "category": "stat-boosts",
+    "name": "MAX-MUSHROOMS"
+  },
+  "1632": {
+    "category": "collectibles",
+    "name": "GALARICA-TWIG"
+  },
+  "1633": {
+    "category": "collectibles",
+    "name": "GALARICA-CUFF"
+  },
+  "1634": {
+    "category": "gameplay",
+    "name": "STYLE-CARD"
+  },
+  "1635": {
+    "category": "plot-advancement",
+    "name": "ARMOR-PASS"
+  },
+  "1636": {
+    "category": "unused",
+    "name": "ROTOM-BIKE--SPARKLING-WHITE"
+  },
+  "1637": {
+    "category": "unused",
+    "name": "ROTOM-BIKE--GLISTENING-BLACK"
+  },
+  "1638": {
+    "category": "gameplay",
+    "name": "EXP-CHARM"
+  },
+  "1639": {
+    "category": "collectibles",
+    "name": "ARMORITE-ORE"
+  },
+  "1640": {
+    "category": "gameplay",
+    "name": "MARK-CHARM"
+  },
+  "1641": {
+    "category": "unused",
+    "name": "REINS-OF-UNITY--MERGE"
+  },
+  "1642": {
+    "category": "unused",
+    "name": "REINS-OF-UNITY--SPLIT"
+  },
+  "1643": {
+    "category": "collectibles",
+    "name": "GALARICA-WREATH"
+  },
+  "1644": {
+    "category": "plot-advancement",
+    "name": "LEGENDARY-CLUE-1"
+  },
+  "1645": {
+    "category": "plot-advancement",
+    "name": "LEGENDARY-CLUE-2"
+  },
+  "1646": {
+    "category": "plot-advancement",
+    "name": "LEGENDARY-CLUE-3"
+  },
+  "1647": {
+    "category": "plot-advancement",
+    "name": "LEGENDARY-CLUE-QUESTION"
+  },
+  "1648": {
+    "category": "plot-advancement",
+    "name": "CROWN-PASS"
+  },
+  "1649": {
+    "category": "plot-advancement",
+    "name": "WOODEN-CROWN"
+  },
+  "1650": {
+    "category": "plot-advancement",
+    "name": "RADIANT-PETAL"
+  },
+  "1651": {
+    "category": "plot-advancement",
+    "name": "WHITE-MANE-HAIR"
+  },
+  "1652": {
+    "category": "plot-advancement",
+    "name": "BLACK-MANE-HAIR"
+  },
+  "1653": {
+    "category": "plot-advancement",
+    "name": "ICEROOT-CARROT"
+  },
+  "1654": {
+    "category": "plot-advancement",
+    "name": "SHADEROOT-CARROT"
+  },
+  "1655": {
+    "category": "collectibles",
+    "name": "DYNITE-ORE"
+  },
+  "1656": {
+    "category": "plot-advancement",
+    "name": "CARROT-SEEDS"
+  },
+  "1657": {
+    "category": "vitamins",
+    "name": "ABILITY-PATCH"
+  },
+  "1658": {
+    "category": "plot-advancement",
+    "name": "REINS-OF-UNITY"
+  },
+  "1659": {
+    "category": "gameplay",
+    "name": "ADAMANT-CRYSTAL"
+  },
+  "1660": {
+    "category": "gameplay",
+    "name": "LUSTROUS-GLOBE"
+  },
+  "1661": {
+    "category": "gameplay",
+    "name": "GRISEOUS-CORE"
+  },
+  "1662": {
+    "category": "plates",
+    "name": "BLANK-PLATE"
+  },
+  "1663": {
+    "category": "event-items",
+    "name": "STRANGE-BALL"
+  },
+  "1664": {
+    "category": "plates",
+    "name": "LEGEND-PLATE"
+  },
+  "1665": {
+    "category": "event-items",
+    "name": "ROTOM-PHONE"
+  },
+  "1666": {
+    "category": "event-items",
+    "name": "SANDWICH"
+  },
+  "1667": {
+    "category": "event-items",
+    "name": "KORAIDON\u2019S-POK\u00c9-BALL"
+  },
+  "1668": {
+    "category": "event-items",
+    "name": "MIRAIDON\u2019S-POK\u00c9-BALL"
+  },
+  "1669": {
+    "category": "event-items",
+    "name": "TERA-ORB"
+  },
+  "1670": {
+    "category": "event-items",
+    "name": "SCARLET-BOOK"
+  },
+  "1671": {
+    "category": "event-items",
+    "name": "VIOLET-BOOK"
+  },
+  "1672": {
+    "category": "plot-advancement",
+    "name": "KOFU\u2019S-WALLET"
+  },
+  "1673": {
+    "category": "loot",
+    "name": "TINY-BAMBOO-SHOOT"
+  },
+  "1674": {
+    "category": "loot",
+    "name": "BIG-BAMBOO-SHOOT"
+  },
+  "1675": {
+    "category": "gameplay",
+    "name": "SCROLL-OF-DARKNESS"
+  },
+  "1676": {
+    "category": "gameplay",
+    "name": "SCROLL-OF-WATERS"
+  },
+  "1677": {
+    "category": "evolution",
+    "name": "MALICIOUS-ARMOR"
+  },
+  "1678": {
+    "category": "tera-shard",
+    "name": "NORMAL-TERA-SHARD"
+  },
+  "1679": {
+    "category": "tera-shard",
+    "name": "FIRE-TERA-SHARD"
+  },
+  "1680": {
+    "category": "tera-shard",
+    "name": "WATER-TERA-SHARD"
+  },
+  "1681": {
+    "category": "tera-shard",
+    "name": "ELECTRIC-TERA-SHARD"
+  },
+  "1682": {
+    "category": "tera-shard",
+    "name": "GRASS-TERA-SHARD"
+  },
+  "1683": {
+    "category": "tera-shard",
+    "name": "ICE-TERA-SHARD"
+  },
+  "1684": {
+    "category": "tera-shard",
+    "name": "FIGHTING-TERA-SHARD"
+  },
+  "1685": {
+    "category": "tera-shard",
+    "name": "POISON-TERA-SHARD"
+  },
+  "1686": {
+    "category": "tera-shard",
+    "name": "GROUND-TERA-SHARD"
+  },
+  "1687": {
+    "category": "tera-shard",
+    "name": "FLYING-TERA-SHARD"
+  },
+  "1688": {
+    "category": "tera-shard",
+    "name": "PSYCHIC-TERA-SHARD"
+  },
+  "1689": {
+    "category": "tera-shard",
+    "name": "BUG-TERA-SHARD"
+  },
+  "1690": {
+    "category": "tera-shard",
+    "name": "ROCK-TERA-SHARD"
+  },
+  "1691": {
+    "category": "tera-shard",
+    "name": "GHOST-TERA-SHARD"
+  },
+  "1692": {
+    "category": "tera-shard",
+    "name": "DRAGON-TERA-SHARD"
+  },
+  "1693": {
+    "category": "tera-shard",
+    "name": "DARK-TERA-SHARD"
+  },
+  "1694": {
+    "category": "tera-shard",
+    "name": "STEEL-TERA-SHARD"
+  },
+  "1695": {
+    "category": "tera-shard",
+    "name": "FAIRY-TERA-SHARD"
+  },
+  "1696": {
+    "category": "held-items",
+    "name": "BOOSTER-ENERGY"
+  },
+  "1697": {
+    "category": "held-items",
+    "name": "ABILITY-SHIELD"
+  },
+  "1698": {
+    "category": "held-items",
+    "name": "CLEAR-AMULET"
+  },
+  "1699": {
+    "category": "held-items",
+    "name": "MIRROR-HERB"
+  },
+  "1700": {
+    "category": "held-items",
+    "name": "PUNCHING-GLOVE"
+  },
+  "1701": {
+    "category": "held-items",
+    "name": "COVERT-CLOAK"
+  },
+  "1702": {
+    "category": "held-items",
+    "name": "LOADED-DICE"
+  },
+  "1703": {
+    "category": "sandwich-ingredients",
+    "name": "BAGUETTE"
+  },
+  "1704": {
+    "category": "sandwich-ingredients",
+    "name": "MAYONNAISE"
+  },
+  "1705": {
+    "category": "sandwich-ingredients",
+    "name": "KETCHUP"
+  },
+  "1706": {
+    "category": "sandwich-ingredients",
+    "name": "MUSTARD"
+  },
+  "1707": {
+    "category": "sandwich-ingredients",
+    "name": "BUTTER"
+  },
+  "1708": {
+    "category": "sandwich-ingredients",
+    "name": "PEANUT-BUTTER"
+  },
+  "1709": {
+    "category": "sandwich-ingredients",
+    "name": "CHILI-SAUCE"
+  },
+  "1710": {
+    "category": "sandwich-ingredients",
+    "name": "SALT"
+  },
+  "1711": {
+    "category": "sandwich-ingredients",
+    "name": "PEPPER"
+  },
+  "1712": {
+    "category": "sandwich-ingredients",
+    "name": "YOGURT"
+  },
+  "1713": {
+    "category": "sandwich-ingredients",
+    "name": "WHIPPED-CREAM"
+  },
+  "1714": {
+    "category": "sandwich-ingredients",
+    "name": "CREAM-CHEESE"
+  },
+  "1715": {
+    "category": "sandwich-ingredients",
+    "name": "JAM"
+  },
+  "1716": {
+    "category": "sandwich-ingredients",
+    "name": "MARMALADE"
+  },
+  "1717": {
+    "category": "sandwich-ingredients",
+    "name": "OLIVE-OIL"
+  },
+  "1718": {
+    "category": "sandwich-ingredients",
+    "name": "VINEGAR"
+  },
+  "1719": {
+    "category": "sandwich-ingredients",
+    "name": "SWEET-HERBA-MYSTICA"
+  },
+  "1720": {
+    "category": "sandwich-ingredients",
+    "name": "SALTY-HERBA-MYSTICA"
+  },
+  "1721": {
+    "category": "sandwich-ingredients",
+    "name": "SOUR-HERBA-MYSTICA"
+  },
+  "1722": {
+    "category": "sandwich-ingredients",
+    "name": "BITTER-HERBA-MYSTICA"
+  },
+  "1723": {
+    "category": "sandwich-ingredients",
+    "name": "SPICY-HERBA-MYSTICA"
+  },
+  "1724": {
+    "category": "sandwich-ingredients",
+    "name": "LETTUCE"
+  },
+  "1725": {
+    "category": "sandwich-ingredients",
+    "name": "TOMATO"
+  },
+  "1726": {
+    "category": "sandwich-ingredients",
+    "name": "CHERRY-TOMATOES"
+  },
+  "1727": {
+    "category": "sandwich-ingredients",
+    "name": "CUCUMBER"
+  },
+  "1728": {
+    "category": "sandwich-ingredients",
+    "name": "PICKLE"
+  },
+  "1729": {
+    "category": "sandwich-ingredients",
+    "name": "ONION"
+  },
+  "1730": {
+    "category": "sandwich-ingredients",
+    "name": "RED-ONION"
+  },
+  "1731": {
+    "category": "sandwich-ingredients",
+    "name": "GREEN-BELL-PEPPER"
+  },
+  "1732": {
+    "category": "sandwich-ingredients",
+    "name": "RED-BELL-PEPPER"
+  },
+  "1733": {
+    "category": "sandwich-ingredients",
+    "name": "YELLOW-BELL-PEPPER"
+  },
+  "1734": {
+    "category": "sandwich-ingredients",
+    "name": "AVOCADO"
+  },
+  "1735": {
+    "category": "sandwich-ingredients",
+    "name": "BACON"
+  },
+  "1736": {
+    "category": "sandwich-ingredients",
+    "name": "HAM"
+  },
+  "1737": {
+    "category": "sandwich-ingredients",
+    "name": "PROSCIUTTO"
+  },
+  "1738": {
+    "category": "sandwich-ingredients",
+    "name": "CHORIZO"
+  },
+  "1739": {
+    "category": "sandwich-ingredients",
+    "name": "HERBED-SAUSAGE"
+  },
+  "1740": {
+    "category": "sandwich-ingredients",
+    "name": "HAMBURGER"
+  },
+  "1741": {
+    "category": "sandwich-ingredients",
+    "name": "KLAWF-STICK"
+  },
+  "1742": {
+    "category": "sandwich-ingredients",
+    "name": "SMOKED-FILLET"
+  },
+  "1743": {
+    "category": "sandwich-ingredients",
+    "name": "FRIED-FILLET"
+  },
+  "1744": {
+    "category": "sandwich-ingredients",
+    "name": "EGG"
+  },
+  "1745": {
+    "category": "sandwich-ingredients",
+    "name": "POTATO-TORTILLA"
+  },
+  "1746": {
+    "category": "sandwich-ingredients",
+    "name": "TOFU"
+  },
+  "1747": {
+    "category": "sandwich-ingredients",
+    "name": "RICE"
+  },
+  "1748": {
+    "category": "sandwich-ingredients",
+    "name": "NOODLES"
+  },
+  "1749": {
+    "category": "sandwich-ingredients",
+    "name": "POTATO-SALAD"
+  },
+  "1750": {
+    "category": "sandwich-ingredients",
+    "name": "CHEESE"
+  },
+  "1751": {
+    "category": "sandwich-ingredients",
+    "name": "BANANA"
+  },
+  "1752": {
+    "category": "sandwich-ingredients",
+    "name": "STRAWBERRY"
+  },
+  "1753": {
+    "category": "sandwich-ingredients",
+    "name": "APPLE"
+  },
+  "1754": {
+    "category": "sandwich-ingredients",
+    "name": "KIWI"
+  },
+  "1755": {
+    "category": "sandwich-ingredients",
+    "name": "PINEAPPLE"
+  },
+  "1756": {
+    "category": "sandwich-ingredients",
+    "name": "JALAPE\u00d1O"
+  },
+  "1757": {
+    "category": "sandwich-ingredients",
+    "name": "HORSERADISH"
+  },
+  "1758": {
+    "category": "sandwich-ingredients",
+    "name": "CURRY-POWDER"
+  },
+  "1759": {
+    "category": "sandwich-ingredients",
+    "name": "WASABI"
+  },
+  "1760": {
+    "category": "sandwich-ingredients",
+    "name": "WATERCRESS"
+  },
+  "1761": {
+    "category": "sandwich-ingredients",
+    "name": "BASIL"
+  },
+  "1762": {
+    "category": "tm-materials",
+    "name": "VENONAT-FANG"
+  },
+  "1763": {
+    "category": "tm-materials",
+    "name": "DIGLETT-DIRT"
+  },
+  "1764": {
+    "category": "tm-materials",
+    "name": "MEOWTH-FUR"
+  },
+  "1765": {
+    "category": "tm-materials",
+    "name": "PSYDUCK-DOWN"
+  },
+  "1766": {
+    "category": "tm-materials",
+    "name": "MANKEY-FUR"
+  },
+  "1767": {
+    "category": "tm-materials",
+    "name": "GROWLITHE-FUR"
+  },
+  "1768": {
+    "category": "tm-materials",
+    "name": "SLOWPOKE-CLAW"
+  },
+  "1769": {
+    "category": "tm-materials",
+    "name": "MAGNEMITE-SCREW"
+  },
+  "1770": {
+    "category": "tm-materials",
+    "name": "GRIMER-TOXIN"
+  },
+  "1771": {
+    "category": "tm-materials",
+    "name": "SHELLDER-PEARL"
+  },
+  "1772": {
+    "category": "tm-materials",
+    "name": "GASTLY-GAS"
+  },
+  "1773": {
+    "category": "tm-materials",
+    "name": "DROWZEE-FUR"
+  },
+  "1774": {
+    "category": "tm-materials",
+    "name": "VOLTORB-SPARKS"
+  },
+  "1775": {
+    "category": "tm-materials",
+    "name": "SCYTHER-CLAW"
+  },
+  "1776": {
+    "category": "tm-materials",
+    "name": "TAUROS-HAIR"
+  },
+  "1777": {
+    "category": "tm-materials",
+    "name": "MAGIKARP-SCALES"
+  },
+  "1778": {
+    "category": "tm-materials",
+    "name": "DITTO-GOO"
+  },
+  "1779": {
+    "category": "tm-materials",
+    "name": "EEVEE-FUR"
+  },
+  "1780": {
+    "category": "tm-materials",
+    "name": "DRATINI-SCALES"
+  },
+  "1781": {
+    "category": "tm-materials",
+    "name": "PICHU-FUR"
+  },
+  "1782": {
+    "category": "tm-materials",
+    "name": "IGGLYBUFF-FLUFF"
+  },
+  "1783": {
+    "category": "tm-materials",
+    "name": "MAREEP-WOOL"
+  },
+  "1784": {
+    "category": "tm-materials",
+    "name": "HOPPIP-LEAF"
+  },
+  "1785": {
+    "category": "tm-materials",
+    "name": "SUNKERN-LEAF"
+  },
+  "1786": {
+    "category": "tm-materials",
+    "name": "MURKROW-BAUBLE"
+  },
+  "1787": {
+    "category": "tm-materials",
+    "name": "MISDREAVUS-TEARS"
+  },
+  "1788": {
+    "category": "tm-materials",
+    "name": "GIRAFARIG-FUR"
+  },
+  "1789": {
+    "category": "tm-materials",
+    "name": "PINECO-HUSK"
+  },
+  "1790": {
+    "category": "tm-materials",
+    "name": "DUNSPARCE-SCALES"
+  },
+  "1791": {
+    "category": "tm-materials",
+    "name": "QWILFISH-SPINES"
+  },
+  "1792": {
+    "category": "tm-materials",
+    "name": "HERACROSS-CLAW"
+  },
+  "1793": {
+    "category": "tm-materials",
+    "name": "SNEASEL-CLAW"
+  },
+  "1794": {
+    "category": "tm-materials",
+    "name": "TEDDIURSA-CLAW"
+  },
+  "1795": {
+    "category": "tm-materials",
+    "name": "DELIBIRD-PARCEL"
+  },
+  "1796": {
+    "category": "tm-materials",
+    "name": "HOUNDOUR-FANG"
+  },
+  "1797": {
+    "category": "tm-materials",
+    "name": "PHANPY-NAIL"
+  },
+  "1798": {
+    "category": "tm-materials",
+    "name": "STANTLER-HAIR"
+  },
+  "1799": {
+    "category": "tm-materials",
+    "name": "LARVITAR-CLAW"
+  },
+  "1800": {
+    "category": "tm-materials",
+    "name": "WINGULL-FEATHER"
+  },
+  "1801": {
+    "category": "tm-materials",
+    "name": "RALTS-DUST"
+  },
+  "1802": {
+    "category": "tm-materials",
+    "name": "SURSKIT-SYRUP"
+  },
+  "1803": {
+    "category": "tm-materials",
+    "name": "SHROOMISH-SPORES"
+  },
+  "1804": {
+    "category": "tm-materials",
+    "name": "SLAKOTH-FUR"
+  },
+  "1805": {
+    "category": "tm-materials",
+    "name": "MAKUHITA-SWEAT"
+  },
+  "1806": {
+    "category": "tm-materials",
+    "name": "AZURILL-FUR"
+  },
+  "1807": {
+    "category": "tm-materials",
+    "name": "SABLEYE-GEM"
+  },
+  "1808": {
+    "category": "tm-materials",
+    "name": "MEDITITE-SWEAT"
+  },
+  "1809": {
+    "category": "tm-materials",
+    "name": "GULPIN-MUCUS"
+  },
+  "1810": {
+    "category": "tm-materials",
+    "name": "NUMEL-LAVA"
+  },
+  "1811": {
+    "category": "tm-materials",
+    "name": "TORKOAL-COAL"
+  },
+  "1812": {
+    "category": "tm-materials",
+    "name": "SPOINK-PEARL"
+  },
+  "1813": {
+    "category": "tm-materials",
+    "name": "CACNEA-NEEDLE"
+  },
+  "1814": {
+    "category": "tm-materials",
+    "name": "SWABLU-FLUFF"
+  },
+  "1815": {
+    "category": "tm-materials",
+    "name": "ZANGOOSE-CLAW"
+  },
+  "1816": {
+    "category": "tm-materials",
+    "name": "SEVIPER-FANG"
+  },
+  "1817": {
+    "category": "tm-materials",
+    "name": "BARBOACH-SLIME"
+  },
+  "1818": {
+    "category": "tm-materials",
+    "name": "SHUPPET-SCRAP"
+  },
+  "1819": {
+    "category": "tm-materials",
+    "name": "TROPIUS-LEAF"
+  },
+  "1820": {
+    "category": "tm-materials",
+    "name": "SNORUNT-FUR"
+  },
+  "1821": {
+    "category": "tm-materials",
+    "name": "LUVDISC-SCALES"
+  },
+  "1822": {
+    "category": "tm-materials",
+    "name": "BAGON-SCALES"
+  },
+  "1823": {
+    "category": "tm-materials",
+    "name": "STARLY-FEATHER"
+  },
+  "1824": {
+    "category": "tm-materials",
+    "name": "KRICKETOT-SHELL"
+  },
+  "1825": {
+    "category": "tm-materials",
+    "name": "SHINX-FANG"
+  },
+  "1826": {
+    "category": "tm-materials",
+    "name": "COMBEE-HONEY"
+  },
+  "1827": {
+    "category": "tm-materials",
+    "name": "PACHIRISU-FUR"
+  },
+  "1828": {
+    "category": "tm-materials",
+    "name": "BUIZEL-FUR"
+  },
+  "1829": {
+    "category": "tm-materials",
+    "name": "SHELLOS-MUCUS"
+  },
+  "1830": {
+    "category": "tm-materials",
+    "name": "DRIFLOON-GAS"
+  },
+  "1831": {
+    "category": "tm-materials",
+    "name": "STUNKY-FUR"
+  },
+  "1832": {
+    "category": "tm-materials",
+    "name": "BRONZOR-FRAGMENT"
+  },
+  "1833": {
+    "category": "tm-materials",
+    "name": "BONSLY-TEARS"
+  },
+  "1834": {
+    "category": "tm-materials",
+    "name": "HAPPINY-DUST"
+  },
+  "1835": {
+    "category": "tm-materials",
+    "name": "SPIRITOMB-FRAGMENT"
+  },
+  "1836": {
+    "category": "tm-materials",
+    "name": "GIBLE-SCALES"
+  },
+  "1837": {
+    "category": "tm-materials",
+    "name": "RIOLU-FUR"
+  },
+  "1838": {
+    "category": "tm-materials",
+    "name": "HIPPOPOTAS-SAND"
+  },
+  "1839": {
+    "category": "tm-materials",
+    "name": "CROAGUNK-POISON"
+  },
+  "1840": {
+    "category": "tm-materials",
+    "name": "FINNEON-SCALES"
+  },
+  "1841": {
+    "category": "tm-materials",
+    "name": "SNOVER-BERRIES"
+  },
+  "1842": {
+    "category": "tm-materials",
+    "name": "ROTOM-SPARKS"
+  },
+  "1843": {
+    "category": "tm-materials",
+    "name": "PETILIL-LEAF"
+  },
+  "1844": {
+    "category": "tm-materials",
+    "name": "BASCULIN-FANG"
+  },
+  "1845": {
+    "category": "tm-materials",
+    "name": "SANDILE-CLAW"
+  },
+  "1846": {
+    "category": "tm-materials",
+    "name": "ZORUA-FUR"
+  },
+  "1847": {
+    "category": "tm-materials",
+    "name": "GOTHITA-EYELASH"
+  },
+  "1848": {
+    "category": "tm-materials",
+    "name": "DEERLING-HAIR"
+  },
+  "1849": {
+    "category": "tm-materials",
+    "name": "FOONGUS-SPORES"
+  },
+  "1850": {
+    "category": "tm-materials",
+    "name": "ALOMOMOLA-MUCUS"
+  },
+  "1851": {
+    "category": "tm-materials",
+    "name": "TYNAMO-SLIME"
+  },
+  "1852": {
+    "category": "tm-materials",
+    "name": "AXEW-SCALES"
+  },
+  "1853": {
+    "category": "tm-materials",
+    "name": "CUBCHOO-FUR"
+  },
+  "1854": {
+    "category": "tm-materials",
+    "name": "CRYOGONAL-ICE"
+  },
+  "1855": {
+    "category": "tm-materials",
+    "name": "PAWNIARD-BLADE"
+  },
+  "1856": {
+    "category": "tm-materials",
+    "name": "RUFFLET-FEATHER"
+  },
+  "1857": {
+    "category": "tm-materials",
+    "name": "DEINO-SCALES"
+  },
+  "1858": {
+    "category": "tm-materials",
+    "name": "LARVESTA-FUZZ"
+  },
+  "1859": {
+    "category": "tm-materials",
+    "name": "FLETCHLING-FEATHER"
+  },
+  "1860": {
+    "category": "tm-materials",
+    "name": "SCATTERBUG-POWDER"
+  },
+  "1861": {
+    "category": "tm-materials",
+    "name": "LITLEO-TUFT"
+  },
+  "1862": {
+    "category": "tm-materials",
+    "name": "FLAB\u00c9B\u00c9-POLLEN"
+  },
+  "1863": {
+    "category": "tm-materials",
+    "name": "SKIDDO-LEAF"
+  },
+  "1864": {
+    "category": "tm-materials",
+    "name": "SKRELP-KELP"
+  },
+  "1865": {
+    "category": "tm-materials",
+    "name": "CLAUNCHER-CLAW"
+  },
+  "1866": {
+    "category": "tm-materials",
+    "name": "HAWLUCHA-DOWN"
+  },
+  "1867": {
+    "category": "tm-materials",
+    "name": "DEDENNE-FUR"
+  },
+  "1868": {
+    "category": "tm-materials",
+    "name": "GOOMY-GOO"
+  },
+  "1869": {
+    "category": "tm-materials",
+    "name": "KLEFKI-KEY"
+  },
+  "1870": {
+    "category": "tm-materials",
+    "name": "BERGMITE-ICE"
+  },
+  "1871": {
+    "category": "tm-materials",
+    "name": "NOIBAT-FUR"
+  },
+  "1872": {
+    "category": "tm-materials",
+    "name": "YUNGOOS-FUR"
+  },
+  "1873": {
+    "category": "tm-materials",
+    "name": "CRABRAWLER-SHELL"
+  },
+  "1874": {
+    "category": "tm-materials",
+    "name": "ORICORIO-FEATHER"
+  },
+  "1875": {
+    "category": "tm-materials",
+    "name": "ROCKRUFF-ROCK"
+  },
+  "1876": {
+    "category": "tm-materials",
+    "name": "MAREANIE-SPIKE"
+  },
+  "1877": {
+    "category": "tm-materials",
+    "name": "MUDBRAY-MUD"
+  },
+  "1878": {
+    "category": "tm-materials",
+    "name": "FOMANTIS-LEAF"
+  },
+  "1879": {
+    "category": "tm-materials",
+    "name": "SALANDIT-GAS"
+  },
+  "1880": {
+    "category": "tm-materials",
+    "name": "BOUNSWEET-SWEAT"
+  },
+  "1881": {
+    "category": "tm-materials",
+    "name": "ORANGURU-FUR"
+  },
+  "1882": {
+    "category": "tm-materials",
+    "name": "PASSIMIAN-FUR"
+  },
+  "1883": {
+    "category": "tm-materials",
+    "name": "SANDYGAST-SAND"
+  },
+  "1884": {
+    "category": "tm-materials",
+    "name": "KOMALA-CLAW"
+  },
+  "1885": {
+    "category": "tm-materials",
+    "name": "MIMIKYU-SCRAP"
+  },
+  "1886": {
+    "category": "tm-materials",
+    "name": "BRUXISH-TOOTH"
+  },
+  "1887": {
+    "category": "tm-materials",
+    "name": "CHEWTLE-CLAW"
+  },
+  "1888": {
+    "category": "tm-materials",
+    "name": "SKWOVET-FUR"
+  },
+  "1889": {
+    "category": "tm-materials",
+    "name": "ARROKUDA-SCALES"
+  },
+  "1890": {
+    "category": "tm-materials",
+    "name": "ROOKIDEE-FEATHER"
+  },
+  "1891": {
+    "category": "tm-materials",
+    "name": "TOXEL-SPARKS"
+  },
+  "1892": {
+    "category": "tm-materials",
+    "name": "FALINKS-SWEAT"
+  },
+  "1893": {
+    "category": "tm-materials",
+    "name": "CUFANT-TARNISH"
+  },
+  "1894": {
+    "category": "tm-materials",
+    "name": "ROLYCOLY-COAL"
+  },
+  "1895": {
+    "category": "tm-materials",
+    "name": "SILICOBRA-SAND"
+  },
+  "1896": {
+    "category": "tm-materials",
+    "name": "INDEEDEE-FUR"
+  },
+  "1897": {
+    "category": "tm-materials",
+    "name": "PINCURCHIN-SPINES"
+  },
+  "1898": {
+    "category": "tm-materials",
+    "name": "SNOM-THREAD"
+  },
+  "1899": {
+    "category": "tm-materials",
+    "name": "IMPIDIMP-HAIR"
+  },
+  "1900": {
+    "category": "tm-materials",
+    "name": "APPLIN-JUICE"
+  },
+  "1901": {
+    "category": "tm-materials",
+    "name": "SINISTEA-CHIP"
+  },
+  "1902": {
+    "category": "tm-materials",
+    "name": "HATENNA-DUST"
+  },
+  "1903": {
+    "category": "tm-materials",
+    "name": "STONJOURNER-STONE"
+  },
+  "1904": {
+    "category": "tm-materials",
+    "name": "EISCUE-DOWN"
+  },
+  "1905": {
+    "category": "tm-materials",
+    "name": "DREEPY-POWDER"
+  },
+  "1906": {
+    "category": "tm-materials",
+    "name": "LECHONK-HAIR"
+  },
+  "1907": {
+    "category": "tm-materials",
+    "name": "TAROUNTULA-THREAD"
+  },
+  "1908": {
+    "category": "tm-materials",
+    "name": "NYMBLE-CLAW"
+  },
+  "1909": {
+    "category": "tm-materials",
+    "name": "RELLOR-MUD"
+  },
+  "1910": {
+    "category": "tm-materials",
+    "name": "GREAVARD-WAX"
+  },
+  "1911": {
+    "category": "tm-materials",
+    "name": "FLITTLE-DOWN"
+  },
+  "1912": {
+    "category": "tm-materials",
+    "name": "WIGLETT-SAND"
+  },
+  "1913": {
+    "category": "tm-materials",
+    "name": "DONDOZO-WHISKER"
+  },
+  "1914": {
+    "category": "tm-materials",
+    "name": "VELUZA-FILLET"
+  },
+  "1915": {
+    "category": "tm-materials",
+    "name": "FINIZEN-MUCUS"
+  },
+  "1916": {
+    "category": "tm-materials",
+    "name": "SMOLIV-OIL"
+  },
+  "1917": {
+    "category": "tm-materials",
+    "name": "CAPSAKID-SEED"
+  },
+  "1918": {
+    "category": "tm-materials",
+    "name": "TADBULB-MUCUS"
+  },
+  "1919": {
+    "category": "tm-materials",
+    "name": "VAROOM-FUME"
+  },
+  "1920": {
+    "category": "tm-materials",
+    "name": "ORTHWORM-TARNISH"
+  },
+  "1921": {
+    "category": "tm-materials",
+    "name": "TANDEMAUS-FUR"
+  },
+  "1922": {
+    "category": "tm-materials",
+    "name": "CETODDLE-GREASE"
+  },
+  "1923": {
+    "category": "tm-materials",
+    "name": "FRIGIBAX-SCALES"
+  },
+  "1924": {
+    "category": "tm-materials",
+    "name": "TATSUGIRI-SCALES"
+  },
+  "1925": {
+    "category": "tm-materials",
+    "name": "CYCLIZAR-SCALES"
+  },
+  "1926": {
+    "category": "tm-materials",
+    "name": "PAWMI-FUR"
+  },
+  "1927": {
+    "category": "tm-materials",
+    "name": "WATTREL-FEATHER"
+  },
+  "1928": {
+    "category": "tm-materials",
+    "name": "BOMBIRDIER-FEATHER"
+  },
+  "1929": {
+    "category": "tm-materials",
+    "name": "SQUAWKABILLY-FEATHER"
+  },
+  "1930": {
+    "category": "tm-materials",
+    "name": "FLAMIGO-DOWN"
+  },
+  "1931": {
+    "category": "tm-materials",
+    "name": "KLAWF-CLAW"
+  },
+  "1932": {
+    "category": "tm-materials",
+    "name": "NACLI-SALT"
+  },
+  "1933": {
+    "category": "tm-materials",
+    "name": "GLIMMET-CRYSTAL"
+  },
+  "1934": {
+    "category": "tm-materials",
+    "name": "SHROODLE-INK"
+  },
+  "1935": {
+    "category": "tm-materials",
+    "name": "FIDOUGH-FUR"
+  },
+  "1936": {
+    "category": "tm-materials",
+    "name": "MASCHIFF-FANG"
+  },
+  "1937": {
+    "category": "tm-materials",
+    "name": "BRAMBLIN-TWIG"
+  },
+  "1938": {
+    "category": "tm-materials",
+    "name": "GIMMIGHOUL-COIN"
+  },
+  "1939": {
+    "category": "tm-materials",
+    "name": "TINKATINK-HAIR"
+  },
+  "1940": {
+    "category": "tm-materials",
+    "name": "CHARCADET-SOOT"
+  },
+  "1941": {
+    "category": "tm-materials",
+    "name": "TOEDSCOOL-FLAPS"
+  },
+  "1942": {
+    "category": "tm-materials",
+    "name": "WOOPER-SLIME"
+  },
+  "1943": {
+    "category": "all-machines",
+    "name": "TM100"
+  },
+  "1944": {
+    "category": "all-machines",
+    "name": "TM101"
+  },
+  "1945": {
+    "category": "all-machines",
+    "name": "TM102"
+  },
+  "1946": {
+    "category": "all-machines",
+    "name": "TM103"
+  },
+  "1947": {
+    "category": "all-machines",
+    "name": "TM104"
+  },
+  "1948": {
+    "category": "all-machines",
+    "name": "TM105"
+  },
+  "1949": {
+    "category": "all-machines",
+    "name": "TM106"
+  },
+  "1950": {
+    "category": "all-machines",
+    "name": "TM107"
+  },
+  "1951": {
+    "category": "all-machines",
+    "name": "TM108"
+  },
+  "1952": {
+    "category": "all-machines",
+    "name": "TM109"
+  },
+  "1953": {
+    "category": "all-machines",
+    "name": "TM110"
+  },
+  "1954": {
+    "category": "all-machines",
+    "name": "TM111"
+  },
+  "1955": {
+    "category": "all-machines",
+    "name": "TM112"
+  },
+  "1956": {
+    "category": "all-machines",
+    "name": "TM113"
+  },
+  "1957": {
+    "category": "all-machines",
+    "name": "TM114"
+  },
+  "1958": {
+    "category": "all-machines",
+    "name": "TM115"
+  },
+  "1959": {
+    "category": "all-machines",
+    "name": "TM116"
+  },
+  "1960": {
+    "category": "all-machines",
+    "name": "TM117"
+  },
+  "1961": {
+    "category": "all-machines",
+    "name": "TM118"
+  },
+  "1962": {
+    "category": "all-machines",
+    "name": "TM119"
+  },
+  "1963": {
+    "category": "all-machines",
+    "name": "TM120"
+  },
+  "1964": {
+    "category": "all-machines",
+    "name": "TM121"
+  },
+  "1965": {
+    "category": "all-machines",
+    "name": "TM122"
+  },
+  "1966": {
+    "category": "all-machines",
+    "name": "TM123"
+  },
+  "1967": {
+    "category": "all-machines",
+    "name": "TM124"
+  },
+  "1968": {
+    "category": "all-machines",
+    "name": "TM125"
+  },
+  "1969": {
+    "category": "all-machines",
+    "name": "TM126"
+  },
+  "1970": {
+    "category": "all-machines",
+    "name": "TM127"
+  },
+  "1971": {
+    "category": "all-machines",
+    "name": "TM128"
+  },
+  "1972": {
+    "category": "all-machines",
+    "name": "TM129"
+  },
+  "1973": {
+    "category": "all-machines",
+    "name": "TM130"
+  },
+  "1974": {
+    "category": "all-machines",
+    "name": "TM131"
+  },
+  "1975": {
+    "category": "all-machines",
+    "name": "TM132"
+  },
+  "1976": {
+    "category": "all-machines",
+    "name": "TM133"
+  },
+  "1977": {
+    "category": "all-machines",
+    "name": "TM134"
+  },
+  "1978": {
+    "category": "all-machines",
+    "name": "TM135"
+  },
+  "1979": {
+    "category": "all-machines",
+    "name": "TM136"
+  },
+  "1980": {
+    "category": "all-machines",
+    "name": "TM137"
+  },
+  "1981": {
+    "category": "all-machines",
+    "name": "TM138"
+  },
+  "1982": {
+    "category": "all-machines",
+    "name": "TM139"
+  },
+  "1983": {
+    "category": "all-machines",
+    "name": "TM140"
+  },
+  "1984": {
+    "category": "all-machines",
+    "name": "TM141"
+  },
+  "1985": {
+    "category": "all-machines",
+    "name": "TM142"
+  },
+  "1986": {
+    "category": "all-machines",
+    "name": "TM143"
+  },
+  "1987": {
+    "category": "all-machines",
+    "name": "TM144"
+  },
+  "1988": {
+    "category": "all-machines",
+    "name": "TM145"
+  },
+  "1989": {
+    "category": "all-machines",
+    "name": "TM146"
+  },
+  "1990": {
+    "category": "all-machines",
+    "name": "TM147"
+  },
+  "1991": {
+    "category": "all-machines",
+    "name": "TM148"
+  },
+  "1992": {
+    "category": "all-machines",
+    "name": "TM149"
+  },
+  "1993": {
+    "category": "all-machines",
+    "name": "TM150"
+  },
+  "1994": {
+    "category": "all-machines",
+    "name": "TM151"
+  },
+  "1995": {
+    "category": "all-machines",
+    "name": "TM152"
+  },
+  "1996": {
+    "category": "all-machines",
+    "name": "TM153"
+  },
+  "1997": {
+    "category": "all-machines",
+    "name": "TM154"
+  },
+  "1998": {
+    "category": "all-machines",
+    "name": "TM155"
+  },
+  "1999": {
+    "category": "all-machines",
+    "name": "TM156"
+  },
+  "2000": {
+    "category": "all-machines",
+    "name": "TM157"
+  },
+  "2001": {
+    "category": "all-machines",
+    "name": "TM158"
+  },
+  "2002": {
+    "category": "all-machines",
+    "name": "TM159"
+  },
+  "2003": {
+    "category": "all-machines",
+    "name": "TM160"
+  },
+  "2004": {
+    "category": "all-machines",
+    "name": "TM161"
+  },
+  "2005": {
+    "category": "all-machines",
+    "name": "TM162"
+  },
+  "2006": {
+    "category": "all-machines",
+    "name": "TM163"
+  },
+  "2007": {
+    "category": "all-machines",
+    "name": "TM164"
+  },
+  "2008": {
+    "category": "all-machines",
+    "name": "TM165"
+  },
+  "2009": {
+    "category": "all-machines",
+    "name": "TM166"
+  },
+  "2010": {
+    "category": "all-machines",
+    "name": "TM167"
+  },
+  "2011": {
+    "category": "all-machines",
+    "name": "TM168"
+  },
+  "2012": {
+    "category": "all-machines",
+    "name": "TM169"
+  },
+  "2013": {
+    "category": "all-machines",
+    "name": "TM170"
+  },
+  "2014": {
+    "category": "all-machines",
+    "name": "TM171"
+  },
+  "2015": {
+    "category": "picnic",
+    "name": "PICNIC-SET"
+  },
+  "2016": {
+    "category": "picnic",
+    "name": "ACADEMY-BOTTLE"
+  },
+  "2017": {
+    "category": "picnic",
+    "name": "ACADEMY-BOTTLE"
+  },
+  "2018": {
+    "category": "picnic",
+    "name": "POLKA-DOT-BOTTLE"
+  },
+  "2019": {
+    "category": "picnic",
+    "name": "STRIPED-BOTTLE"
+  },
+  "2020": {
+    "category": "picnic",
+    "name": "DIAMOND-BOTTLE"
+  },
+  "2021": {
+    "category": "picnic",
+    "name": "ACADEMY-CUP"
+  },
+  "2022": {
+    "category": "picnic",
+    "name": "ACADEMY-CUP"
+  },
+  "2023": {
+    "category": "picnic",
+    "name": "STRIPED-CUP"
+  },
+  "2024": {
+    "category": "picnic",
+    "name": "POLKA-DOT-CUP"
+  },
+  "2025": {
+    "category": "picnic",
+    "name": "FLOWER-PATTERN-CUP"
+  },
+  "2026": {
+    "category": "picnic",
+    "name": "ACADEMY-TABLECLOTH"
+  },
+  "2027": {
+    "category": "picnic",
+    "name": "ACADEMY-TABLECLOTH"
+  },
+  "2028": {
+    "category": "picnic",
+    "name": "WHIMSICAL-TABLECLOTH"
+  },
+  "2029": {
+    "category": "picnic",
+    "name": "LEAFY-TABLECLOTH"
+  },
+  "2030": {
+    "category": "picnic",
+    "name": "SPOOKY-TABLECLOTH"
+  },
+  "2031": {
+    "category": "picnic",
+    "name": "ACADEMY-BALL"
+  },
+  "2032": {
+    "category": "picnic",
+    "name": "ACADEMY-BALL"
+  },
+  "2033": {
+    "category": "picnic",
+    "name": "MARILL-BALL"
+  },
+  "2034": {
+    "category": "picnic",
+    "name": "YARN-BALL"
+  },
+  "2035": {
+    "category": "picnic",
+    "name": "CYBER-BALL"
+  },
+  "2036": {
+    "category": "picnic",
+    "name": "GOLD-PICK"
+  },
+  "2037": {
+    "category": "picnic",
+    "name": "SILVER-PICK"
+  },
+  "2038": {
+    "category": "picnic",
+    "name": "RED-FLAG-PICK"
+  },
+  "2039": {
+    "category": "picnic",
+    "name": "BLUE-FLAG-PICK"
+  },
+  "2040": {
+    "category": "picnic",
+    "name": "PIKA-PIKA-PICK"
+  },
+  "2041": {
+    "category": "picnic",
+    "name": "WINKING-PIKA-PICK"
+  },
+  "2042": {
+    "category": "picnic",
+    "name": "VEE-VEE-PICK"
+  },
+  "2043": {
+    "category": "picnic",
+    "name": "SMILING-VEE-PICK"
+  },
+  "2044": {
+    "category": "picnic",
+    "name": "BLUE-POK\u00c9-BALL-PICK"
+  },
+  "2045": {
+    "category": "picnic",
+    "name": "AUSPICIOUS-ARMOR"
+  },
+  "2046": {
+    "category": "picnic",
+    "name": "LEADER\u2019S-CREST"
+  },
+  "2047": {
+    "category": "picnic",
+    "name": "PINK-BOTTLE"
+  },
+  "2048": {
+    "category": "picnic",
+    "name": "BLUE-BOTTLE"
+  },
+  "2049": {
+    "category": "picnic",
+    "name": "YELLOW-BOTTLE"
+  },
+  "2050": {
+    "category": "picnic",
+    "name": "STEEL-BOTTLE-(R)"
+  },
+  "2051": {
+    "category": "picnic",
+    "name": "STEEL-BOTTLE-(Y)"
+  },
+  "2052": {
+    "category": "picnic",
+    "name": "STEEL-BOTTLE-(B)"
+  },
+  "2053": {
+    "category": "picnic",
+    "name": "SILVER-BOTTLE"
+  },
+  "2054": {
+    "category": "picnic",
+    "name": "BARRED-CUP"
+  },
+  "2055": {
+    "category": "picnic",
+    "name": "DIAMOND-PATTERN-CUP"
+  },
+  "2056": {
+    "category": "picnic",
+    "name": "FIRE-PATTERN-CUP"
+  },
+  "2057": {
+    "category": "picnic",
+    "name": "PINK-CUP"
+  },
+  "2058": {
+    "category": "picnic",
+    "name": "BLUE-CUP"
+  },
+  "2059": {
+    "category": "picnic",
+    "name": "YELLOW-CUP"
+  },
+  "2060": {
+    "category": "picnic",
+    "name": "PIKACHU-CUP"
+  },
+  "2061": {
+    "category": "picnic",
+    "name": "EEVEE-CUP"
+  },
+  "2062": {
+    "category": "picnic",
+    "name": "SLOWPOKE-CUP"
+  },
+  "2063": {
+    "category": "picnic",
+    "name": "SILVER-CUP"
+  },
+  "2064": {
+    "category": "picnic",
+    "name": "EXERCISE-BALL"
+  },
+  "2065": {
+    "category": "picnic",
+    "name": "PLAID-TABLECLOTH-(Y)"
+  },
+  "2066": {
+    "category": "picnic",
+    "name": "PLAID-TABLECLOTH-(B)"
+  },
+  "2067": {
+    "category": "picnic",
+    "name": "PLAID-TABLECLOTH-(R)"
+  },
+  "2068": {
+    "category": "picnic",
+    "name": "B&W-GRASS-TABLECLOTH"
+  },
+  "2069": {
+    "category": "picnic",
+    "name": "BATTLE-TABLECLOTH"
+  },
+  "2070": {
+    "category": "picnic",
+    "name": "MONSTROUS-TABLECLOTH"
+  },
+  "2071": {
+    "category": "picnic",
+    "name": "STRIPED-TABLECLOTH"
+  },
+  "2072": {
+    "category": "picnic",
+    "name": "DIAMOND-TABLECLOTH"
+  },
+  "2073": {
+    "category": "picnic",
+    "name": "POLKA-DOT-TABLECLOTH"
+  },
+  "2074": {
+    "category": "picnic",
+    "name": "LILAC-TABLECLOTH"
+  },
+  "2075": {
+    "category": "picnic",
+    "name": "MINT-TABLECLOTH"
+  },
+  "2076": {
+    "category": "picnic",
+    "name": "PEACH-TABLECLOTH"
+  },
+  "2077": {
+    "category": "picnic",
+    "name": "YELLOW-TABLECLOTH"
+  },
+  "2078": {
+    "category": "picnic",
+    "name": "BLUE-TABLECLOTH"
+  },
+  "2079": {
+    "category": "picnic",
+    "name": "PINK-TABLECLOTH"
+  },
+  "2080": {
+    "category": "picnic",
+    "name": "GOLD-BOTTLE"
+  },
+  "2081": {
+    "category": "picnic",
+    "name": "BRONZE-BOTTLE"
+  },
+  "2082": {
+    "category": "picnic",
+    "name": "GOLD-CUP"
+  },
+  "2083": {
+    "category": "picnic",
+    "name": "BRONZE-CUP"
+  },
+  "2084": {
+    "category": "picnic",
+    "name": "GREEN-POK\u00c9-BALL-PICK"
+  },
+  "2085": {
+    "category": "picnic",
+    "name": "RED-POK\u00c9-BALL-PICK"
+  },
+  "2086": {
+    "category": "picnic",
+    "name": "PARTY-SPARKLER-PICK"
+  },
+  "2087": {
+    "category": "picnic",
+    "name": "HEROIC-SWORD-PICK"
+  },
+  "2088": {
+    "category": "picnic",
+    "name": "MAGICAL-STAR-PICK"
+  },
+  "2089": {
+    "category": "picnic",
+    "name": "MAGICAL-HEART-PICK"
+  },
+  "2090": {
+    "category": "picnic",
+    "name": "PARASOL-PICK"
+  },
+  "2091": {
+    "category": "picnic",
+    "name": "BLUE-SKY-FLOWER-PICK"
+  },
+  "2092": {
+    "category": "picnic",
+    "name": "SUNSET-FLOWER-PICK"
+  },
+  "2093": {
+    "category": "picnic",
+    "name": "SUNRISE-FLOWER-PICK"
+  },
+  "2094": {
+    "category": "picnic",
+    "name": "BLUE-DISH"
+  },
+  "2095": {
+    "category": "picnic",
+    "name": "GREEN-DISH"
+  },
+  "2096": {
+    "category": "picnic",
+    "name": "ORANGE-DISH"
+  },
+  "2097": {
+    "category": "picnic",
+    "name": "RED-DISH"
+  },
+  "2098": {
+    "category": "picnic",
+    "name": "WHITE-DISH"
+  },
+  "2099": {
+    "category": "picnic",
+    "name": "YELLOW-DISH"
+  },
+  "2100": {
+    "category": "gameplay",
+    "name": "ROTO-STICK"
+  },
+  "2101": {
+    "category": "gameplay",
+    "name": "TEAL-STYLE-CARD"
+  },
+  "2102": {
+    "category": "event-items",
+    "name": "TEAL-MASK"
+  },
+  "2103": {
+    "category": "gameplay",
+    "name": "GLIMMERING-CHARM"
+  },
+  "2104": {
+    "category": "event-items",
+    "name": "CRYSTAL-CLUSTER"
+  },
+  "2105": {
+    "category": "held-items",
+    "name": "FAIRY-FEATHER"
+  },
+  "2106": {
+    "category": "held-items",
+    "name": "WELLSPRING-MASK"
+  },
+  "2107": {
+    "category": "held-items",
+    "name": "HEARTHFLAME-MASK"
+  },
+  "2108": {
+    "category": "held-items",
+    "name": "CORNERSTONE-MASK"
+  },
+  "2109": {
+    "category": "evolution",
+    "name": "SYRUPY-APPLE"
+  },
+  "2110": {
+    "category": "evolution",
+    "name": "UNREMARKABLE-TEACUP"
+  },
+  "2111": {
+    "category": "evolution",
+    "name": "MASTERPIECE-TEACUP"
+  },
+  "2112": {
+    "category": "vitamins",
+    "name": "HEALTH-MOCHI"
+  },
+  "2113": {
+    "category": "vitamins",
+    "name": "MUSCLE-MOCHI"
+  },
+  "2114": {
+    "category": "vitamins",
+    "name": "RESIST-MOCHI"
+  },
+  "2115": {
+    "category": "vitamins",
+    "name": "GENIUS-MOCHI"
+  },
+  "2116": {
+    "category": "vitamins",
+    "name": "CLEVER-MOCHI"
+  },
+  "2117": {
+    "category": "vitamins",
+    "name": "SWIFT-MOCHI"
+  },
+  "2118": {
+    "category": "vitamins",
+    "name": "FRESH-START-MOCHI"
+  },
+  "2119": {
+    "category": "tm-materials",
+    "name": "EKANS-FANG"
+  },
+  "2120": {
+    "category": "tm-materials",
+    "name": "SANDSHREW-CLAW"
+  },
+  "2121": {
+    "category": "tm-materials",
+    "name": "CLEFFA-FUR"
+  },
+  "2122": {
+    "category": "tm-materials",
+    "name": "VULPIX-FUR"
+  },
+  "2123": {
+    "category": "tm-materials",
+    "name": "POLIWAG-SLIME"
+  },
+  "2124": {
+    "category": "tm-materials",
+    "name": "BELLSPROUT-VINE"
+  },
+  "2125": {
+    "category": "tm-materials",
+    "name": "GEODUDE-FRAGMENT"
+  },
+  "2126": {
+    "category": "tm-materials",
+    "name": "KOFFING-GAS"
+  },
+  "2127": {
+    "category": "tm-materials",
+    "name": "MUNCHLAX-FANG"
+  },
+  "2128": {
+    "category": "tm-materials",
+    "name": "SENTRET-FUR"
+  },
+  "2129": {
+    "category": "tm-materials",
+    "name": "HOOTHOOT-FEATHER"
+  },
+  "2130": {
+    "category": "tm-materials",
+    "name": "SPINARAK-THREAD"
+  },
+  "2131": {
+    "category": "tm-materials",
+    "name": "AIPOM-HAIR"
+  },
+  "2132": {
+    "category": "tm-materials",
+    "name": "YANMA-SPIKE"
+  },
+  "2133": {
+    "category": "tm-materials",
+    "name": "GLIGAR-FANG"
+  },
+  "2134": {
+    "category": "tm-materials",
+    "name": "SLUGMA-LAVA"
+  },
+  "2135": {
+    "category": "tm-materials",
+    "name": "SWINUB-HAIR"
+  },
+  "2136": {
+    "category": "tm-materials",
+    "name": "POOCHYENA-FANG"
+  },
+  "2137": {
+    "category": "tm-materials",
+    "name": "LOTAD-LEAF"
+  },
+  "2138": {
+    "category": "tm-materials",
+    "name": "SEEDOT-STEM"
+  },
+  "2139": {
+    "category": "tm-materials",
+    "name": "NOSEPASS-FRAGMENT"
+  },
+  "2140": {
+    "category": "tm-materials",
+    "name": "VOLBEAT-FLUID"
+  },
+  "2141": {
+    "category": "tm-materials",
+    "name": "ILLUMISE-FLUID"
+  },
+  "2142": {
+    "category": "tm-materials",
+    "name": "CORPHISH-SHELL"
+  },
+  "2143": {
+    "category": "tm-materials",
+    "name": "FEEBAS-SCALES"
+  },
+  "2144": {
+    "category": "tm-materials",
+    "name": "DUSKULL-FRAGMENT"
+  },
+  "2145": {
+    "category": "tm-materials",
+    "name": "CHINGLING-FRAGMENT"
+  },
+  "2146": {
+    "category": "tm-materials",
+    "name": "TIMBURR-SWEAT"
+  },
+  "2147": {
+    "category": "tm-materials",
+    "name": "SEWADDLE-LEAF"
+  },
+  "2148": {
+    "category": "tm-materials",
+    "name": "DUCKLETT-FEATHER"
+  },
+  "2149": {
+    "category": "tm-materials",
+    "name": "LITWICK-SOOT"
+  },
+  "2150": {
+    "category": "tm-materials",
+    "name": "MIENFOO-CLAW"
+  },
+  "2151": {
+    "category": "tm-materials",
+    "name": "VULLABY-FEATHER"
+  },
+  "2152": {
+    "category": "tm-materials",
+    "name": "CARBINK-JEWEL"
+  },
+  "2153": {
+    "category": "tm-materials",
+    "name": "PHANTUMP-TWIG"
+  },
+  "2154": {
+    "category": "tm-materials",
+    "name": "GRUBBIN-THREAD"
+  },
+  "2155": {
+    "category": "tm-materials",
+    "name": "CUTIEFLY-POWDER"
+  },
+  "2156": {
+    "category": "tm-materials",
+    "name": "JANGMO-O-SCALES"
+  },
+  "2157": {
+    "category": "tm-materials",
+    "name": "CRAMORANT-DOWN"
+  },
+  "2158": {
+    "category": "tm-materials",
+    "name": "MORPEKO-SNACK"
+  },
+  "2159": {
+    "category": "tm-materials",
+    "name": "POLTCHAGEIST-POWDER"
+  },
+  "2160": {
+    "category": "evolution",
+    "name": "LINKING-CORD"
+  },
+  "2161": {
+    "category": "all-machines",
+    "name": "TM172"
+  },
+  "2162": {
+    "category": "all-machines",
+    "name": "TM173"
+  },
+  "2163": {
+    "category": "all-machines",
+    "name": "TM174"
+  },
+  "2164": {
+    "category": "all-machines",
+    "name": "TM175"
+  },
+  "2165": {
+    "category": "all-machines",
+    "name": "TM176"
+  },
+  "2166": {
+    "category": "all-machines",
+    "name": "TM177"
+  },
+  "2167": {
+    "category": "all-machines",
+    "name": "TM178"
+  },
+  "2168": {
+    "category": "all-machines",
+    "name": "TM179"
+  },
+  "2169": {
+    "category": "all-machines",
+    "name": "TM180"
+  },
+  "2170": {
+    "category": "all-machines",
+    "name": "TM181"
+  },
+  "2171": {
+    "category": "all-machines",
+    "name": "TM182"
+  },
+  "2172": {
+    "category": "all-machines",
+    "name": "TM183"
+  },
+  "2173": {
+    "category": "all-machines",
+    "name": "TM184"
+  },
+  "2174": {
+    "category": "all-machines",
+    "name": "TM185"
+  },
+  "2175": {
+    "category": "all-machines",
+    "name": "TM186"
+  },
+  "2176": {
+    "category": "all-machines",
+    "name": "TM187"
+  },
+  "2177": {
+    "category": "all-machines",
+    "name": "TM188"
+  },
+  "2178": {
+    "category": "all-machines",
+    "name": "TM189"
+  },
+  "2179": {
+    "category": "all-machines",
+    "name": "TM190"
+  },
+  "2180": {
+    "category": "all-machines",
+    "name": "TM191"
+  },
+  "2181": {
+    "category": "all-machines",
+    "name": "TM192"
+  },
+  "2182": {
+    "category": "all-machines",
+    "name": "TM193"
+  },
+  "2183": {
+    "category": "all-machines",
+    "name": "TM194"
+  },
+  "2184": {
+    "category": "all-machines",
+    "name": "TM195"
+  },
+  "2185": {
+    "category": "all-machines",
+    "name": "TM196"
+  },
+  "2186": {
+    "category": "all-machines",
+    "name": "TM197"
+  },
+  "2187": {
+    "category": "all-machines",
+    "name": "TM198"
+  },
+  "2188": {
+    "category": "all-machines",
+    "name": "TM199"
+  },
+  "2189": {
+    "category": "all-machines",
+    "name": "TM200"
+  },
+  "2190": {
+    "category": "all-machines",
+    "name": "TM201"
+  },
+  "2191": {
+    "category": "all-machines",
+    "name": "TM202"
+  },
+  "2192": {
+    "category": "all-machines",
+    "name": "TM203"
+  },
+  "2193": {
+    "category": "all-machines",
+    "name": "TM204"
+  },
+  "2194": {
+    "category": "all-machines",
+    "name": "TM205"
+  },
+  "2195": {
+    "category": "all-machines",
+    "name": "TM206"
+  },
+  "2196": {
+    "category": "all-machines",
+    "name": "TM207"
+  },
+  "2197": {
+    "category": "all-machines",
+    "name": "TM208"
+  },
+  "2198": {
+    "category": "all-machines",
+    "name": "TM209"
+  },
+  "2199": {
+    "category": "all-machines",
+    "name": "TM210"
+  },
+  "2200": {
+    "category": "all-machines",
+    "name": "TM211"
+  },
+  "2201": {
+    "category": "all-machines",
+    "name": "TM212"
+  },
+  "2202": {
+    "category": "all-machines",
+    "name": "TM213"
+  },
+  "2203": {
+    "category": "all-machines",
+    "name": "TM214"
+  },
+  "2204": {
+    "category": "all-machines",
+    "name": "TM215"
+  },
+  "2205": {
+    "category": "all-machines",
+    "name": "TM216"
+  },
+  "2206": {
+    "category": "all-machines",
+    "name": "TM217"
+  },
+  "2207": {
+    "category": "all-machines",
+    "name": "TM218"
+  },
+  "2208": {
+    "category": "all-machines",
+    "name": "TM219"
+  },
+  "2209": {
+    "category": "all-machines",
+    "name": "TM220"
+  },
+  "2210": {
+    "category": "all-machines",
+    "name": "TM221"
+  },
+  "2211": {
+    "category": "all-machines",
+    "name": "TM222"
+  },
+  "2212": {
+    "category": "all-machines",
+    "name": "TM223"
+  },
+  "2213": {
+    "category": "all-machines",
+    "name": "TM224"
+  },
+  "2214": {
+    "category": "all-machines",
+    "name": "TM225"
+  },
+  "2215": {
+    "category": "all-machines",
+    "name": "TM226"
+  },
+  "2216": {
+    "category": "all-machines",
+    "name": "TM227"
+  },
+  "2217": {
+    "category": "all-machines",
+    "name": "TM228"
+  },
+  "2218": {
+    "category": "all-machines",
+    "name": "TM229"
+  },
+  "2219": {
+    "category": "standard-balls",
+    "name": "LASTRANGE-BALL"
+  },
+  "2220": {
+    "category": "standard-balls",
+    "name": "LAPOKE-BALL"
+  },
+  "2221": {
+    "category": "standard-balls",
+    "name": "LAGREAT-BALL"
+  },
+  "2222": {
+    "category": "standard-balls",
+    "name": "LAULTRA-BALL"
+  },
+  "2223": {
+    "category": "standard-balls",
+    "name": "LAHEAVY-BALL"
+  },
+  "2224": {
+    "category": "standard-balls",
+    "name": "LALEADEN-BALL"
+  },
+  "2225": {
+    "category": "standard-balls",
+    "name": "LAGIGATON-BALL"
+  },
+  "2226": {
+    "category": "standard-balls",
+    "name": "LAFEATHER-BALL"
+  },
+  "2227": {
+    "category": "standard-balls",
+    "name": "LAWING-BALL"
+  },
+  "2228": {
+    "category": "standard-balls",
+    "name": "LAJET-BALL"
+  },
+  "2229": {
+    "category": "standard-balls",
+    "name": "LAORIGIN-BALL"
+  },
+  "10001": {
+    "category": "evolution",
+    "name": "BLACK-AUGURITE"
+  },
+  "10002": {
+    "category": "evolution",
+    "name": "PEAT-BLOCK"
+  }
+}
