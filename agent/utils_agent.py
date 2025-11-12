@@ -2,7 +2,7 @@
 Utils Agent - Handles utilities: dialogue, shopping, naming, etc. in Pokemon Emerald.
 
 Responsibilities:
-- Talk to NPCs
+- Talk to NPCs (dialogue navigation)
 - Navigate dialogues
 - Buy/sell items
 - Name Pokemon/character
@@ -12,32 +12,38 @@ Responsibilities:
 
 import logging
 import time
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional, Union, Literal
 from pydantic import BaseModel, Field
-from typing import Literal
 
 logger = logging.getLogger(__name__)
 
-class SubAgentActionResponse(BaseModel):
-    """Schema for sub-agent action response.
 
-    The sub-agent can choose one of three action types:
-    - High-level action: Use predefined tools (e.g., talk_to_npc, buy_item)
-    - press_buttons: Direct button inputs
-    - complete_subgoal: Mark subgoal as done with status
+class PressButtonsAction(BaseModel):
+    """Direct controller input"""
+    kind: Literal["press_buttons"]
+    buttons: List[Literal["A", "B", "START", "SELECT", "UP", "DOWN", "LEFT", "RIGHT", "L", "R"]] = Field(
+        description="Ordered list of valid button presses"
+    )
+
+
+class CompleteSubgoalAction(BaseModel):
+    """Mark subgoal as done / failed / interrupted"""
+    kind: Literal["complete_subgoal"]
+    status: Literal["completed", "failed", "interrupted"]
+    context: Optional[str] = Field(default=None, description="Reason or additional context")
+
+
+class SubAgentActionResponse(BaseModel):
+    """
+    The sub-agent chooses exactly one action:
+      - press_buttons: send controller inputs
+      - complete_subgoal: mark subgoal done/failed/interrupted
     """
     reasoning: str = Field(description="Reasoning about what to do next")
-    action: Literal["high_level_action", "press_buttons", "complete_subgoal"] = Field(
-        description="Type of action to take"
-    )
-    action_detail: Dict[str, Any] = Field(
-        description=(
-            "Details for the action. "
-            "For 'high_level_action': {tool_name: str, tool_input: dict}. "
-            "For 'press_buttons': {buttons: [list of button strings]}. "
-            "For 'complete_subgoal': {status: str, context: str}"
-        )
-    )
+    action: Union[
+        PressButtonsAction,
+        CompleteSubgoalAction,
+    ] = Field(description="Exactly one action object")
 
 
 class UtilsAgent:
@@ -45,13 +51,13 @@ class UtilsAgent:
     Sub-agent for utilities: dialogue, shopping, naming, etc.
 
     Responsibilities:
-    - Talk to NPCs
-    - Navigate dialogues
-    - Buy/sell items
+    - Navigate dialogues and conversations
+    - Handle menus and item management
+    - Complete title sequence setup
+    - Buy/sell items in shops
     - Name Pokemon/character
-    - Interact with menus
     - Everything not exploration or battle
-    
+
     Health Monitoring System:
     - Periodically monitors party health during step execution at least every 1 minute (60 seconds) if needed
     - Sets healing_needed flag when party is in critical condition:
@@ -60,151 +66,79 @@ class UtilsAgent:
       * More than half of party has low/zero HP
     - Automatically prioritizes Pokemon Center healing in prompts
     - Provides health status context to VLM for better decision making
-    
+
     Usage:
     - The planning agent can check utils_agent.needs_healing() to create
       emergency healing subgoals
-    - Health status is included in overworld prompts when relevant
+    - Health status is included in prompts when relevant
     - Pokemon Center dialogues are handled with healing priority
     """
 
-    def __init__(self, mcp_server_url: str):
+    def __init__(self, backend, model_name, mcp_server_url: str):
         from utils.vlm import VLM
 
         self.mcp_server_url = mcp_server_url
-        self.vlm = VLM()  # Create own VLM instance with own conversation history
-        self.handlers = {
-            "dialog": self._handle_dialog, 
-            "menu": self._handle_menu,
-            "title": self._handle_title,
-            "overworld": self._handle_overworld
-        }
+        self.vlm = VLM(backend=backend, model_name=model_name, system_prompt=self._get_system_prompt())
         self.healing_needed = False  # Track if emergency healing is needed
         self.last_health_check = 0.0  # Track last time we checked health
         self.in_pokemon_center = False  # Track if currently in Pokemon Center
 
+    def _get_system_prompt(self) -> str:
+        """Get system prompt for the utils agent."""
+        return """You are a utility agent for Pokemon Emerald speedrunning.
+
+RESPONSIBILITIES:
+- Navigate dialogues and conversations (press A to advance, UP/DOWN for choices)
+- Handle menus and item management (navigate with UP/DOWN/LEFT/RIGHT, A to confirm, B to cancel)
+- Complete title sequence setup (press A to advance quickly)
+- Buy/sell items in shops
+- Name Pokemon/character
+
+ACTIONS:
+- press_buttons: Direct controller input (A, B, START, UP, DOWN, LEFT, RIGHT, etc.)
+- complete_subgoal: Mark subgoal as completed/failed/interrupted
+
+Analyze the current game state, frame, and subgoal to decide the best action."""
+
     def step(
         self,
         game_state: Dict[str, Any],
+        sampled_frames: List[Any],
         subgoal: Any,  # Subgoal dataclass
         planning_context: Dict[str, Any]
     ) -> Dict[str, Any]:
         """
         Execute one step for utils subgoal.
-        
-        Handles different game states:
-        - dialog: Advance through NPC conversations and text
-        - menu: Navigate menus, select options
-        - title: Handle title sequence and game startup
-        - overworld: Default state for utility interactions
+
+        Directly uses current state, frames, and available actions to decide what to do.
         """
-        # Get current game state
+        # Add current frame to sampled frames
+        current_frame = game_state.get('frame')
+        if current_frame:
+            sampled_frames.append(current_frame)
+
+        # Get game state
         current_state = game_state.get("game", {}).get("game_state", "unknown")
-        
+        dialog_text = game_state.get("game", {}).get("dialog_text", "")
+
         # Check party health status (but not too frequently to avoid spam)
         current_time = time.time()
         if current_time - self.last_health_check > 60.0:  # Check every 1 minute
             self._check_party_health(game_state)
             self.last_health_check = current_time
-        
+
         # Check if we're in a Pokemon Center
         location = game_state.get("player", {}).get("location", "")
         self.in_pokemon_center = "POKEMON" in location.upper() and "CENTER" in location.upper()
-        
-        logger.info(f"UtilsAgent step - State: {current_state}, Subgoal: {subgoal.description}")
-        
-        # Handle pre-defined cases
-        if current_state in self.handlers:
-            return self.handlers[current_state](game_state, subgoal, planning_context)
-        else:
-            # Handle unknown/exception cases
-            logger.warning(f"Unknown game state: {current_state}, defaulting to generic handler")
-            return self._handle_exception(game_state, subgoal, planning_context)
 
-    def _handle_dialog(
-        self,
-        game_state: Dict[str, Any],
-        subgoal: Any,
-        planning_context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """Handle dialogue interactions - advance conversations, make choices."""
-        frame = game_state.get("frame")
-        dialog_text = game_state.get("game", {}).get("dialog_text", "")
-        
-        # Extract planning context info
-        overall_goal = planning_context.get("goal", "Unknown goal")
-        next_milestone = planning_context.get("next_milestone", {})
-        milestone_desc = next_milestone.get("description", "No milestone info")
-        
-        # Check if we're in Pokemon Center and need healing
-        pokemon_center_context = ""
-        if self.in_pokemon_center and self.healing_needed:
-            pokemon_center_context = "\n🏥 NOTE: Party needs healing - accept healing if offered."
-        
-        # Build dialogue-specific prompt
-        prompt = f"""💬 DIALOGUE INTERACTION TASK
-
-You are handling a dialogue interaction in Pokémon Emerald.
-
-🎯 OVERALL GOAL: {overall_goal}
-📍 NEXT MILESTONE: {milestone_desc}
-
-CURRENT SUBGOAL: {subgoal.description}
-
-DIALOGUE TEXT: {dialog_text if dialog_text else "No text detected"}
-{pokemon_center_context}
-
-💬 DIALOGUE INTERACTION RULES:
-1. **READ THE TEXT**: Understand what's being said
-2. **ADVANCE WITH A**: Press A to advance through dialogue text
-3. **IDENTIFY DIALOGUE TYPE**: Determine if this requires a decision
-
-📝 DIALOGUE CATEGORIES:
-- **Flavor Text**: General NPC chatter, dialogue before/after battles (press A to skip)
-- **Story Dialogue**: Important plot points (press A to continue)
-- **Instructional Dialogue**: NPCs giving hints/directions/items (press A)
-- **Choice Dialogue**: YES/NO questions (use UP/DOWN to select, A to confirm)
-
-💡 DIALOGUE NAVIGATION STRATEGY:
-- **Look for Questions**: If dialogue asks YES/NO, you may need to choose
-- **Watch for Instructions**: Note important information before advancing
-- **Item Reception**: Press A to receive items and continue
-
-AVAILABLE ACTIONS: A, B, UP, DOWN, LEFT, RIGHT
-
-Based on the dialogue and your subgoal, choose the best action.
-
-REASONING: [Explain your choice]
-ACTION: [Single button like 'A' or 'DOWN']
-"""
-        
-        try:
-            response = self.vlm.get_query(frame, prompt, "utils_dialog")
-            action = self._parse_action_from_response(response)
-            
-            logger.info(f"Dialog action: {action}")
-            return {"action": [action]}
-            
-        except Exception as e:
-            logger.error(f"VLM call failed in dialog handler: {e}")
-            return {"action": ["A"]}  # Default: advance dialogue
-
-    def _handle_menu(
-        self,
-        game_state: Dict[str, Any],
-        subgoal: Any,
-        planning_context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """Handle menu navigation - select options, manage items, etc."""
-        frame = game_state.get("frame")
+        # Extract player info
         player_info = game_state.get("player", {})
-        
-        # Get player data
         player_name = player_info.get("name", "Unknown")
         money = player_info.get("money", 0)
+        position = player_info.get("position", {})
+
+        # Get party info
         party = player_info.get("party", [])
-        
-        # Format party info
         party_str = ""
         if party:
             for i, pokemon in enumerate(party[:6], 1):
@@ -215,304 +149,142 @@ ACTION: [Single button like 'A' or 'DOWN']
                 party_str += f"\n  {i}. {species} Lv.{level} - HP: {hp}/{max_hp}"
         else:
             party_str = "\n  No Pokémon in party"
-        
-        badges = game_state.get("game", {}).get("badges", [])
-        
-        # Extract planning context info
+
+        # Extract planning context
         overall_goal = planning_context.get("goal", "Unknown goal")
         next_milestone = planning_context.get("next_milestone", {})
         milestone_desc = next_milestone.get("description", "No milestone info")
-        
-        prompt = f"""🎮 MENU NAVIGATION TASK
 
-You are navigating a menu in Pokémon Emerald.
-
-🎯 OVERALL GOAL: {overall_goal}
-📍 NEXT MILESTONE: {milestone_desc}
-
-CURRENT SUBGOAL: {subgoal.description}
-
-📊 CURRENT GAME STATE:
-- **Player**: {player_name}
-- **Money**: ${money}
-- **Badges**: {len(badges)}
-
-🎯 YOUR POKÉMON PARTY:{party_str}
-
-🎮 MENU SELECTION RULES:
-1. **IDENTIFY MENU TYPE**: Determine which menu you're in (Main, Bag, Pokémon, etc.)
-2. **KNOW YOUR GOAL**: What do you need? (heal Pokémon, use item, save, etc.)
-3. **READ OPTIONS**: Examine all visible menu options
-4. **USE DIRECTIONAL KEYS**: Navigate with UP/DOWN (sometimes LEFT/RIGHT)
-5. **CONFIRM WITH A**: Press A to select the highlighted option
-6. **CANCEL WITH B**: Press B to go back or close menu
-7. **EXIT PROPERLY**: Use B to back out or select "Exit"
-
-📋 MAIN MENU OPTIONS:
-- **Pokédex**: View caught Pokémon
-- **Pokémon**: View party and stats
-- **Bag**: Access items (Items, Poké Balls, TMs & HMs, Berries, Key Items)
-- **Save**: Save game progress
-- **Exit**: Close menu
-
-AVAILABLE ACTIONS: A, B, UP, DOWN, LEFT, RIGHT, START
-
-Based on the menu and your subgoal, choose the best action.
-
-REASONING: [Explain your choice]
-ACTION: [Single button like 'A', 'DOWN', or 'B']
-"""
-        
-        try:
-            response = self.vlm.get_query(frame, prompt, "utils_menu")
-            action = self._parse_action_from_response(response)
-            
-            logger.info(f"Menu action: {action}")
-            return {"action": [action]}
-            
-        except Exception as e:
-            logger.error(f"VLM call failed in menu handler: {e}")
-            return {"action": ["B"]}  # Default: exit menu
-
-    def _handle_title(
-        self,
-        game_state: Dict[str, Any],
-        subgoal: Any,
-        planning_context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """Handle title sequence - skip intro, set name, start game."""
-        frame = game_state.get("frame")
-        player_info = game_state.get("player", {})
-        player_name = player_info.get("name", "????????")
-        player_location = player_info.get("location", "TITLE_SEQUENCE")
-        
-        # Check milestone progress
-        milestones = game_state.get("milestones", {})
-        game_running = milestones.get("GAME_RUNNING", {}).get("completed", False)
-        player_name_set = milestones.get("PLAYER_NAME_SET", {}).get("completed", False)
-        intro_complete = milestones.get("INTRO_CUTSCENE_COMPLETE", {}).get("completed", False)
-        
-        # Determine current stage
-        current_stage = "Starting title sequence"
-        if intro_complete:
-            current_stage = "Intro complete - should be in gameplay soon"
-        elif player_name_set:
-            current_stage = "Name set - in intro cutscene"
-        elif game_running:
-            current_stage = "Game started - setting up player"
-        
-        # Extract planning context info
-        overall_goal = planning_context.get("goal", "Unknown goal")
-        next_milestone = planning_context.get("next_milestone", {})
-        milestone_desc = next_milestone.get("description", "No milestone info")
-        
-        prompt = f"""🎬 TITLE SEQUENCE TASK
-
-You are completing the title sequence in Pokémon Emerald.
-
-🎯 OVERALL GOAL: {overall_goal}
-📍 NEXT MILESTONE: {milestone_desc}
-
-CURRENT SUBGOAL: {subgoal.description}
-
-📊 CURRENT STATE:
-- **Player Name**: {player_name}
-- **Location**: {player_location}
-- **Progress Stage**: {current_stage}
-- **Game Running**: {"Yes" if game_running else "No"}
-- **Name Set**: {"Yes" if player_name_set else "No"}
-- **Intro Complete**: {"Yes" if intro_complete else "No"}
-
-🎬 TITLE SEQUENCE RULES:
-1. **SKIP QUICKLY**: Complete setup as fast as possible
-2. **PRESS A TO ADVANCE**: Most screens advance with A
-3. **MAKE QUICK CHOICES**: Choose quickly without overthinking
-4. **USE DEFAULTS**: Short, simple choices speed up the process
-5. **DON'T READ EVERYTHING**: Skip intro text and logos
-
-💡 QUICK COMPLETION STRATEGY:
-- **Spam A Button**: Most sequences need repeated A presses
-- **Name Selection**: Leave name empty for default
-- **Don't Customize**: Use defaults as much as possible, including name, gender, and clock time
-
-AVAILABLE ACTIONS: A, B, START, UP, DOWN, LEFT, RIGHT
-
-Based on the current stage and your subgoal, choose the best action.
-
-REASONING: [Explain your choice]
-ACTION: [Single button like 'A', 'START', or 'DOWN']
-"""
-        
-        try:
-            response = self.vlm.get_query(frame, prompt, "utils_title")
-            action = self._parse_action_from_response(response)
-            
-            logger.info(f"Title action: {action}")
-            return {"action": [action]}
-            
-        except Exception as e:
-            logger.error(f"VLM call failed in title handler: {e}")
-            return {"action": ["A"]}  # Default: advance with A
-
-    def _handle_overworld(
-        self,
-        game_state: Dict[str, Any],
-        subgoal: Any,
-        planning_context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """Handle overworld utility tasks - interact with objects, NPCs, etc."""
-        frame = game_state.get("frame")
-        player_info = game_state.get("player", {})
-        position = player_info.get("position", {})
-        location = player_info.get("location", "Unknown")
-        
-        # Extract planning context info
-        overall_goal = planning_context.get("goal", "Unknown goal")
-        next_milestone = planning_context.get("next_milestone", {})
-        milestone_desc = next_milestone.get("description", "No milestone info")
-        milestone_target = next_milestone.get("target", "")
-        
-        # Get completed/failed subgoals for context awareness
+        # Get completed/failed subgoals
         completed_subgoals = planning_context.get("completed_subgoals", [])
         failed_subgoals = planning_context.get("failed_subgoals", [])
-        
-        # Format recent history
-        history_context = ""
-        if completed_subgoals:
-            recent_completed = completed_subgoals[-3:]  # Last 3 completed
-            history_context += "\n✅ RECENTLY COMPLETED:"
-            for sg in recent_completed:
-                history_context += f"\n  - {sg.get('description', 'Unknown')}"
-        if failed_subgoals:
-            recent_failed = failed_subgoals[-2:]  # Last 2 failed
-            history_context += "\n❌ RECENT FAILURES:"
-            for sg in recent_failed:
-                history_context += f"\n  - {sg.get('description', 'Unknown')}"
-        
-        # Get party health status
-        party_health_str = ""
-        if self.healing_needed:
-            party_health_str = f"\n⚠️ Party needs healing - seek Pokemon Center"
-        
-        prompt = f"""🎮 UTILITY TASK IN OVERWORLD
 
-You are performing a utility task in the overworld.
+        # Format history
+        history_str = ""
+        if completed_subgoals:
+            recent = completed_subgoals[-3:]
+            history_str += "\n✅ RECENTLY COMPLETED:"
+            for sg in recent:
+                history_str += f"\n  - {sg.get('description', 'Unknown')}"
+        if failed_subgoals:
+            recent = failed_subgoals[-2:]
+            history_str += "\n❌ RECENT FAILURES:"
+            for sg in recent:
+                history_str += f"\n  - {sg.get('description', 'Unknown')}"
+
+        # Add Pokemon Center context if needed
+        pokemon_center_context = ""
+        if self.in_pokemon_center and self.healing_needed:
+            pokemon_center_context = "\n🏥 NOTE: Party needs healing - accept healing if offered."
+
+        # Build comprehensive prompt
+        prompt = f"""UTILITY TASK
 
 🎯 OVERALL GOAL: {overall_goal}
 📍 NEXT MILESTONE: {milestone_desc}
-{f"🎪 TARGET: {milestone_target}" if milestone_target else ""}
 
 CURRENT SUBGOAL: {subgoal.description}
 SUBGOAL CONTEXT: {subgoal.context}
-{history_context if history_context else ""}
+{history_str}
 
-📊 CURRENT STATUS:
-- **Location**: {location}
-- **Position**: ({position.get('x', '?')}, {position.get('y', '?')}){party_health_str}
+📊 CURRENT STATE:
+- Game State: {current_state}
+- Location: {location}
+- Position: ({position.get('x', '?')}, {position.get('y', '?')})
+- Player: {player_name}
+- Money: ${money}
+- Dialog Text: {dialog_text if dialog_text else "None"}
+{pokemon_center_context}
 
-💡 UTILITY ACTIONS:
-- **Talk to NPC**: Walk adjacent, face them, press A
-- **Use Object**: Walk adjacent, face it, press A
-- **Open Menu**: Press START
-- **Use Item**: START → Bag → Select item
-- **Check Pokémon**: START → Pokémon
+🎯 YOUR POKÉMON PARTY:{party_str}
 
-🎯 INTERACTION STEPS:
-1. Walk adjacent to target (within 1 tile)
-2. Face the target (press direction toward it)
-3. Press A to interact
+💡 UTILITY GUIDELINES:
+- **Dialogues**: Press A to advance, UP/DOWN to select choices, then A to confirm
+- **Menus**: Navigate with UP/DOWN/LEFT/RIGHT, A to confirm, B to cancel/exit
+- **Title Sequence**: Press A repeatedly to advance quickly through setup
+- **Shopping**: Navigate items with UP/DOWN, A to buy/confirm, B to cancel
+- **Naming**: Use directional keys and A to select letters, confirm name when done
 
-AVAILABLE ACTIONS: A, B, START, UP, DOWN, LEFT, RIGHT
+Based on the subgoal, game state, and frames, determine the best next action."""
 
-Based on your subgoal, what action should you take?
-
-REASONING: [Explain your choice]
-ACTION: [Single button]
-"""
-        
+        # Call VLM for action decision
         try:
-            response = self.vlm.get_query(frame, prompt, "utils_overworld")
-            action = self._parse_action_from_response(response)
-            
-            logger.info(f"Overworld action: {action}")
-            return {"action": [action]}
-            
+            response = self.vlm.get_structured_query(
+                text=prompt,
+                response_schema=SubAgentActionResponse,
+                img=sampled_frames,
+                module_name="utils_agent",
+            )
+
+            # Execute the action
+            return self._execute_action(response)
+
         except Exception as e:
-            logger.error(f"VLM call failed in overworld handler: {e}")
-            return {"action": ["WAIT"]}
+            logger.error(f"VLM call failed: {e}")
+            return {
+                "action_type": "error",
+                "action": ["WAIT"],
+                "reasoning": f"Error: {e}"
+            }
 
-    def _handle_exception(
-        self,
-        game_state: Dict[str, Any],
-        subgoal: Any,
-        planning_context: Dict[str, Any]
-    ) -> Dict[str, Any]:
-        """Handle unknown or exception cases."""
-        current_state = game_state.get("game", {}).get("game_state", "unknown")
-        frame = game_state.get("frame")
-        
-        # Extract planning context info
-        overall_goal = planning_context.get("goal", "Unknown goal")
-        next_milestone = planning_context.get("next_milestone", {})
-        milestone_desc = next_milestone.get("description", "No milestone info")
-        
-        logger.warning(f"Handling exception case for state: {current_state}")
-        
-        prompt = f"""⚠️ UNKNOWN GAME STATE
+    def _execute_action(self, response: SubAgentActionResponse) -> Dict[str, Any]:
+        """Execute the action returned by the VLM."""
+        action = response.action
 
-Current game state is: {current_state}
+        # Handle press_buttons
+        if action.kind == "press_buttons":
+            buttons = action.buttons
+            logger.info(f"🎮 Returning buttons to press: {buttons}")
+            return {
+                "action_type": "press_buttons",
+                "action": list(buttons),
+                "reasoning": response.reasoning
+            }
 
-🎯 OVERALL GOAL: {overall_goal}
-📍 NEXT MILESTONE: {milestone_desc}
+        # Handle complete_subgoal
+        elif action.kind == "complete_subgoal":
+            status = action.status
+            context = action.context or ""
+            logger.info(f"✅ Subgoal marked as {status}: {context}")
+            return {
+                "action_type": "complete_subgoal",
+                "action": ["COMPLETE_SUBGOAL"],
+                "reasoning": response.reasoning,
+                "status": status,
+                "context": context
+            }
 
-Subgoal: {subgoal.description}
-
-Analyze the screen and determine the best action to progress.
-You may be in a transition, loading screen, or unusual state.
-
-Common safe actions:
-- A: Advance/confirm
-- B: Cancel/back
-- WAIT: Observe without acting
-
-REASONING: [What do you see and why this action?]
-ACTION: [Single button or WAIT]
-"""
-        
-        try:
-            response = self.vlm.get_query(frame, prompt, "utils_exception")
-            action = self._parse_action_from_response(response)
-            
-            logger.info(f"Exception handler action: {action}")
-            return {"action": [action]}
-            
-        except Exception as e:
-            logger.error(f"VLM call failed in exception handler: {e}")
-            return {"action": ["WAIT"]}
+        else:
+            logger.error(f"Unknown action kind: {action.kind}")
+            return {
+                "action_type": "error",
+                "action": ["WAIT"],
+                "reasoning": "Unknown action type"
+            }
 
     def _check_party_health(self, game_state: Dict[str, Any]) -> None:
         """
         Check party health and set healing_needed flag if critical.
-        
+
         Simple check: if party has significant fainted/low HP Pokemon, flag for healing.
         """
         player_info = game_state.get("player", {})
         party = player_info.get("party", [])
-        
+
         if not party:
             self.healing_needed = False
             return
-        
+
         total = len(party)
         current_health = [p.get("current_hp", 0) for p in party]
-        max_health = [max(p.get("max_hp", 1),1) for p in party]
+        max_health = [max(p.get("max_hp", 1), 1) for p in party]
         threshold = 0.2  # Threshold for healing, can be adjusted
         critical_count = sum(1 for hp, max_hp in zip(current_health, max_health) if hp == 0 or (hp / max_hp) < threshold)
 
         # Need healing if most of party is in bad shape
         old_state = self.healing_needed
         self.healing_needed = (critical_count / total) > 0.5
-        
+
         if self.healing_needed and not old_state:
             logger.warning(f"🏥 Party needs healing: {critical_count}/{total} Pokemon critical")
         elif not self.healing_needed and old_state:
@@ -525,45 +297,24 @@ ACTION: [Single button or WAIT]
     def get_health_status(self, game_state: Dict[str, Any]) -> Dict[str, Any]:
         """
         Get simplified health status of the party.
-        
+
         Returns:
             Dict with basic party health summary.
         """
         player_info = game_state.get("player", {})
         party = player_info.get("party", [])
-        
+
         if not party:
             return {"total": 0, "needs_healing": False}
-        
+
         total = len(party)
-        critical = sum(1 for p in party if p.get("current_hp", 0) == 0 or 
+        critical = sum(1 for p in party if p.get("current_hp", 0) == 0 or
                       (p.get("current_hp", 0) / max(p.get("max_hp", 1), 1)) < 0.3)
         alive = sum(1 for p in party if p.get("current_hp", 0) > 0)
-        
+
         return {
             "total": total,
             "alive": alive,
             "critical": critical,
             "needs_healing": self.healing_needed
         }
-
-    def _parse_action_from_response(self, response: str) -> str:
-        """Parse action from VLM response."""
-        if not response:
-            return "WAIT"
-        
-        # Look for ACTION: line
-        for line in response.split('\n'):
-            line_stripped = line.strip()
-            if line_stripped.upper().startswith("ACTION:"):
-                action = line_stripped.split(":", 1)[1].strip().upper()
-                # Validate action
-                valid_actions = {'A', 'B', 'START', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'WAIT'}
-                if action in valid_actions:
-                    return action
-                logger.warning(f"Invalid action '{action}', defaulting to WAIT")
-                return "WAIT"
-        
-        # Default if no action found
-        logger.warning("No ACTION: line found in response, defaulting to WAIT")
-        return "WAIT"

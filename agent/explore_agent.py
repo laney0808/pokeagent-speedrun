@@ -81,7 +81,7 @@ class SubAgentActionResponse(BaseModel):
       - press_buttons: send controller inputs
       - complete_subgoal: mark subgoal done/failed/skipped
     """
-    reasoning: str = Field(description="Reasoning about what to do next")
+    reasoning: str = Field(description="Reasoning about why this action is taken")
     action: Union[
         ToolCallAction,
         PressButtonsAction,
