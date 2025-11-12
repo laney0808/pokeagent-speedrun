@@ -54,6 +54,7 @@ The system is built with a modular architecture that separates perception, plann
 - **Web interface**: Visualize the agent's thought process and game state in real-time
 - **Modular architecture**: Easily extendable with new capabilities
 - **Customizable prompts**: Easy-to-edit prompt system for different agent behaviors
+- **Battle micro-agent**: Dedicated battle controller with metadata-driven move and item recommendations plus directive support
 
 ## Directory Structure
 
@@ -666,6 +667,21 @@ You are playing Pokemon Emerald under strict Nuzlocke rules:
 ```
 
 2. **Edit action prompts** to be more cautious about battles
+
+### Battle Agent directives
+
+Simple mode now hands off button pressing to a dedicated battle agent whenever `game_state` reports a battle.
+The overworld LLM issues high-level instructions by adding `BATTLE_DIRECTIVE: MODE details` anywhere in its response.
+
+- Supported modes: `ATTACK`, `CATCH`, `HEAL`, `FLEE`, `STATUS`, `STALL`
+- Examples:
+  - `BATTLE_DIRECTIVE: CATCH shiny Ralts - weaken then throw Ultra Ball`
+  - `BATTLE_DIRECTIVE: HEAL Torchic if HP < 30%`
+  - `BATTLE_DIRECTIVE: FLEE optional battle to follow route plan`
+
+Directives persist until updated, and the battle agent receives structured summaries of move effectiveness,
+bag contents (Poké Balls, healing items), and the latest directive on every turn.
+If you need the overworld agent to take back control, omit the directive and it will fall back to the default aggressive strategy.
 3. **Edit memory** to track "living" vs "dead" Pokemon
 4. **Edit perception** to emphasize Pokemon health monitoring
 

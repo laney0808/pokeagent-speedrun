@@ -3,12 +3,18 @@ Agent modules for Pokemon Emerald speedrunning agent
 """
 
 from utils.vlm import VLM
+from .battle import BattleAgent, BattleDirective, extract_battle_directive
 from .deprecated.action import action_step
 from .deprecated.memory import memory_step
 from .deprecated.perception import perception_step
 from .deprecated.planning import planning_step
-from .simple import SimpleAgent, get_simple_agent, simple_mode_processing_multiprocess, configure_simple_agent_defaults
 from .react import ReActAgent, create_react_agent
+from .simple import (
+    SimpleAgent,
+    configure_simple_agent_defaults,
+    get_simple_agent,
+    simple_mode_processing_multiprocess,
+)
 from .hierarchical_agent import HierarchicalAgent
 from .planning_agent import PlanningAgent
 
@@ -153,6 +159,9 @@ class Agent:
 
 __all__ = [
     'Agent',
+    'BattleAgent',
+    'BattleDirective',
+    'extract_battle_directive',
     'action_step',
     'memory_step',
     'perception_step',
@@ -162,6 +171,7 @@ __all__ = [
     'simple_mode_processing_multiprocess',
     'configure_simple_agent_defaults',
     'ReActAgent',
+    'create_react_agent'
     'create_react_agent',
     'HierarchicalAgent',
     'PlanningAgent'
