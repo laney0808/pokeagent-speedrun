@@ -105,7 +105,7 @@ def main():
     parser.add_argument("--model-name", type=str, default="gemini-2.5-flash", 
                        help="Model name to use")
     parser.add_argument("--scaffold", type=str, default="simple",
-                       choices=["simple", "react", "hierarchical"],
+                       choices=["simple", "react", "hierarchical", "planning"],
                        help="Agent scaffold: simple, react, or hierarchical")
     parser.add_argument("--simple", action="store_true", 
                        help="DEPRECATED: Use --scaffold simple instead")

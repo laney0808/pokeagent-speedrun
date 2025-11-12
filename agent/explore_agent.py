@@ -106,25 +106,18 @@ class ExploreAgent:
     - Move around the world
     """
 
-    def __init__(self, mcp_server_url: str):
+    def __init__(self, backend, model_name, mcp_server_url: str):
         from utils.vlm import VLM
 
         self.mcp_server_url = mcp_server_url
-        self.vlm = VLM()  # Create own VLM instance with own conversation history
         self._initiate_tools()
-        self.system_prompt = ExploreAgent._get_system_prompt()
-        response = self.vlm.get_text_query(
-            text=self.system_prompt,
-            response_schema=SubAgentActionResponse,
-            module_name="explore_agent",
-        )
+        self.vlm = VLM(backend=backend, model_name=model_name, system_prompt=self._get_system_prompt())  # Create own VLM instance with own conversation history
 
-    @staticmethod
-    def _get_system_prompt() -> str:
+    def _get_system_prompt(self) -> str:
         """
         Get system prompt for the sub-agent.
         """
-        return """You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
+        return f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
         You will receive a subgoal to achieve. 
         Given a subgoal, you will determine the type of exploration to perform, and execute actions to achieve the subgoal.
         There are 4 types of exploration:
@@ -219,6 +212,7 @@ class ExploreAgent:
     def step(
         self,
         game_state: Dict[str, Any],
+        sampled_frames: List[Any],
         subgoal: Any,  # Subgoal dataclass
         planning_context: Dict[str, Any]
     ) -> Dict[str, Any]:
@@ -226,6 +220,9 @@ class ExploreAgent:
         Execute one step for exploration subgoal.
         """
         # 1. determine the nature of the subgoal by calling VLM
+        current_frame = game_state.get('frame')
+        sampled_frames.append(current_frame)
+        
         exploration_type = self._determine_exploration_type(
             game_state,
             subgoal,
@@ -254,6 +251,7 @@ class ExploreAgent:
         response = self.vlm.get_structured_query(
             text=prompt,
             response_schema=SubAgentActionResponse,
+            img=sampled_frames,
             module_name="explore_agent",
         )
         output = []
@@ -334,6 +332,7 @@ class ExploreAgent:
     def _determine_exploration_type(
         self,
         game_state: Dict[str, Any],
+        frames: List[Any],
         subgoal: Any,
         planning_context: Dict[str, Any]
     ) -> ExplorationTypeResponse:
@@ -382,6 +381,7 @@ REQUIREMENTS:
                 # (VLM backend automatically manages conversation history)
                 response = self.vlm.get_structured_query(
                     text=prompt,
+                    img=frames,
                     response_schema=ExplorationTypeResponse,
                     module_name="explore_agent",
                 )
