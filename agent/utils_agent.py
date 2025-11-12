@@ -141,14 +141,7 @@ class UtilsAgent:
         # Check if we're in Pokemon Center and need healing
         pokemon_center_context = ""
         if self.in_pokemon_center and self.healing_needed:
-            pokemon_center_context = """
-
-🏥 POKEMON CENTER HEALING PRIORITY:
-⚠️ You are in a Pokemon Center and your party needs healing!
-⚠️ If the nurse asks "Would you like to heal your Pokemon?" or similar, answer YES!
-⚠️ Press A to advance dialogue and accept healing offers.
-⚠️ Look for dialogue about healing, recovery, or Pokemon restoration.
-"""
+            pokemon_center_context = "\n🏥 NOTE: Party needs healing - accept healing if offered."
         
         # Build dialogue-specific prompt
         prompt = f"""💬 DIALOGUE INTERACTION TASK
@@ -437,23 +430,8 @@ ACTION: [Single button like 'A', 'START', or 'DOWN']
         # Get party health status
         health_status = self.get_health_status(game_state)
         party_health_str = ""
-        if health_status["total"] > 0:
-            party_health_str = f"\n\n🏥 PARTY HEALTH STATUS:"
-            party_health_str += f"\n  - Alive: {health_status['alive']}/{health_status['total']}"
-            party_health_str += f"\n  - Fainted: {health_status['fainted']}"
-            party_health_str += f"\n  - Low HP: {health_status['low_hp']}"
-            
-            # Show individual Pokemon health
-            for p in health_status['party_details']:
-                status_emoji = {"healthy": "✅", "low": "⚠️", "critical": "🔴", "fainted": "💀"}
-                emoji = status_emoji.get(p['status'], "❓")
-                party_health_str += f"\n  {emoji} {p['species']} Lv.{p['level']}: {p['current_hp']}/{p['max_hp']} HP ({p['hp_percentage']}%)"
-            
-            # Add critical warning if healing needed
-            if self.healing_needed:
-                party_health_str += f"\n\n🚨 CRITICAL WARNING: HEALING NEEDED URGENTLY!"
-                party_health_str += f"\n   ⚠️ Your party is in critical condition!"
-                party_health_str += f"\n   ⚠️ Find a Pokemon Center immediately to heal!"
+        if self.healing_needed and health_status["total"] > 0:
+            party_health_str = f"\n⚠️ Party needs healing - seek Pokemon Center"
         
         prompt = f"""🎮 UTILITY TASK IN OVERWORLD
 
@@ -469,8 +447,7 @@ SUBGOAL CONTEXT: {subgoal.context}
 
 📊 CURRENT STATUS:
 - **Location**: {location}
-- **Position**: ({position.get('x', '?')}, {position.get('y', '?')})
-{party_health_str}
+- **Position**: ({position.get('x', '?')}, {position.get('y', '?')}){party_health_str}
 
 💡 UTILITY ACTIONS:
 - **Talk to NPC**: Walk adjacent, face them, press A
@@ -483,8 +460,6 @@ SUBGOAL CONTEXT: {subgoal.context}
 1. Walk adjacent to target (within 1 tile)
 2. Face the target (press direction toward it)
 3. Press A to interact
-
-{"🏥 PRIORITY: If your party needs healing, your priority should be to find and enter a Pokemon Center!" if self.healing_needed else ""}
 
 AVAILABLE ACTIONS: A, B, START, UP, DOWN, LEFT, RIGHT
 
@@ -558,10 +533,7 @@ ACTION: [Single button or WAIT]
         """
         Check party health and set healing_needed flag if critical.
         
-        Criteria for needing healing:
-        - All Pokemon fainted (HP = 0)
-        - More than half of party has low HP (< 30%)
-        - Only one Pokemon alive and it has low HP
+        Simple check: if party has significant fainted/low HP Pokemon, flag for healing.
         """
         player_info = game_state.get("player", {})
         party = player_info.get("party", [])
@@ -570,50 +542,18 @@ ACTION: [Single button or WAIT]
             self.healing_needed = False
             return
         
-        fainted_count = 0
-        low_hp_count = 0
-        alive_count = 0
-        total_pokemon = len(party)
+        total = len(party)
+        critical_count = sum(1 for p in party if p.get("current_hp", 0) == 0 or 
+                            (p.get("current_hp", 0) / max(p.get("max_hp", 1), 1)) < 0.3)
         
-        for pokemon in party:
-            current_hp = pokemon.get("current_hp", 0)
-            max_hp = pokemon.get("max_hp", 1)
-            
-            if current_hp == 0:
-                fainted_count += 1
-            else:
-                alive_count += 1
-                hp_percentage = (current_hp / max_hp) * 100 if max_hp > 0 else 0
-                if hp_percentage < 30:
-                    low_hp_count += 1
-        
-        # Determine if healing is needed
-        critical_state = False
-        
-        # Case 1: All Pokemon fainted
-        if fainted_count == total_pokemon:
-            critical_state = True
-            logger.warning("🚨 CRITICAL: All Pokemon fainted! Need Pokemon Center!")
-        
-        # Case 2: Only one Pokemon alive and it has low HP
-        elif alive_count == 1 and low_hp_count > 0:
-            critical_state = True
-            logger.warning("🚨 CRITICAL: Only one Pokemon alive with low HP! Need Pokemon Center!")
-        
-        # Case 3: More than half of party has low HP or is fainted
-        elif (fainted_count + low_hp_count) > (total_pokemon / 2):
-            critical_state = True
-            logger.warning(f"⚠️ WARNING: {fainted_count} fainted, {low_hp_count} low HP. Need Pokemon Center!")
-        
-        # Update the flag
+        # Need healing if most of party is in bad shape
         old_state = self.healing_needed
-        self.healing_needed = critical_state
+        self.healing_needed = critical_count > total / 2
         
-        # Log state change
         if self.healing_needed and not old_state:
-            logger.info("🏥 Setting healing_needed flag to TRUE")
+            logger.warning(f"🏥 Party needs healing: {critical_count}/{total} Pokemon critical")
         elif not self.healing_needed and old_state:
-            logger.info("✅ Party health restored, healing_needed flag to FALSE")
+            logger.info("✅ Party health recovered")
 
     def needs_healing(self) -> bool:
         """Public method to check if healing is needed."""
@@ -621,65 +561,27 @@ ACTION: [Single button or WAIT]
 
     def get_health_status(self, game_state: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Get detailed health status of the party.
+        Get simplified health status of the party.
         
         Returns:
-            Dict with party health information including counts and percentages.
+            Dict with basic party health summary.
         """
         player_info = game_state.get("player", {})
         party = player_info.get("party", [])
         
         if not party:
-            return {
-                "total": 0,
-                "alive": 0,
-                "fainted": 0,
-                "low_hp": 0,
-                "needs_healing": False,
-                "party_details": []
-            }
+            return {"total": 0, "needs_healing": False}
         
-        fainted_count = 0
-        low_hp_count = 0
-        alive_count = 0
-        party_details = []
-        
-        for pokemon in party:
-            species = pokemon.get("species_name", "Unknown")
-            current_hp = pokemon.get("current_hp", 0)
-            max_hp = pokemon.get("max_hp", 1)
-            level = pokemon.get("level", "?")
-            
-            hp_percentage = (current_hp / max_hp) * 100 if max_hp > 0 else 0
-            
-            status = "healthy"
-            if current_hp == 0:
-                fainted_count += 1
-                status = "fainted"
-            else:
-                alive_count += 1
-                if hp_percentage < 30:
-                    low_hp_count += 1
-                    status = "critical"
-                elif hp_percentage < 50:
-                    status = "low"
-            
-            party_details.append({
-                "species": species,
-                "level": level,
-                "current_hp": current_hp,
-                "max_hp": max_hp,
-                "hp_percentage": round(hp_percentage, 1),
-                "status": status
-            })
+        total = len(party)
+        critical = sum(1 for p in party if p.get("current_hp", 0) == 0 or 
+                      (p.get("current_hp", 0) / max(p.get("max_hp", 1), 1)) < 0.3)
+        alive = sum(1 for p in party if p.get("current_hp", 0) > 0)
         
         return {
-            "total": len(party),
-            "alive": alive_count,
-            "fainted": fainted_count,
-            "low_hp": low_hp_count,
-            "needs_healing": self.healing_needed,
-            "party_details": party_details
+            "total": total,
+            "alive": alive,
+            "critical": critical,
+            "needs_healing": self.healing_needed
         }
 
     def _parse_action_from_response(self, response: str) -> str:
