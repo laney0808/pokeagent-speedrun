@@ -439,10 +439,10 @@ class PlanningAgent:
             return self.explore_agent.step(game_state, sampled_frames, subgoal, planning_context)
 
         elif subgoal.agent_type == SubAgentType.BATTLE:
-            return self.battle_agent.step(game_state, sampled_frames,subgoal, planning_context)
+            return self.battle_agent.step(game_state, sampled_frames, subgoal, planning_context)
 
         elif subgoal.agent_type == SubAgentType.UTILS:
-            return self.utils_agent.step(game_state, sampled_frames,subgoal, planning_context)
+            return self.utils_agent.step(game_state, sampled_frames, subgoal, planning_context)
 
         else:
             logger.error(f"Unknown agent type: {subgoal.agent_type}")
