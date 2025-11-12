@@ -214,7 +214,7 @@ class PlanningAgent:
 
         # Initialize sub-agents (each creates its own VLM instance)
         self.explore_agent = ExploreAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
-        #self.battle_agent = BattleAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
+        # self.battle_agent = BattleAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
         self.utils_agent = UtilsAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
 
         # Initialize milestone tracking
@@ -414,16 +414,97 @@ class PlanningAgent:
 
         # Get current subgoal
         current_subgoal = self.state.subgoals[self.state.current_subgoal_index]
-        
+
         # Get sampled frames
         sampled_frames = [frame_data.get('frame') for frame_data in self._get_sampled_frames()]
 
         # Delegate to appropriate sub-agent
         result = self._delegate_to_subagent(game_state, sampled_frames, current_subgoal)
-        print(result)
-        #TODO: parse the subagent result to return the correct action
 
-        return result
+        # Parse the sub-agent result based on action_type
+        action_type = result.get("action_type")
+
+        if action_type == "press_buttons":
+            # Sub-agent wants to press buttons - return them directly
+            buttons = result.get("action", ["WAIT"])
+            logger.info(f"🎮 Sub-agent action: {buttons}")
+            return {"action": buttons}
+
+        elif action_type == "tool_call":
+            # Tool was executed, sub-agent is waiting - return WAIT
+            logger.info(f"🔧 Tool call executed: {result.get('reasoning', 'No reasoning')}")
+            return {"action": ["WAIT"]}
+
+        elif action_type == "tool_call_failed":
+            # Tool failed - mark subgoal as failed and replan
+            logger.warning(f"❌ Tool call failed: {result.get('reasoning', 'Unknown error')}")
+            current_subgoal.status = "failed"
+            current_subgoal.result = result.get("reasoning", "Tool call failed")
+            self.state.mode = AgentMode.PLANNING
+            return {"action": ["WAIT"]}
+
+        elif action_type == "complete_subgoal":
+            # Subgoal completed/failed/interrupted
+            status = result.get("status", "completed")
+            context = result.get("context", "")
+
+            logger.info(f"✅ Subgoal {status}: {current_subgoal.description}")
+
+            current_subgoal.status = status
+            current_subgoal.result = context
+
+            # Store context for future planning
+            self.state.subagent_context.append(f"Subgoal {current_subgoal.id} ({status}): {context}")
+
+            # Update planning context
+            if status == "completed":
+                completed_list = self.state.planning_context.get("completed_subgoals", [])
+                completed_list.append({
+                    "id": current_subgoal.id,
+                    "description": current_subgoal.description,
+                    "result": context
+                })
+                self.state.planning_context["completed_subgoals"] = completed_list
+            else:
+                failed_list = self.state.planning_context.get("failed_subgoals", [])
+                failed_list.append({
+                    "id": current_subgoal.id,
+                    "description": current_subgoal.description,
+                    "result": context
+                })
+                self.state.planning_context["failed_subgoals"] = failed_list
+
+            # Move to next subgoal or replan
+            if status == "completed":
+                # Move to next subgoal
+                self.state.current_subgoal_index += 1
+
+                if self.state.current_subgoal_index >= len(self.state.subgoals):
+                    # All subgoals completed - go back to planning
+                    logger.info("🎉 All subgoals completed, returning to planning")
+                    self.state.mode = AgentMode.PLANNING
+                else:
+                    # Start next subgoal
+                    next_subgoal = self.state.subgoals[self.state.current_subgoal_index]
+                    next_subgoal.status = "in_progress"
+                    self.state.active_subagent = next_subgoal.agent_type
+                    logger.info(f"🎯 Starting next subgoal: {next_subgoal.description}")
+            else:
+                # Subgoal failed or interrupted - replan
+                logger.info("⚠️ Subgoal failed/interrupted, returning to planning")
+                self.state.mode = AgentMode.PLANNING
+
+            return {"action": ["WAIT"]}
+
+        elif action_type == "error":
+            # Error occurred - log and wait
+            logger.error(f"❌ Sub-agent error: {result.get('reasoning', 'Unknown error')}")
+            return {"action": ["WAIT"]}
+
+        else:
+            # Unknown action type - log and wait
+            logger.error(f"❌ Unknown action_type: {action_type}")
+            return {"action": ["WAIT"]}
 
     def _delegate_to_subagent(
         self,
@@ -439,10 +520,10 @@ class PlanningAgent:
             return self.explore_agent.step(game_state, sampled_frames, subgoal, planning_context)
 
         elif subgoal.agent_type == SubAgentType.BATTLE:
-            return self.battle_agent.step(game_state, sampled_frames,subgoal, planning_context)
+            return self.battle_agent.step(game_state, sampled_frames, subgoal, planning_context)
 
         elif subgoal.agent_type == SubAgentType.UTILS:
-            return self.utils_agent.step(game_state, sampled_frames,subgoal, planning_context)
+            return self.utils_agent.step(game_state, sampled_frames, subgoal, planning_context)
 
         else:
             logger.error(f"Unknown agent type: {subgoal.agent_type}")
@@ -812,24 +893,24 @@ Generate the updated subgoals now."""
                     )
                     subgoals.append(subgoal)
 
-                logger.info(f"✅ Updated {len(subgoals)} subgoals successfully")
-                logger.info(f"💭 Reasoning: {response.reasoning}")
+                print(f"✅ Updated {len(subgoals)} subgoals successfully")
+                print(f"💭 Reasoning: {response.reasoning}")
                 for i, sg in enumerate(subgoals):
-                    logger.info(f"   {i+1}. [{sg.agent_type.value}] {sg.description}")
+                    print(f"   {i+1}. [{sg.agent_type.value}] {sg.description}")
 
                 return subgoals
 
             except Exception as e:
                 last_error = e
-                logger.warning(f"⚠️  VLM subgoal update failed (attempt {attempt + 1}/{max_retries}): {e}")
+                print(f"⚠️  VLM subgoal update failed (attempt {attempt + 1}/{max_retries}): {e}")
 
                 if attempt < max_retries - 1:
                     time.sleep(1.0)
-                    logger.info(f"🔄 Retrying...")
+                    print(f"🔄 Retrying...")
 
         # All retries failed
         error_msg = f"Failed to update subgoals after {max_retries} attempts. Last error: {last_error}"
-        logger.error(f"❌ {error_msg}")
+        print(f"❌ {error_msg}")
         raise RuntimeError(error_msg)
 
     def _should_update_plan(self, game_state: Dict[str, Any]) -> bool:

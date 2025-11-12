@@ -8,92 +8,86 @@ Responsibilities:
 - Move around the world
 """
 
-from dataclasses import dataclass
-from enum import Enum
 import logging
-from typing import Dict, Any, List
-from urllib import request
-from pydantic import BaseModel, Field
-from typing import Literal
-import time
+from typing import Dict, Any, List, Optional, Union, Literal, Annotated
 import requests
+from pydantic import BaseModel, Field
 
 logger = logging.getLogger(__name__)
 
 
-class SubAgentActionResponse(BaseModel):
-    """Schema for sub-agent action response.
-
-    The sub-agent can choose one of three action types:
-    - High-level action: Use predefined tools (e.g., navigate_to, find_npc)
-    - press_buttons: Direct button inputs
-    - complete_subgoal: Mark subgoal as done with status
-    """
-    reasoning: str = Field(description="Reasoning about what to do next")
-    action: Literal["high_level_action", "press_buttons", "complete_subgoal"] = Field(
-        description="Type of action to take"
-    )
-    action_detail: Dict[str, Any] = Field(
-        description=(
-            "Details for the action. "
-            "For 'high_level_action': {tool_name: str, tool_input: dict}. "
-            "For 'press_buttons': {buttons: [list of button strings]}. "
-            "For 'complete_subgoal': {status: str, context: str}"
-        )
+class PressButtonsAction(BaseModel):
+    """Direct controller input"""
+    kind: Literal["press_buttons"]
+    buttons: List[Literal["A", "B", "START", "SELECT", "UP", "DOWN", "LEFT", "RIGHT", "L", "R"]] = Field(
+        description="Ordered list of valid button presses"
     )
 
-@dataclass
-class ExplorationTypes(Enum):
-    NAVIGATE = "navigate"
-    FIND = "find"
-    EXPLORE = "explore"
-    MOVE_AREA = "move_area"
+class CompleteSubgoalAction(BaseModel):
+    """Mark subgoal as done / failed / interrupted"""
+    kind: Literal["complete_subgoal"]
+    status: Literal["completed", "failed", "interrupted"]
+    context: Optional[str] = Field(default=None, description="Reason or additional context")
 
-@dataclass
-class Coordinate:
+class ToolNavigateTo(BaseModel):
+    tool: Literal["navigate_to"]
     x: int
     y: int
-    is_blocked: bool
+    reason: str
 
-class ExplorationTypeResponse(BaseModel):
-    """Schema for exploration type response.
+class ToolNavigateInteract(BaseModel):
+    tool: Literal["navigate_interact"]
+    x: int
+    y: int
 
-    The sub-agent can choose one of the 4 exploration types:
-    - a. navigate to an (unblocked) coordinate in current area
-    - b. finding item/npc in current area
-    - c. explore the current area
-    - d. move to another area (cross-area navigation)
+class ToolGetWorldMap(BaseModel):
+    tool: Literal["get_world_map"]
+
+class ToolGetNavigationHints(BaseModel):
+    tool: Literal["get_navigation_hints"]
+    target_area_name: str
+
+class ToolSearchKnowledge(BaseModel):
+    tool: Literal["search_knowledge"]
+    query: str
+
+class ToolAddKnowledge(BaseModel):
+    tool: Literal["add_knowledge"]
+    key: str
+    value: str
+
+# ---------- Tool call action ----------
+ToolCallPayload = Annotated[
+    Union[
+        ToolNavigateTo,
+        ToolNavigateInteract,
+        ToolGetWorldMap,
+        ToolGetNavigationHints,
+        ToolSearchKnowledge,
+        ToolAddKnowledge,
+    ],
+    Field(discriminator="tool"),
+]
+
+class ToolCallAction(BaseModel):
+    """Invoke a predefined MCP tool"""
+    kind: Literal["tool_call"]
+    tool_call: ToolCallPayload
+
+class SubAgentActionResponse(BaseModel):
     """
-    exploration_type: Literal[
-        "navigate",
-        "find",
-        "explore",
-        "move_area"
-    ] = Field(description="Type of exploration to perform")
-    details: Dict[str, Any] = Field(
-        description="More specific details on where the player should go or what to find"
-    )
+    The sub-agent chooses exactly one action:
+      - tool_call: invoke one of the predefined tools
+      - press_buttons: send controller inputs
+      - complete_subgoal: mark subgoal done/failed/skipped
+    """
+    reasoning: str = Field(description="Reasoning about why this action is taken")
+    action: Union[
+        ToolCallAction,
+        PressButtonsAction,
+        CompleteSubgoalAction,
+    ] = Field(description="Exactly one action object")
 
-class CoordinateResponse(BaseModel):
-    """Schema for coordinate response."""
-    x: int = Field(description="X coordinate")
-    y: int = Field(description="Y coordinate")
-    is_blocked: bool = Field(description="Whether the coordinate is blocked by structure, npc or item or not")
-
-class FindItemState(BaseModel):
-    """Schema for finding item state response."""
-    target_name: str = Field(description="Name of the item/NPC to find")
-    target_coordinate: Coordinate = Field(description="Coordinate of the item/NPC to find")
-    found: bool = Field(description="Whether the item/NPC is found in the current area")
-    visited_locations: List[Coordinate] = Field(
-        description="List of coordinates already visited while searching for the item/NPC"
-    )
-    planned_locations: List[Coordinate] = Field(
-        description="List of coordinates planned to visit next while searching for the item/NPC"
-    )
-    details: Dict[str, Any] = Field(
-        description="More specific details on how to find the item/NPC or why it cannot be found"
-    )
 
 class ExploreAgent:
     """
@@ -110,102 +104,51 @@ class ExploreAgent:
         from utils.vlm import VLM
 
         self.mcp_server_url = mcp_server_url
-        self._initiate_tools()
-        self.vlm = VLM(backend=backend, model_name=model_name, system_prompt=self._get_system_prompt())  # Create own VLM instance with own conversation history
+        self.tools_info = self._get_tools_info()
+        self.vlm = VLM(backend=backend, model_name=model_name, system_prompt=self._get_system_prompt())
 
     def _get_system_prompt(self) -> str:
-        """
-        Get system prompt for the sub-agent.
-        """
-        return f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
-        You will receive a subgoal to achieve. 
-        Given a subgoal, you will determine the type of exploration to perform, and execute actions to achieve the subgoal.
-        There are 4 types of exploration:
-        1. NAVIGATION: Moving within the current area to specific coordinates
-        2. FINDING: Searching for a specific item or NPC in the current area
-        3. EXPLORATION: Thoroughly exploring the current area to uncover hidden items or paths
-        4. MOVE-AREA: Moving to a different area entirely
-        There are 3 types of actions you can take:
-        - High-level action: Use predefined tools.
-        - press_buttons: Direct button inputs.
-        - complete_subgoal: Mark subgoal as done with status.
-        The following are the tools available to you:
-        {self.tools}
-        Wait for further instructions.
-        """
+        """Get system prompt for the exploration agent."""
+        tools_desc = "\n".join([f"- {t['name']}: {t['description']}" for t in self.tools_info])
 
-    def _initiate_tools(self):
-        """
-        Initialize tools for the sub-agent.
-        """
-        self.tools = [
+        return f"""You are an exploration and navigation agent for Pokemon Emerald speedrunning.
+
+AVAILABLE TOOLS:
+{tools_desc}
+
+ACTIONS:
+- tool_call: Invoke one of the available tools
+- press_buttons: Direct controller input (A, B, START, UP, DOWN, LEFT, RIGHT, etc.)
+- complete_subgoal: Mark subgoal as completed/failed/interrupted
+
+Analyze the current game state, frames, and subgoal to decide the best action."""
+
+    def _get_tools_info(self) -> List[Dict[str, Any]]:
+        """Get information about available tools."""
+        return [
             {
                 "name": "navigate_to",
-                "description": "Move to specified coordinates in the current area.",
-                "input_schema": {
-                    "x": "int - X coordinate to navigate to",
-                    "y": "int - Y coordinate to navigate to",
-                    "reason": "str - Reason for navigation"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the navigation is successful"
-                }
+                "description": "Move to specified coordinates in the current area (x, y, reason).",
             },
             {
                 "name": "navigate_interact",
-                "description": "Move to specified coordinates and interact with the target item or npc.", 
-                "input_schema": {
-                    "x": "int - X coordinate to navigate to",
-                    "y": "int - Y coordinate to navigate to",
-                }, 
-                "output_schema": {
-                    "success": "bool - Whether the navigation is successful"
-                }
-            }, 
+                "description": "Move to coordinates and interact with target (x, y).",
+            },
             {
                 "name": "get_world_map",
-                "description": "Get world map information to assist in cross-area navigation.",
-                "input_schema": {},
-                "output_schema": {
-                    "success": "bool - Whether the world map retrieval is successful",
-                    "world_map_overview": "str - Overview of the world map",
-                }
-            }, 
+                "description": "Get world map information for cross-area navigation.",
+            },
             {
                 "name": "get_navigation_hints",
-                "description": "Get navigation hints to assist in navigation and exploration.",
-                "input_schema": {
-                    "target_area_name": "str - Target area to navigate to"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the navigation hints retrieval is successful",
-                    "navigation_hints": "str - Useful navigation hints",
-                }
+                "description": "Get navigation hints for a target area (target_area_name).",
             },
             {
                 "name": "search_knowledge",
-                "description": "Search external knowledge base for information to assist in navigation and exploration.",
-                "input_schema": {
-                    "query": "str - Query string to search in the knowledge base"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the knowledge search is successful",
-                    "query": "str - The original query string",
-                    "search_results": "Dict[str, str] - Search results with titles and snippets",
-                }
-            }, 
+                "description": "Search knowledge base for information (query).",
+            },
             {
                 "name": "add_knowledge",
-                "description": "Add new knowledge to the knowledge base.",
-                "input_schema": {
-                    "key": "str - Knowledge key or title",
-                    "value": "str - Knowledge content or description"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the knowledge addition was successful",
-                    "key": "str - Knowledge key or title",
-                    "value": "str - Knowledge content or description"
-                }
+                "description": "Add new knowledge to the knowledge base (key, value).",
             }
         ]
 
@@ -218,514 +161,243 @@ class ExploreAgent:
     ) -> Dict[str, Any]:
         """
         Execute one step for exploration subgoal.
+
+        Directly uses current state, frames, and available actions to decide what to do.
         """
-        # 1. determine the nature of the subgoal by calling VLM
+        # Add current frame to sampled frames
         current_frame = game_state.get('frame')
-        sampled_frames.append(current_frame)
-        
-        exploration_type = self._determine_exploration_type(
-            game_state,
-            subgoal,
-            planning_context
-        )
-        # 2. User different prompts based on the nature determined above
-        if exploration_type == ExplorationTypes.NAVIGATE:
-            logger.info("Exploration type determined: NAVIGATE")
-            prompt = self._get_navi_prompt(subgoal, game_state, planning_context)
-        elif exploration_type == ExplorationTypes.FIND:
-            logger.info("Exploration type determined: FIND")
-            prompt = self._get_find_prompt(subgoal, game_state, planning_context)
-        elif exploration_type == ExplorationTypes.EXPLORE:  
-            prompt = self._get_explore_prompt(subgoal, game_state, planning_context)
-        elif exploration_type == ExplorationTypes.MOVE_AREA:
-            prompt = self._get_move_area_prompt(subgoal, game_state, planning_context)  
-        else:
-            # In case where it cannot be classified, return to high-level planner
-            logger.warning("Exploration type could not be determined, returning to high-level planner.")
-            return {"actions": "WAIT", 
-                    "reasoning": "Could not determine exploration type, please replan or refine the subgoal.",
-                    "back_to_planning": True}
+        if current_frame:
+            sampled_frames.append(current_frame)
 
-        # Call the VLM with the constructed prompt
-        # and parse the response to get the next action
-        response = self.vlm.get_structured_query(
-            text=prompt,
-            response_schema=SubAgentActionResponse,
-            img=sampled_frames,
-            module_name="explore_agent",
-        )
-        output = []
-        # extract the response actions and execute them
-        if response.action == "high_level_action":
-            tool_name = response.action_detail.get("tool_name", "")
-            tool_input = response.action_detail.get("tool_input", {})
-            try:
-                result = self._execute_tool(tool_name, tool_input)   
-                if result.get("success"):
-                    logger.info(f"Successfully executed tool: {tool_name} with input: {tool_input}")
-                    output.append(f"Executed tool: {tool_name} successfully.")
-                    output.append(result)
-                else:
-                    logger.error(f"Failed to execute tool: {tool_name} with input: {tool_input}, error: {result.get('error')}")
-                    return {"actions": ["WAIT"],
-                        "reasoning": f"Failed to execute tool: {tool_name} due to error: {result.get('error')}"}
-            except Exception as e:
-                logger.error(f"Error executing tool {tool_name}: {e}")
-                return {"actions": ["WAIT"],
-                        "reasoning": f"Failed to execute tool: {tool_name} due to error: {result.get('error')}"}
-        elif response.action == "press_buttons":
-            buttons = response.action_detail.get("buttons", [])
-            try:
-                action_response = requests.post(f"{self.mcp_server_url}/mcp/press_buttons", json={
-                    "buttons": buttons,
-                })
-                action_response.raise_for_status()
-                result = action_response.json()
-                if result.get("success"):
-                    logger.info(f"Successfully pressed buttons: {buttons}")
-                else:
-                    logger.error(f"Failed to press buttons: {result.get('error')}")
-                    return {"actions": ["WAIT"],
-                        "reasoning": f"Failed to press buttons due to error: {e}"}
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Failed to call press_buttons: {e}")
-                return {"actions": ["WAIT"],
-                        "reasoning": f"Failed to press buttons due to error: {e}"}
-        elif response.action == "complete_subgoal":
-            status = response.action_detail.get("status", "unknown")
-            context = response.action_detail.get("context", "")
-            logger.info(f"Subgoal marked as complete with status: {status}, context: {context}")
-            return {"actions": ["Mark subgoal as complete"],
-                    "reasoning": response.reasoning}
-        else: 
-            logger.error(f"Unknown action type: {response.action}")
-            return {"actions": ["WAIT"],
-                    "reasoning": f"VLM Returned unknown action type: {response.action}"}
+        # Extract game state info
+        player_info = game_state.get("player", {})
+        location = player_info.get("location", "Unknown")
+        position = player_info.get("position", {})
 
-        # # 3. determine if subgoal is completed, and whether to return to high-level planner
-        # judging_state_prompt = f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
+        # Extract planning context
+        overall_goal = planning_context.get("goal", "Unknown goal")
+        next_milestone = planning_context.get("next_milestone", {})
+        milestone_desc = next_milestone.get("description", "No milestone info")
+        world_map_info = planning_context.get("world_map_info", "No map info")
+        nav_hints = planning_context.get("navigation_hints", "No navigation hints")
 
-        # You've just taken the following action to achieve the subgoal:
-        # {response.action} with details {response.action_detail}
-        # SUBGOAL: 
-        # {subgoal.description}, with context: {subgoal.context}
+        # Get completed/failed subgoals
+        completed_subgoals = planning_context.get("completed_subgoals", [])
+        failed_subgoals = planning_context.get("failed_subgoals", [])
 
-        # CURRENT GAME STATE:
-        # {game_state}
+        # Format history
+        history_str = ""
+        if completed_subgoals:
+            recent = completed_subgoals[-3:]
+            history_str += "\n✅ RECENTLY COMPLETED:"
+            for sg in recent:
+                history_str += f"\n  - {sg.get('description', 'Unknown')}"
+        if failed_subgoals:
+            recent = failed_subgoals[-2:]
+            history_str += "\n❌ RECENT FAILURES:"
+            for sg in recent:
+                history_str += f"\n  - {sg.get('description', 'Unknown')}"
 
-        # Please respond:
-        # 1. Is the subgoal completed? (True/False)
-        # 2. Should you return to the high-level planner for further instructions? (True/False)
-        # """
-        # judging_response = self.vlm.get_structured_query(
-        #     text=judging_state_prompt,
-        #     response_schema=JudgementResponse,
-        #     module_name="explore_agent",
-        # )
-        # back_to_planning = judging_response.back_to_planning
-        # subgoal_completed = judging_response.subgoal_completed
-        return {
-            "actions": ["WAIT"],
-            "message": output,
-        }
+        # Build prompt with all context
+        prompt = f"""EXPLORATION TASK
 
-    def _determine_exploration_type(
-        self,
-        game_state: Dict[str, Any],
-        frames: List[Any],
-        subgoal: Any,
-        planning_context: Dict[str, Any]
-    ) -> ExplorationTypeResponse:
-        """
-        Determine the type of exploration to perform by calling VLM.
+🎯 OVERALL GOAL: {overall_goal}
+📍 NEXT MILESTONE: {milestone_desc}
 
-        Returns an ExplorationTypeResponse indicating the type and details.
-        """
-        # Get player's location
-        current_location = game_state.get("player", {}).get("location", "Unknown")
-        player_pos = game_state.get("player", {}).get("position")
-        world_map_info = planning_context.get("world_map_info", "No map info available.")
-        nav_hints = planning_context.get("navigation_hints", "No navigation hints available.")
+CURRENT SUBGOAL: {subgoal.description}
+SUBGOAL CONTEXT: {subgoal.context}
+{history_str}
 
-        # Build detailed prompt
-        prompt = f""" Determine the type of exploration to perform to achieve the subgoal.
+📊 CURRENT STATE:
+- Location: {location}
+- Position: ({position.get('x', '?')}, {position.get('y', '?')})
 
-SUBGOAL: {subgoal.description}, with context: {subgoal.context}
-
-PLAYER STATE:
-Location: {current_location}
-Position: {player_pos}
-
-WORLD MAP INFORMATION:
+🗺️ WORLD MAP INFO:
 {world_map_info}
 
-NAVIGATION HINTS:
+🧭 NAVIGATION HINTS:
 {nav_hints}
 
-REQUIREMENTS:
-1. Analyze the subgoal and context carefully to understand its nature
-2. Consider the player's current location and position
-3. Use the world map information to assess possible routes and areas
-4. Use information from world map, navigation hints, and walkthrough
-"""
+Based on the subgoal, game state, and available tools/actions, determine the best next action."""
 
-        # Retry logic: 3 attempts with 1-second delays
-        max_retries = 3
-        last_error = None
-
-        for attempt in range(max_retries):
-            try:
-                logger.info(f"🤖 Calling VLM to determine exploration type (attempt {attempt + 1}/{max_retries})...")
-
-                # Call VLM structured output with all sampled frames
-                # (VLM backend automatically manages conversation history)
-                response = self.vlm.get_structured_query(
-                    text=prompt,
-                    img=frames,
-                    response_schema=ExplorationTypeResponse,
-                    module_name="explore_agent",
-                )
-                # convert response to ExplorationType
-                exploration_type = ExplorationTypes[response.exploration_type]
-                return exploration_type
-
-            except Exception as e:
-                last_error = e
-                logger.warning(f"⚠️ Attempt {attempt + 1} failed with error: {e}")
-
-                if attempt < max_retries - 1:
-                    # Sleep before retry
-                    time.sleep(1.0)
-                    logger.info(f"🔄 Retrying...")
-
-        # All retries failed
-        error_msg = f"Failed to generate subgoals after {max_retries} attempts. Last error: {last_error}"
-        logger.error(f"❌ {error_msg}")
-        raise RuntimeError(error_msg)
-
-    def _execute_tool(self, tool_name: str, tool_input: Dict[str, Any]) -> Any:
-        """
-        Execute a tool based on its name and input.
-        """
-        if tool_name == "navigate_to":
-            x = tool_input.get("x")
-            y = tool_input.get("y")
-            reason = tool_input.get("reason", "No reason provided")
-            return self._execute_navigation(x, y, reason)
-        elif tool_name == "navigate_interact":
-            x = tool_input.get("x")
-            y = tool_input.get("y")
-            return self._execute_interaction(x, y)
-        elif tool_name == "get_world_map":
-            try:
-                response = requests.post(f"{self.mcp_server_url}/mcp/get_world_map", json={})
-                response.raise_for_status()
-                result = response.json()
-                if result.get("success"):
-                    logger.info(f"Successfully retrieved world map information.")
-                    return result
-                else:
-                    logger.error(f"Failed to retrieve world map: {result.get('error')}")
-                    return result
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Failed to call get_world_map: {e}")
-                return {"success": False, "error": str(e)}
-        elif tool_name == "get_navigation_hints":
-            target_area_name = tool_input.get("target_area_name", "")
-            try:
-                response = requests.post(f"{self.mcp_server_url}/mcp/get_navigation_hints", json={
-                    "target_area": target_area_name
-                })
-                response.raise_for_status()
-                result = response.json()
-                if result.get("success"):
-                    logger.info(f"Successfully retrieved navigation hints.")
-                    return result
-                else:
-                    logger.error(f"Failed to retrieve navigation hints: {result.get('error')}")
-                    return result
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Failed to call get_navigation_hints: {e}")
-                return {"success": False, "error": str(e)}
-        elif tool_name == "search_knowledge":
-            query = tool_input.get("query", "")
-            try:
-                response = requests.post(f"{self.mcp_server_url}/mcp/search_knowledge", json={
-                    "query": query
-                })
-                response.raise_for_status()
-                result = response.json()
-                if result.get("success"):
-                    logger.info(f"Successfully searched knowledge base.")
-                    return result
-                else:
-                    logger.error(f"Failed to search knowledge: {result.get('error')}")
-                    return result
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Failed to call search_knowledge: {e}")
-                return {"success": False, "error": str(e)}
-        elif tool_name == "add_knowledge":
-            key = tool_input.get("key", "")
-            value = tool_input.get("value", "")
-            try:
-                response = requests.post(f"{self.mcp_server_url}/mcp/add_knowledge", json={
-                    "key": key,
-                    "value": value
-                })
-                response.raise_for_status()
-                result = response.json()
-                if result.get("success"):
-                    logger.info(f"Successfully added knowledge to the knowledge base.")
-                    return result
-                else:
-                    logger.error(f"Failed to add knowledge: {result.get('error')}")
-                    return result
-            except requests.exceptions.RequestException as e:
-                logger.error(f"Failed to call add_knowledge: {e}")
-                return {"success": False, "error": str(e)}
-        else:
-            raise ValueError(f"Unknown tool name: {tool_name}")
-        
-    def _get_navi_prompt(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse) -> str:
-        """
-        Generate navigation prompt for VLM.
-        """
-        current_location = game_state.get("player", {}).get("location", "Unknown")
-        player_pos = game_state.get("player", {}).get("position")
-        current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        exploration_details = exploration.details
-        return f"""
-        Your are navigating to a specific position within the current map to achieve the subgoal: {subgoal.description}, with context: {subgoal.context}.
-        DETAILS: {exploration_details}
-        CURRENT GAME STATE:
-        player location: {current_location}
-        player position: {player_pos}
-        CURRENT MAP INFORMATION:
-        {current_map_info}
-        Your task is to determine which coordinate to navigate to, and then navigate there.
-        """
-
-    def _get_find_prompt(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse) -> str:
-        """
-        Generate finding prompt for VLM.
-        """
-        exploration_details = exploration.details
-        current_location = game_state.get("player", {}).get("location", "Unknown")
-        player_pos = game_state.get("player", {}).get("position")
-        current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        return f"""
-        Your are finding a specific item or NPC to achieve the subgoal: {subgoal.description}, with context: {subgoal.context}.
-        DETAILS: {exploration_details}
-        CURRENT GAME STATE:
-        player location: {current_location}
-        player position: {player_pos}
-        CURRENT MAP INFORMATION:
-        {current_map_info}
-        Your task is to locate the item/NPC in the current area, navigating to the right coordinates and interacting with it.
-        """
-
-    def _get_explore_prompt(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse) -> str:
-        """
-        Generate exploration prompt for VLM.
-        """
-        exploration_details = exploration.details
-        current_location = game_state.get("player", {}).get("location", "Unknown")
-        player_pos = game_state.get("player", {}).get("position")
-        current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        return f"""
-        Your are exploring a specific area to achieve the subgoal: {subgoal.description}, with context: {subgoal.context}.
-        DETAILS: {exploration_details}
-        CURRENT GAME STATE:
-        player location: {current_location}
-        player position: {player_pos}
-        CURRENT MAP INFORMATION:
-        {current_map_info}
-        Explore the current area, navigating to the right positions and interacting with it.
-        """
-
-    def _get_move_area_prompt(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse) -> str:
-        """
-        Generate move-area prompt for VLM.
-        """
-        exploration_details = exploration.details
-        current_location = game_state.get("player", {}).get("location", "Unknown")
-        player_pos = game_state.get("player", {}).get("position")
-        current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        return f"""
-        Your are to achieve the subgoal: {subgoal.description}, with context: {subgoal.context} by moving to another area in the world map.
-        DETAILS: {exploration_details}
-        CURRENT GAME STATE:
-        player location: {current_location}
-        player position: {player_pos}
-        CURRENT MAP INFORMATION:
-        {current_map_info}
-        """
-
-    def _execute_navigation(self, x, y, reason) -> str:
-        """Executes a navigation task using the pathfinder."""
-
+        # Call VLM for action decision
         try:
-            response = requests.post(f"{self.mcp_server_url}/mcp/navigate_to", json={
-                "x": x,
-                "y": y,
-                "reason": reason,
-            })
+            response = self.vlm.get_structured_query(
+                text=prompt,
+                response_schema=SubAgentActionResponse,
+                img=sampled_frames,
+                module_name="explore_agent",
+            )
+
+            # Execute the action
+            return self._execute_action(response)
+
+        except Exception as e:
+            logger.error(f"VLM call failed: {e}")
+            return {"action": ["WAIT"], "reasoning": f"Error: {e}"}
+
+    def _execute_action(self, response: SubAgentActionResponse) -> Dict[str, Any]:
+        """Execute the action returned by the VLM."""
+        action = response.action
+
+        # Handle tool_call
+        if action.kind == "tool_call":
+            tool_call = action.tool_call
+            tool_name = tool_call.tool
+
+            try:
+                result = self._execute_tool(tool_call)
+                if result.get("success"):
+                    logger.info(f"✅ Tool '{tool_name}' executed successfully")
+                    return {
+                        "action_type": "tool_call",
+                        "action": ["WAIT"],
+                        "reasoning": response.reasoning,
+                        "tool_result": result
+                    }
+                else:
+                    logger.error(f"❌ Tool '{tool_name}' failed: {result.get('error')}")
+                    return {
+                        "action_type": "tool_call_failed",
+                        "action": ["WAIT"],
+                        "reasoning": f"Tool failed: {result.get('error')}"
+                    }
+            except Exception as e:
+                logger.error(f"Error executing tool '{tool_name}': {e}")
+                return {
+                    "action_type": "error",
+                    "action": ["WAIT"],
+                    "reasoning": f"Tool error: {e}"
+                }
+
+        # Handle press_buttons
+        elif action.kind == "press_buttons":
+            buttons = action.buttons
+            logger.info(f"🎮 Returning buttons to press: {buttons}")
+            return {
+                "action_type": "press_buttons",
+                "action": list(buttons),
+                "reasoning": response.reasoning
+            }
+
+        # Handle complete_subgoal
+        elif action.kind == "complete_subgoal":
+            status = action.status
+            context = action.context or ""
+            logger.info(f"✅ Subgoal marked as {status}: {context}")
+            return {
+                "action_type": "complete_subgoal",
+                "action": ["COMPLETE_SUBGOAL"],
+                "reasoning": response.reasoning,
+                "status": status,
+                "context": context
+            }
+
+        else:
+            logger.error(f"Unknown action kind: {action.kind}")
+            return {
+                "action_type": "error",
+                "action": ["WAIT"],
+                "reasoning": "Unknown action type"
+            }
+
+    def _execute_tool(self, tool_call: ToolCallPayload) -> Dict[str, Any]:
+        """Execute a tool based on its specification."""
+        tool = tool_call.tool
+
+        if tool == "navigate_to":
+            return self._execute_navigation(tool_call.x, tool_call.y, tool_call.reason)
+        elif tool == "navigate_interact":
+            return self._execute_interaction(tool_call.x, tool_call.y)
+        elif tool == "get_world_map":
+            return self._call_mcp_endpoint("/mcp/get_world_map", {})
+        elif tool == "get_navigation_hints":
+            return self._call_mcp_endpoint("/mcp/get_navigation_hints", {"target_area": tool_call.target_area_name})
+        elif tool == "search_knowledge":
+            return self._call_mcp_endpoint("/mcp/search_knowledge", {"query": tool_call.query})
+        elif tool == "add_knowledge":
+            return self._call_mcp_endpoint("/mcp/add_knowledge", {"key": tool_call.key, "value": tool_call.value})
+        else:
+            return {"success": False, "error": f"Unknown tool: {tool}"}
+
+    def _call_mcp_endpoint(self, endpoint: str, payload: Dict[str, Any]) -> Dict[str, Any]:
+        """Call an MCP endpoint."""
+        try:
+            response = requests.post(f"{self.mcp_server_url}{endpoint}", json=payload)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            logger.error(f"MCP call to {endpoint} failed: {e}")
+            return {"success": False, "error": str(e)}
+
+    def _execute_navigation(self, x: int, y: int, reason: str) -> Dict[str, Any]:
+        """Execute navigation to specified coordinates."""
+        try:
+            response = requests.post(
+                f"{self.mcp_server_url}/mcp/navigate_to",
+                json={"x": x, "y": y, "reason": reason}
+            )
             response.raise_for_status()
             result = response.json()
+
             if result.get("success"):
-                logger.info(f"Pathfinding successful")
+                logger.info(f"✅ Navigation to ({x}, {y}) successful")
                 return {"success": True}
             else:
-                logger.error(f"Pathfinding failed: {result.get('error')}")
+                logger.error(f"❌ Navigation failed: {result.get('error')}")
                 return {"success": False, "error": result.get("error")}
+
         except requests.exceptions.RequestException as e:
             logger.error(f"Failed to call navigate_to: {e}")
             return {"success": False, "error": str(e)}
 
-
-    def _execute_interaction(self, x, y) -> List[str]:
-        """Executes an interaction task using the pathfinder."""
+    def _execute_interaction(self, x: int, y: int) -> Dict[str, Any]:
+        """Execute navigation and interaction with target."""
         try:
-            self._execute_navigation(x, y, "Navigate and interact with target")
-            # wait for arrival
-            response = requests.post(f"{self.mcp_server_url}/get_comprehensive_state", json={})
-            response.raise_for_status()
-            result = response.json()
-            player_pos = result.get("player", {}).get("position")
-            if player_pos:
-                player_coords = (player_pos.get("x", 0), player_pos.get("y", 0))
-            target_coords = {"x": x, "y": y}
-            key = ""
-            if target_coords and player_coords:
-                # switch for 4 cases: target is on the left, right, above, below, and default (not within range)
-                if (abs(player_coords[0] - target_coords["x"]) == 1 and player_coords[1] == target_coords["y"]):
-                    key = "LEFT"
-                elif (abs(player_coords[0] - target_coords["x"]) == -1 and player_coords[1] == target_coords["y"]):
-                    key = "RIGHT"
-                elif (player_coords[0] == target_coords["x"] and abs(player_coords[1] - target_coords["y"]) == 1):
-                    key = "ABOVE"
-                elif (player_coords[0] == target_coords["x"] and abs(player_coords[1] - target_coords["y"]) == -1):
-                    key = "BELOW"
-                else:
-                    logger.error(f"Not in interaction range for target")
-                    return False
-            action_response = requests.post(f"{self.mcp_server_url}/mcp/press_buttons", json={
-                "buttons": [key + "A"],
-            })
+            # Navigate to target
+            nav_result = self._execute_navigation(x, y, "Navigate and interact with target")
+            if not nav_result.get("success"):
+                return nav_result
+
+            # Get current player position
+            state_response = requests.post(f"{self.mcp_server_url}/get_comprehensive_state", json={})
+            state_response.raise_for_status()
+            state_data = state_response.json()
+
+            player_pos = state_data.get("player", {}).get("position", {})
+            player_x = player_pos.get("x", 0)
+            player_y = player_pos.get("y", 0)
+
+            # Determine direction to face
+            direction = None
+            if player_x == x - 1 and player_y == y:
+                direction = "RIGHT"
+            elif player_x == x + 1 and player_y == y:
+                direction = "LEFT"
+            elif player_x == x and player_y == y - 1:
+                direction = "DOWN"
+            elif player_x == x and player_y == y + 1:
+                direction = "UP"
+            else:
+                logger.error(f"Not adjacent to target ({x}, {y}), player at ({player_x}, {player_y})")
+                return {"success": False, "error": "Not in interaction range"}
+
+            # Face direction and press A
+            buttons = [direction, "A"]
+            action_response = requests.post(
+                f"{self.mcp_server_url}/mcp/press_buttons",
+                json={"buttons": buttons}
+            )
             action_response.raise_for_status()
             result = action_response.json()
+
             if result.get("success"):
-                logger.info(f"Successfully executed interaction.")
+                logger.info(f"✅ Successfully interacted with target at ({x}, {y})")
                 return {"success": True}
             else:
-                logger.error(f"Failed to execute interaction: {result.get('error')}")
+                logger.error(f"❌ Interaction failed: {result.get('error')}")
                 return {"success": False, "error": result.get("error")}
+
         except requests.exceptions.RequestException as e:
-            logger.error(f"Failed to call get_game_state after navigation: {e}")
+            logger.error(f"Failed to execute interaction: {e}")
             return {"success": False, "error": str(e)}
-
-    def _navigate_in_area(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse, planning_context: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Call VLM to figure out the coordinates to go to in the current area based on the subgoal.
-        """
-        current_location = game_state.get("player", {}).get("location", "Unknown")
-        player_pos = game_state.get("player", {}).get("position")
-        current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        exploration_details = exploration.details
-
-        # Build prompt
-        prompt = f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning. 
-        
-SUBGOAL: {subgoal.description}, with context: {subgoal.context}. 
-DETAILS: {exploration_details}
-PLAYER STATE:
-Location: {current_location}
-Position: {player_pos}
-CURRENT MAP INFORMATION:
-{current_map_info}
-Your task is to determine the specific coordinates to navigate to in order to achieve the subgoal, and whether the coordinate is blocked or not.
-
-REQUIREMENTS:
-1. Analyze the subgoal and context carefully to understand its nature
-2. Consider the player's current location and position
-3. Use the current map information to determine the best coordinates to navigate to
-"""
-        # Retry logic: 3 attempts with 1-second delays
-        max_retries = 3
-        last_error = None
-        for attempt in range(max_retries):
-            try:
-                logger.info(f"🤖 Calling VLM to determine navigation coordinates (attempt {attempt + 1}/{max_retries})...")
-
-                # Call VLM structured output with all sampled frames
-                # (VLM backend automatically manages conversation history)
-                response = self.vlm.get_structured_query(
-                    text=prompt,
-                    response_schema=CoordinateResponse,
-                    module_name="explore_agent",
-                )
-                x, y, is_blocked = response.x, response.y, response.is_blocked
-                response = requests.post(
-                    f"{self.mcp_server_url}/mcp/navigate_to",
-                    json={"x": x, "y": y, "reason": exploration_details},
-                    timeout=5
-                )
-                response.raise_for_status()
-                if response.ok:
-                    logger.info(f"✅ Navigation command sent to MCP for coordinates ({x}, {y})")
-                    return {"nav_result": "SUCCESS", 
-                            "is_blocked": is_blocked}
-                else:
-                    logger.error(f"❌ Failed to send navigation command to MCP: {response.text}")
-                    return {"nav_result": "FAILED",
-                            "is_blocked": is_blocked}
-
-            except Exception as e:
-                last_error = e
-                logger.warning(f"⚠️ Attempt {attempt + 1} failed with error: {e}")
-
-                if attempt < max_retries - 1:
-                    # Sleep before retry
-                    time.sleep(1.0)
-                    logger.info(f"🔄 Retrying...")
-        
- 
-    def _find_in_area(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse) -> Dict[str, Any]:
-        """
-        Call VLM to figure out how to find the item/npc in the current area based on the subgoal.
-        """
-        current_location = game_state.get("player", {}).get("location", "Unknown")
-        player_pos = game_state.get("player", {}).get("position")
-        current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        exploration_details = exploration.details
-
-        # Build prompt
-        prompt = f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
-
-SUBGOAL: {subgoal.description}, with context: {subgoal.context}
-
-PLAYER STATE:
-Location: {current_location}
-Position: {player_pos}
-
-CURRENT MAP INFORMATION:
-{current_map_info}
-
-EXPLORATION DETAILS:
-{exploration_details}
-
-Your task is to determine how to find the specified item or NPC in the current area.
-
-FINDING STRATEGIES:
-1. Use the current map information to locate the item/NPC
-2. Make sure the player is facing the item/NPC when reaching the target coordinate
-3. Output one action at a time to gradually approach and find the item/NPC
-
-Output format:
-Output one action at a time.
-The sub-agent can choose one of three action types:
-- High-level action: Use predefined tools as listed below:
-    - navigate_to: Move to specified coordinates. 
-- press_buttons: Direct button inputs
-- complete_subgoal: Mark subgoal as done with status
-"""

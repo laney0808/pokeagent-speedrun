@@ -281,7 +281,7 @@ class UtilsAgent:
         """Handle dialogue interactions - advance conversations, make choices."""
         frame = game_state.get("frame")
         dialog_text = game_state.get("game", {}).get("dialog_text", "")
-        
+        print("Debug: ⚙️ Entering utils_agent DIALOG step")
         # Extract planning context info
         overall_goal = planning_context.get("goal", "Unknown goal")
         next_milestone = planning_context.get("next_milestone", {})
@@ -349,7 +349,7 @@ ACTION: [Single button like 'A' or 'DOWN']
         """Handle menu navigation - select options, manage items, etc."""
         frame = game_state.get("frame")
         player_info = game_state.get("player", {})
-        
+        print("Debug: ⚙️ Entering utils_agent MENU step")
         # Get player data
         player_name = player_info.get("name", "Unknown")
         money = player_info.get("money", 0)
@@ -436,7 +436,7 @@ ACTION: [Single button like 'A', 'DOWN', or 'B']
         player_info = game_state.get("player", {})
         player_name = player_info.get("name", "????????")
         player_location = player_info.get("location", "TITLE_SEQUENCE")
-        
+        print("Debug: ⚙️ Entering utils_agent TITLE step")
         # Check milestone progress
         milestones = game_state.get("milestones", {})
         game_running = milestones.get("GAME_RUNNING", {}).get("completed", False)
@@ -516,7 +516,7 @@ ACTION: [Single button like 'A', 'START', or 'DOWN']
         player_info = game_state.get("player", {})
         position = player_info.get("position", {})
         location = player_info.get("location", "Unknown")
-        
+        print("Debug: ⚙️ Entering utils_agent OVERWORLD step")
         # Extract planning context info
         overall_goal = planning_context.get("goal", "Unknown goal")
         next_milestone = planning_context.get("next_milestone", {})
