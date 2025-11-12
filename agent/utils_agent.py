@@ -162,25 +162,15 @@ DIALOGUE TEXT: {dialog_text if dialog_text else "No text detected"}
 3. **IDENTIFY DIALOGUE TYPE**: Determine if this requires a decision
 
 📝 DIALOGUE CATEGORIES:
-- **Flavor Text**: General NPC chatter (press A to skip)
+- **Flavor Text**: General NPC chatter, dialogue before/after battles (press A to skip)
 - **Story Dialogue**: Important plot points (press A to continue)
-- **Instructional Dialogue**: NPCs giving hints/directions (press A)
+- **Instructional Dialogue**: NPCs giving hints/directions/items (press A)
 - **Choice Dialogue**: YES/NO questions (use UP/DOWN to select, A to confirm)
-- **Pre-Battle Dialogue**: Trainer challenges (press A to enter battle)
-- **Post-Event Dialogue**: After receiving items/completing objectives (press A)
 
 💡 DIALOGUE NAVIGATION STRATEGY:
-- **Quick Advancement**: Most dialogue needs A to progress
 - **Look for Questions**: If dialogue asks YES/NO, you may need to choose
 - **Watch for Instructions**: Note important information before advancing
 - **Item Reception**: Press A to receive items and continue
-
-🎯 COMMON DIALOGUE SCENARIOS:
-- **NPC Greetings**: "Hello! Welcome to [Town]!" → Press A
-- **Directions/Hints**: "The Gym is north" → Press A
-- **YES/NO Questions**: "Would you like to [action]?" → UP/DOWN then A
-- **Trainer Battles**: "[Trainer] wants to battle!" → Press A
-- **Receiving Items**: "Here, take this!" → Press A
 
 AVAILABLE ACTIONS: A, B, UP, DOWN, LEFT, RIGHT
 
@@ -253,10 +243,12 @@ CURRENT SUBGOAL: {subgoal.description}
 
 🎮 MENU SELECTION RULES:
 1. **IDENTIFY MENU TYPE**: Determine which menu you're in (Main, Bag, Pokémon, etc.)
-2. **READ OPTIONS**: Examine all visible menu options
-3. **USE DIRECTIONAL KEYS**: Navigate with UP/DOWN (sometimes LEFT/RIGHT)
-4. **CONFIRM WITH A**: Press A to select the highlighted option
-5. **CANCEL WITH B**: Press B to go back or close menu
+2. **KNOW YOUR GOAL**: What do you need? (heal Pokémon, use item, save, etc.)
+3. **READ OPTIONS**: Examine all visible menu options
+4. **USE DIRECTIONAL KEYS**: Navigate with UP/DOWN (sometimes LEFT/RIGHT)
+5. **CONFIRM WITH A**: Press A to select the highlighted option
+6. **CANCEL WITH B**: Press B to go back or close menu
+7. **EXIT PROPERLY**: Use B to back out or select "Exit"
 
 📋 MAIN MENU OPTIONS:
 - **Pokédex**: View caught Pokémon
@@ -264,17 +256,6 @@ CURRENT SUBGOAL: {subgoal.description}
 - **Bag**: Access items (Items, Poké Balls, TMs & HMs, Berries, Key Items)
 - **Save**: Save game progress
 - **Exit**: Close menu
-
-💡 MENU NAVIGATION STRATEGY:
-- **Know Your Goal**: What do you need? (heal Pokémon, use item, save, etc.)
-- **Navigate Efficiently**: Use UP/DOWN to move, A to select
-- **Sub-menu Awareness**: Some options open sub-menus
-- **Exit Properly**: Use B to back out or select "Exit"
-
-🎯 COMMON MENU TASKS:
-- **Using Items**: Bag → Select Pouch → Select Item → Use
-- **Checking Pokémon**: Pokémon → Select to view stats
-- **Saving Game**: Save → Confirm
 
 AVAILABLE ACTIONS: A, B, UP, DOWN, LEFT, RIGHT, START
 
@@ -351,27 +332,10 @@ CURRENT SUBGOAL: {subgoal.description}
 4. **USE DEFAULTS**: Short, simple choices speed up the process
 5. **DON'T READ EVERYTHING**: Skip intro text and logos
 
-📋 TITLE SEQUENCE STAGES:
-- **Company Logos**: Press A to skip
-- **Title Screen**: Press START or A
-- **Intro Cutscene**: Press A through Professor Birch's speech
-- **Gender Selection**: Select with arrows, confirm with A
-- **Name Entry**: Use short name or press START for default
-- **Story Cutscenes**: Press A rapidly
-
 💡 QUICK COMPLETION STRATEGY:
 - **Spam A Button**: Most sequences need repeated A presses
-- **Gender Choice**: Either option is fine
-- **Name Selection**: Use shortest name (A, B, ASH) or press START for default
-- **Don't Customize**: Use defaults
-- **Clock Setting**: Accept default with A
-
-🎯 COMMON ACTIONS:
-- **Logo Screens**: Press A repeatedly
-- **Main Title**: Press START or A
-- **Name Entry**: Press START for default OR type 1 letter then START
-- **Dialogue**: Press A to advance
-- **Choices**: Select with arrows, confirm with A
+- **Name Selection**: Left name empty for default
+- **Don't Customize**: Use defaults as much as possible, including name, gender, and clock time
 
 AVAILABLE ACTIONS: A, B, START, UP, DOWN, LEFT, RIGHT
 
