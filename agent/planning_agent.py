@@ -214,8 +214,8 @@ class PlanningAgent:
 
         # Initialize sub-agents (each creates its own VLM instance)
         self.explore_agent = ExploreAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
-        # self.battle_agent = BattleAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
-        # self.utils_agent = UtilsAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
+        #self.battle_agent = BattleAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
+        self.utils_agent = UtilsAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
 
         # Initialize milestone tracking
         self._initialize_milestones()
@@ -423,7 +423,7 @@ class PlanningAgent:
         print(result)
         #TODO: parse the subagent result to return the correct action
 
-        return {"action": ["WAIT"]}
+        return result
 
     def _delegate_to_subagent(
         self,
