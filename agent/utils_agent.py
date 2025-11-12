@@ -180,14 +180,13 @@ Analyze the current game state, frame, and subgoal to decide the best action."""
         # Build comprehensive prompt
         prompt = f"""UTILITY TASK
 
-🎯 OVERALL GOAL: {overall_goal}
-📍 NEXT MILESTONE: {milestone_desc}
+OVERALL GOAL: {overall_goal}
+NEXT MILESTONE: {milestone_desc}
 
 CURRENT SUBGOAL: {subgoal.description}
 SUBGOAL CONTEXT: {subgoal.context}
 {history_str}
-
-📊 CURRENT STATE:
+CURRENT STATE:
 - Game State: {current_state}
 - Location: {location}
 - Position: ({position.get('x', '?')}, {position.get('y', '?')})
@@ -196,9 +195,9 @@ SUBGOAL CONTEXT: {subgoal.context}
 - Dialog Text: {dialog_text if dialog_text else "None"}
 {pokemon_center_context}
 
-🎯 YOUR POKÉMON PARTY:{party_str}
+YOUR POKÉMON PARTY:{party_str}
 
-💡 UTILITY GUIDELINES:
+UTILITY GUIDELINES:
 - **Dialogues**: Press A to advance, UP/DOWN to select choices, then A to confirm
 - **Menus**: Navigate with UP/DOWN/LEFT/RIGHT, A to confirm, B to cancel/exit
 - **Title Sequence**: Press A repeatedly to advance quickly through setup

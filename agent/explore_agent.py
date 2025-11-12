@@ -201,21 +201,21 @@ Analyze the current game state, frames, and subgoal to decide the best action.""
         # Build prompt with all context
         prompt = f"""EXPLORATION TASK
 
-🎯 OVERALL GOAL: {overall_goal}
-📍 NEXT MILESTONE: {milestone_desc}
+OVERALL GOAL: {overall_goal}
+NEXT MILESTONE: {milestone_desc}
 
 CURRENT SUBGOAL: {subgoal.description}
 SUBGOAL CONTEXT: {subgoal.context}
 {history_str}
 
-📊 CURRENT STATE:
+CURRENT STATE:
 - Location: {location}
 - Position: ({position.get('x', '?')}, {position.get('y', '?')})
 
-🗺️ WORLD MAP INFO:
+WORLD MAP INFO:
 {world_map_info}
 
-🧭 NAVIGATION HINTS:
+NAVIGATION HINTS:
 {nav_hints}
 
 Based on the subgoal, game state, and available tools/actions, determine the best next action."""
