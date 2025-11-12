@@ -11,6 +11,7 @@ Responsibilities:
 """
 
 import logging
+import time
 from typing import Dict, Any, List
 from pydantic import BaseModel, Field
 from typing import Literal
@@ -51,6 +52,21 @@ class UtilsAgent:
     - Name Pokemon/character
     - Interact with menus
     - Everything not exploration or battle
+    
+    Health Monitoring System:
+    - Continuously monitors party health every 5 seconds
+    - Sets healing_needed flag when party is in critical condition:
+      * All Pokemon fainted
+      * Only one Pokemon alive with low HP (< 30%)
+      * More than half of party has low/zero HP
+    - Automatically prioritizes Pokemon Center healing in prompts
+    - Provides health status context to VLM for better decision making
+    
+    Usage:
+    - The planning agent can check utils_agent.needs_healing() to create
+      emergency healing subgoals
+    - Health status is included in overworld prompts when relevant
+    - Pokemon Center dialogues are handled with healing priority
     """
 
     def __init__(self, mcp_server_url: str):
@@ -58,6 +74,15 @@ class UtilsAgent:
 
         self.mcp_server_url = mcp_server_url
         self.vlm = VLM()  # Create own VLM instance with own conversation history
+        self.handlers = {
+            "dialog": self._handle_dialog, 
+            "menu": self._handle_menu,
+            "title": self._handle_title,
+            "overworld": self._handle_overworld
+        }
+        self.healing_needed = False  # Track if emergency healing is needed
+        self.last_health_check = 0.0  # Track last time we checked health
+        self.in_pokemon_center = False  # Track if currently in Pokemon Center
 
     def step(
         self,
@@ -78,17 +103,21 @@ class UtilsAgent:
         current_state = game_state.get("game", {}).get("game_state", "unknown")
         frame = game_state.get("frame")
         
+        # Check party health status (but not too frequently to avoid spam)
+        current_time = time.time()
+        if current_time - self.last_health_check > 5.0:  # Check every 5 seconds
+            self._check_party_health(game_state)
+            self.last_health_check = current_time
+        
+        # Check if we're in a Pokemon Center
+        location = game_state.get("player", {}).get("location", "")
+        self.in_pokemon_center = "POKEMON" in location.upper() and "CENTER" in location.upper()
+        
         logger.info(f"UtilsAgent step - State: {current_state}, Subgoal: {subgoal.description}")
         
-        # Build appropriate prompt based on game state
-        if current_state == "dialog":
-            return self._handle_dialog(game_state, subgoal, planning_context)
-        elif current_state == "menu":
-            return self._handle_menu(game_state, subgoal, planning_context)
-        elif current_state == "title":
-            return self._handle_title(game_state, subgoal, planning_context)
-        elif current_state == "overworld":
-            return self._handle_overworld(game_state, subgoal, planning_context)
+        # Handle pre-defined cases
+        if current_state in self.handlers:
+            return self.handlers[current_state](game_state, subgoal, planning_context)
         else:
             # Handle unknown/exception cases
             logger.warning(f"Unknown game state: {current_state}, defaulting to generic handler")
@@ -104,14 +133,35 @@ class UtilsAgent:
         frame = game_state.get("frame")
         dialog_text = game_state.get("game", {}).get("dialog_text", "")
         
+        # Extract planning context info
+        overall_goal = planning_context.get("goal", "Unknown goal")
+        next_milestone = planning_context.get("next_milestone", {})
+        milestone_desc = next_milestone.get("description", "No milestone info")
+        
+        # Check if we're in Pokemon Center and need healing
+        pokemon_center_context = ""
+        if self.in_pokemon_center and self.healing_needed:
+            pokemon_center_context = """
+
+🏥 POKEMON CENTER HEALING PRIORITY:
+⚠️ You are in a Pokemon Center and your party needs healing!
+⚠️ If the nurse asks "Would you like to heal your Pokemon?" or similar, answer YES!
+⚠️ Press A to advance dialogue and accept healing offers.
+⚠️ Look for dialogue about healing, recovery, or Pokemon restoration.
+"""
+        
         # Build dialogue-specific prompt
         prompt = f"""💬 DIALOGUE INTERACTION TASK
 
 You are handling a dialogue interaction in Pokémon Emerald.
 
+🎯 OVERALL GOAL: {overall_goal}
+📍 NEXT MILESTONE: {milestone_desc}
+
 CURRENT SUBGOAL: {subgoal.description}
 
 DIALOGUE TEXT: {dialog_text if dialog_text else "No text detected"}
+{pokemon_center_context}
 
 💬 DIALOGUE INTERACTION RULES:
 1. **READ THE TEXT**: Understand what's being said
@@ -187,9 +237,17 @@ ACTION: [Single button like 'A' or 'DOWN']
         
         badges = game_state.get("game", {}).get("badges", [])
         
+        # Extract planning context info
+        overall_goal = planning_context.get("goal", "Unknown goal")
+        next_milestone = planning_context.get("next_milestone", {})
+        milestone_desc = next_milestone.get("description", "No milestone info")
+        
         prompt = f"""🎮 MENU NAVIGATION TASK
 
 You are navigating a menu in Pokémon Emerald.
+
+🎯 OVERALL GOAL: {overall_goal}
+📍 NEXT MILESTONE: {milestone_desc}
 
 CURRENT SUBGOAL: {subgoal.description}
 
@@ -271,9 +329,17 @@ ACTION: [Single button like 'A', 'DOWN', or 'B']
         elif game_running:
             current_stage = "Game started - setting up player"
         
+        # Extract planning context info
+        overall_goal = planning_context.get("goal", "Unknown goal")
+        next_milestone = planning_context.get("next_milestone", {})
+        milestone_desc = next_milestone.get("description", "No milestone info")
+        
         prompt = f"""🎬 TITLE SEQUENCE TASK
 
 You are completing the title sequence in Pokémon Emerald.
+
+🎯 OVERALL GOAL: {overall_goal}
+📍 NEXT MILESTONE: {milestone_desc}
 
 CURRENT SUBGOAL: {subgoal.description}
 
@@ -345,16 +411,66 @@ ACTION: [Single button like 'A', 'START', or 'DOWN']
         position = player_info.get("position", {})
         location = player_info.get("location", "Unknown")
         
+        # Extract planning context info
+        overall_goal = planning_context.get("goal", "Unknown goal")
+        next_milestone = planning_context.get("next_milestone", {})
+        milestone_desc = next_milestone.get("description", "No milestone info")
+        milestone_target = next_milestone.get("target", "")
+        
+        # Get completed/failed subgoals for context awareness
+        completed_subgoals = planning_context.get("completed_subgoals", [])
+        failed_subgoals = planning_context.get("failed_subgoals", [])
+        
+        # Format recent history
+        history_context = ""
+        if completed_subgoals:
+            recent_completed = completed_subgoals[-3:]  # Last 3 completed
+            history_context += "\n✅ RECENTLY COMPLETED:"
+            for sg in recent_completed:
+                history_context += f"\n  - {sg.get('description', 'Unknown')}"
+        if failed_subgoals:
+            recent_failed = failed_subgoals[-2:]  # Last 2 failed
+            history_context += "\n❌ RECENT FAILURES:"
+            for sg in recent_failed:
+                history_context += f"\n  - {sg.get('description', 'Unknown')}"
+        
+        # Get party health status
+        health_status = self.get_health_status(game_state)
+        party_health_str = ""
+        if health_status["total"] > 0:
+            party_health_str = f"\n\n🏥 PARTY HEALTH STATUS:"
+            party_health_str += f"\n  - Alive: {health_status['alive']}/{health_status['total']}"
+            party_health_str += f"\n  - Fainted: {health_status['fainted']}"
+            party_health_str += f"\n  - Low HP: {health_status['low_hp']}"
+            
+            # Show individual Pokemon health
+            for p in health_status['party_details']:
+                status_emoji = {"healthy": "✅", "low": "⚠️", "critical": "🔴", "fainted": "💀"}
+                emoji = status_emoji.get(p['status'], "❓")
+                party_health_str += f"\n  {emoji} {p['species']} Lv.{p['level']}: {p['current_hp']}/{p['max_hp']} HP ({p['hp_percentage']}%)"
+            
+            # Add critical warning if healing needed
+            if self.healing_needed:
+                party_health_str += f"\n\n🚨 CRITICAL WARNING: HEALING NEEDED URGENTLY!"
+                party_health_str += f"\n   ⚠️ Your party is in critical condition!"
+                party_health_str += f"\n   ⚠️ Find a Pokemon Center immediately to heal!"
+        
         prompt = f"""🎮 UTILITY TASK IN OVERWORLD
 
 You are performing a utility task in the overworld.
 
+🎯 OVERALL GOAL: {overall_goal}
+📍 NEXT MILESTONE: {milestone_desc}
+{f"🎪 TARGET: {milestone_target}" if milestone_target else ""}
+
 CURRENT SUBGOAL: {subgoal.description}
 SUBGOAL CONTEXT: {subgoal.context}
+{history_context if history_context else ""}
 
 📊 CURRENT STATUS:
 - **Location**: {location}
 - **Position**: ({position.get('x', '?')}, {position.get('y', '?')})
+{party_health_str}
 
 💡 UTILITY ACTIONS:
 - **Talk to NPC**: Walk adjacent, face them, press A
@@ -367,6 +483,8 @@ SUBGOAL CONTEXT: {subgoal.context}
 1. Walk adjacent to target (within 1 tile)
 2. Face the target (press direction toward it)
 3. Press A to interact
+
+{"🏥 PRIORITY: If your party needs healing, your priority should be to find and enter a Pokemon Center!" if self.healing_needed else ""}
 
 AVAILABLE ACTIONS: A, B, START, UP, DOWN, LEFT, RIGHT
 
@@ -397,11 +515,20 @@ ACTION: [Single button]
         current_state = game_state.get("game", {}).get("game_state", "unknown")
         frame = game_state.get("frame")
         
+        # Extract planning context info
+        overall_goal = planning_context.get("goal", "Unknown goal")
+        next_milestone = planning_context.get("next_milestone", {})
+        milestone_desc = next_milestone.get("description", "No milestone info")
+        
         logger.warning(f"Handling exception case for state: {current_state}")
         
         prompt = f"""⚠️ UNKNOWN GAME STATE
 
 Current game state is: {current_state}
+
+🎯 OVERALL GOAL: {overall_goal}
+📍 NEXT MILESTONE: {milestone_desc}
+
 Subgoal: {subgoal.description}
 
 Analyze the screen and determine the best action to progress.
@@ -426,6 +553,134 @@ ACTION: [Single button or WAIT]
         except Exception as e:
             logger.error(f"VLM call failed in exception handler: {e}")
             return {"action": ["WAIT"]}
+
+    def _check_party_health(self, game_state: Dict[str, Any]) -> None:
+        """
+        Check party health and set healing_needed flag if critical.
+        
+        Criteria for needing healing:
+        - All Pokemon fainted (HP = 0)
+        - More than half of party has low HP (< 30%)
+        - Only one Pokemon alive and it has low HP
+        """
+        player_info = game_state.get("player", {})
+        party = player_info.get("party", [])
+        
+        if not party:
+            self.healing_needed = False
+            return
+        
+        fainted_count = 0
+        low_hp_count = 0
+        alive_count = 0
+        total_pokemon = len(party)
+        
+        for pokemon in party:
+            current_hp = pokemon.get("current_hp", 0)
+            max_hp = pokemon.get("max_hp", 1)
+            
+            if current_hp == 0:
+                fainted_count += 1
+            else:
+                alive_count += 1
+                hp_percentage = (current_hp / max_hp) * 100 if max_hp > 0 else 0
+                if hp_percentage < 30:
+                    low_hp_count += 1
+        
+        # Determine if healing is needed
+        critical_state = False
+        
+        # Case 1: All Pokemon fainted
+        if fainted_count == total_pokemon:
+            critical_state = True
+            logger.warning("🚨 CRITICAL: All Pokemon fainted! Need Pokemon Center!")
+        
+        # Case 2: Only one Pokemon alive and it has low HP
+        elif alive_count == 1 and low_hp_count > 0:
+            critical_state = True
+            logger.warning("🚨 CRITICAL: Only one Pokemon alive with low HP! Need Pokemon Center!")
+        
+        # Case 3: More than half of party has low HP or is fainted
+        elif (fainted_count + low_hp_count) > (total_pokemon / 2):
+            critical_state = True
+            logger.warning(f"⚠️ WARNING: {fainted_count} fainted, {low_hp_count} low HP. Need Pokemon Center!")
+        
+        # Update the flag
+        old_state = self.healing_needed
+        self.healing_needed = critical_state
+        
+        # Log state change
+        if self.healing_needed and not old_state:
+            logger.info("🏥 Setting healing_needed flag to TRUE")
+        elif not self.healing_needed and old_state:
+            logger.info("✅ Party health restored, healing_needed flag to FALSE")
+
+    def needs_healing(self) -> bool:
+        """Public method to check if healing is needed."""
+        return self.healing_needed
+
+    def get_health_status(self, game_state: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Get detailed health status of the party.
+        
+        Returns:
+            Dict with party health information including counts and percentages.
+        """
+        player_info = game_state.get("player", {})
+        party = player_info.get("party", [])
+        
+        if not party:
+            return {
+                "total": 0,
+                "alive": 0,
+                "fainted": 0,
+                "low_hp": 0,
+                "needs_healing": False,
+                "party_details": []
+            }
+        
+        fainted_count = 0
+        low_hp_count = 0
+        alive_count = 0
+        party_details = []
+        
+        for pokemon in party:
+            species = pokemon.get("species_name", "Unknown")
+            current_hp = pokemon.get("current_hp", 0)
+            max_hp = pokemon.get("max_hp", 1)
+            level = pokemon.get("level", "?")
+            
+            hp_percentage = (current_hp / max_hp) * 100 if max_hp > 0 else 0
+            
+            status = "healthy"
+            if current_hp == 0:
+                fainted_count += 1
+                status = "fainted"
+            else:
+                alive_count += 1
+                if hp_percentage < 30:
+                    low_hp_count += 1
+                    status = "critical"
+                elif hp_percentage < 50:
+                    status = "low"
+            
+            party_details.append({
+                "species": species,
+                "level": level,
+                "current_hp": current_hp,
+                "max_hp": max_hp,
+                "hp_percentage": round(hp_percentage, 1),
+                "status": status
+            })
+        
+        return {
+            "total": len(party),
+            "alive": alive_count,
+            "fainted": fainted_count,
+            "low_hp": low_hp_count,
+            "needs_healing": self.healing_needed,
+            "party_details": party_details
+        }
 
     def _parse_action_from_response(self, response: str) -> str:
         """Parse action from VLM response."""
