@@ -42,11 +42,6 @@ class SubAgentActionResponse(BaseModel):
         )
     )
 
-class JudgementResponse(BaseModel):
-    """Schema for judgement response."""
-    subgoal_completed: bool = Field(description="Whether the subgoal is completed")
-    back_to_planning: bool = Field(description="Whether to return to high-level planner")
-
 @dataclass
 class ExplorationTypes(Enum):
     NAVIGATE = "navigate"
@@ -116,16 +111,36 @@ class ExploreAgent:
 
         self.mcp_server_url = mcp_server_url
         self.vlm = VLM()  # Create own VLM instance with own conversation history
-        self.find_state = FindItemState(
-            target_name="",
-            target_coordinate=Coordinate(x=-1, y=-1, is_blocked=False),
-            found=False,
-            visited_locations=[],
-            planned_locations=[],
-            details={}
-        )
         self._initiate_tools()
-    
+        self.system_prompt = ExploreAgent._get_system_prompt()
+        response = self.vlm.get_text_query(
+            text=self.system_prompt,
+            response_schema=SubAgentActionResponse,
+            module_name="explore_agent",
+        )
+
+    @staticmethod
+    def _get_system_prompt() -> str:
+        """
+        Get system prompt for the sub-agent.
+        """
+        return """You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
+        You will receive a subgoal to achieve. 
+        Given a subgoal, you will determine the type of exploration to perform, and execute actions to achieve the subgoal.
+        There are 4 types of exploration:
+        1. NAVIGATION: Moving within the current area to specific coordinates
+        2. FINDING: Searching for a specific item or NPC in the current area
+        3. EXPLORATION: Thoroughly exploring the current area to uncover hidden items or paths
+        4. MOVE-AREA: Moving to a different area entirely
+        There are 3 types of actions you can take:
+        - High-level action: Use predefined tools.
+        - press_buttons: Direct button inputs.
+        - complete_subgoal: Mark subgoal as done with status.
+        The following are the tools available to you:
+        {self.tools}
+        Wait for further instructions.
+        """
+
     def _initiate_tools(self):
         """
         Initialize tools for the sub-agent.
@@ -255,15 +270,11 @@ class ExploreAgent:
                 else:
                     logger.error(f"Failed to execute tool: {tool_name} with input: {tool_input}, error: {result.get('error')}")
                     return {"actions": ["WAIT"],
-                        "reasoning": f"Failed to execute tool: {tool_name} due to error: {result.get('error')}",
-                        "subgoal_completed": False,
-                        "back_to_planning": True}
+                        "reasoning": f"Failed to execute tool: {tool_name} due to error: {result.get('error')}"}
             except Exception as e:
                 logger.error(f"Error executing tool {tool_name}: {e}")
                 return {"actions": ["WAIT"],
-                        "reasoning": f"Failed to execute tool: {tool_name} due to error: {result.get('error')}",
-                        "subgoal_completed": False,
-                        "back_to_planning": True}
+                        "reasoning": f"Failed to execute tool: {tool_name} due to error: {result.get('error')}"}
         elif response.action == "press_buttons":
             buttons = response.action_detail.get("buttons", [])
             try:
@@ -277,57 +288,47 @@ class ExploreAgent:
                 else:
                     logger.error(f"Failed to press buttons: {result.get('error')}")
                     return {"actions": ["WAIT"],
-                        "reasoning": f"Failed to press buttons due to error: {e}",
-                        "subgoal_completed": False,
-                        "back_to_planning": True}
+                        "reasoning": f"Failed to press buttons due to error: {e}"}
             except requests.exceptions.RequestException as e:
                 logger.error(f"Failed to call press_buttons: {e}")
                 return {"actions": ["WAIT"],
-                        "reasoning": f"Failed to press buttons due to error: {e}",
-                        "subgoal_completed": False,
-                        "back_to_planning": True}
+                        "reasoning": f"Failed to press buttons due to error: {e}"}
         elif response.action == "complete_subgoal":
             status = response.action_detail.get("status", "unknown")
             context = response.action_detail.get("context", "")
             logger.info(f"Subgoal marked as complete with status: {status}, context: {context}")
             return {"actions": ["Mark subgoal as complete"],
-                    "reasoning": response.reasoning,
-                    "subgoal_completed": True,
-                    "back_to_planning": True}
+                    "reasoning": response.reasoning}
         else: 
             logger.error(f"Unknown action type: {response.action}")
             return {"actions": ["WAIT"],
-                    "reasoning": f"VLM Returned unknown action type: {response.action}",
-                    "subgoal_completed": False,
-                    "back_to_planning": True}
+                    "reasoning": f"VLM Returned unknown action type: {response.action}"}
 
-        # 3. determine if subgoal is completed, and whether to return to high-level planner
-        judging_state_prompt = f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
+        # # 3. determine if subgoal is completed, and whether to return to high-level planner
+        # judging_state_prompt = f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
 
-        You've just taken the following action to achieve the subgoal:
-        {response.action} with details {response.action_detail}
-        SUBGOAL: 
-        {subgoal.description}, with context: {subgoal.context}
+        # You've just taken the following action to achieve the subgoal:
+        # {response.action} with details {response.action_detail}
+        # SUBGOAL: 
+        # {subgoal.description}, with context: {subgoal.context}
 
-        CURRENT GAME STATE:
-        {game_state}
+        # CURRENT GAME STATE:
+        # {game_state}
 
-        Please respond:
-        1. Is the subgoal completed? (True/False)
-        2. Should you return to the high-level planner for further instructions? (True/False)
-        """
-        judging_response = self.vlm.get_structured_query(
-            text=judging_state_prompt,
-            response_schema=JudgementResponse,
-            module_name="explore_agent",
-        )
-        back_to_planning = judging_response.back_to_planning
-        subgoal_completed = judging_response.subgoal_completed
+        # Please respond:
+        # 1. Is the subgoal completed? (True/False)
+        # 2. Should you return to the high-level planner for further instructions? (True/False)
+        # """
+        # judging_response = self.vlm.get_structured_query(
+        #     text=judging_state_prompt,
+        #     response_schema=JudgementResponse,
+        #     module_name="explore_agent",
+        # )
+        # back_to_planning = judging_response.back_to_planning
+        # subgoal_completed = judging_response.subgoal_completed
         return {
             "actions": ["WAIT"],
             "message": output,
-            "subgoal_completed": subgoal_completed,
-            "back_to_planning": back_to_planning
         }
 
     def _determine_exploration_type(
@@ -348,7 +349,7 @@ class ExploreAgent:
         nav_hints = planning_context.get("navigation_hints", "No navigation hints available.")
 
         # Build detailed prompt
-        prompt = f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning. 
+        prompt = f""" Determine the type of exploration to perform to achieve the subgoal.
 
 SUBGOAL: {subgoal.description}, with context: {subgoal.context}
 
@@ -361,14 +362,6 @@ WORLD MAP INFORMATION:
 
 NAVIGATION HINTS:
 {nav_hints}
-
-You are given a specific navigation-related subgoal to achieve as part of a larger milestone. Your task is to determine which type of exploration is most appropriate to achieve the subgoal.
-
-EXPLORATION TYPES:
-1. NAVIGATION: Moving within the current area to specific coordinates
-2. FINDING: Searching for a specific item or NPC in the current area
-3. EXPLORATION: Thoroughly exploring the current area to uncover hidden items or paths
-4. MOVE-AREA: Moving to a different area entirely
 
 REQUIREMENTS:
 1. Analyze the subgoal and context carefully to understand its nature
@@ -501,8 +494,8 @@ REQUIREMENTS:
         player_pos = game_state.get("player", {}).get("position")
         current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
         exploration_details = exploration.details
-        return f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
-        Your are navigating to a specific area to achieve the subgoal: {subgoal.description}, with context: {subgoal.context}.
+        return f"""
+        Your are navigating to a specific position within the current map to achieve the subgoal: {subgoal.description}, with context: {subgoal.context}.
         DETAILS: {exploration_details}
         CURRENT GAME STATE:
         player location: {current_location}
@@ -510,13 +503,6 @@ REQUIREMENTS:
         CURRENT MAP INFORMATION:
         {current_map_info}
         Your task is to determine which coordinate to navigate to, and then navigate there.
-        Return one action at a time.
-        You can choose one of three action types:
-        - High-level action: Use predefined tools.
-        - press_buttons: Direct button inputs.
-        - complete_subgoal: Mark subgoal as done with status.
-        The following are the tools available to you:
-        {self.tools}
         """
 
     def _get_find_prompt(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse) -> str:
@@ -527,7 +513,7 @@ REQUIREMENTS:
         current_location = game_state.get("player", {}).get("location", "Unknown")
         player_pos = game_state.get("player", {}).get("position")
         current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        return f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
+        return f"""
         Your are finding a specific item or NPC to achieve the subgoal: {subgoal.description}, with context: {subgoal.context}.
         DETAILS: {exploration_details}
         CURRENT GAME STATE:
@@ -536,13 +522,6 @@ REQUIREMENTS:
         CURRENT MAP INFORMATION:
         {current_map_info}
         Your task is to locate the item/NPC in the current area, navigating to the right coordinates and interacting with it.
-        Return one action at a time.
-        You can choose one of three action types:
-        - High-level action: Use predefined tools.
-        - press_buttons: Direct button inputs.
-        - complete_subgoal: Mark subgoal as done with status.
-        The following are the tools available to you:
-        {self.tools}
         """
 
     def _get_explore_prompt(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse) -> str:
@@ -553,7 +532,7 @@ REQUIREMENTS:
         current_location = game_state.get("player", {}).get("location", "Unknown")
         player_pos = game_state.get("player", {}).get("position")
         current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        return f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
+        return f"""
         Your are exploring a specific area to achieve the subgoal: {subgoal.description}, with context: {subgoal.context}.
         DETAILS: {exploration_details}
         CURRENT GAME STATE:
@@ -561,14 +540,7 @@ REQUIREMENTS:
         player position: {player_pos}
         CURRENT MAP INFORMATION:
         {current_map_info}
-        Your task is to explore the current area, navigating to the right coordinates and interacting with it.
-        Return one action at a time.
-        You can choose one of three action types:
-        - High-level action: Use predefined tools.
-        - press_buttons: Direct button inputs.
-        - complete_subgoal: Mark subgoal as done with status.
-        The following are the tools available to you:
-        {self.tools}
+        Explore the current area, navigating to the right positions and interacting with it.
         """
 
     def _get_move_area_prompt(self, subgoal: Any, game_state: Dict[str, Any], exploration: ExplorationTypeResponse) -> str:
@@ -579,7 +551,7 @@ REQUIREMENTS:
         current_location = game_state.get("player", {}).get("location", "Unknown")
         player_pos = game_state.get("player", {}).get("position")
         current_map_info = game_state.get("map", {}).get("stitched_map_info", "No map info available.")
-        return f"""You are a lower-level exploration and navigation agent for Pokemon Emerald speedrunning.
+        return f"""
         Your are to achieve the subgoal: {subgoal.description}, with context: {subgoal.context} by moving to another area in the world map.
         DETAILS: {exploration_details}
         CURRENT GAME STATE:
@@ -587,14 +559,6 @@ REQUIREMENTS:
         player position: {player_pos}
         CURRENT MAP INFORMATION:
         {current_map_info}
-        Your task is to navigate to the target area specified in or deduced from the subgoal.
-        Return one action at a time.
-        You can choose one of three action types:
-        - High-level action: Use predefined tools.
-        - press_buttons: Direct button inputs.
-        - complete_subgoal: Mark subgoal as done with status.
-        The following are the tools available to you:
-        {self.tools}
         """
 
     def _execute_navigation(self, x, y, reason) -> str:
