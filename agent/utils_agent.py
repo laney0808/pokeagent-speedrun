@@ -18,7 +18,6 @@ from typing import Literal
 
 logger = logging.getLogger(__name__)
 
-
 class SubAgentActionResponse(BaseModel):
     """Schema for sub-agent action response.
 
