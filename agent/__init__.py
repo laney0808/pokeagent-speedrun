@@ -38,43 +38,50 @@ class Agent:
             scaffold = "simple"
         else:
             scaffold = "fourmodule"
-        
-        # Initialize VLM
-        self.vlm = VLM(backend=backend, model_name=model_name)
-        print(f"   VLM: {backend}/{model_name}")
-        
-        # Initialize agent based on scaffold
+            
         self.scaffold = scaffold
-        if scaffold == "simple":
-            # Use global SimpleAgent instance to enable checkpoint persistence
-            self.agent_impl = get_simple_agent(self.vlm)
-            print(f"   Scaffold: Simple (direct frame->action)")
-
-        elif scaffold == "react":
-            # Create ReAct agent
-            vlm_client = VLM(backend=backend, model_name=model_name)
-            self.agent_impl = create_react_agent(vlm_client=vlm_client, verbose=True)
-            print(f"   Scaffold: ReAct (Thought->Action->Observation)")
-
-        elif scaffold == "hierarchical":
-            # Create Hierarchical agent
-            self.agent_impl = HierarchicalAgent(vlm=self.vlm, mcp_server_url=server_url)
-            print(f"   Scaffold: Hierarchical (Strategic/Tactical Layers)")
-
-        elif scaffold == "planning":
+        
+        if scaffold == "planning":
             # Create Planning agent with sub-agents
-            self.agent_impl = PlanningAgent(vlm=self.vlm, mcp_server_url=server_url)
+            self.agent_impl = PlanningAgent(backend=backend, model_name=model_name, mcp_server_url=server_url)
             print(f"   Scaffold: Planning (High-level planner with ExploreAgent/BattleAgent/UtilsAgent)")
+            
+        else:
+            # Initialize VLM
+            self.vlm = VLM(backend=backend, model_name=model_name)
+            print(f"   VLM: {backend}/{model_name}")
+            
+            # Initialize agent based on scaffold
+            if scaffold == "simple":
+                # Use global SimpleAgent instance to enable checkpoint persistence
+                self.agent_impl = get_simple_agent(self.vlm)
+                print(f"   Scaffold: Simple (direct frame->action)")
 
-        else:  # fourmodule (default)
-            # Four-module agent context
-            self.agent_impl = None  # Will use internal four-module processing
-            self.context = {
-                'perception_output': None,
-                'planning_output': None,
-                'memory': []
-            }
-            print(f"   Scaffold: Four-module (Perception->Planning->Memory->Action)")
+            elif scaffold == "react":
+                # Create ReAct agent
+                vlm_client = VLM(backend=backend, model_name=model_name)
+                self.agent_impl = create_react_agent(vlm_client=vlm_client, verbose=True)
+                print(f"   Scaffold: ReAct (Thought->Action->Observation)")
+
+            elif scaffold == "hierarchical":
+                # Create Hierarchical agent
+                self.agent_impl = HierarchicalAgent(vlm=self.vlm, mcp_server_url=server_url)
+                print(f"   Scaffold: Hierarchical (Strategic/Tactical Layers)")
+
+            elif scaffold == "planning":
+                # Create Planning agent with sub-agents
+                self.agent_impl = PlanningAgent(vlm=self.vlm, mcp_server_url=server_url)
+                print(f"   Scaffold: Planning (High-level planner with ExploreAgent/BattleAgent/UtilsAgent)")
+
+            else:  # fourmodule (default)
+                # Four-module agent context
+                self.agent_impl = None  # Will use internal four-module processing
+                self.context = {
+                    'perception_output': None,
+                    'planning_output': None,
+                    'memory': []
+                }
+                print(f"   Scaffold: Four-module (Perception->Planning->Memory->Action)")
     
     def step(self, game_state):
         """

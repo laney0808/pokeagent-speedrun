@@ -36,6 +36,7 @@ from pydantic import BaseModel, Field
 from agent.explore_agent import ExploreAgent
 from agent.battle_agent import BattleAgent
 from agent.utils_agent import UtilsAgent
+from utils.vlm import VLM
 
 logger = logging.getLogger(__name__)
 
@@ -48,8 +49,7 @@ class SubgoalSchema(BaseModel):
     agent_type: Literal["EXPLORE", "BATTLE", "UTILS"] = Field(
         description="Which agent should handle this: EXPLORE for navigation, BATTLE for fights, UTILS for dialogue/menus/other"
     )
-    context: Dict[str, Any] = Field(
-        default_factory=dict,
+    context: str = Field(
         description="Additional context for the subgoal execution"
     )
 
@@ -125,6 +125,76 @@ class PlanningState:
     # Planning metadata
     last_planning_time: float = 0.0
     planning_interval: float = 10.0  # Replan every 10 seconds if needed
+    
+    
+PLANNING_AGENT_SYSTEM_PROMPT = """You are a high-level planning agent for Pokemon Emerald speedrunning.
+
+Your role is to create strategic plans by breaking down game milestones into executable subgoals, then delegating these subgoals to specialized sub-agents for execution.
+
+# AGENT TYPES
+
+You have three specialized sub-agents at your disposal:
+
+1. **EXPLORE Agent** - Navigation and exploration
+   - Navigate to specific coordinates
+   - Explore areas to find hidden items/paths
+   - Find NPCs or items in the current area
+   - Move between different areas (cross-area navigation)
+
+2. **BATTLE Agent** - Combat and catching Pokemon
+   - Fight trainer battles
+   - Battle wild Pokemon
+   - Catch Pokemon
+   - Manage battle strategy (move selection, item usage, switching)
+
+3. **UTILS Agent** - Dialogue, menus, and interactions
+   - Talk to NPCs and navigate dialogues
+   - Navigate menus (Bag, Pokemon, Save, etc.)
+   - Buy/sell items at shops
+   - Use items from inventory
+   - Name Pokemon/character
+   - Handle title sequence and game startup
+   - Interact with objects (signs, items on ground, etc.)
+
+# SUBGOAL CREATION REQUIREMENTS
+
+When creating subgoals, you must:
+
+1. **Be Clear and Actionable** - Each subgoal must have a specific, achievable objective
+2. **Order Logically** - Sequence subgoals in a sensible order (e.g., navigate before interact)
+3. **Provide Context** - Include relevant details in the subgoal's context field:
+   - Target coordinates for navigation
+   - NPC names or item names for finding
+   - Battle strategy notes for combat
+   - Dialogue choices for interactions
+4. **Stay Focused** - Keep all subgoals focused on the current milestone only
+5. **Limit Quantity** - Generate 2-5 subgoals per milestone (not more, not less)
+6. **Learn from History** - When replanning:
+   - DO NOT repeat completed subgoals
+   - Avoid strategies that previously failed
+   - Build upon what was already accomplished
+   - Try alternative approaches for failed subgoals
+
+# REASONING PROCESS
+
+Always include your reasoning when generating subgoals:
+
+1. **Analyze the Milestone** - What needs to be accomplished?
+2. **Assess Current State** - Where is the player? What resources are available?
+3. **Consider Dependencies** - What must happen first?
+4. **Use Available Information** - Leverage world map, navigation hints, and walkthrough
+5. **Plan for Contingencies** - Consider what could go wrong
+
+# IMPORTANT NOTES
+
+- You are the strategic planner, not the executor
+- Sub-agents will handle the actual button presses and game interactions
+- Focus on high-level strategy and proper task breakdown
+- Trust the sub-agents to execute their specialized tasks
+- When in doubt, break complex tasks into smaller, simpler subgoals
+- Always provide rich context to help sub-agents succeed
+
+Wait for milestone and game state information to begin planning."""
 
 
 class PlanningAgent:
@@ -137,15 +207,15 @@ class PlanningAgent:
     3. update_plan - When subgoals finish or get interrupted
     """
 
-    def __init__(self, vlm=None, mcp_server_url: str = "http://localhost:8000"):
-        self.vlm = vlm
+    def __init__(self, backend, model_name, mcp_server_url: str = "http://localhost:8000"):
+        self.vlm = VLM(backend=backend, model_name=model_name, system_prompt=PLANNING_AGENT_SYSTEM_PROMPT)
         self.mcp_server_url = mcp_server_url
         self.state = PlanningState()
 
         # Initialize sub-agents (each creates its own VLM instance)
-        self.explore_agent = ExploreAgent(mcp_server_url)
-        self.battle_agent = BattleAgent(mcp_server_url)
-        self.utils_agent = UtilsAgent(mcp_server_url)
+        self.explore_agent = ExploreAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
+        # self.battle_agent = BattleAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
+        # self.utils_agent = UtilsAgent(backend=backend, model_name=model_name, mcp_server_url=mcp_server_url)
 
         # Initialize milestone tracking
         self._initialize_milestones()
@@ -255,44 +325,37 @@ class PlanningAgent:
         logger.info("🎉 All milestones completed!")
 
     def _accumulate_frame(self, game_state: Dict[str, Any]) -> None:
-        """Store one frame every 5 seconds for planning context."""
+        """Store every frame for planning context."""
         current_time = time.time()
+        
+        frame_snapshot = {
+            "timestamp": current_time,
+            "player": game_state.get("player", {}),
+            "game": game_state.get("game", {}),
+            "map": game_state.get("map", {}),
+            "frame": game_state.get("frame", {})  # Screenshot
+        }
 
-        if (current_time - self.state.last_frame_time) >= self.state.frame_interval:
-            # Store frame with timestamp
-            frame_snapshot = {
-                "timestamp": current_time,
-                "player": game_state.get("player", {}),
-                "game": game_state.get("game", {}),
-                "map": game_state.get("map", {}),
-                "frame": game_state.get("frame", {})  # Screenshot
-            }
+        self.state.frame_history.append(frame_snapshot)
+        self.state.last_frame_time = current_time
 
-            self.state.frame_history.append(frame_snapshot)
-            self.state.last_frame_time = current_time
-
-            logger.debug(f"📸 Frame accumulated ({len(self.state.frame_history)} total)")
+        logger.debug(f"📸 Frame accumulated ({len(self.state.frame_history)} total)")
 
     def _get_sampled_frames(self) -> List[Dict[str, Any]]:
         """
-        Get frames sampled evenly for planning.
-
-        If we have more than 128 frames, sample 128 evenly spaced.
-        Otherwise return all frames.
+        Get the recent 10 frames
         """
         num_frames = len(self.state.frame_history)
-        max_frames = self.state.max_frames_for_planning
 
         if num_frames == 0:
             return []
 
-        if num_frames <= max_frames:
+        if num_frames <= 10:
             # Use all frames
             return self.state.frame_history
 
         # Sample evenly
-        indices = [int(i * num_frames / max_frames) for i in range(max_frames)]
-        sampled = [self.state.frame_history[i] for i in indices]
+        sampled = self.state.frame_history[-10:]
 
         logger.debug(f"📊 Sampled {len(sampled)} frames from {num_frames} total")
         return sampled
@@ -311,7 +374,7 @@ class PlanningAgent:
         """
         current_time = time.time()
 
-        logger.info("🧠 Planning step")
+        print("🧠 Planning step")
 
         # Check if we need to create a new plan
         if not self.state.current_goal or not self.state.subgoals:
@@ -351,10 +414,13 @@ class PlanningAgent:
 
         # Get current subgoal
         current_subgoal = self.state.subgoals[self.state.current_subgoal_index]
+        
+        # Get sampled frames
+        sampled_frames = [frame_data.get('frame') for frame_data in self._get_sampled_frames()]
 
         # Delegate to appropriate sub-agent
-        result = self._delegate_to_subagent(game_state, current_subgoal)
-
+        result = self._delegate_to_subagent(game_state, sampled_frames, current_subgoal)
+        print(result)
         #TODO: parse the subagent result to return the correct action
 
         return {"action": ["WAIT"]}
@@ -362,6 +428,7 @@ class PlanningAgent:
     def _delegate_to_subagent(
         self,
         game_state: Dict[str, Any],
+        sampled_frames: List[Any],
         subgoal: Subgoal
     ) -> Dict[str, Any]:
         """Delegate to the appropriate sub-agent based on subgoal type."""
@@ -369,13 +436,13 @@ class PlanningAgent:
         planning_context = self.state.planning_context
 
         if subgoal.agent_type == SubAgentType.EXPLORE:
-            return self.explore_agent.step(game_state, subgoal, planning_context)
+            return self.explore_agent.step(game_state, sampled_frames, subgoal, planning_context)
 
         elif subgoal.agent_type == SubAgentType.BATTLE:
-            return self.battle_agent.step(game_state, subgoal, planning_context)
+            return self.battle_agent.step(game_state, sampled_frames,subgoal, planning_context)
 
         elif subgoal.agent_type == SubAgentType.UTILS:
-            return self.utils_agent.step(game_state, subgoal, planning_context)
+            return self.utils_agent.step(game_state, sampled_frames,subgoal, planning_context)
 
         else:
             logger.error(f"Unknown agent type: {subgoal.agent_type}")
@@ -387,7 +454,7 @@ class PlanningAgent:
         Uses MCP tools to gather information, then VLM to generate plan.
         Stores planning context for sub-agents.
         """
-        logger.info("📝 Creating new plan")
+        print("📝 Creating new plan")
 
         # Determine next milestone
         if not self.state.next_milestone:
@@ -398,7 +465,7 @@ class PlanningAgent:
             return
 
         next_milestone = self.state.next_milestone
-        logger.info(f"📋 Planning for milestone: {next_milestone.description}")
+        print(f"📋 Planning for milestone: {next_milestone.description}")
 
         # Gather information using MCP tools
         world_map_info = ""
@@ -506,8 +573,7 @@ class PlanningAgent:
         player_location = player_state.get('player', {})
 
         # Build detailed prompt
-        prompt = f"""You are a high-level planning agent for Pokemon Emerald speedrunning.
-
+        prompt = f"""
 The images provided show {len(sampled_frames)} frames sampled from {len(self.state.frame_history)} total frames, showing the progression over time.
 
 CURRENT MILESTONE:
@@ -532,19 +598,7 @@ WALKTHROUGH GUIDANCE:
 RECENT SUBAGENT CONTEXT:
 {self.state.subagent_context[-3:] if self.state.subagent_context else "None"}
 
-Your task is to break down this milestone into 2-5 concrete, actionable subgoals.
-
-AGENT TYPES:
-- EXPLORE: Use for navigation, moving between locations, finding NPCs/items
-- BATTLE: Use for trainer battles, wild Pokemon encounters, catching Pokemon
-- UTILS: Use for dialogue, menus, item usage, system interactions
-
-REQUIREMENTS:
-1. Each subgoal must be clear and actionable
-2. Order subgoals logically (navigation before interaction, etc.)
-3. Include relevant context for each subgoal (target locations, battle info, etc.)
-4. Keep subgoals focused on the current milestone only
-5. Use information from world map, navigation hints, and walkthrough
+Break down this milestone into 2-5 concrete, actionable subgoals.
 
 Generate the subgoals now."""
 
@@ -554,7 +608,7 @@ Generate the subgoals now."""
 
         for attempt in range(max_retries):
             try:
-                logger.info(f"🤖 Generating subgoals with VLM using {len(sampled_frames)} frames (attempt {attempt + 1}/{max_retries})")
+                print(f"🤖 Generating subgoals with VLM using {len(sampled_frames)} frames (attempt {attempt + 1}/{max_retries})")
 
                 # Call VLM structured output with all sampled frames
                 # (VLM backend automatically manages conversation history)
@@ -584,10 +638,10 @@ Generate the subgoals now."""
                     )
                     subgoals.append(subgoal)
 
-                logger.info(f"✅ Generated {len(subgoals)} subgoals successfully")
-                logger.info(f"💭 Reasoning: {response.reasoning}")
+                print(f"✅ Generated {len(subgoals)} subgoals successfully")
+                print(f"💭 Reasoning: {response.reasoning}")
                 for i, sg in enumerate(subgoals):
-                    logger.info(f"   {i+1}. [{sg.agent_type.value}] {sg.description}")
+                    print(f"   {i+1}. [{sg.agent_type.value}] {sg.description}")
 
                 return subgoals
 

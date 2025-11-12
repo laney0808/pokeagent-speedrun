@@ -79,6 +79,9 @@ class OpenAIBackend(VLMBackend):
         self.client = OpenAI(api_key=self.api_key)
         self.errors = (openai.RateLimitError,)
         self.chat_history = []
+        
+        if "system_prompt" in kwargs:
+            self._update_chat_history("system", kwargs["system_prompt"], None)
     
     @retry_with_exponential_backoff
     def _call_completion(self, recency=50):
@@ -209,11 +212,16 @@ class OpenAIBackend(VLMBackend):
 
     @retry_with_exponential_backoff
     def _call_completion_parse(self, response_format, recency=50):
-        return self.client.chat.completions.parse(
-            model=self.model_name,
-            messages=self.chat_history[-recency:],
-            response_format=response_format
-        )
+        try:  
+            response = self.client.chat.completions.parse(
+                model=self.model_name,
+                messages=self.chat_history[-recency:],
+                response_format=response_format
+            )
+            return response
+        except Exception as e:
+            print(f"OpenAI parse call error: {e}")
+            raise
 
     def get_structured_query(self, img: Union[Image.Image, np.ndarray, List[Union[Image.Image, np.ndarray]]], text: str,
                             response_schema: Any, module_name: str = "Unknown") -> Any:
@@ -223,8 +231,8 @@ class OpenAIBackend(VLMBackend):
 
         try:
             response = self._call_completion_parse(response_schema)
-            result = response.choices[0].message.parsed
             content = response.choices[0].message.content
+            result = response.choices[0].message.parsed
             
             self._update_chat_history("assistant", content, None)
             duration = time.time() - start_time
