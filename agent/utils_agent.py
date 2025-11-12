@@ -101,7 +101,6 @@ class UtilsAgent:
         """
         # Get current game state
         current_state = game_state.get("game", {}).get("game_state", "unknown")
-        frame = game_state.get("frame")
         
         # Check party health status (but not too frequently to avoid spam)
         current_time = time.time()
@@ -559,7 +558,7 @@ ACTION: [Single button or WAIT]
             if line_stripped.upper().startswith("ACTION:"):
                 action = line_stripped.split(":", 1)[1].strip().upper()
                 # Validate action
-                valid_actions = {'A', 'B', 'START', 'SELECT', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'WAIT'}
+                valid_actions = {'A', 'B', 'START', 'UP', 'DOWN', 'LEFT', 'RIGHT', 'WAIT'}
                 if action in valid_actions:
                     return action
                 logger.warning(f"Invalid action '{action}', defaulting to WAIT")
