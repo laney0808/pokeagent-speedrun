@@ -54,7 +54,7 @@ class UtilsAgent:
     - Everything not exploration or battle
     
     Health Monitoring System:
-    - Continuously monitors party health every 5 seconds
+    - Periodically monitors party health during step execution at least every 1 minute (60 seconds) if needed
     - Sets healing_needed flag when party is in critical condition:
       * All Pokemon fainted
       * Only one Pokemon alive with low HP (< 30%)
@@ -104,7 +104,7 @@ class UtilsAgent:
         
         # Check party health status (but not too frequently to avoid spam)
         current_time = time.time()
-        if current_time - self.last_health_check > 5.0:  # Check every 5 seconds
+        if current_time - self.last_health_check > 60.0:  # Check every 1 minute
             self._check_party_health(game_state)
             self.last_health_check = current_time
         
@@ -333,7 +333,7 @@ CURRENT SUBGOAL: {subgoal.description}
 
 💡 QUICK COMPLETION STRATEGY:
 - **Spam A Button**: Most sequences need repeated A presses
-- **Name Selection**: Left name empty for default
+- **Name Selection**: Leave name empty for default
 - **Don't Customize**: Use defaults as much as possible, including name, gender, and clock time
 
 AVAILABLE ACTIONS: A, B, START, UP, DOWN, LEFT, RIGHT
@@ -391,9 +391,8 @@ ACTION: [Single button like 'A', 'START', or 'DOWN']
                 history_context += f"\n  - {sg.get('description', 'Unknown')}"
         
         # Get party health status
-        health_status = self.get_health_status(game_state)
         party_health_str = ""
-        if self.healing_needed and health_status["total"] > 0:
+        if self.healing_needed:
             party_health_str = f"\n⚠️ Party needs healing - seek Pokemon Center"
         
         prompt = f"""🎮 UTILITY TASK IN OVERWORLD
@@ -506,12 +505,14 @@ ACTION: [Single button or WAIT]
             return
         
         total = len(party)
-        critical_count = sum(1 for p in party if p.get("current_hp", 0) == 0 or 
-                            (p.get("current_hp", 0) / max(p.get("max_hp", 1), 1)) < 0.3)
-        
+        current_health = [p.get("current_hp", 0) for p in party]
+        max_health = [max(p.get("max_hp", 1),1) for p in party]
+        threshold = 0.2  # Threshold for healing, can be adjusted
+        critical_count = sum(1 for hp, max_hp in zip(current_health, max_health) if hp == 0 or (hp / max_hp) < threshold)
+
         # Need healing if most of party is in bad shape
         old_state = self.healing_needed
-        self.healing_needed = critical_count > total / 2
+        self.healing_needed = (critical_count / total) > 0.5
         
         if self.healing_needed and not old_state:
             logger.warning(f"🏥 Party needs healing: {critical_count}/{total} Pokemon critical")
