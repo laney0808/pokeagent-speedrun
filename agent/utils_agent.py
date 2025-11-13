@@ -18,27 +18,6 @@ from typing import Literal
 
 logger = logging.getLogger(__name__)
 
-
-class SubAgentActionResponse(BaseModel):
-    """Schema for sub-agent action response.
-
-    The sub-agent can choose one of two action types:
-    - press_buttons: Direct button inputs (A, B, START, UP, DOWN, LEFT, RIGHT)
-    - complete_subgoal: Mark subgoal as done with status (completed/failed/interrupted)
-    """
-    reasoning: str = Field(description="Reasoning about what to do next")
-    action: Literal["press_buttons", "complete_subgoal"] = Field(
-        description="Type of action to take"
-    )
-    action_detail: Dict[str, Any] = Field(
-        description=(
-            "Details for the action. "
-            "For 'press_buttons': {buttons: [list of button strings]}. "
-            "For 'complete_subgoal': {status: str, context: str}"
-        )
-    )
-
-
 class UtilsAgent:
     """
     Sub-agent for utilities: dialogue, shopping, naming, etc.
@@ -208,11 +187,11 @@ ACTION: [Single button like 'A' or 'DOWN']
             action = self._parse_action_from_response(response)
             
             logger.info(f"Dialog action: {action}")
-            return {"action": [action]}
+            return {"action_type": "press_buttons", "action": [action]}
             
         except Exception as e:
             logger.error(f"VLM call failed in dialog handler: {e}")
-            return {"action": ["A"]}  # Default: advance dialogue
+            return {"action_type": "press_buttons", "action": ["A"]}  # Default: advance dialogue
 
     def _handle_menu(
         self,
@@ -293,11 +272,11 @@ ACTION: [Single button like 'A', 'DOWN', or 'B']
             action = self._parse_action_from_response(response)
             
             logger.info(f"Menu action: {action}")
-            return {"action": [action]}
+            return {"action_type": "press_buttons", "action": [action]}
             
         except Exception as e:
             logger.error(f"VLM call failed in menu handler: {e}")
-            return {"action": ["B"]}  # Default: exit menu
+            return {"action_type": "press_buttons", "action": ["B"]}  # Default: exit menu
 
     def _handle_title(
         self,
@@ -373,11 +352,11 @@ ACTION: [Single button like 'A', 'START', or 'DOWN']
             action = self._parse_action_from_response(response)
             
             logger.info(f"Title action: {action}")
-            return {"action": [action]}
+            return {"action_type": "press_buttons", "action": [action]}
             
         except Exception as e:
             logger.error(f"VLM call failed in title handler: {e}")
-            return {"action": ["A"]}  # Default: advance with A
+            return {"action_type": "press_buttons", "action": ["A"]}  # Default: advance with A
 
     def _handle_overworld(
         self,
@@ -460,11 +439,11 @@ ACTION: [Single button]
             action = self._parse_action_from_response(response)
             
             logger.info(f"Overworld action: {action}")
-            return {"action": [action]}
+            return {"action_type": "press_buttons", "action": [action]}
             
         except Exception as e:
             logger.error(f"VLM call failed in overworld handler: {e}")
-            return {"action": ["WAIT"]}
+            return {"action_type": "press_buttons", "action": ["WAIT"]}
 
     def _handle_exception(
         self,
@@ -509,11 +488,11 @@ ACTION: [Single button or WAIT]
             action = self._parse_action_from_response(response)
             
             logger.info(f"Exception handler action: {action}")
-            return {"action": [action]}
+            return {"action_type": "press_buttons", "action": [action]}
             
         except Exception as e:
             logger.error(f"VLM call failed in exception handler: {e}")
-            return {"action": ["WAIT"]}
+            return {"action_type": "press_buttons", "action": ["WAIT"]}
 
     def _check_party_health(self, game_state: Dict[str, Any]) -> None:
         """
