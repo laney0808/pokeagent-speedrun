@@ -22,19 +22,17 @@ logger = logging.getLogger(__name__)
 class SubAgentActionResponse(BaseModel):
     """Schema for sub-agent action response.
 
-    The sub-agent can choose one of three action types:
-    - High-level action: Use predefined tools (e.g., talk_to_npc, buy_item)
-    - press_buttons: Direct button inputs
-    - complete_subgoal: Mark subgoal as done with status
+    The sub-agent can choose one of two action types:
+    - press_buttons: Direct button inputs (A, B, START, UP, DOWN, LEFT, RIGHT)
+    - complete_subgoal: Mark subgoal as done with status (completed/failed/interrupted)
     """
     reasoning: str = Field(description="Reasoning about what to do next")
-    action: Literal["high_level_action", "press_buttons", "complete_subgoal"] = Field(
+    action: Literal["press_buttons", "complete_subgoal"] = Field(
         description="Type of action to take"
     )
     action_detail: Dict[str, Any] = Field(
         description=(
             "Details for the action. "
-            "For 'high_level_action': {tool_name: str, tool_input: dict}. "
             "For 'press_buttons': {buttons: [list of button strings]}. "
             "For 'complete_subgoal': {status: str, context: str}"
         )
@@ -73,7 +71,6 @@ class UtilsAgent:
         from utils.vlm import VLM
 
         self.mcp_server_url = mcp_server_url
-        self._initiate_tools()
         self.vlm = VLM(backend=backend, model_name=model_name, system_prompt=self._get_system_prompt())  # Create own VLM instance with own conversation history
         self.handlers = {
             "dialog": self._handle_dialog, 
@@ -86,152 +83,29 @@ class UtilsAgent:
         self.in_pokemon_center = False  # Track if currently in Pokemon Center
 
     def _get_system_prompt(self) -> str:
-        """
-        Get system prompt for the utils sub-agent.
-        """
-        return f"""You are a lower-level utility agent for Pokemon Emerald speedrunning.
-        You will receive a subgoal to achieve related to utility tasks such as dialogue, menus, shopping, naming, and interactions.
-        Given a subgoal, you will determine the appropriate action and execute it to achieve the subgoal.
-        
-        Your responsibilities include:
-        1. DIALOGUE: Navigating NPC conversations, making dialogue choices, reading and responding to text
-        2. MENU: Navigating game menus, selecting options, managing inventory
-        3. TITLE: Handling title sequence, naming character, starting game
-        4. OVERWORLD UTILITIES: Interacting with objects, NPCs, opening menus, using items
-        5. SHOPPING: Buying and selling items at shops
-        6. HEALING: Monitoring party health and coordinating Pokemon Center visits
-        
-        There are 3 types of actions you can take:
-        - High-level action: Use predefined tools.
-        - press_buttons: Direct button inputs (A, B, START, UP, DOWN, LEFT, RIGHT).
-        - complete_subgoal: Mark subgoal as done with status.
-        
-        The following are the tools available to you:
-        {self.tools}
-        
-        Special considerations:
-        - Monitor party health and flag when healing is needed
-        - Handle dialogue efficiently by reading text and making appropriate choices
-        - Navigate menus systematically to reach desired options
-        - Complete title sequence quickly using defaults
-        - Interact with NPCs and objects by positioning adjacent and pressing A
-        
-        Wait for further instructions.
-        """
+        """Get system prompt for the utils sub-agent."""
+        return """You are a utility agent for Pokemon Emerald speedrunning.
+Handle dialogue, menus, shopping, and interactions efficiently.
 
-    def _initiate_tools(self):
-        """
-        Initialize tools for the sub-agent.
-        """
-        self.tools = [
-            {
-                "name": "talk_to_npc",
-                "description": "Initiate conversation with an NPC by walking adjacent and pressing A.",
-                "input_schema": {
-                    "npc_name": "str - Name or description of the NPC",
-                    "x": "int - X coordinate of the NPC",
-                    "y": "int - Y coordinate of the NPC"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the interaction initiated successfully"
-                }
-            },
-            {
-                "name": "advance_dialogue",
-                "description": "Advance through dialogue text by pressing A.",
-                "input_schema": {},
-                "output_schema": {
-                    "success": "bool - Whether the dialogue advanced"
-                }
-            },
-            {
-                "name": "select_dialogue_option",
-                "description": "Select a dialogue option when presented with choices.",
-                "input_schema": {
-                    "option": "str - The option to select (e.g., 'YES', 'NO')",
-                    "direction": "str - Direction to navigate (UP/DOWN)"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the option was selected"
-                }
-            },
-            {
-                "name": "open_menu",
-                "description": "Open the main game menu by pressing START.",
-                "input_schema": {},
-                "output_schema": {
-                    "success": "bool - Whether the menu opened"
-                }
-            },
-            {
-                "name": "navigate_menu",
-                "description": "Navigate through menu options using directional inputs.",
-                "input_schema": {
-                    "target_option": "str - The menu option to select",
-                    "navigation_sequence": "list - Sequence of directions (UP/DOWN/LEFT/RIGHT)"
-                },
-                "output_schema": {
-                    "success": "bool - Whether navigation was successful"
-                }
-            },
-            {
-                "name": "use_item",
-                "description": "Use an item from the bag on a Pokemon or in the field.",
-                "input_schema": {
-                    "item_name": "str - Name of the item to use",
-                    "target": "str - Target Pokemon or usage context"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the item was used successfully"
-                }
-            },
-            {
-                "name": "buy_item",
-                "description": "Purchase an item from a shop.",
-                "input_schema": {
-                    "item_name": "str - Name of the item to buy",
-                    "quantity": "int - Number of items to purchase"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the purchase was successful",
-                    "money_spent": "int - Amount of money spent"
-                }
-            },
-            {
-                "name": "check_party_health",
-                "description": "Check the health status of the Pokemon party.",
-                "input_schema": {},
-                "output_schema": {
-                    "success": "bool - Whether the check was successful",
-                    "health_status": "dict - Summary of party health"
-                }
-            },
-            {
-                "name": "search_knowledge",
-                "description": "Search external knowledge base for information about utilities, items, NPCs, or game mechanics.",
-                "input_schema": {
-                    "query": "str - Query string to search in the knowledge base"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the knowledge search is successful",
-                    "query": "str - The original query string",
-                    "search_results": "Dict[str, str] - Search results with titles and snippets"
-                }
-            },
-            {
-                "name": "add_knowledge",
-                "description": "Add new knowledge to the knowledge base about utilities, items, or interactions.",
-                "input_schema": {
-                    "key": "str - Knowledge key or title",
-                    "value": "str - Knowledge content or description"
-                },
-                "output_schema": {
-                    "success": "bool - Whether the knowledge addition was successful",
-                    "key": "str - Knowledge key or title",
-                    "value": "str - Knowledge content or description"
-                }
-            }
-        ]
+Your responsibilities:
+- DIALOGUE: Navigate NPC conversations, advance text, make choices
+- MENU: Navigate menus, select options, manage inventory
+- TITLE: Complete title sequence quickly using defaults
+- OVERWORLD: Interact with objects/NPCs, open menus, use items
+- HEALING: Monitor party health and coordinate Pokemon Center visits
+
+Available actions:
+- press_buttons: Direct inputs (A, B, START, UP, DOWN, LEFT, RIGHT)
+- complete_subgoal: Mark done (status: completed/failed/interrupted)
+
+Tips:
+- Press A to advance dialogue and confirm selections
+- Use UP/DOWN to navigate menus and make choices
+- Press START to open the main menu
+- Press B to cancel or go back
+- Walk adjacent to targets and press A to interact
+
+Be efficient and complete tasks quickly."""
 
     def step(
         self,
@@ -281,7 +155,7 @@ class UtilsAgent:
         """Handle dialogue interactions - advance conversations, make choices."""
         frame = game_state.get("frame")
         dialog_text = game_state.get("game", {}).get("dialog_text", "")
-        print("Debug: ⚙️ Entering utils_agent DIALOG step")
+        print("⚙️ Entering utils_agent DIALOG step")
         # Extract planning context info
         overall_goal = planning_context.get("goal", "Unknown goal")
         next_milestone = planning_context.get("next_milestone", {})
@@ -349,7 +223,7 @@ ACTION: [Single button like 'A' or 'DOWN']
         """Handle menu navigation - select options, manage items, etc."""
         frame = game_state.get("frame")
         player_info = game_state.get("player", {})
-        print("Debug: ⚙️ Entering utils_agent MENU step")
+        print("⚙️ Entering utils_agent MENU step")
         # Get player data
         player_name = player_info.get("name", "Unknown")
         money = player_info.get("money", 0)
@@ -436,7 +310,7 @@ ACTION: [Single button like 'A', 'DOWN', or 'B']
         player_info = game_state.get("player", {})
         player_name = player_info.get("name", "????????")
         player_location = player_info.get("location", "TITLE_SEQUENCE")
-        print("Debug: ⚙️ Entering utils_agent TITLE step")
+        print("⚙️ Entering utils_agent TITLE step")
         # Check milestone progress
         milestones = game_state.get("milestones", {})
         game_running = milestones.get("GAME_RUNNING", {}).get("completed", False)
@@ -516,7 +390,7 @@ ACTION: [Single button like 'A', 'START', or 'DOWN']
         player_info = game_state.get("player", {})
         position = player_info.get("position", {})
         location = player_info.get("location", "Unknown")
-        print("Debug: ⚙️ Entering utils_agent OVERWORLD step")
+        print("⚙️ Entering utils_agent OVERWORLD step")
         # Extract planning context info
         overall_goal = planning_context.get("goal", "Unknown goal")
         next_milestone = planning_context.get("next_milestone", {})
@@ -656,7 +530,7 @@ ACTION: [Single button or WAIT]
         
         total = len(party)
         current_health = [p.get("current_hp", 0) for p in party]
-        max_health = [max(p.get("max_hp", 1),1) for p in party]
+        max_health = [max(p.get("max_hp", 1), 1) for p in party]
         threshold = 0.2  # Threshold for healing, can be adjusted
         critical_count = sum(1 for hp, max_hp in zip(current_health, max_health) if hp == 0 or (hp / max_hp) < threshold)
 
